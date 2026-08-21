@@ -354,6 +354,39 @@ body {
     padding-bottom: 36px !important;
     border-bottom: 1px dashed #D1D5DB !important;
   }
+
+  /* 🌟 LEADERSHIP print scale-down (인쇄 시 리더십 폰트 축소) */
+  .leadership-section-meta {
+    font-size: 9pt !important;
+    margin-bottom: 4px !important;
+  }
+  .leadership-section-h2 {
+    font-size: 24pt !important;
+    margin-bottom: 12px !important;
+  }
+  .leadership-lead-p {
+    font-size: 14pt !important;
+    margin-bottom: 8px !important;
+  }
+  .leadership-desc-p {
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+  }
+  .leadership-card-item {
+    padding: 18px 24px !important;
+    min-height: 180px !important;
+    background-color: #101218 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .leadership-card-title {
+    font-size: 14pt !important;
+    margin-bottom: 8px !important;
+  }
+  .leadership-card-desc {
+    font-size: 10pt !important;
+    line-height: 1.5 !important;
+  }
 }
 
 /* ─── Global Animation Utilities ────────────────────────────────────────── */

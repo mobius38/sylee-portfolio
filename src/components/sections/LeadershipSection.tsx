@@ -64,10 +64,11 @@ export function LeadershipSection({ w }: { w: number }) {
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* 1. Giant Bold LEADERSHIP Section Header */}
         <div style={{ maxWidth: "1000px", marginBottom: isMobile ? "40px" : "64px" }}>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
+          <span className="leadership-section-meta" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
             DESIGN LEADERSHIP &amp; PHILOSOPHY
           </span>
           <h2
+            className="leadership-section-h2"
             style={{
               fontSize: isMobile ? "44px" : "clamp(56px, 6.5vw, 84px)",
               fontWeight: 900,
@@ -79,10 +80,10 @@ export function LeadershipSection({ w }: { w: number }) {
           >
             LEADERSHIP
           </h2>
-          <p style={{ fontSize: isMobile ? "18px" : "26px", color: "#93C5FD", margin: "0 0 12px 0", fontWeight: 700, letterSpacing: "-0.02em" }}>
+          <p className="leadership-lead-p" style={{ fontSize: isMobile ? "18px" : "26px", color: "#93C5FD", margin: "0 0 12px 0", fontWeight: 700, letterSpacing: "-0.02em" }}>
             제품을 직접 설계하며, 디자인의 기준까지 만들어왔습니다.
           </p>
-          <p style={{ fontSize: isMobile ? "14px" : "16px", color: "rgba(255, 255, 255, 0.75)", lineHeight: 1.8, margin: 0 }}>
+          <p className="leadership-desc-p" style={{ fontSize: isMobile ? "14px" : "16px", color: "rgba(255, 255, 255, 0.75)", lineHeight: 1.8, margin: 0 }}>
             Senior Product Designer로 제품 설계를 담당하면서 제품 방향 제안, 디자인 리뷰, 디자인 시스템 구축과 협업 조율까지 실무 기반의 디자인 리딩을 수행했습니다.
           </p>
         </div>
@@ -102,6 +103,7 @@ export function LeadershipSection({ w }: { w: number }) {
                 key={idx}
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
+                className="leadership-card-item"
                 style={{
                   position: "relative",
                   overflow: "hidden",
@@ -161,6 +163,7 @@ export function LeadershipSection({ w }: { w: number }) {
                 {/* Top: Large Bold Pure Korean Title (No English Duplicate) */}
                 <div style={{ position: "relative", zIndex: 2 }}>
                   <h3
+                    className="leadership-card-title"
                     style={{
                       fontSize: isMobile ? "24px" : "28px",
                       fontWeight: 900,
@@ -179,6 +182,7 @@ export function LeadershipSection({ w }: { w: number }) {
                   {p.lines.map((line, lIdx) => (
                     <p
                       key={lIdx}
+                      className="leadership-card-desc"
                       style={{
                         fontSize: isMobile ? "13px" : "14px",
                         color: isHovered ? "#FFFFFF" : "rgba(255, 255, 255, 0.72)",
