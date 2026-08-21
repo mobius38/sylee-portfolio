@@ -399,6 +399,26 @@ body {
     font-size: 10pt !important;
     line-height: 1.5 !important;
   }
+
+  /* 🌟 FOOTER print scale-down (인쇄 시 푸터 폰트 축소) */
+  .footer-title-h2 {
+    font-size: 16pt !important;
+    margin-bottom: 8px !important;
+  }
+  .footer-title-h2 span {
+    margin-top: 2px !important;
+  }
+  .footer-signature-p {
+    font-size: 11pt !important;
+    margin-bottom: 16px !important;
+  }
+  footer {
+    background-color: #08090C !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    padding-top: 40px !important;
+    padding-bottom: 30px !important;
+  }
 }
 
 /* ─── Global Animation Utilities ────────────────────────────────────────── */

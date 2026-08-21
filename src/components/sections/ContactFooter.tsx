@@ -26,6 +26,7 @@ export function ContactFooter({ w }: { w: number }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "32px" }}>
           <div>
             <h2
+              className="footer-title-h2"
               style={{
                 fontSize: isMobile ? "28px" : "38px",
                 fontWeight: 900,
@@ -40,7 +41,7 @@ export function ContactFooter({ w }: { w: number }) {
                 언제든 편하게 연락해 주세요.
               </span>
             </h2>
-            <p style={{ fontSize: isMobile ? "15px" : "17px", color: "rgba(255, 255, 255, 0.7)", margin: "0 0 24px 0", fontWeight: 500 }}>
+            <p className="footer-signature-p" style={{ fontSize: isMobile ? "15px" : "17px", color: "rgba(255, 255, 255, 0.7)", margin: "0 0 24px 0", fontWeight: 500 }}>
               이선영 <span style={{ color: "rgba(255, 255, 255, 0.35)", margin: "0 6px" }}>·</span> Product Designer
             </p>
 
