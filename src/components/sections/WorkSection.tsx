@@ -920,7 +920,7 @@ export function WorkSection({ w }: { w: number }) {
 
       {/* 3. Tier 1: Recent Top 2 Featured Showcase (최근 대표작 2선 상단 배치) */}
       {featuredProjects.length > 0 && (
-        <div style={{ marginBottom: isMobile ? "40px" : "60px" }}>
+        <div className="no-print" style={{ marginBottom: isMobile ? "40px" : "60px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "18px" }}>
             <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
               RECENT FEATURED WORKS (최근 대표 프로젝트)
@@ -1003,7 +1003,7 @@ export function WorkSection({ w }: { w: number }) {
 
       {/* 4. Tier 2: Selected Products Grid (선별 플랫폼 & 모바일 앱 8종) */}
       {gridProjects.length > 0 && (
-        <div>
+        <div className="no-print">
           <div
             style={{
               display: "grid",
