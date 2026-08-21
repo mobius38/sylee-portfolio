@@ -599,65 +599,21 @@ function CaseStudyDialog({
               </strong>
             </div>
           </div>
-          {/* Interactive Slide Switcher (if multi-slide) */}
-          {project.slides.length > 1 && (
-            <div className="mobile-scroll-wrap" style={{ marginBottom: "14px" }}>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "12px",
-                  overflowX: "auto",
-                  WebkitOverflowScrolling: "touch",
-                  borderBottom: "1px solid #E5E7EB",
-                  paddingBottom: "8px",
-                }}
-              >
-                {project.slides.map((s, idx) => {
-                  const isActive = idx === activeSlideIdx;
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveSlideIdx(idx)}
-                      style={{
-                        background: "none",
-                        border: "none",
-                        padding: "6px 2px",
-                        cursor: "pointer",
-                        fontFamily: "'JetBrains Mono', monospace",
-                        fontSize: isMobile ? "11px" : "12px",
-                        fontWeight: isActive ? 800 : 500,
-                        color: isActive ? "#111111" : "#9CA3AF",
-                        position: "relative",
-                        whiteSpace: "nowrap",
-                        transition: "color 0.15s ease",
-                      }}
-                    >
-                      <span style={{ color: isActive ? "#2563EB" : "#9CA3AF", marginRight: "6px" }}>0{idx + 1}</span>
-                      <span>{s.tabLabel}</span>
-                      {isActive && (
-                        <div style={{ position: "absolute", bottom: "-9px", left: 0, right: 0, height: "2px", backgroundColor: "#111111" }} />
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* High-Resolution Screen Frame with 100% Unclipped Contain */}
+          {/* High-Resolution Screen Frame with Interactive Dot Pagination */}
           <div
             style={{
+              position: "relative",
               width: "100%",
               height: isMobile ? "280px" : "500px",
               backgroundColor: "#F9FAFB",
-              borderRadius: "6px",
+              borderRadius: "8px",
               overflow: "hidden",
               border: "1px solid #E5E7EB",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: isMobile ? "12px" : "20px",
-              marginBottom: "10px",
+              padding: isMobile ? "12px" : "24px",
+              marginBottom: "12px",
             }}
           >
             <img
@@ -669,18 +625,134 @@ function CaseStudyDialog({
                 objectFit: "contain",
                 objectPosition: "center",
                 display: "block",
+                transition: "opacity 0.2s ease",
               }}
             />
+
+            {/* Prev / Next Controls (if multi-slide) */}
+            {project.slides.length > 1 && (
+              <>
+                <button
+                  onClick={() => setActiveSlideIdx((prev) => (prev > 0 ? prev - 1 : project.slides.length - 1))}
+                  aria-label="Previous slide"
+                  style={{
+                    position: "absolute",
+                    left: "12px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    border: "1px solid #E5E7EB",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    color: "#111111",
+                    fontSize: "20px",
+                    lineHeight: 1,
+                    transition: "all 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#111111";
+                    e.currentTarget.style.color = "#FFFFFF";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
+                    e.currentTarget.style.color = "#111111";
+                  }}
+                >
+                  ‹
+                </button>
+
+                <button
+                  onClick={() => setActiveSlideIdx((prev) => (prev < project.slides.length - 1 ? prev + 1 : 0))}
+                  aria-label="Next slide"
+                  style={{
+                    position: "absolute",
+                    right: "12px",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    backgroundColor: "rgba(255, 255, 255, 0.9)",
+                    border: "1px solid #E5E7EB",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    color: "#111111",
+                    fontSize: "20px",
+                    lineHeight: 1,
+                    transition: "all 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = "#111111";
+                    e.currentTarget.style.color = "#FFFFFF";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
+                    e.currentTarget.style.color = "#111111";
+                  }}
+                >
+                  ›
+                </button>
+
+                {/* Bottom Centered Pagination Dots */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "14px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    display: "flex",
+                    gap: "6px",
+                    alignItems: "center",
+                    backgroundColor: "rgba(17, 24, 39, 0.55)",
+                    padding: "5px 10px",
+                    borderRadius: "9999px",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  {project.slides.map((_, idx) => {
+                    const isActive = idx === activeSlideIdx;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveSlideIdx(idx)}
+                        aria-label={`Go to slide ${idx + 1}`}
+                        style={{
+                          width: isActive ? "18px" : "6px",
+                          height: "6px",
+                          borderRadius: "9999px",
+                          backgroundColor: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.45)",
+                          border: "none",
+                          padding: 0,
+                          cursor: "pointer",
+                          transition: "all 0.2s ease",
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
 
           {/* Slide Caption Bar */}
-          <div style={{ marginBottom: "24px", display: "flex", justifyContent: "space-between", fontSize: "12px", color: "#6B7280", flexWrap: "wrap", gap: "6px", borderBottom: "1px solid #F3F4F6", paddingBottom: "10px" }}>
-            <span style={{ color: "#374151" }}>
+          <div style={{ marginBottom: "24px", display: "flex", justifyContent: "space-between", fontSize: "13px", color: "#6B7280", flexWrap: "wrap", gap: "6px", borderBottom: "1px solid #F3F4F6", paddingBottom: "10px" }}>
+            <span style={{ color: "#374151", fontWeight: 500 }}>
               {currentSlide.caption}
             </span>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF" }}>
-              0{activeSlideIdx + 1} / 0{project.slides.length}
-            </span>
+            {project.slides.length > 1 && (
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11.5px", fontWeight: 700, color: "#2563EB" }}>
+                0{activeSlideIdx + 1} / 0{project.slides.length}
+              </span>
+            )}
           </div>
 
           {/* 🌟 Editorial 3-Column Story Section (Challenge ➔ Approach ➔ Outcome) */}
