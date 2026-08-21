@@ -1172,38 +1172,41 @@ export function WorkSection({ w }: { w: number }) {
                 </div>
               </div>
 
-              {/* 🌟 Cover & Sub Images for Printing (1장일 땐 가로 꽉 차게, 2장 이상일 땐 2단 바둑판 격자로 전형 나열) */}
-              {p.slides.length > 0 && (
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: p.slides.length === 1 ? "1fr" : "repeat(2, 1fr)",
-                    gap: "12px",
-                    marginBottom: "24px",
-                  }}
-                >
-                  {p.slides.map((slide, sIdx) => (
-                    <div
-                      key={sIdx}
-                      style={{
-                        width: "100%",
-                        aspectRatio: "16/9",
-                        backgroundColor: "#F9FAFB",
-                        border: "1px solid #E5E7EB",
-                        borderRadius: "6px",
-                        overflow: "hidden",
-                      }}
-                    >
-                      <img
-                        src={slide.src}
-                        alt={slide.alt}
-                        loading="lazy"
-                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+              {/* 🌟 Cover & Sub Images for Printing (최대 4개 이미지 제한, 1장일 땐 가로 꽉 차게, 2~4장일 땐 2단 바둑판 2x2 격자 나열) */}
+              {(() => {
+                const printSlides = p.slides.slice(0, 4);
+                return printSlides.length > 0 ? (
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: printSlides.length === 1 ? "1fr" : "repeat(2, 1fr)",
+                      gap: "12px",
+                      marginBottom: "24px",
+                    }}
+                  >
+                    {printSlides.map((slide, sIdx) => (
+                      <div
+                        key={sIdx}
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/9",
+                          backgroundColor: "#F9FAFB",
+                          border: "1px solid #E5E7EB",
+                          borderRadius: "6px",
+                          overflow: "hidden",
+                        }}
+                      >
+                        <img
+                          src={slide.src}
+                          alt={slide.alt}
+                          loading="lazy"
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ) : null;
+              })()}
 
               {/* 🌟 3-Segment Story Vertical List (웹 모달과 완전 동일한 에디토리얼 레이아웃 계층 적용) */}
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
