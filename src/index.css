@@ -378,7 +378,13 @@ body {
     margin-bottom: 12px !important;
   }
 
-  /* 🌟 CORE COMPETENCIES print scale-down */
+  /* 🌟 CORE COMPETENCIES print scale-down (핵심 역량 시작 시 강제 페이지 넘김 추가) */
+  .about-competency-section {
+    break-before: page !important;
+    page-break-before: always !important;
+    margin-top: 40px !important; /* 새 인쇄 페이지 상단 적정 여백 */
+    margin-bottom: 30px !important;
+  }
   .competency-section-title {
     font-size: 9pt !important;
   }

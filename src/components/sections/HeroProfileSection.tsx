@@ -223,7 +223,7 @@ export function HeroProfileSection({ w }: { w: number }) {
       </div>
 
       {/* 4. 3 Core Competencies */}
-      <div style={{ marginBottom: isMobile ? "48px" : "80px" }}>
+      <div className="about-competency-section" style={{ marginBottom: isMobile ? "48px" : "80px" }}>
         <div style={{ marginBottom: "20px" }}>
           <span className="competency-section-title" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
             CORE COMPETENCIES (3대 핵심 역량)
