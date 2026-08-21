@@ -648,7 +648,7 @@ function CaseStudyDialog({
             style={{
               marginBottom: "24px",
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "flex-end",
               alignItems: "center",
               fontSize: "13.5px",
               color: "#4B5563",
@@ -656,10 +656,6 @@ function CaseStudyDialog({
               paddingBottom: "12px",
             }}
           >
-            {/* Left: Slide Caption Text */}
-            <span style={{ color: "#374151", fontWeight: 500, flex: 1, wordBreak: "keep-all" }}>
-              {currentSlide.caption}
-            </span>
 
             {/* Right: Integrated Controller Group */}
             {project.slides.length > 1 && (
