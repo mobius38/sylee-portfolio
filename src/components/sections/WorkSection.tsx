@@ -1113,7 +1113,7 @@ export function WorkSection({ w }: { w: number }) {
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "16px" }}>
                 <div>
                   <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.08em" }}>
-                    CASE {p.num} · {p.client}
+                    CASE {p.num}
                   </span>
                   <h3 style={{ fontSize: "19px", fontWeight: 900, color: "#111111", margin: "4px 0 0 0", letterSpacing: "-0.02em" }}>
                     {p.title}
@@ -1122,6 +1122,54 @@ export function WorkSection({ w }: { w: number }) {
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280" }}>
                   {p.keyword}
                 </span>
+              </div>
+
+              {/* 🌟 4-Column Professional Metadata Spec Bar (인쇄 시 메타 정보 바 보강 복구) */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(4, 1fr)",
+                  gap: "16px",
+                  borderBottom: "1px solid #F3F4F6",
+                  paddingBottom: "12px",
+                  marginBottom: "16px",
+                }}
+              >
+                <div>
+                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                    CLIENT
+                  </span>
+                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#111111", display: "block" }}>
+                    {p.client}
+                  </strong>
+                </div>
+
+                <div>
+                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                    CATEGORY
+                  </span>
+                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#111111", display: "block" }}>
+                    {p.keyword}
+                  </strong>
+                </div>
+
+                <div>
+                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                    DATE (PERIOD)
+                  </span>
+                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block" }}>
+                    {p.period}
+                  </strong>
+                </div>
+
+                <div>
+                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                    ROLE
+                  </span>
+                  <strong style={{ fontSize: "11px", fontWeight: 800, color: "#111111", display: "block", lineHeight: 1.3 }}>
+                    {p.role}
+                  </strong>
+                </div>
               </div>
 
               {/* Cover Image for Printing */}
@@ -1134,7 +1182,7 @@ export function WorkSection({ w }: { w: number }) {
                     border: "1px solid #E5E7EB",
                     borderRadius: "6px",
                     overflow: "hidden",
-                    marginBottom: "20px",
+                    marginBottom: "24px",
                   }}
                 >
                   <img
@@ -1145,37 +1193,34 @@ export function WorkSection({ w }: { w: number }) {
                 </div>
               )}
 
-              {/* 3-Column Detailed Story Grid */}
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
-                {/* Column 1: Challenge */}
-                <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
-                    01 / CHALLENGE
+              {/* 🌟 3-Segment Story Vertical List (세로 정렬 레이아웃 개선) */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+                {/* Segment 1: Challenge */}
+                <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "14px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px", letterSpacing: "0.05em" }}>
+                    01 / CHALLENGE (문제 정의)
                   </span>
-                  <h4 style={{ fontSize: "12px", color: "#111111", margin: "0 0 6px 0", fontWeight: 800 }}>문제 정의</h4>
-                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.6, margin: 0 }}>
                     {p.challenge}
                   </p>
                 </div>
 
-                {/* Column 2: Approach */}
-                <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
-                    02 / APPROACH
+                {/* Segment 2: Approach */}
+                <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "14px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px", letterSpacing: "0.05em" }}>
+                    02 / APPROACH (해결 방안)
                   </span>
-                  <h4 style={{ fontSize: "12px", color: "#111111", margin: "0 0 6px 0", fontWeight: 800 }}>해결 방안</h4>
-                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.6, margin: 0 }}>
                     {p.approach}
                   </p>
                 </div>
 
-                {/* Column 3: Outcome */}
+                {/* Segment 3: Outcome */}
                 <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
-                    03 / OUTCOME
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px", letterSpacing: "0.05em" }}>
+                    03 / OUTCOME (수행 성과)
                   </span>
-                  <h4 style={{ fontSize: "12px", color: "#111111", margin: "0 0 6px 0", fontWeight: 800 }}>수행 성과</h4>
-                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.6, margin: 0 }}>
                     {p.outcome}
                   </p>
                 </div>
