@@ -10,7 +10,7 @@ export function CareerSection({ w }: { w: number }) {
     { period: "2023", role: "SalesBridge", desc: "브랜딩 · 협업 플랫폼 UX/UI · PWA" },
     { period: "2024", role: "Dualspace", desc: "제품 방향 기획 · UX/UI · High-fi Prototype" },
     { period: "2025", role: "DWorks 통합 제품", desc: "멀티 프로덕트 디자인 시스템 · 통합 제품 경험" },
-    { period: "2025–2026", role: "DOOLINKER · Intranet", desc: "Workflow 구조화 · 제품 설계 · 디자인 시스템" },
+    { period: "2025–2026", role: "DOOLINKER · MIZUHO Portal", desc: "Workflow 구조화 · 제품 설계 · 디자인 시스템" },
   ];
 
   return (

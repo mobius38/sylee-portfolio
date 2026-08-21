@@ -12,8 +12,8 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
     {
       num: "02",
       id: "#cases",
-      title: "INTRANET PORTAL",
-      sub: "Enterprise Work Platform",
+      title: "MIZUHO PORTAL",
+      sub: "일본 미즈호(MIZUHO) 은행 사내 포탈",
       flow: "IA → Permission → System →",
     },
     {

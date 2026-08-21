@@ -19,6 +19,11 @@ import imgDualspacePartner from "../../imports/optimized/dualspace-partner.webp"
 // DWORKS
 import imgDworksBranding from "../../imports/optimized/dworks-branding.webp";
 import imgDworksProduct from "../../imports/optimized/dworks-product.webp";
+import imgDworksDSThumbnail from "../../imports/optimized/dworks-ds-thumbnail.jpg";
+import imgDworksDSTheme from "../../imports/optimized/dworks-ds-theme.png";
+import imgDworksDSSemantic from "../../imports/optimized/dworks-ds-semantic.png";
+import imgDworksDSPalette from "../../imports/optimized/dworks-ds-palette.png";
+import imgDworksDSPrimitive from "../../imports/optimized/dworks-ds-primitive.png";
 // CS TALK
 import imgCSTalkOverview from "../../imports/optimized/cstalk-overview.webp";
 import imgCSTalkDashLight from "../../imports/optimized/cstalk-dashboard-light.webp";
@@ -31,6 +36,7 @@ import imgNH from "../../imports/optimized/mobile-nh.webp";
 import imgHelloLink from "../../imports/optimized/mobile-hellolink.webp";
 import imgHelloLinkMagazine from "../../imports/mobile-hellolink-magazine.png";
 import imgShaluv from "../../imports/commerce-shaluv.png";
+import imgShaluvPromotions from "../../imports/optimized/commerce-shaluv-promotions.png";
 import imgDime from "../../imports/optimized/mobile-dime.webp";
 import imgLMS from "../../imports/hanmilab-lms.png";
 
@@ -97,12 +103,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: "MONITOR" },
     ],
     tags: ["Workflow_Automation", "Interactive_Canvas", "Drag_and_Drop", "Design_System", "Prototype"],
-    thumbnail: imgWorkflow,
+    thumbnail: imgLogin,
     isFeatured: true,
     slides: [
+      { src: imgLogin, alt: "Login", tabLabel: "Login & Brand", title: "브랜드의 시각적 기준을 제품 경험까지 연결", caption: "Brand Identity와 Product UI가 분리되지 않도록 시각적 기준 확장" },
       { src: imgWorkflow, alt: "Workflow Builder", tabLabel: "Workflow Builder", title: "Drag & Drop으로 Workflow를 구성하다", caption: "Node 선택·연결·설정·실행 인터랙션을 Hi-Fi 프로토타입으로 빠르게 구체화" },
       { src: imgDashboard, alt: "Dashboard", tabLabel: "Dashboard", title: "자동화의 생성 · 실행 · 모니터링을 하나의 흐름으로", caption: "Trigger / Action 기반 복잡한 자동화 로직을 사용자가 직접 구성하고 상태 확인" },
-      { src: imgLogin, alt: "Login", tabLabel: "Login & Brand", title: "브랜드의 시각적 기준을 제품 경험까지 연결", caption: "Brand Identity와 Product UI가 분리되지 않도록 시각적 기준 확장" },
       { src: imgDoolinkerDS, alt: "Design System", tabLabel: "Design System", title: "Design Principles에서 Component까지 — 확장 가능한 UI 기준", caption: "FLOW · SIMPLICITY · FLEXIBILITY 3개 원칙 기반 Foundations 6/6, Components 26/26 완성" },
       { src: imgSettings, alt: "Settings", tabLabel: "Settings", title: "공통 컴포넌트 실서비스 적용", caption: "디자인 시스템 컴포넌트를 활용하여 구축된 계정 및 시스템 환경 설정" },
     ],
@@ -110,15 +116,15 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "intranet",
     num: "02",
-    title: "INTRANET PORTAL",
-    subtitle: "Enterprise Work Platform",
+    title: "MIZUHO PORTAL",
+    subtitle: "일본 미즈호(MIZUHO) 은행 사내 포탈",
     categoryFlow: "IA → Permission → System",
     keyword: "Financial",
     client: "도전하는사람들",
     period: "2025.11 ~ 2026.04",
-    serviceType: "Enterprise Work Portal",
+    serviceType: "MIZUHO Bank Enterprise Portal",
     role: "Product Design",
-    description: "금융 이중 포탈의 정보구조와 5단계 권한 인가 체계를 설계하여 사용자 역할별 안전하고 명확한 접근 경험을 구현했습니다.",
+    description: "일본 미즈호(MIZUHO) 은행 사내 포탈의 정보구조와 5단계 권한 인가 체계를 설계하여 사용자 역할별 안전하고 명확한 접근 경험을 구현했습니다.",
     challenge: "다수의 금융 서비스와 대용량 트랜잭션 모듈이 파편화되어 역할별 접근 권한 및 데이터 모니터링 체계가 불명확했음.",
     approach: "사용자 맞춤 포탈과 총괄 어드민을 분리한 이중 포탈 IA를 수립하고, 대용량 금융 데이터 처리에 최적화된 고밀도 Data Grid 컴포넌트 구축.",
     outcome: "User-Org-Role-Permission 5단계 인가 모델 수립 및 금융 도메인 맞춤형 토큰 기반 전사 디자인 시스템 규격화.",
@@ -149,7 +155,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     categoryFlow: "Problem → Structure → Hi-Fi Prototype → Integrated Product",
     keyword: "Enterprise",
     client: "㈜스펙트라",
-    period: "2024.07 ~ 2025.07",
+    period: "2024.09 ~ 2024.10",
     serviceType: "Unified Enterprise Platform",
     role: "Product Design",
     description: "분리되어 있던 1:1 고객상담과 N:N 파트너 협업을 하나의 단일 인터페이스로 통합하여 업무 연속성을 완성했습니다.",
@@ -165,7 +171,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: "INTEGRATED PRODUCT" },
     ],
     tags: ["Unified_Communication", "MVP_Leading", "UX_Architecture", "Hi_Fi_Prototype", "Sole_Design"],
-    thumbnail: imgDualspaceCustomer,
+    thumbnail: imgDworksProduct,
     slides: [
       { src: imgDualspaceArch, alt: "통합 생태계", tabLabel: "통합 생태계", title: "상담과 협업 — 분리된 두 제품을 하나의 경험으로", caption: "CS Talk(1:1 상담)과 SalesBridge(N:N 협업)을 통합한 신규 서비스 구조", fit: "contain" },
       { src: imgDualspaceCustomer, alt: "1:1 상담", tabLabel: "1:1 상담 뷰", title: "사용자 관계 · 역할 · 권한 · 정보 접근을 구조화", caption: "복수 사용자 기반의 복잡한 관계를 제품의 대화 흐름과 접근 구조로 전환" },
@@ -196,9 +202,13 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: "DEV SYNC" },
     ],
     tags: ["Design_System", "Figma_Variables", "UI_Components", "Design_Tokens", "Governance"],
-    thumbnail: imgDworksBranding,
+    thumbnail: imgDworksDSThumbnail,
     slides: [
-      { src: imgDworksBranding, alt: "DWorks 디자인 시스템", tabLabel: "디자인 시스템", title: "DWorks — 멀티 프로덕트 전사 디자인 시스템 구축", caption: "Figma Variables 기반 Foundations 6종 및 공통 Components 26종 디자인 시스템 가이드 수립" },
+      { src: imgDworksDSThumbnail, alt: "DWorks 디자인 시스템", tabLabel: "디자인 시스템 개요", title: "DWorks — 멀티 프로덕트 전사 디자인 시스템 구축", caption: "Figma Variables 기반 Foundations 6종 및 공통 Components 26종 디자인 시스템 가이드 수립" },
+      { src: imgDworksDSPalette, alt: "기초 컬러 팔레트", tabLabel: "기초 컬러 팔레트", title: "기초 컬러 가이드라인 수립 (Primitive, Theme, Semantic)", caption: "Figma Foundation 기반의 체계화된 세부 컬러 칩 분배 및 일관성 확보" },
+      { src: imgDworksDSPrimitive, alt: "Primitive 컬렉션", tabLabel: "Primitive 토큰", title: "Figma Variables — Primitive 컬러 토큰 수립", caption: "전사적으로 공통 사용되는 기초 시스템 기본 색상 및 투명도(Alpha) 토큰 변수 정의" },
+      { src: imgDworksDSTheme, alt: "Theme 컬렉션", tabLabel: "Theme 토큰", title: "Figma Variables — 브랜드/제품별 Theme 컬러 토큰 분기", caption: "salesBridge, workflow, guestZone, csTalk의 독립적 색상 테마를 하나의 시스템 내부로 통합" },
+      { src: imgDworksDSSemantic, alt: "Semantic 컬렉션", tabLabel: "Semantic 토큰", title: "Figma Variables — 의미 기반 Semantic 컬러 토큰 매핑", caption: "다크/라이트 모드, 배경, 테두리, 텍스트 등 실제 컴포넌트의 역할과 의미에 대응되는 의미 토큰 수립" },
     ],
   },
   {
@@ -314,6 +324,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     thumbnail: imgShaluv,
     slides: [
       { src: imgShaluv, alt: "SHALUV 이커머스 쇼핑몰", tabLabel: "러블리 무드 & 멀티채널", title: "SHALUV — 여아 타깃 러블리 무드 리브랜딩", caption: "여자아이 부모를 위한 러블리 무드 니치 브랜드 리뉴얼 및 멀티 채널(스마트스토어·자사몰·쿠팡·카카오) 비주얼 개편으로 14배 유입 성장 및 연매출 1억 달성", fit: "contain" },
+      { src: imgShaluvPromotions, alt: "SHALUV 프로모션 시안", tabLabel: "프로모션 디자인", title: "SHALUV — 시즌별 배송 안내 및 상품 프로모션 기획", caption: "추석/크리스마스 시즌별 배송 안내 캘린더와 가을 시즌 룩북 상품 상세 웹 그래픽 시안 수립", fit: "contain" },
     ],
   },
   {
@@ -504,7 +515,7 @@ function CaseStudyDialog({
             top: 0,
             zIndex: 10,
             backgroundColor: "#FFFFFF",
-            borderBottom: "1px solid #E5E7EB",
+            borderBottom: "none",
             padding: isMobile ? "16px 20px" : "20px 32px",
             display: "flex",
             justifyContent: "space-between",
@@ -558,9 +569,9 @@ function CaseStudyDialog({
               display: "grid",
               gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
               gap: isMobile ? "14px 12px" : "24px",
-              borderBottom: "1px solid #E5E7EB",
-              paddingBottom: "18px",
-              marginBottom: "20px",
+              borderBottom: "none",
+              paddingBottom: "12px",
+              marginBottom: "28px",
             }}
           >
             <div>
@@ -605,10 +616,10 @@ function CaseStudyDialog({
               position: "relative",
               width: "100%",
               height: isMobile ? "280px" : "500px",
-              backgroundColor: "#F9FAFB",
+              backgroundColor: "transparent",
               borderRadius: "8px",
               overflow: "hidden",
-              border: "1px solid #E5E7EB",
+              border: "none",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -629,129 +640,96 @@ function CaseStudyDialog({
               }}
             />
 
-            {/* Prev / Next Controls (if multi-slide) */}
-            {project.slides.length > 1 && (
-              <>
-                <button
-                  onClick={() => setActiveSlideIdx((prev) => (prev > 0 ? prev - 1 : project.slides.length - 1))}
-                  aria-label="Previous slide"
-                  style={{
-                    position: "absolute",
-                    left: "12px",
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                    border: "1px solid #E5E7EB",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    cursor: "pointer",
-                    color: "#111111",
-                    fontSize: "20px",
-                    lineHeight: 1,
-                    transition: "all 0.15s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#111111";
-                    e.currentTarget.style.color = "#FFFFFF";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
-                    e.currentTarget.style.color = "#111111";
-                  }}
-                >
-                  ‹
-                </button>
-
-                <button
-                  onClick={() => setActiveSlideIdx((prev) => (prev < project.slides.length - 1 ? prev + 1 : 0))}
-                  aria-label="Next slide"
-                  style={{
-                    position: "absolute",
-                    right: "12px",
-                    top: "50%",
-                    transform: "translateY(-50%)",
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(255, 255, 255, 0.9)",
-                    border: "1px solid #E5E7EB",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    cursor: "pointer",
-                    color: "#111111",
-                    fontSize: "20px",
-                    lineHeight: 1,
-                    transition: "all 0.15s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#111111";
-                    e.currentTarget.style.color = "#FFFFFF";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.9)";
-                    e.currentTarget.style.color = "#111111";
-                  }}
-                >
-                  ›
-                </button>
-
-                {/* Bottom Centered Pagination Dots */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: "14px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    display: "flex",
-                    gap: "6px",
-                    alignItems: "center",
-                    backgroundColor: "rgba(17, 24, 39, 0.55)",
-                    padding: "5px 10px",
-                    borderRadius: "9999px",
-                    backdropFilter: "blur(6px)",
-                  }}
-                >
-                  {project.slides.map((_, idx) => {
-                    const isActive = idx === activeSlideIdx;
-                    return (
-                      <button
-                        key={idx}
-                        onClick={() => setActiveSlideIdx(idx)}
-                        aria-label={`Go to slide ${idx + 1}`}
-                        style={{
-                          width: isActive ? "18px" : "6px",
-                          height: "6px",
-                          borderRadius: "9999px",
-                          backgroundColor: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.45)",
-                          border: "none",
-                          padding: 0,
-                          cursor: "pointer",
-                          transition: "all 0.2s ease",
-                        }}
-                      />
-                    );
-                  })}
-                </div>
-              </>
-            )}
+            {/* 이미지 위에 얹어지던 절대좌표 컨트롤러 삭제 (캡션 바로 통합) */}
           </div>
 
-          {/* Slide Caption Bar */}
-          <div style={{ marginBottom: "24px", display: "flex", justifyContent: "space-between", fontSize: "13px", color: "#6B7280", flexWrap: "wrap", gap: "6px", borderBottom: "1px solid #F3F4F6", paddingBottom: "10px" }}>
-            <span style={{ color: "#374151", fontWeight: 500 }}>
+          {/* Slide Caption Bar & Controls Group */}
+          <div
+            style={{
+              marginBottom: "24px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              fontSize: "13.5px",
+              color: "#4B5563",
+              gap: "16px",
+              paddingBottom: "12px",
+            }}
+          >
+            {/* Left: Slide Caption Text */}
+            <span style={{ color: "#374151", fontWeight: 500, flex: 1, wordBreak: "keep-all" }}>
               {currentSlide.caption}
             </span>
+
+            {/* Right: Integrated Controller Group */}
             {project.slides.length > 1 && (
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11.5px", fontWeight: 700, color: "#2563EB" }}>
-                0{activeSlideIdx + 1} / 0{project.slides.length}
-              </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
+                {/* Counter */}
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 700, color: "#6B7280", letterSpacing: "0.05em" }}>
+                  {activeSlideIdx + 1} / {project.slides.length}
+                </span>
+
+                <div style={{ display: "flex", gap: "4px", border: "1px solid #E5E7EB", borderRadius: "6px", overflow: "hidden", backgroundColor: "#F9FAFB" }}>
+                  {/* Left Arrow Button */}
+                  <button
+                    onClick={() => setActiveSlideIdx((prev) => (prev > 0 ? prev - 1 : project.slides.length - 1))}
+                    aria-label="Previous slide"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "transparent",
+                      border: "none",
+                      color: "#111111",
+                      cursor: "pointer",
+                      transition: "all 0.15s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "#E5E7EB";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                    }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+
+                  {/* Divider Line */}
+                  <div style={{ width: "1px", height: "16px", backgroundColor: "#E5E7EB", alignSelf: "center" }} />
+
+                  {/* Right Arrow Button */}
+                  <button
+                    onClick={() => setActiveSlideIdx((prev) => (prev < project.slides.length - 1 ? prev + 1 : 0))}
+                    aria-label="Next slide"
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      backgroundColor: "transparent",
+                      border: "none",
+                      color: "#111111",
+                      cursor: "pointer",
+                      transition: "all 0.15s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "#E5E7EB";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = "transparent";
+                    }}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
             )}
           </div>
 
@@ -768,11 +746,11 @@ function CaseStudyDialog({
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  01 / CHALLENGE
+                  CHALLENGE
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                도전 과제 & 배경
+                도전 과제
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.challenge}
@@ -783,11 +761,11 @@ function CaseStudyDialog({
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  02 / APPROACH
+                  APPROACH
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                접근 방식 & 설계
+                해결 방안
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.approach}
@@ -798,11 +776,11 @@ function CaseStudyDialog({
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  03 / OUTCOME
+                  OUTCOME
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                산출 성과 & 결실
+                수행 성과
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.outcome}
@@ -1007,12 +985,6 @@ export function WorkSection({ w }: { w: number }) {
       {/* 4. Tier 2: Selected Products Grid (선별 플랫폼 & 모바일 앱 8종) */}
       {gridProjects.length > 0 && (
         <div>
-          <div style={{ marginBottom: "18px" }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#6B7280" }}>
-              SELECTED PLATFORMS &amp; MOBILE APPS (선별 플랫폼 &amp; 네이티브 모바일)
-            </span>
-          </div>
-
           <div
             style={{
               display: "grid",

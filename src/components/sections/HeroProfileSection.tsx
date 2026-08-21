@@ -18,58 +18,67 @@ export function HeroProfileSection({ w }: { w: number }) {
 
   // 15-Year 10-Month Career Timeline (Clean Recruiter-Friendly Structure)
   const timelineMilestones = [
+    // 최신 연도부터 내림차순으로 정렬
     {
-      year: "2025–26",
+      year: "2026",
       items: [
-        { date: "2026.04", title: "도전하는사람들 DOOLINKER 워크플로우 빌더 UX 설계" },
-        { date: "2025.11", title: "도전하는사람들 사내 인트라넷 포털 & 디자인 시스템 구축" },
+        { date: "2026.04", title: "MIZUHO 일본은행 사내포탈 설계 (IA·권한·컴포넌트)" },
+        { date: "2026.03", title: "Figma Variables 기반 디자인 시스템 구축" },
+        { date: "2026.01", title: "DO.LiNKER Workflow 생성·실행·모니터링 UX 설계" },
       ],
     },
     {
-      year: "2024–25",
+      year: "2025",
       items: [
-        { date: "2025.07", title: "스펙트라 DWorks 고객상담·협업 통합 제품 플랫폼 UX/UI 설계" },
-        { date: "2024.12", title: "스펙트라 Dualspace 신규 통합 플랫폼 단독 기획 & Hi-Fi" },
-        { date: "2024.06", title: "스펙트라 DWorks 전사 디자인 시스템 구축 26종" },
+        { date: "2025.12", title: "Trigger/Action 기반 Workflow Builder UX 설계" },
+        { date: "2025.11", title: "DO.LiNKER 브랜드 아이덴티티(BI) 수립" },
+        { date: "2025.08", title: "Dualspace 통합 플랫폼 기획 & Hi-Fi 프로토타입" },
+        { date: "2025.07", title: "DWorks 고객상담·협업 통합 플랫폼 UX/UI 설계" },
+      ],
+    },
+    {
+      year: "2024",
+      items: [
+        { date: "2024.12", title: "SalesBridge 데스크톱 & PWA UX/UI 설계" },
+        { date: "2024.06", title: "DWorks 멀티 플랫폼 디자인 시스템 구축" },
       ],
     },
     {
       year: "2022–23",
       items: [
-        { date: "2023.12", title: "스펙트라 SalesBridge 데스크톱 플랫폼 & 모바일 PWA" },
-        { date: "2023.06", title: "스펙트라 DWorks 엔터프라이즈 DX 리브랜딩 & 공식 사이트" },
-        { date: "2022.10", title: "스펙트라 CS Talk 고객상담 플랫폼 대시보드 UI/UX" },
+        { date: "2023.06", title: "DWorks 엔터프라이즈 리브랜딩 & 공식 사이트 구축" },
+        { date: "2022.10", title: "CS Talk 고객상담 플랫폼 대시보드 UI/UX 설계" },
       ],
     },
     {
       year: "2019–22",
       items: [
-        { date: "2022.09", title: "어스투 Shaluv 아동복 '러블리 무드' 리브랜딩 & 연매출 1억" },
-        { date: "2019.08", title: "어스투 자사몰 및 멀티 이커머스 채널 운영 총괄" },
+        { date: "2022.09", title: "Shaluv 아동복 리브랜딩 & 연매출 1억 달성" },
+        { date: "2019.08", title: "자사몰 및 멀티 이커머스 채널 운영 총괄" },
       ],
     },
     {
       year: "2017–18",
       items: [
-        { date: "2018.03", title: "다임 Dime 소셜 데이팅 서비스 모바일 앱 UX/UI 설계" },
-        { date: "2017.07", title: "한미랩 LMS 에듀테크 플랫폼 사용자 & 어드민 시스템 구축" },
+        { date: "2018.03", title: "Dime 소셜 데이팅 모바일 앱 UX/UI 설계" },
+        { date: "2017.07", title: "LMS 에듀테크 플랫폼 사용자 & 어드민 구축" },
       ],
     },
     {
       year: "2011–16",
       items: [
-        { date: "2016.02", title: "인포뱅크 헬로링크 커머스 & 매거진 모바일 앱 설계" },
-        { date: "2015.01", title: "인포뱅크 NH 바로바로마켓 모바일 & 금융 태블릿 전용 UI" },
-        { date: "2014.11", title: "인포뱅크 삼성화재 SMS 모바일 웹 인터페이스 설계" },
-        { date: "2011.08", title: "인포뱅크 배달 · 주소록 · 쇼핑 네이티브 앱 iOS/Android 가이드" },
+        { date: "2016.02", title: "헬로링크 커머스 & 매거진 모바일 앱 설계" },
+        { date: "2015.01", title: "NH 바로바로마켓 모바일 & 금융 태블릿 UI 설계" },
+        { date: "2014.11", title: "삼성화재 SMS 모바일 웹 인터페이스 설계" },
+        { date: "2011.08", title: "네이티브 앱 iOS/Android UI 가이드 수립" },
       ],
     },
     {
       year: "2006–09",
       items: [
-        { date: "2009.11", title: "그래텍 곰플레이어 · 곰오디오 · 곰TV 미디어 GUI 디자인" },
-        { date: "2008.08", title: "잡코리아 채용 플랫폼 UI 템플릿 및 프로모션 디자인" },
-        { date: "2006.12", title: "이야소프트 묵향온라인 게임 프로모션 웹 UI 설계" },
+        { date: "2009.11", title: "곰플레이어 · 곰오디오 · 곰TV 미디어 GUI 디자인" },
+        { date: "2008.08", title: "잡코리아 채용 플랫폼 UI 및 프로모션 디자인" },
+        { date: "2006.12", title: "묵향온라인 게임 프로모션 웹 UI 설계" },
       ],
     },
   ];
@@ -80,7 +89,7 @@ export function HeroProfileSection({ w }: { w: number }) {
       setCanScrollLeft(scrollLeft > 20);
       setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 20);
 
-      const cardWidth = isMobile ? 280 : 350;
+      const cardWidth = isMobile ? 300 : 390;
       const newIdx = Math.round(scrollLeft / cardWidth);
       setActiveIdx(Math.min(Math.max(newIdx, 0), timelineMilestones.length - 1));
     }
@@ -89,7 +98,7 @@ export function HeroProfileSection({ w }: { w: number }) {
   const handleScrollToIdx = (targetIdx: number) => {
     if (scrollContainerRef.current) {
       const clampedIdx = Math.min(Math.max(targetIdx, 0), timelineMilestones.length - 1);
-      const cardWidth = isMobile ? 280 : 350;
+      const cardWidth = isMobile ? 300 : 390;
       scrollContainerRef.current.scrollTo({
         left: clampedIdx * cardWidth,
         behavior: "smooth",
@@ -156,7 +165,7 @@ export function HeroProfileSection({ w }: { w: number }) {
           Web · Mobile · B2B/B2C 제품을 경험하며 화면 설계에서 제품 구조 설계로 역할을 확장했습니다.
         </p>
         <p style={{ fontSize: isMobile ? "14.5px" : "16.5px", color: "#374151", lineHeight: 1.75, margin: 0 }}>
-          Workflow Automation, Intranet, Communication Platform에서 노드 기반 인터랙션과 사용성을 개선하고 디자인 시스템을 설계했으며 Native Mobile과 E-Commerce 비즈니스 경험을 모두 다뤘습니다.
+          Workflow Automation, MIZUHO Portal, Communication Platform에서 노드 기반 인터랙션과 사용성을 개선하고 디자인 시스템을 설계했으며 Native Mobile과 E-Commerce 비즈니스 경험을 모두 다뤘습니다.
         </p>
       </div>
 
@@ -265,7 +274,7 @@ export function HeroProfileSection({ w }: { w: number }) {
             style={{
               position: "absolute",
               left: "0px",
-              top: "50%",
+              top: "49px",
               transform: "translateY(-50%)",
               zIndex: 25,
               opacity: isTimelineHovered && canScrollLeft ? 1 : 0,
@@ -310,7 +319,7 @@ export function HeroProfileSection({ w }: { w: number }) {
             style={{
               position: "absolute",
               right: "0px",
-              top: "50%",
+              top: "49px",
               transform: "translateY(-50%)",
               zIndex: 25,
               opacity: isTimelineHovered && canScrollRight ? 1 : 0,
@@ -401,7 +410,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                     onMouseEnter={() => setHoveredYearIdx(idx)}
                     onMouseLeave={() => setHoveredYearIdx(null)}
                     style={{
-                      width: isMobile ? "280px" : "360px",
+                      width: isMobile ? "300px" : "390px",
                       flexShrink: 0,
                       cursor: "pointer",
                       position: "relative",
@@ -425,7 +434,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                     </div>
 
                     {/* Giant Clean Year Label (No Subtitle Clutter) */}
-                    <div style={{ marginBottom: "14px", paddingLeft: "6px" }}>
+                    <div style={{ marginBottom: "26px", paddingLeft: "6px" }}>
                       <span
                         style={{
                           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
@@ -443,7 +452,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                     </div>
 
                     {/* 🌟 Ultra-Clean Scannable 1-Line List (Date + Project Title · Company) */}
-                    <div style={{ display: "flex", flexDirection: "column", gap: "12px", paddingLeft: "6px" }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "18px", paddingLeft: "6px" }}>
                       {m.items.map((item, iIdx) => (
                         <div
                           key={iIdx}
@@ -451,7 +460,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                             display: "flex",
                             alignItems: "baseline",
                             gap: "10px",
-                            lineHeight: 1.45,
+                            lineHeight: 1.6,
                           }}
                         >
                           <span
