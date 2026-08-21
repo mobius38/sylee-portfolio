@@ -515,7 +515,7 @@ function CaseStudyDialog({
             top: 0,
             zIndex: 10,
             backgroundColor: "#FFFFFF",
-            borderBottom: "none",
+            borderBottom: "1px solid #F3F4F6",
             padding: isMobile ? "16px 20px" : "20px 32px",
             display: "flex",
             justifyContent: "space-between",
@@ -616,7 +616,7 @@ function CaseStudyDialog({
               position: "relative",
               width: "100%",
               height: isMobile ? "280px" : "500px",
-              backgroundColor: "transparent",
+              backgroundColor: "#F9FAFB",
               borderRadius: "8px",
               overflow: "hidden",
               border: "none",
@@ -739,7 +739,9 @@ function CaseStudyDialog({
               display: "grid",
               gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
               gap: isMobile ? "24px" : "32px",
-              paddingTop: "6px",
+              borderTop: "1px solid #F3F4F6",
+              paddingTop: "24px",
+              marginTop: "8px",
             }}
           >
             {/* Column 1: Challenge */}
