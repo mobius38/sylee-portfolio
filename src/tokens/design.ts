@@ -1,0 +1,10 @@
+export const PORTFOLIO_PDF_URL = "/portfolio.pdf";
+export const PRIMARY = "#111111";
+export const ACCENT_BLUE = "#2563EB";
+export const ACCENT_INDIGO = "#4F46E5";
+export const ACCENT_GREEN = "#059669";
+export const CANVAS = "#FFFFFF";
+export const CANVAS_SUB = "#F8F9FA";
+export const CANVAS_DARK = "#0D0E12";
+export const BORDER = "#E5E7EB";
+export const MUTED = "#6B7280";

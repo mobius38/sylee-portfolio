@@ -1,0 +1,15 @@
+{
+  "title": "이선영 — Product Design Lead 포트폴리오",
+  "description": "15년 이상의 Product Design 경험. Workflow Automation, Enterprise Intranet, Communication Platform 설계 전문. 힐링페이퍼 · 강남언니 Product Design Lead 지원.",
+  "language": "ko",
+  "robots": {
+    "index": false
+  },
+  "openGraph": {
+    "image": "/og-image.png"
+  },
+  "accessibility": {
+    "addBypassLinks": true,
+    "ignoreReducedMotion": false
+  }
+}
