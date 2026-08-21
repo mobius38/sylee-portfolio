@@ -850,6 +850,7 @@ export function WorkSection({ w }: { w: number }) {
           SELECTED WORKS · 2014–2026
         </span>
         <h2
+          className="projects-title-h2"
           style={{
             fontSize: isMobile ? "44px" : "clamp(56px, 6.5vw, 84px)",
             fontWeight: 900,

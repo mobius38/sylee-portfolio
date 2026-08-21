@@ -286,10 +286,25 @@ body {
     width: 100% !important;
   }
 
-  /* 🌟 Scale down giant fonts during printing */
-  .about-title-h1 {
-    font-size: 28pt !important;
+  /* 🌟 Scale down giant section titles during printing (24pt 공통 통일) */
+  .about-title-h1,
+  .projects-title-h2,
+  .leadership-section-h2 {
+    font-size: 24pt !important;
+    font-weight: 900 !important;
+    margin-top: 0 !important;
     margin-bottom: 12px !important;
+    letter-spacing: -0.04em !important;
+    line-height: 1.0 !important;
+  }
+
+  .about-title-h1,
+  .projects-title-h2 {
+    color: #111111 !important;
+  }
+
+  .leadership-section-h2 {
+    color: #FFFFFF !important;
   }
   .about-sub-p {
     font-size: 16pt !important;
@@ -360,10 +375,7 @@ body {
     font-size: 9pt !important;
     margin-bottom: 4px !important;
   }
-  .leadership-section-h2 {
-    font-size: 24pt !important;
-    margin-bottom: 12px !important;
-  }
+
   .leadership-lead-p {
     font-size: 14pt !important;
     margin-bottom: 8px !important;
