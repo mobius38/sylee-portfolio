@@ -764,83 +764,71 @@ function CaseStudyDialog({
             </div>
           </div>
 
-          {/* 🌟 Bottom Case Navigation Banner (Prev / Next Case Switcher) */}
+          {/* 🌟 Bottom Case Navigation Banner (Slim Text Switcher) */}
           <div
             style={{
               marginTop: "48px",
-              paddingTop: "28px",
-              borderTop: "1px solid #E5E7EB",
+              paddingTop: "20px",
+              borderTop: "1px solid #F3F4F6",
               display: "flex",
-              flexDirection: isMobile ? "column" : "row" as const,
               justifyContent: "space-between",
-              gap: "16px",
+              alignItems: "center",
+              fontSize: "12px",
+              fontWeight: 700,
             }}
           >
-            {/* Left Button: Previous Project */}
+            {/* Left Link: Previous Project */}
             <button
               onClick={handlePrevProject}
               style={{
-                flex: 1,
-                textAlign: "left" as const,
-                backgroundColor: "transparent",
-                border: "1px solid #E5E7EB",
-                padding: "16px 20px",
-                borderRadius: "8px",
+                background: "transparent",
+                border: "none",
+                padding: 0,
                 cursor: "pointer",
                 display: "flex",
-                flexDirection: "column" as const,
-                gap: "6px",
+                alignItems: "center",
+                gap: "4px",
+                color: "#9CA3AF",
                 transition: "all 0.15s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#111111";
-                e.currentTarget.style.backgroundColor = "#F9FAFB";
+                e.currentTarget.style.color = "#111111";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "#E5E7EB";
-                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#9CA3AF";
               }}
             >
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10.5px", fontWeight: 800, color: "#6B7280", letterSpacing: "0.08em" }}>
-                ← PREV CASE
-              </span>
-              <strong style={{ fontSize: "14px", fontWeight: 800, color: "#111111" }}>
-                CASE {prevProj.num} · {prevProj.title}
-              </strong>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+              <span>CASE {prevProj.num} · {prevProj.title}</span>
             </button>
 
-            {/* Right Button: Next Project */}
+            {/* Right Link: Next Project */}
             <button
               onClick={handleNextProject}
               style={{
-                flex: 1,
-                textAlign: "right" as const,
-                backgroundColor: "transparent",
-                border: "1px solid #E5E7EB",
-                padding: "16px 20px",
-                borderRadius: "8px",
+                background: "transparent",
+                border: "none",
+                padding: 0,
                 cursor: "pointer",
                 display: "flex",
-                flexDirection: "column" as const,
-                alignItems: isMobile ? "flex-start" : "flex-end" as const,
-                gap: "6px",
+                alignItems: "center",
+                gap: "4px",
+                color: "#9CA3AF",
                 transition: "all 0.15s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "#111111";
-                e.currentTarget.style.backgroundColor = "#F9FAFB";
+                e.currentTarget.style.color = "#111111";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "#E5E7EB";
-                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "#9CA3AF";
               }}
             >
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10.5px", fontWeight: 800, color: "#6B7280", letterSpacing: "0.08em" }}>
-                NEXT CASE →
-              </span>
-              <strong style={{ fontSize: "14px", fontWeight: 800, color: "#111111" }}>
-                CASE {nextProj.num} · {nextProj.title}
-              </strong>
+              <span>CASE {nextProj.num} · {nextProj.title}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
             </button>
           </div>
         </div>
