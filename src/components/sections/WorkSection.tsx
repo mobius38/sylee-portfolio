@@ -503,13 +503,13 @@ function CaseStudyDialog({
         right: 0,
         bottom: 0,
         zIndex: 1000,
-        backgroundColor: "rgba(10, 12, 16, 0.75)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
+        backgroundColor: isMobile ? "#FFFFFF" : "rgba(10, 12, 16, 0.75)",
+        backdropFilter: isMobile ? "none" : "blur(12px)",
+        WebkitBackdropFilter: isMobile ? "none" : "blur(12px)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: isMobile ? "12px" : "32px",
+        padding: isMobile ? "0px" : "32px",
         overflowY: "auto",
       }}
       onClick={(e) => {
@@ -519,13 +519,14 @@ function CaseStudyDialog({
       <div
         style={{
           width: "100%",
-          maxWidth: "1180px",
-          maxHeight: "92vh",
+          height: isMobile ? "100%" : "auto",
+          maxWidth: isMobile ? "100%" : "1180px",
+          maxHeight: isMobile ? "100vh" : "92vh",
           backgroundColor: "#FFFFFF",
           color: "#111111",
-          borderRadius: "8px",
+          borderRadius: isMobile ? "0px" : "8px",
           overflowY: "auto",
-          boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.35)",
+          boxShadow: isMobile ? "none" : "0 25px 60px -15px rgba(0, 0, 0, 0.35)",
           display: "flex",
           flexDirection: "column",
         }}
