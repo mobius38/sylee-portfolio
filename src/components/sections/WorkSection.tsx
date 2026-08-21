@@ -919,14 +919,14 @@ export function WorkSection({ w }: { w: number }) {
 
       {/* 3. Tier 1: Recent Top 2 Featured Showcase (최근 대표작 2선 상단 배치) */}
       {featuredProjects.length > 0 && (
-        <div className="no-print" style={{ marginBottom: isMobile ? "40px" : "60px" }}>
+        <div className="no-print" style={{ marginBottom: isMobile ? "24px" : "32px" }}>
 
 
           <div
             style={{
               display: "grid",
               gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-              gap: isMobile ? "24px" : "32px",
+              gap: isMobile ? "16px" : "24px",
             }}
           >
             {featuredProjects.map((p) => (
@@ -1003,7 +1003,7 @@ export function WorkSection({ w }: { w: number }) {
             style={{
               display: "grid",
               gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-              gap: isMobile ? "24px" : "32px", /* 1행(Featured)의 gap 수치와 동일하게 맞추어 수직 정렬 정렬선 매칭 */
+              gap: isMobile ? "16px" : "24px", /* 1행(Featured)의 gap 수치와 동일하게 맞추어 수직 정렬 정렬선 매칭 */
             }}
           >
             {gridProjects.map((p) => (
