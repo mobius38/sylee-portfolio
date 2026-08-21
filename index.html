@@ -9,6 +9,16 @@
       gtag('js', new Date());
 
       gtag('config', 'G-YL54DSSZSJ');
+
+      // 🌟 인쇄 시도(Cmd + P, 브라우저 메뉴 인쇄) 감지 및 GA4 이벤트 추적 전송
+      window.addEventListener('beforeprint', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'print_portfolio', {
+            'event_category': 'Engagement',
+            'event_label': 'Print or Save PDF Document'
+          });
+        }
+      });
     </script>
     <!-- figma:head-start -->
     <meta charset="UTF-8" />
