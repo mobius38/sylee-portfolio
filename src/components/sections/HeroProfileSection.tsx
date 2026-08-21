@@ -252,10 +252,10 @@ export function HeroProfileSection({ w }: { w: number }) {
 
       {/* 2. Narrative Sentences */}
       <div style={{ maxWidth: "960px", marginBottom: isMobile ? "40px" : "60px" }}>
-        <p style={{ fontSize: isMobile ? "15px" : "18px", color: "#111111", lineHeight: 1.8, fontWeight: 500, margin: "0 0 12px 0" }}>
+        <p style={{ fontSize: isMobile ? "16px" : "19px", color: "#111111", lineHeight: 1.6, fontWeight: 600, margin: "0 0 12px 0" }}>
           Web · Mobile · B2B/B2C 제품을 경험하며 화면 설계에서 제품 구조 설계로 역할을 확장했습니다.
         </p>
-        <p style={{ fontSize: isMobile ? "13px" : "16px", color: "#6B7280", lineHeight: 1.8, margin: 0 }}>
+        <p style={{ fontSize: isMobile ? "14.5px" : "16.5px", color: "#374151", lineHeight: 1.75, margin: 0 }}>
           Workflow Automation, Intranet, Communication Platform에서 노드 기반 인터랙션과 사용성을 개선하고 디자인 시스템을 설계했으며 Native Mobile과 E-Commerce 비즈니스 경험을 모두 다뤘습니다.
         </p>
       </div>
@@ -288,10 +288,10 @@ export function HeroProfileSection({ w }: { w: number }) {
             >
               {m.num}
             </span>
-            <strong style={{ fontSize: isMobile ? "13px" : "15px", color: "#111111", display: "block", marginBottom: "3px" }}>
+            <strong style={{ fontSize: isMobile ? "14px" : "16px", color: "#111111", fontWeight: 800, display: "block", marginBottom: "4px" }}>
               {m.label}
             </strong>
-            <span style={{ fontSize: isMobile ? "11px" : "13px", color: "#6B7280" }}>
+            <span style={{ fontSize: isMobile ? "12.5px" : "13.5px", color: "#4B5563", lineHeight: 1.45, display: "block" }}>
               {m.sub}
             </span>
           </div>
@@ -301,38 +301,38 @@ export function HeroProfileSection({ w }: { w: number }) {
       {/* 4. 3 Core Competencies */}
       <div style={{ marginBottom: isMobile ? "48px" : "80px" }}>
         <div style={{ marginBottom: "20px" }}>
-          <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+          <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
             CORE COMPETENCIES (3대 핵심 역량)
           </span>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "20px" : "32px" }}>
-          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB" }}>
-            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "16px" : "32px" }}>
+          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
+            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
               01 / COMPLEX UX
             </span>
-            <h3 style={{ fontSize: isMobile ? "17px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0" }}>복잡도 구조화</h3>
-            <p style={{ fontSize: "13px", color: "#4B5563", margin: 0, lineHeight: 1.6 }}>
+            <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>복잡도 구조화</h3>
+            <p style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
               Workflow · Permission · Communication
             </p>
           </div>
 
-          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB" }}>
-            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
+          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
+            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
               02 / DESIGN SYSTEM
             </span>
-            <h3 style={{ fontSize: isMobile ? "17px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0" }}>디자인 시스템 표준</h3>
-            <p style={{ fontSize: "13px", color: "#4B5563", margin: 0, lineHeight: 1.6 }}>
+            <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>디자인 시스템 표준</h3>
+            <p style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
               Variables · Components · Guidelines
             </p>
           </div>
 
-          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB" }}>
-            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
+          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
+            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
               03 / PROTOTYPING
             </span>
-            <h3 style={{ fontSize: isMobile ? "17px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0" }}>인터랙티브 검증</h3>
-            <p style={{ fontSize: "13px", color: "#4B5563", margin: 0, lineHeight: 1.6 }}>
+            <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>인터랙티브 검증</h3>
+            <p style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
               Hi-Fi · Interaction · Validation
             </p>
           </div>
@@ -353,7 +353,7 @@ export function HeroProfileSection({ w }: { w: number }) {
           <h3 style={{ fontSize: isMobile ? "24px" : "36px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.03em" }}>
             화면 설계에서 제품의 구조와 방향 설계로
           </h3>
-          <p style={{ fontSize: isMobile ? "13px" : "15px", color: "#6B7280", margin: 0 }}>
+          <p style={{ fontSize: isMobile ? "14.5px" : "16px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
             15년 10개월간 화면과 인터랙션 설계에서 시작해, 복잡한 제품의 사용성 개선과 디자인 시스템, 프로토타입 기반 제품 검증으로 확장해왔습니다.
           </p>
         </div>
@@ -547,16 +547,16 @@ export function HeroProfileSection({ w }: { w: number }) {
                     </div>
 
                     {/* 🌟 Vertical Structured Project Details List */}
-                    <div style={{ display: "flex", flexDirection: "column", gap: "14px", paddingLeft: "6px" }}>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "16px", paddingLeft: "6px" }}>
                       {m.items.map((item, iIdx) => (
                         <div key={iIdx} style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-                          <span style={{ fontSize: "11px", color: "#2563EB", fontWeight: 700, letterSpacing: "-0.01em" }}>
+                          <span style={{ fontSize: "12px", color: "#2563EB", fontWeight: 700, letterSpacing: "-0.01em" }}>
                             {item.date}
                           </span>
-                          <strong style={{ fontSize: "14px", color: "#111111", fontWeight: 800, lineHeight: 1.4 }}>
+                          <strong style={{ fontSize: "15px", color: "#111111", fontWeight: 800, lineHeight: 1.4 }}>
                             {item.title}
                           </strong>
-                          <p style={{ fontSize: "12px", color: "#6B7280", lineHeight: 1.55, margin: "2px 0 0 0" }}>
+                          <p style={{ fontSize: isMobile ? "13.5px" : "14px", color: "#4B5563", lineHeight: 1.6, margin: "3px 0 0 0" }}>
                             {item.desc}
                           </p>
                         </div>

@@ -57,16 +57,21 @@ export function GnbHeader({ w }: { w: number }) {
           display: "flex",
           alignItems: "center",
           gap: "8px",
+          whiteSpace: "nowrap",
         }}
       >
         <span>LEE SUNYOUNG</span>
-        <span style={{ color: "#D1D5DB" }}>/</span>
-        <span style={{ fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>PRODUCT DESIGNER</span>
+        {!isMobile && (
+          <>
+            <span style={{ color: "#D1D5DB" }}>/</span>
+            <span style={{ fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>PRODUCT DESIGNER</span>
+          </>
+        )}
       </a>
 
       {/* Nav 4 Items + Download Button */}
-      <div style={{ display: "flex", alignItems: "center", gap: isMobile ? "12px" : "28px" }}>
-        <nav style={{ display: "flex", gap: isMobile ? "12px" : "24px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: isMobile ? "8px" : "28px" }}>
+        <nav style={{ display: "flex", gap: isMobile ? "10px" : "24px" }}>
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -75,12 +80,13 @@ export function GnbHeader({ w }: { w: number }) {
                 href={item.href}
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: isMobile ? "11px" : "13px",
+                  fontSize: isMobile ? "11.5px" : "13px",
                   fontWeight: isActive ? 900 : 600,
                   color: isActive ? "#2563EB" : "#4B5563",
                   textDecoration: "none",
                   position: "relative",
                   padding: "4px 0",
+                  whiteSpace: "nowrap",
                   transition: "color 0.15s ease",
                 }}
               >
