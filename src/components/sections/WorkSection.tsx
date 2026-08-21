@@ -640,7 +640,45 @@ function CaseStudyDialog({
               }}
             />
 
-            {/* 이미지 위에 얹어지던 절대좌표 컨트롤러 삭제 (캡션 바로 통합) */}
+            {/* Bottom Centered Pagination Dots (이전 디자인 복구) */}
+            {project.slides.length > 1 && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "14px",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  display: "flex",
+                  gap: "6px",
+                  alignItems: "center",
+                  backgroundColor: "rgba(17, 24, 39, 0.55)",
+                  padding: "5px 10px",
+                  borderRadius: "9999px",
+                  backdropFilter: "blur(6px)",
+                }}
+              >
+                {project.slides.map((_, idx) => {
+                  const isActive = idx === activeSlideIdx;
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveSlideIdx(idx)}
+                      aria-label={`Go to slide ${idx + 1}`}
+                      style={{
+                        width: isActive ? "18px" : "6px",
+                        height: "6px",
+                        borderRadius: "9999px",
+                        backgroundColor: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.45)",
+                        border: "none",
+                        padding: 0,
+                        cursor: "pointer",
+                        transition: "all 0.2s ease",
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Slide Caption Bar & Controls Group */}
@@ -659,12 +697,7 @@ function CaseStudyDialog({
 
             {/* Right: Integrated Controller Group */}
             {project.slides.length > 1 && (
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
-                {/* Counter */}
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 700, color: "#6B7280", letterSpacing: "0.05em" }}>
-                  {activeSlideIdx + 1} / {project.slides.length}
-                </span>
-
+              <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
                 <div style={{ display: "flex", gap: "4px", border: "1px solid #E5E7EB", borderRadius: "6px", overflow: "hidden", backgroundColor: "#F9FAFB" }}>
                   {/* Left Arrow Button */}
                   <button
