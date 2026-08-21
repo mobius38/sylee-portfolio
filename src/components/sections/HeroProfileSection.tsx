@@ -224,38 +224,38 @@ export function HeroProfileSection({ w }: { w: number }) {
       {/* 4. 3 Core Competencies */}
       <div style={{ marginBottom: isMobile ? "48px" : "80px" }}>
         <div style={{ marginBottom: "20px" }}>
-          <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+          <span className="competency-section-title" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
             CORE COMPETENCIES (3대 핵심 역량)
           </span>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "16px" : "32px" }}>
-          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
-            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
+          <div className="competency-card-item" style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
               01 / COMPLEX UX
             </span>
-            <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>복잡도 구조화</h3>
-            <p style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>복잡도 구조화</h3>
+            <p className="competency-card-desc" style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
               Workflow · Permission · Communication
             </p>
           </div>
 
-          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
-            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
+          <div className="competency-card-item" style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
               02 / DESIGN SYSTEM
             </span>
-            <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>디자인 시스템 표준</h3>
-            <p style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>디자인 시스템 표준</h3>
+            <p className="competency-card-desc" style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
               Variables · Components · Guidelines
             </p>
           </div>
 
-          <div style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
-            <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
+          <div className="competency-card-item" style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
               03 / PROTOTYPING
             </span>
-            <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>인터랙티브 검증</h3>
-            <p style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>인터랙티브 검증</h3>
+            <p className="competency-card-desc" style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
               Hi-Fi · Interaction · Validation
             </p>
           </div>
