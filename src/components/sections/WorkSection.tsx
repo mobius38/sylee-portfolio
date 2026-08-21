@@ -1085,11 +1085,7 @@ export function WorkSection({ w }: { w: number }) {
 
       {/* 🌟 6. Print-only Detailed Cases Booklet (웹에서는 완전히 숨기고 인쇄 시에만 모달 속 상세 내용을 세로 책자처럼 출력) */}
       <div className="print-only-detailed-cases" style={{ display: "none" }}>
-        <div style={{ borderBottom: "2px solid #111111", paddingBottom: "12px", marginBottom: "36px", marginTop: "60px" }}>
-          <h2 style={{ fontSize: "24px", fontWeight: 900, color: "#111111", letterSpacing: "-0.03em", margin: 0 }}>
-            SELECTED WORKS · DETAILED CASE STUDIES
-          </h2>
-        </div>
+
 
         {PROJECTS_DATA.map((p) => {
           // 인쇄용 첫 번째 대표 이미지
