@@ -265,6 +265,7 @@ export function HeroProfileSection({ w }: { w: number }) {
 
       {/* 5. 🌟 Full 15-Year 10-Month Timeline with Shaluv Growth Metrics */}
       <div
+        className="about-timeline-section"
         style={{ borderTop: "1px solid #111111", paddingTop: isMobile ? "36px" : "60px" }}
         onMouseEnter={() => setIsTimelineHovered(true)}
         onMouseLeave={() => setIsTimelineHovered(false)}

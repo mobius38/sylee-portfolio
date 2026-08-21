@@ -378,15 +378,20 @@ body {
     margin-bottom: 12px !important;
   }
 
-  /* 🌟 CORE COMPETENCIES print scale-down (핵심 역량 시작 시 강제 페이지 넘김 추가) */
+  /* 🌟 CORE COMPETENCIES print scale-down (핵심역량은 1페이지 하단에 연속 노출) */
   .about-competency-section {
-    break-before: page !important;
-    page-break-before: always !important;
-    margin-top: 40px !important; /* 새 인쇄 페이지 상단 적정 여백 */
-    margin-bottom: 30px !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
   }
   .competency-section-title {
     font-size: 9pt !important;
+  }
+
+  /* 🌟 TIMELINE print page-break (핵심역량 다음, 즉 타임라인 기점부터 강제 페이지 분할) */
+  .about-timeline-section {
+    break-before: page !important;
+    page-break-before: always !important;
+    margin-top: 36px !important; /* 새 페이지 최상단 타임라인 시작 여백 조율 */
   }
   .competency-card-item {
     padding: 14px !important;
