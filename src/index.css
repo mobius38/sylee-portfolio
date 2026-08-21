@@ -344,17 +344,17 @@ body {
     color: #FFFFFF !important;
   }
   .about-sub-p {
-    font-size: 13.5pt !important; /* 16pt -> 13.5pt로 낮추어 H1(24pt)과의 위계 정비 */
+    font-size: 11pt !important; /* 13.5pt -> 11pt로 축소하여 Title(24pt)과의 위계를 명확히 분리 */
     line-height: 1.4 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 16px !important;
   }
   .about-narrative-lead {
-    font-size: 12pt !important;
+    font-size: 10pt !important; /* 12pt -> 10pt로 축소 */
     line-height: 1.5 !important;
     margin-bottom: 8px !important;
   }
   .about-narrative-body {
-    font-size: 10.5pt !important;
+    font-size: 9pt !important; /* 10.5pt -> 9pt로 축소 */
     line-height: 1.6 !important;
   }
 
