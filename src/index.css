@@ -279,6 +279,38 @@ body {
   .timeline-node-container {
     display: none !important;
   }
+
+  /* 🌟 Running Header print styling */
+  .print-only-header {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* 🌟 Scale down giant fonts during printing */
+  .about-title-h1 {
+    font-size: 28pt !important;
+    margin-bottom: 12px !important;
+  }
+  .about-sub-p {
+    font-size: 16pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 24px !important;
+  }
+  .about-narrative-lead {
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    margin-bottom: 8px !important;
+  }
+  .about-narrative-body {
+    font-size: 10.5pt !important;
+    line-height: 1.6 !important;
+  }
+
+  /* 🌟 Timeline year print optimization */
+  .timeline-year-text {
+    font-size: 20pt !important;
+    margin-bottom: 12px !important;
+  }
 }
 
 /* ─── Global Animation Utilities ────────────────────────────────────────── */

@@ -124,12 +124,25 @@ export function HeroProfileSection({ w }: { w: number }) {
         margin: "0 auto",
       }}
     >
+      {/* 🌟 프린트 시에만 상단에 나타나는 머리말 (Running Header) */}
+      <div className="print-only-header" style={{ display: "none" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "2px solid #111111", paddingBottom: "10px", marginBottom: "32px" }}>
+          <span style={{ fontSize: "14px", fontWeight: 800, color: "#111111", letterSpacing: "-0.02em" }}>
+            LEE SUNYOUNG · PRODUCT DESIGNER PORTFOLIO
+          </span>
+          <span style={{ fontSize: "11px", fontWeight: 700, color: "#4B5563", fontFamily: "'JetBrains Mono', monospace" }}>
+            mobius38@gmail.com
+          </span>
+        </div>
+      </div>
+
       {/* 1. Giant Bold Section Title */}
       <div style={{ marginBottom: isMobile ? "32px" : "48px" }}>
         <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
           PRODUCT DESIGN PORTFOLIO
         </span>
         <h1
+          className="about-title-h1"
           style={{
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
             fontSize: isMobile ? "44px" : "clamp(56px, 6.5vw, 84px)",
@@ -143,6 +156,7 @@ export function HeroProfileSection({ w }: { w: number }) {
           ABOUT
         </h1>
         <p
+          className="about-sub-p"
           style={{
             fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
             fontSize: isMobile ? "20px" : "clamp(26px, 2.6vw, 36px)",
@@ -161,10 +175,10 @@ export function HeroProfileSection({ w }: { w: number }) {
 
       {/* 2. Narrative Sentences */}
       <div style={{ maxWidth: "960px", marginBottom: isMobile ? "40px" : "60px" }}>
-        <p style={{ fontSize: isMobile ? "16px" : "19px", color: "#111111", lineHeight: 1.6, fontWeight: 600, margin: "0 0 12px 0" }}>
+        <p className="about-narrative-lead" style={{ fontSize: isMobile ? "16px" : "19px", color: "#111111", lineHeight: 1.6, fontWeight: 600, margin: "0 0 12px 0" }}>
           Web · Mobile · B2B/B2C 제품을 경험하며 화면 설계에서 제품 구조 설계로 역할을 확장했습니다.
         </p>
-        <p style={{ fontSize: isMobile ? "14.5px" : "16.5px", color: "#374151", lineHeight: 1.75, margin: 0 }}>
+        <p className="about-narrative-body" style={{ fontSize: isMobile ? "14.5px" : "16.5px", color: "#374151", lineHeight: 1.75, margin: 0 }}>
           Workflow Automation, MIZUHO Portal, Communication Platform에서 노드 기반 인터랙션과 사용성을 개선하고 디자인 시스템을 설계했으며 Native Mobile과 E-Commerce 비즈니스 경험을 모두 다뤘습니다.
         </p>
       </div>
@@ -439,6 +453,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                     {/* Giant Clean Year Label (No Subtitle Clutter) */}
                     <div style={{ marginBottom: "26px", paddingLeft: "6px" }}>
                       <span
+                        className="timeline-year-text"
                         style={{
                           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
                           fontSize: isMobile ? "32px" : "38px",
