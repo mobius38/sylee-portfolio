@@ -1086,6 +1086,103 @@ export function WorkSection({ w }: { w: number }) {
           isMobile={isMobile}
         />
       )}
+
+      {/* 🌟 6. Print-only Detailed Cases Booklet (웹에서는 완전히 숨기고 인쇄 시에만 모달 속 상세 내용을 세로 책자처럼 출력) */}
+      <div className="print-only-detailed-cases" style={{ display: "none" }}>
+        <div style={{ borderBottom: "2px solid #111111", paddingBottom: "12px", marginBottom: "36px", marginTop: "60px" }}>
+          <h2 style={{ fontSize: "24px", fontWeight: 900, color: "#111111", letterSpacing: "-0.03em", margin: 0 }}>
+            SELECTED WORKS · DETAILED CASE STUDIES
+          </h2>
+        </div>
+
+        {PROJECTS_DATA.map((p) => {
+          // 인쇄용 첫 번째 대표 이미지
+          const primarySlide = p.slides[0];
+
+          return (
+            <div
+              key={p.id}
+              className="print-case-page"
+              style={{
+                marginBottom: "48px",
+                paddingBottom: "36px",
+              }}
+            >
+              {/* Header Info */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "16px" }}>
+                <div>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.08em" }}>
+                    CASE {p.num} · {p.client}
+                  </span>
+                  <h3 style={{ fontSize: "19px", fontWeight: 900, color: "#111111", margin: "4px 0 0 0", letterSpacing: "-0.02em" }}>
+                    {p.title}
+                  </h3>
+                </div>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280" }}>
+                  {p.keyword}
+                </span>
+              </div>
+
+              {/* Cover Image for Printing */}
+              {primarySlide && (
+                <div
+                  style={{
+                    width: "100%",
+                    aspectRatio: "16/9",
+                    backgroundColor: "#F9FAFB",
+                    border: "1px solid #E5E7EB",
+                    borderRadius: "6px",
+                    overflow: "hidden",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <img
+                    src={primarySlide.src}
+                    alt={primarySlide.alt}
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                  />
+                </div>
+              )}
+
+              {/* 3-Column Detailed Story Grid */}
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "20px" }}>
+                {/* Column 1: Challenge */}
+                <div>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
+                    01 / CHALLENGE
+                  </span>
+                  <h4 style={{ fontSize: "12px", color: "#111111", margin: "0 0 6px 0", fontWeight: 800 }}>문제 정의</h4>
+                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.5, margin: 0 }}>
+                    {p.challenge}
+                  </p>
+                </div>
+
+                {/* Column 2: Approach */}
+                <div>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
+                    02 / APPROACH
+                  </span>
+                  <h4 style={{ fontSize: "12px", color: "#111111", margin: "0 0 6px 0", fontWeight: 800 }}>해결 방안</h4>
+                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.5, margin: 0 }}>
+                    {p.approach}
+                  </p>
+                </div>
+
+                {/* Column 3: Outcome */}
+                <div>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
+                    03 / OUTCOME
+                  </span>
+                  <h4 style={{ fontSize: "12px", color: "#111111", margin: "0 0 6px 0", fontWeight: 800 }}>수행 성과</h4>
+                  <p style={{ fontSize: "10.5px", color: "#4B5563", lineHeight: 1.5, margin: 0 }}>
+                    {p.outcome}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }

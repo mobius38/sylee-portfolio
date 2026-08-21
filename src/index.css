@@ -332,6 +332,28 @@ body {
     font-size: 10pt !important;
     line-height: 1.4 !important;
   }
+
+  /* 🌟 PROJECTS Print Optimization: Hide screen-only lists and show detailed cases */
+  #projects > div:nth-child(2),
+  #projects > div:nth-child(3),
+  #projects > div:nth-child(4),
+  .project-card,
+  div[style*="RECENT FEATURED WORKS"] {
+    display: none !important;
+  }
+
+  .print-only-detailed-cases {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .print-case-page {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 48px !important;
+    padding-bottom: 36px !important;
+    border-bottom: 1px dashed #D1D5DB !important;
+  }
 }
 
 /* ─── Global Animation Utilities ────────────────────────────────────────── */
