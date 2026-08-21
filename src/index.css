@@ -432,10 +432,8 @@ body {
   }
 
   .print-case-page {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    margin-bottom: 48px !important;
-    padding-bottom: 36px !important;
+    margin-bottom: 32px !important;
+    padding-bottom: 24px !important;
     border-bottom: 1px dashed #D1D5DB !important;
   }
 
