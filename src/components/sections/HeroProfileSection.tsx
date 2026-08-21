@@ -46,7 +46,7 @@ export function HeroProfileSection({ w }: { w: number }) {
     },
     {
       year: "2019–22",
-      company: "어스투 (자영업)",
+      company: "어스투 (대표)",
       items: [
         { date: "2022.09", title: "Shaluv 아동복 '러블리 무드' 니치 리브랜딩 & 연매출 1억 달성" },
         { date: "2019.08", title: "자사몰 및 멀티 이커머스 채널 운영, 수입·인증·세일즈 총괄" },
