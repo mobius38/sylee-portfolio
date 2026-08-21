@@ -144,7 +144,6 @@ export function HeroProfileSection({ w }: { w: number }) {
         <h1
           className="about-title-h1"
           style={{
-            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
             fontSize: isMobile ? "44px" : "clamp(56px, 6.5vw, 84px)",
             fontWeight: 900,
             letterSpacing: "-0.04em",
