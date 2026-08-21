@@ -447,14 +447,34 @@ export const PROJECTS_DATA: ProjectItem[] = [
 function CaseStudyDialog({
   project,
   onClose,
+  onNavigateProject,
   isMobile,
 }: {
   project: ProjectItem;
   onClose: () => void;
+  onNavigateProject: (project: ProjectItem) => void;
   isMobile: boolean;
 }) {
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
   const currentSlide = project.slides[activeSlideIdx] ?? project.slides[0];
+
+  // Reset slide index when active project changes
+  useEffect(() => {
+    setActiveSlideIdx(0);
+  }, [project.id]);
+
+  // Find current project index in PROJECTS_DATA
+  const currentProjIdx = PROJECTS_DATA.findIndex((p) => p.id === project.id);
+
+  const handlePrevProject = () => {
+    const prevIdx = currentProjIdx > 0 ? currentProjIdx - 1 : PROJECTS_DATA.length - 1;
+    onNavigateProject(PROJECTS_DATA[prevIdx]);
+  };
+
+  const handleNextProject = () => {
+    const nextIdx = currentProjIdx < PROJECTS_DATA.length - 1 ? currentProjIdx + 1 : 0;
+    onNavigateProject(PROJECTS_DATA[nextIdx]);
+  };
 
   // Esc key & body scroll lock
   useEffect(() => {
@@ -532,33 +552,105 @@ function CaseStudyDialog({
             </strong>
           </div>
 
-          <button
-            onClick={onClose}
-            style={{
-              background: "#F3F4F6",
-              border: "none",
-              borderRadius: "9999px",
-              width: "36px",
-              height: "36px",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "18px",
-              color: "#4B5563",
-              transition: "all 0.15s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#111111";
-              e.currentTarget.style.color = "#FFFFFF";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#F3F4F6";
-              e.currentTarget.style.color = "#4B5563";
-            }}
-          >
-            ✕
-          </button>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            {/* Project Navigation Prev / Next Buttons */}
+            <div style={{ display: "flex", gap: "4px", border: "1px solid #E5E7EB", borderRadius: "8px", overflow: "hidden", backgroundColor: "#F9FAFB", marginRight: "6px" }}>
+              <button
+                onClick={handlePrevProject}
+                aria-label="Previous project"
+                style={{
+                  padding: isMobile ? "8px 10px" : "8px 14px",
+                  fontSize: "11px",
+                  fontWeight: 800,
+                  color: "#4B5563",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  transition: "all 0.15s ease",
+                  lineHeight: 1,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#E5E7EB";
+                  e.currentTarget.style.color = "#111111";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.color = "#4B5563";
+                }}
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+                {isMobile ? "" : "PREV"}
+              </button>
+
+              <div style={{ width: "1px", height: "14px", backgroundColor: "#E5E7EB", alignSelf: "center" }} />
+
+              <button
+                onClick={handleNextProject}
+                aria-label="Next project"
+                style={{
+                  padding: isMobile ? "8px 10px" : "8px 14px",
+                  fontSize: "11px",
+                  fontWeight: 800,
+                  color: "#4B5563",
+                  backgroundColor: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  transition: "all 0.15s ease",
+                  lineHeight: 1,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#E5E7EB";
+                  e.currentTarget.style.color = "#111111";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.color = "#4B5563";
+                }}
+              >
+                {isMobile ? "" : "NEXT"}
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              style={{
+                background: "#F3F4F6",
+                border: "none",
+                borderRadius: "9999px",
+                width: "36px",
+                height: "36px",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "18px",
+                color: "#4B5563",
+                transition: "all 0.15s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#111111";
+                e.currentTarget.style.color = "#FFFFFF";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#F3F4F6";
+                e.currentTarget.style.color = "#4B5563";
+              }}
+            >
+              ✕
+            </button>
+          </div>
         </div>
 
         {/* Modal Body */}
@@ -624,7 +716,7 @@ function CaseStudyDialog({
               alignItems: "center",
               justifyContent: "center",
               padding: isMobile ? "12px" : "24px",
-              marginBottom: "12px",
+              marginBottom: "28px",
             }}
           >
             <img
@@ -681,86 +773,7 @@ function CaseStudyDialog({
             )}
           </div>
 
-          {/* Slide Caption Bar & Controls Group */}
-          <div
-            style={{
-              marginBottom: "24px",
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "center",
-              fontSize: "13.5px",
-              color: "#4B5563",
-              gap: "16px",
-              paddingBottom: "12px",
-            }}
-          >
 
-            {/* Right: Integrated Controller Group */}
-            {project.slides.length > 1 && (
-              <div style={{ display: "flex", alignItems: "center", flexShrink: 0 }}>
-                <div style={{ display: "flex", gap: "4px", border: "1px solid #E5E7EB", borderRadius: "6px", overflow: "hidden", backgroundColor: "#F9FAFB" }}>
-                  {/* Left Arrow Button */}
-                  <button
-                    onClick={() => setActiveSlideIdx((prev) => (prev > 0 ? prev - 1 : project.slides.length - 1))}
-                    aria-label="Previous slide"
-                    style={{
-                      width: "32px",
-                      height: "32px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      backgroundColor: "transparent",
-                      border: "none",
-                      color: "#111111",
-                      cursor: "pointer",
-                      transition: "all 0.15s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#E5E7EB";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "transparent";
-                    }}
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M15 18l-6-6 6-6" />
-                    </svg>
-                  </button>
-
-                  {/* Divider Line */}
-                  <div style={{ width: "1px", height: "16px", backgroundColor: "#E5E7EB", alignSelf: "center" }} />
-
-                  {/* Right Arrow Button */}
-                  <button
-                    onClick={() => setActiveSlideIdx((prev) => (prev < project.slides.length - 1 ? prev + 1 : 0))}
-                    aria-label="Next slide"
-                    style={{
-                      width: "32px",
-                      height: "32px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      backgroundColor: "transparent",
-                      border: "none",
-                      color: "#111111",
-                      cursor: "pointer",
-                      transition: "all 0.15s ease",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#E5E7EB";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = "transparent";
-                    }}
-                  >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M9 18l6-6-6-6" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
 
           {/* 🌟 Editorial 3-Column Story Section (Challenge ➔ Approach ➔ Outcome) */}
           <div
@@ -1095,6 +1108,7 @@ export function WorkSection({ w }: { w: number }) {
         <CaseStudyDialog
           project={selectedModalProject}
           onClose={() => setSelectedModalProject(null)}
+          onNavigateProject={setSelectedModalProject}
           isMobile={isMobile}
         />
       )}
