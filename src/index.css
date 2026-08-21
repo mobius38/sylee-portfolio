@@ -391,6 +391,8 @@ body {
   .about-timeline-section {
     break-before: page !important;
     page-break-before: always !important;
+    border-top: none !important; /* 인쇄 시 타임라인 상단 검은색 보더 선 완전 제거 */
+    padding-top: 0px !important; /* 인쇄 시 웹 탑 패딩 제거 */
     margin-top: 36px !important; /* 새 페이지 최상단 타임라인 시작 여백 조율 */
   }
   .competency-card-item {
