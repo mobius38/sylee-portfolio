@@ -20,61 +20,54 @@ export function HeroProfileSection({ w }: { w: number }) {
   const timelineMilestones = [
     {
       year: "2025–26",
-      company: "도전하는사람들",
       items: [
-        { date: "2026.04", title: "DOOLINKER 워크플로우 빌더 & 캔버스 UX 설계" },
-        { date: "2025.11", title: "사내 인트라넷 포털 & Figma Variables 디자인 시스템 구축" },
+        { date: "2026.04", title: "도전하는사람들 DOOLINKER 워크플로우 빌더 UX 설계" },
+        { date: "2025.11", title: "도전하는사람들 사내 인트라넷 포털 & 디자인 시스템 구축" },
       ],
     },
     {
       year: "2024–25",
-      company: "스펙트라",
       items: [
-        { date: "2025.07", title: "DWorks 고객상담 & 협업 통합 제품 플랫폼 UX/UI 설계" },
-        { date: "2024.12", title: "Dualspace 신규 통합 플랫폼 단독 기획 및 Hi-Fi 프로토타입" },
-        { date: "2024.06", title: "DWorks 전사 디자인 시스템 (Foundations 6종 · Components 26종)" },
+        { date: "2025.07", title: "스펙트라 DWorks 고객상담·협업 통합 제품 플랫폼 UX/UI 설계" },
+        { date: "2024.12", title: "스펙트라 Dualspace 신규 통합 플랫폼 단독 기획 & Hi-Fi" },
+        { date: "2024.06", title: "스펙트라 DWorks 전사 디자인 시스템 구축 26종" },
       ],
     },
     {
       year: "2022–23",
-      company: "스펙트라",
       items: [
-        { date: "2023.12", title: "SalesBridge 데스크톱 플랫폼 & 모바일 PWA 소통 시스템" },
-        { date: "2023.06", title: "DWorks 엔터프라이즈 DX 리브랜딩 & 공식 사이트 구축" },
-        { date: "2022.10", title: "CS Talk 고객상담 플랫폼 대시보드 UI/UX 고도화" },
+        { date: "2023.12", title: "스펙트라 SalesBridge 데스크톱 플랫폼 & 모바일 PWA" },
+        { date: "2023.06", title: "스펙트라 DWorks 엔터프라이즈 DX 리브랜딩 & 공식 사이트" },
+        { date: "2022.10", title: "스펙트라 CS Talk 고객상담 플랫폼 대시보드 UI/UX" },
       ],
     },
     {
       year: "2019–22",
-      company: "어스투",
       items: [
-        { date: "2022.09", title: "Shaluv 아동복 '러블리 무드' 니치 리브랜딩 & 연매출 1억 달성" },
-        { date: "2019.08", title: "자사몰 및 멀티 이커머스 채널 운영, 수입·인증·세일즈 총괄" },
+        { date: "2022.09", title: "어스투 Shaluv 아동복 '러블리 무드' 리브랜딩 & 연매출 1억" },
+        { date: "2019.08", title: "어스투 자사몰 및 멀티 이커머스 채널 운영 총괄" },
       ],
     },
     {
       year: "2017–18",
-      company: "다임 · 한미랩",
       items: [
-        { date: "2018.03", title: "Dime 소셜 데이팅 서비스 모바일 앱 UX/UI 설계" },
+        { date: "2018.03", title: "다임 Dime 소셜 데이팅 서비스 모바일 앱 UX/UI 설계" },
         { date: "2017.07", title: "한미랩 LMS 에듀테크 플랫폼 사용자 & 어드민 시스템 구축" },
       ],
     },
     {
       year: "2011–16",
-      company: "인포뱅크",
       items: [
-        { date: "2016.02", title: "HelloLink 숫자 코드 커머스 & 매거진 모바일 앱 설계" },
-        { date: "2015.01", title: "NH 바로바로마켓 모바일 & 금융 태블릿 전용 UI 구축" },
-        { date: "2014.11", title: "삼성화재 SMS 모바일 웹 인터페이스 설계 및 웹표준 퍼블리싱" },
-        { date: "2011.08", title: "배달 · 주소록 · 쇼핑 네이티브 앱 iOS/Android 가이드 수립" },
+        { date: "2016.02", title: "인포뱅크 헬로링크 커머스 & 매거진 모바일 앱 설계" },
+        { date: "2015.01", title: "인포뱅크 NH 바로바로마켓 모바일 & 금융 태블릿 전용 UI" },
+        { date: "2014.11", title: "인포뱅크 삼성화재 SMS 모바일 웹 인터페이스 설계" },
+        { date: "2011.08", title: "인포뱅크 배달 · 주소록 · 쇼핑 네이티브 앱 iOS/Android 가이드" },
       ],
     },
     {
       year: "2006–09",
-      company: "그래텍 · 잡코리아",
       items: [
-        { date: "2009.11", title: "곰플레이어 · 곰오디오 · 곰TV 미디어 플레이어 GUI 디자인" },
+        { date: "2009.11", title: "그래텍 곰플레이어 · 곰오디오 · 곰TV 미디어 GUI 디자인" },
         { date: "2008.08", title: "잡코리아 채용 플랫폼 UI 템플릿 및 프로모션 디자인" },
         { date: "2006.12", title: "이야소프트 묵향온라인 게임 프로모션 웹 UI 설계" },
       ],
@@ -484,9 +477,6 @@ export function HeroProfileSection({ w }: { w: number }) {
                             }}
                           >
                             {item.title}
-                            <span style={{ fontSize: "11.5px", color: "#9CA3AF", fontWeight: 500, marginLeft: "6px", fontFamily: "'JetBrains Mono', monospace" }}>
-                              · {m.company}
-                            </span>
                           </span>
                         </div>
                       ))}
