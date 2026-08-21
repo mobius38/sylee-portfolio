@@ -431,29 +431,25 @@ export function HeroProfileSection({ w }: { w: number }) {
                       />
                     </div>
 
-                    {/* Giant Clean Year & Company Label */}
-                    <div style={{ marginBottom: "18px", paddingLeft: "6px" }}>
+                    {/* Giant Clean Year Label (No Subtitle Clutter) */}
+                    <div style={{ marginBottom: "14px", paddingLeft: "6px" }}>
                       <span
                         style={{
                           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
-                          fontSize: isMobile ? "32px" : "40px",
+                          fontSize: isMobile ? "32px" : "38px",
                           fontWeight: 900,
                           color: isFirst || isActive || isHovered ? "#2563EB" : "#111111",
                           letterSpacing: "-0.04em",
                           lineHeight: 1,
                           display: "block",
-                          marginBottom: "6px",
                           transition: "color 0.2s ease",
                         }}
                       >
                         {m.year}
                       </span>
-                      <span style={{ fontSize: "12.5px", color: "#6B7280", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
-                        {m.company}
-                      </span>
                     </div>
 
-                    {/* 🌟 Ultra-Clean Scannable 1-Line List (Date + Project Title) */}
+                    {/* 🌟 Ultra-Clean Scannable 1-Line List (Date + Project Title · Company) */}
                     <div style={{ display: "flex", flexDirection: "column", gap: "12px", paddingLeft: "6px" }}>
                       {m.items.map((item, iIdx) => (
                         <div
@@ -488,6 +484,9 @@ export function HeroProfileSection({ w }: { w: number }) {
                             }}
                           >
                             {item.title}
+                            <span style={{ fontSize: "11.5px", color: "#9CA3AF", fontWeight: 500, marginLeft: "6px", fontFamily: "'JetBrains Mono', monospace" }}>
+                              · {m.company}
+                            </span>
                           </span>
                         </div>
                       ))}
