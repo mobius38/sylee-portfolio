@@ -305,6 +305,24 @@ body {
     width: 100% !important;
   }
 
+  /* 🌟 ABOUT Section Print Paddings & Metrics scale-down */
+  #about {
+    padding-top: 0px !important; /* 웹의 100px 상단 패딩 제거해 러닝 헤더 아래 상단 여백 일치 */
+    padding-bottom: 24px !important;
+  }
+  .about-metric-num {
+    font-size: 24pt !important; /* 56px -> 24pt로 전격 축소 */
+    margin-bottom: 4px !important;
+  }
+  .about-metric-label {
+    font-size: 11pt !important; /* 16px -> 11pt로 축소 */
+    margin-bottom: 2px !important;
+  }
+  .about-metric-sub {
+    font-size: 9.5pt !important; /* 13.5px -> 9.5pt로 축소 */
+    line-height: 1.35 !important;
+  }
+
   /* 🌟 Scale down giant section titles during printing (24pt 공통 통일) */
   .about-title-h1,
   .projects-title-h2,

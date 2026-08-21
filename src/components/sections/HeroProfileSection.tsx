@@ -196,8 +196,9 @@ export function HeroProfileSection({ w }: { w: number }) {
         }}
       >
         {metrics.map((m, idx) => (
-          <div key={idx}>
+          <div key={idx} className="about-metric-card">
             <span
+              className="about-metric-num"
               style={{
                 fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
                 fontSize: isMobile ? "32px" : "56px",
@@ -211,10 +212,10 @@ export function HeroProfileSection({ w }: { w: number }) {
             >
               {m.num}
             </span>
-            <strong style={{ fontSize: isMobile ? "14px" : "16px", color: "#111111", fontWeight: 800, display: "block", marginBottom: "4px" }}>
+            <strong className="about-metric-label" style={{ fontSize: isMobile ? "14px" : "16px", color: "#111111", fontWeight: 800, display: "block", marginBottom: "4px" }}>
               {m.label}
             </strong>
-            <span style={{ fontSize: isMobile ? "12.5px" : "13.5px", color: "#4B5563", lineHeight: 1.45, display: "block" }}>
+            <span className="about-metric-sub" style={{ fontSize: isMobile ? "12.5px" : "13.5px", color: "#4B5563", lineHeight: 1.45, display: "block" }}>
               {m.sub}
             </span>
           </div>
