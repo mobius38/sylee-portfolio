@@ -274,10 +274,10 @@ export function HeroProfileSection({ w }: { w: number }) {
           <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
             CAREER EXPANSION TIMELINE
           </span>
-          <h3 style={{ fontSize: isMobile ? "24px" : "36px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.03em" }}>
+          <h3 className="timeline-section-h3" style={{ fontSize: isMobile ? "24px" : "36px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.03em" }}>
             화면 설계에서 제품의 구조와 방향 설계로
           </h3>
-          <p style={{ fontSize: isMobile ? "14.5px" : "16px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
+          <p className="timeline-section-desc" style={{ fontSize: isMobile ? "14.5px" : "16px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
             15년 10개월간 화면과 인터랙션 설계에서 시작해, 복잡한 제품의 사용성 개선과 디자인 시스템, 프로토타입 기반 제품 검증으로 확장해왔습니다.
           </p>
         </div>

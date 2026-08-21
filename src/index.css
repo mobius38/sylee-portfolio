@@ -344,18 +344,32 @@ body {
     color: #FFFFFF !important;
   }
   .about-sub-p {
-    font-size: 11pt !important; /* 13.5pt -> 11pt로 축소하여 Title(24pt)과의 위계를 명확히 분리 */
+    font-size: 13.5pt !important; /* 원상 복구 */
     line-height: 1.4 !important;
-    margin-bottom: 16px !important;
+    margin-bottom: 20px !important;
   }
   .about-narrative-lead {
-    font-size: 10pt !important; /* 12pt -> 10pt로 축소 */
+    font-size: 12pt !important; /* 원상 복구 */
     line-height: 1.5 !important;
     margin-bottom: 8px !important;
   }
   .about-narrative-body {
-    font-size: 9pt !important; /* 10.5pt -> 9pt로 축소 */
+    font-size: 10.5pt !important; /* 원상 복구 */
     line-height: 1.6 !important;
+  }
+
+  /* 🌟 TIMELINE section header print scale-down (타임라인 메인 타이틀 크기 16pt로 단정하게 축소) */
+  .timeline-section-h3 {
+    font-size: 16pt !important; /* 36px -> 16pt로 축소하여 ABOUT(24pt)보다 확실히 한 단계 낮춤 */
+    font-weight: 900 !important;
+    letter-spacing: -0.03em !important;
+    margin-bottom: 8px !important;
+    color: #111111 !important;
+  }
+  .timeline-section-desc {
+    font-size: 11pt !important; /* 16px -> 11pt로 축소 */
+    line-height: 1.6 !important;
+    color: #374151 !important;
   }
 
   /* 🌟 Timeline year print optimization */
