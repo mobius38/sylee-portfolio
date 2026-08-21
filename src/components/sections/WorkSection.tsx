@@ -875,8 +875,7 @@ export function WorkSection({ w }: { w: number }) {
             gap: "8px",
             overflowX: "auto",
             WebkitOverflowScrolling: "touch",
-            paddingBottom: "8px",
-            borderBottom: "1px solid #E5E7EB",
+            paddingBottom: "4px",
           }}
         >
           {keywords.map((kw) => {
