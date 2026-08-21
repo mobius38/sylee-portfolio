@@ -63,9 +63,9 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
         right: "24px",
         width: "min(400px, calc(100vw - 32px))",
         backgroundColor: "#FFFFFF",
-        border: "1px solid #E5E7EB",
+        border: "1px solid #D1D5DB",
         borderRadius: "12px",
-        boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.15)",
+        boxShadow: "0 24px 64px -16px rgba(0, 0, 0, 0.25), 0 8px 24px -8px rgba(0, 0, 0, 0.12)",
         zIndex: 999,
         overflow: "hidden",
         fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
@@ -76,11 +76,11 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
       <div
         style={{
           padding: "16px 18px",
-          borderBottom: "1px solid #F3F4F6",
+          borderBottom: "1px solid #1F2937",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          backgroundColor: "#FAFAFA",
+          backgroundColor: "#111827",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -88,11 +88,11 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
 
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "2px" }}>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.08em" }}>
+              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.08em" }}>
                 COFFEE CHAT &amp; Q&amp;A
               </span>
             </div>
-            <div style={{ fontSize: "13px", fontWeight: 800, color: "#111111", letterSpacing: "-0.01em" }}>
+            <div style={{ fontSize: "13px", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.01em" }}>
               보름이 &amp; 보리 집사의 커피챗
             </div>
           </div>
