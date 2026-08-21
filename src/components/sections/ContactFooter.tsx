@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { DownloadButton } from "../primitives/DownloadButton";
 
 export function ContactFooter({ w }: { w: number }) {
   const [copied, setCopied] = useState(false);
@@ -70,8 +69,6 @@ export function ContactFooter({ w }: { w: number }) {
                 </svg>
                 {copied ? "이메일 복사 완료" : email}
               </button>
-
-              <DownloadButton variant="ghost" isMobile={isMobile} />
             </div>
           </div>
 

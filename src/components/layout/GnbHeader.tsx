@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { DownloadButton } from "../primitives/DownloadButton";
 
 export function GnbHeader({ w }: { w: number }) {
   const isMobile = w < 768;
@@ -69,47 +68,43 @@ export function GnbHeader({ w }: { w: number }) {
         )}
       </a>
 
-      {/* Nav 4 Items + Download Button */}
-      <div style={{ display: "flex", alignItems: "center", gap: isMobile ? "8px" : "28px" }}>
-        <nav style={{ display: "flex", gap: isMobile ? "10px" : "24px" }}>
-          {navItems.map((item) => {
-            const isActive = activeSection === item.id;
-            return (
-              <a
-                key={item.label}
-                href={item.href}
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: isMobile ? "11.5px" : "13px",
-                  fontWeight: isActive ? 900 : 600,
-                  color: isActive ? "#2563EB" : "#4B5563",
-                  textDecoration: "none",
-                  position: "relative",
-                  padding: "4px 0",
-                  whiteSpace: "nowrap",
-                  transition: "color 0.15s ease",
-                }}
-              >
-                {item.label}
-                {isActive && (
-                  <span
-                    style={{
-                      position: "absolute",
-                      bottom: "-2px",
-                      left: 0,
-                      right: 0,
-                      height: "2px",
-                      backgroundColor: "#2563EB",
-                    }}
-                  />
-                )}
-              </a>
-            );
-          })}
-        </nav>
-
-        {!isMobile && <DownloadButton isMobile={false} />}
-      </div>
+      {/* Nav 4 Items */}
+      <nav style={{ display: "flex", gap: isMobile ? "10px" : "24px" }}>
+        {navItems.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <a
+              key={item.label}
+              href={item.href}
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: isMobile ? "11.5px" : "13px",
+                fontWeight: isActive ? 900 : 600,
+                color: isActive ? "#2563EB" : "#4B5563",
+                textDecoration: "none",
+                position: "relative",
+                padding: "4px 0",
+                whiteSpace: "nowrap",
+                transition: "color 0.15s ease",
+              }}
+            >
+              {item.label}
+              {isActive && (
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: "-2px",
+                    left: 0,
+                    right: 0,
+                    height: "2px",
+                    backgroundColor: "#2563EB",
+                  }}
+                />
+              )}
+            </a>
+          );
+        })}
+      </nav>
     </header>
   );
 }

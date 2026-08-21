@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { DownloadButton } from "../primitives/DownloadButton";
 import { PetDuoAvatar } from "./PetDuoAvatar";
 
 interface FAQItem {
@@ -8,7 +7,6 @@ interface FAQItem {
   a: string;
   actionText?: string;
   actionHref?: string;
-  isDownload?: boolean;
 }
 
 const FAQ_LIST: FAQItem[] = [
@@ -34,16 +32,17 @@ const FAQ_LIST: FAQItem[] = [
     actionHref: "#leadership",
   },
   {
-    id: "resume",
-    q: "이력서 및 포트폴리오 PDF를 받고 싶어요.",
-    a: "채용 검토용 최신 이력서 및 포트폴리오 PDF를 즉시 다운로드하실 수 있습니다.",
-    isDownload: true,
+    id: "contact",
+    q: "프로젝트 제안이나 채용 문의는 어디로 하나요?",
+    a: "이메일(mobius38@gmail.com) 또는 1:1 커피챗으로 연락 주시면 빠르게 확인 후 정중히 회신드리겠습니다.",
+    actionText: "이메일 문의하기",
+    actionHref: "mailto:mobius38@gmail.com",
   },
   {
     id: "coffee-chat",
     q: "이선영 디자이너와 직접 커피챗을 신청하고 싶어요.",
     a: "보름이(러시안블루) & 보리(말티푸) 집사와의 편안한 커피챗! 가벼운 티타임부터 프로덕트 포지션 이야기까지 카카오톡 1:1 오픈채팅으로 언제든 편하게 말 걸어주세요.",
-    actionText: "카카오톡 1:1 커피챗 열기",
+    actionText: "1:1 커피챗 열기",
     actionHref: "https://open.kakao.com/o/sLeeSunyoung",
   },
 ];
@@ -165,19 +164,13 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
                     {item.a}
                   </p>
 
-                  {item.isDownload && (
-                    <div>
-                      <DownloadButton isMobile={false} />
-                    </div>
-                  )}
-
                   {item.actionText && item.actionHref && (
                     <a
                       href={item.actionHref}
                       target={item.actionHref.startsWith("http") ? "_blank" : "_self"}
                       rel={item.actionHref.startsWith("http") ? "noopener noreferrer" : undefined}
                       onClick={() => {
-                        if (!item.actionHref?.startsWith("http")) {
+                        if (!item.actionHref?.startsWith("http") && !item.actionHref?.startsWith("mailto:")) {
                           onClose();
                         }
                       }}
