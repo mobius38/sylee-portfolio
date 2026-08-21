@@ -764,47 +764,20 @@ function CaseStudyDialog({
             </div>
           </div>
 
-          {/* 🌟 Bottom Case Navigation Banner (Slim Text Switcher) */}
+          {/* 🌟 Bottom Case Navigation Banner (Next Case Link Only) */}
           <div
             style={{
               marginTop: "48px",
               paddingTop: "20px",
               borderTop: "1px solid #F3F4F6",
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "flex-end",
               alignItems: "center",
               fontSize: "12px",
               fontWeight: 700,
             }}
           >
-            {/* Left Link: Previous Project */}
-            <button
-              onClick={handlePrevProject}
-              style={{
-                background: "transparent",
-                border: "none",
-                padding: 0,
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-                color: "#9CA3AF",
-                transition: "all 0.15s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#111111";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#9CA3AF";
-              }}
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-              <span>CASE {prevProj.num} · {prevProj.title}</span>
-            </button>
-
-            {/* Right Link: Next Project */}
+            {/* Right Link: Next Project Only */}
             <button
               onClick={handleNextProject}
               style={{
@@ -825,7 +798,7 @@ function CaseStudyDialog({
                 e.currentTarget.style.color = "#9CA3AF";
               }}
             >
-              <span>CASE {nextProj.num} · {nextProj.title}</span>
+              <span>NEXT CASE : CASE {nextProj.num} · {nextProj.title}</span>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M9 18l6-6-6-6" />
               </svg>
