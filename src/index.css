@@ -344,9 +344,9 @@ body {
     color: #FFFFFF !important;
   }
   .about-sub-p {
-    font-size: 16pt !important;
+    font-size: 13.5pt !important; /* 16pt -> 13.5pt로 낮추어 H1(24pt)과의 위계 정비 */
     line-height: 1.4 !important;
-    margin-bottom: 24px !important;
+    margin-bottom: 20px !important;
   }
   .about-narrative-lead {
     font-size: 12pt !important;
