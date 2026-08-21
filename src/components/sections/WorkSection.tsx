@@ -1205,13 +1205,16 @@ export function WorkSection({ w }: { w: number }) {
                 </div>
               )}
 
-              {/* 🌟 3-Segment Story Vertical List (인쇄 시 텍스트 폰트 크기 및 간격 확대 개선) */}
+              {/* 🌟 3-Segment Story Vertical List (웹 모달과 완전 동일한 에디토리얼 레이아웃 계층 적용) */}
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 {/* Segment 1: Challenge */}
                 <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
-                    01 / CHALLENGE (문제 정의)
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
+                    01 / CHALLENGE
                   </span>
+                  <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
+                    문제 정의
+                  </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.challenge}
                   </p>
@@ -1219,9 +1222,12 @@ export function WorkSection({ w }: { w: number }) {
 
                 {/* Segment 2: Approach */}
                 <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
-                    02 / APPROACH (해결 방안)
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
+                    02 / APPROACH
                   </span>
+                  <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
+                    해결 방안
+                  </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.approach}
                   </p>
@@ -1229,9 +1235,12 @@ export function WorkSection({ w }: { w: number }) {
 
                 {/* Segment 3: Outcome */}
                 <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
-                    03 / OUTCOME (수행 성과)
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
+                    03 / OUTCOME
                   </span>
+                  <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
+                    수행 성과
+                  </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.outcome}
                   </p>
