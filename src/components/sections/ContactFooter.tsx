@@ -19,7 +19,6 @@ export function ContactFooter({ w }: { w: number }) {
         backgroundColor: "#08090C",
         color: "#FFFFFF",
         padding: isMobile ? "60px 16px 84px 16px" : "100px 40px 60px 40px",
-        borderTop: "1px solid rgba(255, 255, 255, 0.1)",
       }}
     >
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
