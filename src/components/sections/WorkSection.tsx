@@ -1003,7 +1003,7 @@ export function WorkSection({ w }: { w: number }) {
             style={{
               display: "grid",
               gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-              gap: isMobile ? "20px" : "24px",
+              gap: isMobile ? "24px" : "32px", /* 1행(Featured)의 gap 수치와 동일하게 맞추어 수직 정렬 정렬선 매칭 */
             }}
           >
             {gridProjects.map((p) => (
