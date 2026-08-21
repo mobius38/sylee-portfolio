@@ -720,15 +720,16 @@ function CaseStudyDialog({
             }}
           >
             <img
+              key={currentSlide.src}
               src={currentSlide.src}
               alt={currentSlide.alt}
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: "contain",
-                objectPosition: "center",
+                objectFit: "contain" as const,
+                objectPosition: "center" as const,
                 display: "block",
-                transition: "opacity 0.2s ease",
+                animation: "fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards",
               }}
             />
 
