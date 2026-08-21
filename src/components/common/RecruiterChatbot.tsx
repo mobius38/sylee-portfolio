@@ -43,7 +43,7 @@ const FAQ_LIST: FAQItem[] = [
     q: "이선영 디자이너와 직접 커피챗을 신청하고 싶어요.",
     a: "보름이(러시안블루) & 보리(말티푸) 집사와의 편안한 커피챗! 가벼운 티타임부터 프로덕트 포지션 이야기까지 카카오톡 1:1 오픈채팅으로 언제든 편하게 말 걸어주세요.",
     actionText: "1:1 커피챗 열기",
-    actionHref: "https://open.kakao.com/o/sLeeSunyoung",
+    actionHref: "https://open.kakao.com/o/gMLdWTJi",
   },
 ];
 
@@ -210,7 +210,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
       >
         <span>이메일: mobius38@gmail.com</span>
         <a
-          href="https://open.kakao.com/o/sLeeSunyoung"
+          href="https://open.kakao.com/o/gMLdWTJi"
           target="_blank"
           rel="noopener noreferrer"
           style={{

@@ -255,6 +255,30 @@ body {
     text-decoration: none !important;
     color: #111111 !important;
   }
+
+  /* Timeline print vertical override */
+  .timeline-track-rail {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 100% !important;
+    gap: 32px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .timeline-card-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-shrink: 1 !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    page-break-inside: avoid !important;
+  }
+
+  .timeline-horizontal-line,
+  .timeline-node-container {
+    display: none !important;
+  }
 }
 
 /* ─── Global Animation Utilities ────────────────────────────────────────── */

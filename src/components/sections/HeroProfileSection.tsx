@@ -377,6 +377,7 @@ export function HeroProfileSection({ w }: { w: number }) {
           >
             {/* 🌟 Milestones Flow with 100% Full-Length Continuous Track Line */}
             <div
+              className="timeline-track-rail"
               style={{
                 display: "flex",
                 gap: isMobile ? "36px" : "56px",
@@ -387,6 +388,7 @@ export function HeroProfileSection({ w }: { w: number }) {
             >
               {/* Continuous Track Line centered with circle nodes */}
               <div
+                className="timeline-horizontal-line no-print"
                 style={{
                   position: "absolute",
                   top: "12px",
@@ -409,6 +411,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                     onClick={() => handleScrollToIdx(idx)}
                     onMouseEnter={() => setHoveredYearIdx(idx)}
                     onMouseLeave={() => setHoveredYearIdx(null)}
+                    className="timeline-card-item"
                     style={{
                       width: isMobile ? "300px" : "390px",
                       flexShrink: 0,
@@ -418,7 +421,7 @@ export function HeroProfileSection({ w }: { w: number }) {
                     }}
                   >
                     {/* Circle Node Container */}
-                    <div style={{ marginBottom: "18px", display: "flex", alignItems: "center", height: "26px", paddingLeft: "6px" }}>
+                    <div className="timeline-node-container no-print" style={{ marginBottom: "18px", display: "flex", alignItems: "center", height: "26px", paddingLeft: "6px" }}>
                       <div
                         style={{
                           width: "18px",
