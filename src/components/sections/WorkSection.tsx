@@ -1172,24 +1172,36 @@ export function WorkSection({ w }: { w: number }) {
                 </div>
               </div>
 
-              {/* Cover Image for Printing */}
-              {primarySlide && (
+              {/* 🌟 Cover & Sub Images for Printing (1장일 땐 가로 꽉 차게, 2장 이상일 땐 2단 바둑판 격자로 전형 나열) */}
+              {p.slides.length > 0 && (
                 <div
                   style={{
-                    width: "100%",
-                    aspectRatio: "16/9",
-                    backgroundColor: "#F9FAFB",
-                    border: "1px solid #E5E7EB",
-                    borderRadius: "6px",
-                    overflow: "hidden",
+                    display: "grid",
+                    gridTemplateColumns: p.slides.length === 1 ? "1fr" : "repeat(2, 1fr)",
+                    gap: "12px",
                     marginBottom: "24px",
                   }}
                 >
-                  <img
-                    src={primarySlide.src}
-                    alt={primarySlide.alt}
-                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                  />
+                  {p.slides.map((slide, sIdx) => (
+                    <div
+                      key={sIdx}
+                      style={{
+                        width: "100%",
+                        aspectRatio: "16/9",
+                        backgroundColor: "#F9FAFB",
+                        border: "1px solid #E5E7EB",
+                        borderRadius: "6px",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <img
+                        src={slide.src}
+                        alt={slide.alt}
+                        loading="lazy"
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                      />
+                    </div>
+                  ))}
                 </div>
               )}
 
