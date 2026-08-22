@@ -44,7 +44,6 @@ export function GnbHeader({ w }: { w: number }) {
         backgroundColor: "rgba(255, 255, 255, 0.92)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        borderBottom: "1px solid #E5E7EB",
         padding: isMobile ? "0 10px" : "0 40px", /* 모바일 패딩 축소해 공간 확보 */
         height: "60px",
         display: "flex",
@@ -114,7 +113,21 @@ export function GnbHeader({ w }: { w: number }) {
         })}
       </nav>
 
-      {/* 🌟 Scroll Progress Bar (스크롤 진행률에 따라 실시간으로 너비가 늘어나는 2px 실선) */}
+      {/* 🌟 1. 배경 트랙 가이드 라인 (전체 너비의 1px 연회색 실선) */}
+      <div
+        className="no-print"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "1px",
+          backgroundColor: "#E5E7EB",
+          zIndex: 51,
+        }}
+      />
+
+      {/* 🌟 2. 실제 스크롤 진행 바 (스크롤 진행률에 따라 회색 선 위를 덮는 2px 파란 실선) */}
       <div
         className="no-print"
         style={{
@@ -125,7 +138,7 @@ export function GnbHeader({ w }: { w: number }) {
           height: "2px",
           backgroundColor: "#2563EB",
           transition: "width 0.08s ease-out",
-          zIndex: 51,
+          zIndex: 52,
         }}
       />
     </header>
