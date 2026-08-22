@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 export function GnbHeader({ w }: { w: number }) {
   const isMobile = w < 768;
   const [activeSection, setActiveSection] = useState<string>("about");
+  const [scrollProgress, setScrollProgress] = useState<number>(0); // 🌟 실시간 스크롤 진행률 상태
 
   const navItems = [
     { label: "ABOUT", href: "#about", id: "about" },
@@ -13,6 +14,13 @@ export function GnbHeader({ w }: { w: number }) {
 
   useEffect(() => {
     const handleScroll = () => {
+      // 1. 현재 스크롤 진행률 계산 (0% ~ 100%)
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(scrollPercent);
+
+      // 2. 현재 스크롤 위치에 따른 활성 섹션(GNB Active) 매핑
       const scrollPos = window.scrollY + 140;
       const sections = ["contact", "leadership", "projects", "about"];
       for (const sId of sections) {
@@ -105,6 +113,21 @@ export function GnbHeader({ w }: { w: number }) {
           );
         })}
       </nav>
+
+      {/* 🌟 Scroll Progress Bar (스크롤 진행률에 따라 실시간으로 너비가 늘어나는 2px 실선) */}
+      <div
+        className="no-print"
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: `${scrollProgress}%`,
+          height: "2px",
+          backgroundColor: "#2563EB",
+          transition: "width 0.08s ease-out",
+          zIndex: 51,
+        }}
+      />
     </header>
   );
 }
