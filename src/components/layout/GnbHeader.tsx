@@ -96,18 +96,6 @@ export function GnbHeader({ w }: { w: number }) {
               }}
             >
               {item.label}
-              {isActive && (
-                <span
-                  style={{
-                    position: "absolute",
-                    bottom: "-2px",
-                    left: 0,
-                    right: 0,
-                    height: "2px",
-                    backgroundColor: "#2563EB",
-                  }}
-                />
-              )}
             </a>
           );
         })}
