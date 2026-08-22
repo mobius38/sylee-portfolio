@@ -44,7 +44,7 @@ export function GnbHeader({ w }: { w: number }) {
         backgroundColor: "rgba(255, 255, 255, 0.92)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        padding: isMobile ? "0 10px" : "0 40px", /* 모바일 패딩 축소해 공간 확보 */
+        padding: isMobile ? "0 12px" : "0 40px", /* 모바일 패딩 조정 */
         height: "60px",
         display: "flex",
         alignItems: "center",
@@ -56,7 +56,7 @@ export function GnbHeader({ w }: { w: number }) {
         href="#about"
         style={{
           fontFamily: "'JetBrains Mono', monospace",
-          fontSize: isMobile ? "11.5px" : "14px", /* 모바일 로고 크기 축소 */
+          fontSize: isMobile ? "12px" : "14px", /* 모바일 로고 가독성 위해 12px로 복구 */
           fontWeight: 900,
           color: "#111111",
           textDecoration: "none",
@@ -76,7 +76,7 @@ export function GnbHeader({ w }: { w: number }) {
       </a>
 
       {/* Nav 4 Items */}
-      <nav style={{ display: "flex", gap: isMobile ? "8px" : "24px" }}> {/* 모바일 메뉴 간격 축소 */}
+      <nav style={{ display: "flex", gap: isMobile ? "9px" : "24px" }}> {/* 모바일 메뉴 간격 최적화 */}
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
           return (
@@ -85,7 +85,7 @@ export function GnbHeader({ w }: { w: number }) {
               href={item.href}
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
-                fontSize: isMobile ? "10px" : "13px", /* 모바일 메뉴 폰트 크기 축소 */
+                fontSize: isMobile ? "11px" : "13px", /* 모바일 메뉴 가독성 위해 11px로 복구 */
                 fontWeight: isActive ? 900 : 600,
                 color: isActive ? "#2563EB" : "#4B5563",
                 textDecoration: "none",
