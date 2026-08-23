@@ -43,7 +43,7 @@ export function MobileSection({ w }: { w: number }) {
       }}
     >
       <div style={{ marginBottom: isMobile ? "28px" : "40px", borderBottom: "1px solid #E5E7EB", paddingBottom: "16px" }}>
-        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px" }}>
+        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "6px" }}>
           03 / MOBILE &amp; CROSS-PLATFORM
         </span>
         <h2 style={{ fontSize: isMobile ? "24px" : "36px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.02em" }}>
@@ -68,7 +68,7 @@ export function MobileSection({ w }: { w: number }) {
               </span>
             </div>
 
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#2563EB", fontWeight: 700, display: "block", marginBottom: "4px" }}>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#4B3FE1", fontWeight: 700, display: "block", marginBottom: "4px" }}>
               {app.period}
             </span>
 

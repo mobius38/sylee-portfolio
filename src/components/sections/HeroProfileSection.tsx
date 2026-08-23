@@ -264,7 +264,7 @@ export function HeroProfileSection({
       {/* 4. 3 Core Competencies */}
       <div className="about-competency-section" style={{ marginBottom: isMobile ? "48px" : "80px" }}>
         <div style={{ marginBottom: "20px" }}>
-          <span className="competency-section-title" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+          <span className="competency-section-title" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#4B3FE1", letterSpacing: "0.05em" }}>
             CORE COMPETENCIES (3대 핵심 역량)
           </span>
         </div>
@@ -280,7 +280,7 @@ export function HeroProfileSection({
               transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
               01 / COMPLEX UX & IA
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>복잡한 제품 구조화</h3>
@@ -299,7 +299,7 @@ export function HeroProfileSection({
               transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
               02 / DESIGN SYSTEM STANDARDS
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>디자인 시스템 표준 구축</h3>
@@ -318,7 +318,7 @@ export function HeroProfileSection({
               transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
               03 / HI-FI PROTOTYPING
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>인터랙티브 검증 및 MVP 리딩</h3>
@@ -338,7 +338,7 @@ export function HeroProfileSection({
       >
         {/* Header Row */}
         <div style={{ marginBottom: isMobile ? "24px" : "36px" }}>
-          <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
+          <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
             CAREER EXPANSION TIMELINE
           </span>
           <h3 className="timeline-section-h3" style={{ fontSize: isMobile ? "24px" : "36px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.03em" }}>
@@ -510,8 +510,8 @@ export function HeroProfileSection({
                           height: "18px",
                           borderRadius: "9999px",
                           backgroundColor: "#FFFFFF",
-                          border: isFirst || isActive || isHovered ? "4.5px solid #2563EB" : "4.5px solid #111111",
-                          boxShadow: isActive || isHovered ? "0 0 0 3px rgba(37, 99, 235, 0.25)" : "none",
+                          border: isFirst || isActive || isHovered ? "4.5px solid #4B3FE1" : "4.5px solid #111111", // 🌟 인디고 블루 통합
+                          boxShadow: isActive || isHovered ? "0 0 0 3px rgba(75, 63, 225, 0.25)" : "none", // 🌟 rgba 인디고 블루 매칭
                           transition: "border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease",
                           transform: isActive || isHovered ? "scale(1.15)" : "scale(1)",
                         }}
@@ -526,7 +526,7 @@ export function HeroProfileSection({
                           fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
                           fontSize: isMobile ? "32px" : "38px",
                           fontWeight: 900,
-                          color: isFirst || isActive || isHovered ? "#2563EB" : "#111111",
+                          color: isFirst || isActive || isHovered ? "#4B3FE1" : "#111111", // 🌟 인디고 블루 통합
                           letterSpacing: "-0.04em",
                           lineHeight: 1,
                           display: "block",
@@ -572,7 +572,7 @@ export function HeroProfileSection({
                             onMouseEnter={(e) => {
                               if (item.projectId) {
                                 setHoveredProject({ id: item.projectId });
-                                e.currentTarget.style.color = "#2563EB";
+                                e.currentTarget.style.color = "#4B3FE1"; // 🌟 인디고 블루 통합
                                 if (tooltipRef.current) {
                                   tooltipRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -120%)`;
                                 }

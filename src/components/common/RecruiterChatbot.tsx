@@ -179,7 +179,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
                         alignItems: "center",
                         fontSize: "11.5px",
                         fontWeight: 700,
-                        color: "#2563EB",
+                        color: "#4B3FE1", // 🌟 인디고 블루 통합
                         textDecoration: "none",
                         fontFamily: "'JetBrains Mono', monospace",
                       }}

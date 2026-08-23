@@ -73,7 +73,7 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
       <div style={{ borderTop: "1px solid #111111", paddingTop: "24px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "16px", flexWrap: "wrap", gap: "8px" }}>
           <div>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "4px" }}>
               INDEX
             </span>
             <h2 style={{ fontSize: isMobile ? "18px" : "22px", fontWeight: 800, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
@@ -111,7 +111,7 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
               }}
             >
               <div>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isMobile ? "12px" : "13px", fontWeight: 800, color: "#2563EB" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isMobile ? "12px" : "13px", fontWeight: 800, color: "#4B3FE1" }}>
                   {c.num}
                 </span>
               </div>
@@ -133,7 +133,7 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
                 </div>
               )}
               <div style={{ textAlign: "right" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isMobile ? "11px" : "12px", color: "#2563EB", fontWeight: 700 }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isMobile ? "11px" : "12px", color: "#4B3FE1", fontWeight: 700 }}>
                   {isMobile ? "→" : c.flow}
                 </span>
               </div>

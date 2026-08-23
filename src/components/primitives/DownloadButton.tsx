@@ -32,8 +32,8 @@ export function DownloadButton({
       }}
       onMouseEnter={(e) => {
         if (isDark) {
-          e.currentTarget.style.backgroundColor = "#2563EB";
-          e.currentTarget.style.borderColor = "#2563EB";
+          e.currentTarget.style.backgroundColor = "#4B3FE1"; // 🌟 인디고 블루 통합
+          e.currentTarget.style.borderColor = "#4B3FE1"; // 🌟 인디고 블루 통합
         } else if (isGhost) {
           e.currentTarget.style.borderColor = "#FFFFFF";
           e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)";
