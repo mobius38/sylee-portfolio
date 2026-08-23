@@ -426,7 +426,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     role: "UX/UI Design",
     description: "농협 모바일 커머스 앱의 상품 탐색과 장바구니/주문 결제 동선을 모바일 터치 사용성에 맞춰 전면 재설계했습니다.",
     challenge: "복잡한 카테고리와 장바구니/결제 단계로 인해 모바일 쇼핑 시 이탈률이 높고 터치 사용성이 낮았음.",
-    approach: "한 손 조작(Thumb Zone)에 최적화된 하단 탭 바, 상품 탐색 동선 단순화, 안드로이드 머티리얼 가이드 기반 컴포넌트 리뉴얼.",
+    approach: "한 손 조작(Thumb Zone)에 최적화된 하단 탭 바, 상품 탐색 동선 단순화, 안드로이드 플랫폼 가이드 기반의 UI 컴포넌트 설계.",
     outcome: "브랜딩, UI 설계, 개발 가이드 및 릴리즈 전 디자인 QA 100% 완결로 농협 모바일 커머스 현대화 달성.",
     pipelineTitle: "COMMERCE MOBILE FLOW",
     pipelineSteps: [
