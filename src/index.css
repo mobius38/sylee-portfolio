@@ -231,7 +231,12 @@ body {
   article,
   figure,
   img,
-  div[style*="border: 1px solid"] {
+  div[style*="border: 1px solid"],
+  .competency-card-item,
+  .print-case-card,
+  .print-timeline-item,
+  .print-career-item,
+  .about-metric-card {
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
@@ -539,5 +544,16 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ─── Core Competency Card Micro-interactions ──────────────────────────── */
+.competency-card-item {
+  will-change: transform, box-shadow, border-color, background-color;
+}
+.competency-card-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 28px -6px rgba(37, 99, 235, 0.06), 0 8px 16px -8px rgba(0, 0, 0, 0.04) !important;
+  border-color: #3B82F6 !important;
+  background-color: #FFFFFF !important;
 }
 

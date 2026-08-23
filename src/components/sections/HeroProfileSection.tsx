@@ -230,33 +230,60 @@ export function HeroProfileSection({ w }: { w: number }) {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "16px" : "32px" }}>
-          <div className="competency-card-item" style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
-              01 / COMPLEX UX
+          <div
+            className="competency-card-item"
+            style={{
+              padding: "28px 24px",
+              backgroundColor: "#F9FAFB",
+              border: "1px solid #E5E7EB",
+              borderRadius: "8px",
+              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
+            }}
+          >
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+              01 / COMPLEX UX & IA
             </span>
-            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>복잡도 구조화</h3>
-            <p className="competency-card-desc" style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
-              Workflow · Permission · Communication
+            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>복잡한 제품 구조화</h3>
+            <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+              비즈니스 복잡도가 높은 워크플로우 자동화, 사내 다중 권한 포털의 정보구조(IA)와 업무 흐름을 직관적인 사용자 태스크 플로우로 단순화합니다.
             </p>
           </div>
 
-          <div className="competency-card-item" style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
-              02 / DESIGN SYSTEM
+          <div
+            className="competency-card-item"
+            style={{
+              padding: "28px 24px",
+              backgroundColor: "#F9FAFB",
+              border: "1px solid #E5E7EB",
+              borderRadius: "8px",
+              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
+            }}
+          >
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+              02 / DESIGN SYSTEM STANDARDS
             </span>
-            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>디자인 시스템 표준</h3>
-            <p className="competency-card-desc" style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
-              Variables · Components · Guidelines
+            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>디자인 시스템 표준 구축</h3>
+            <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+              Figma Variables 기반 컬러/타이포 디자인 토큰화 및 크로스 플랫폼 공통 컴포넌트 표준을 제정해 제품군의 일관성과 협업 속도를 혁신합니다.
             </p>
           </div>
 
-          <div className="competency-card-item" style={{ padding: "24px", backgroundColor: "#F8F9FA", border: "1px solid #E5E7EB", borderRadius: "8px" }}>
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "8px" }}>
-              03 / PROTOTYPING
+          <div
+            className="competency-card-item"
+            style={{
+              padding: "28px 24px",
+              backgroundColor: "#F9FAFB",
+              border: "1px solid #E5E7EB",
+              borderRadius: "8px",
+              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
+            }}
+          >
+            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+              03 / HI-FI PROTOTYPING
             </span>
-            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 8px 0" }}>인터랙티브 검증</h3>
-            <p className="competency-card-desc" style={{ fontSize: isMobile ? "14px" : "14.5px", color: "#374151", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
-              Hi-Fi · Interaction · Validation
+            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>인터랙티브 검증 및 MVP 리딩</h3>
+            <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+              실서비스 환경에 수렴하는 고해상도(Hi-Fi) 프로토타이핑을 설계하여 복잡한 노드 기반 인터랙션의 요구사항을 검증하고 최적의 MVP 범위를 정의합니다.
             </p>
           </div>
         </div>
