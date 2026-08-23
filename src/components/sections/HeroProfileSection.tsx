@@ -600,9 +600,6 @@ export function HeroProfileSection({
                               letterSpacing: "-0.015em",
                               wordBreak: "keep-all",
                               cursor: item.projectId ? "pointer" : "default",
-                              textDecoration: item.projectId ? "underline" : "none",
-                              textDecorationStyle: "dotted",
-                              textUnderlineOffset: "4px",
                               transition: "color 0.15s ease",
                             }}
                           >
