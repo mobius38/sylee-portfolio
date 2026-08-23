@@ -85,7 +85,7 @@ export function GnbHeader({ w }: { w: number }) {
           href="#about"
           onClick={() => setIsMenuOpen(false)}
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
+            fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
             fontSize: isMobile ? "13px" : "14px",
             fontWeight: 900,
             color: "#111111",
@@ -160,7 +160,7 @@ export function GnbHeader({ w }: { w: number }) {
                   key={item.label}
                   href={item.href}
                   style={{
-                    fontFamily: "'JetBrains Mono', monospace",
+                    fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
                     fontSize: "13px",
                     fontWeight: isActive ? 900 : 600,
                     color: isActive ? "#4B3FE1" : "#4B5563", // 🌟 인디고블루 싱크
@@ -202,7 +202,7 @@ export function GnbHeader({ w }: { w: number }) {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 style={{
-                  fontFamily: "'JetBrains Mono', monospace",
+                  fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
                   fontSize: "24px",
                   fontWeight: isActive ? 900 : 600,
                   color: isActive ? "#4B3FE1" : "#111111", // 🌟 인디고블루 싱크
