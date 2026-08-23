@@ -163,7 +163,7 @@ export function GnbHeader({ w }: { w: number }) {
                     fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
                     fontSize: "13px",
                     fontWeight: isActive ? 900 : 600,
-                    color: isActive ? "#4B3FE1" : "#4B5563", // 🌟 인디고블루 싱크
+                    color: isActive ? "#2563EB" : "#4B5563", // 🌟 신뢰 블루 싱크
                     textDecoration: "none",
                     position: "relative",
                     padding: "4px 0",
@@ -205,7 +205,7 @@ export function GnbHeader({ w }: { w: number }) {
                   fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
                   fontSize: "24px",
                   fontWeight: isActive ? 900 : 600,
-                  color: isActive ? "#4B3FE1" : "#111111", // 🌟 인디고블루 싱크
+                  color: isActive ? "#2563EB" : "#111111", // 🌟 신뢰 블루 싱크
                   textDecoration: "none",
                   letterSpacing: "0.05em",
                   transition: "transform 0.2s ease, color 0.2s ease",
@@ -242,7 +242,7 @@ export function GnbHeader({ w }: { w: number }) {
           left: 0,
           width: `${scrollProgress}%`,
           height: "2px",
-          backgroundColor: "#4B3FE1", // 🌟 스크롤 진행 바도 인디고블루로 통합 통일!
+          backgroundColor: "#2563EB", // 🌟 스크롤 진행 바도 블루로 통합 통일!
           transition: "width 0.08s ease-out",
           zIndex: 52,
         }}

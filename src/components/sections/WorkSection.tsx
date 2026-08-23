@@ -553,7 +553,7 @@ function CaseStudyDialog({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 900, color: "#4B3FE1", letterSpacing: "0.05em" }}>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 900, color: "#2563EB", letterSpacing: "0.05em" }}>
               CASE {project.num}
             </span>
             <span style={{ color: "#D1D5DB" }}>|</span>
@@ -627,7 +627,7 @@ function CaseStudyDialog({
               <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "4px", letterSpacing: "0.06em" }}>
                 DATE (PERIOD)
               </span>
-              <strong style={{ fontSize: "14px", fontWeight: 800, color: "#4B3FE1", display: "block" }}>
+              <strong style={{ fontSize: "14px", fontWeight: 800, color: "#2563EB", display: "block" }}>
                 {project.period}
               </strong>
             </div>
@@ -731,7 +731,7 @@ function CaseStudyDialog({
             {/* Column 1: Challenge */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", letterSpacing: "0.05em" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
                   CHALLENGE
                 </span>
               </div>
@@ -746,7 +746,7 @@ function CaseStudyDialog({
             {/* Column 2: Approach */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", letterSpacing: "0.05em" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
                   APPROACH
                 </span>
               </div>
@@ -761,7 +761,7 @@ function CaseStudyDialog({
             {/* Column 3: Outcome */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", letterSpacing: "0.05em" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
                   OUTCOME
                 </span>
               </div>
@@ -955,7 +955,7 @@ export function WorkSection({
     >
       {/* 1. Giant Bold PROJECTS Section Header */}
       <div style={{ marginBottom: isMobile ? "32px" : "44px" }}>
-        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#4B3FE1", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
+        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
           SELECTED WORKS · 2014–2026
         </span>
         <h2
@@ -1074,7 +1074,7 @@ export function WorkSection({
                   </div>
 
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#4B3FE1" }}>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
                       CASE {p.num}
                     </span>
                     <span style={{ color: "#D1D5DB" }}>·</span>
@@ -1095,7 +1095,7 @@ export function WorkSection({
                   <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
                     {p.keyword}
                   </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#4B3FE1", fontWeight: 800 }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
                     View Case →
                   </span>
                 </div>
@@ -1151,7 +1151,7 @@ export function WorkSection({
                   </div>
 
                   <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#4B3FE1" }}>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
                       CASE {p.num}
                     </span>
                     <span style={{ color: "#D1D5DB" }}>·</span>
@@ -1172,7 +1172,7 @@ export function WorkSection({
                   <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
                     {p.keyword}
                   </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#4B3FE1", fontWeight: 800 }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
                     View Case →
                   </span>
                 </div>
@@ -1212,7 +1212,7 @@ export function WorkSection({
               {/* Header Info */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "16px" }}>
                 <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#4B3FE1", letterSpacing: "0.08em" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.08em" }}>
                     CASE {p.num}
                   </span>
                   <h3 style={{ fontSize: "19px", fontWeight: 900, color: "#111111", margin: "4px 0 0 0", letterSpacing: "-0.02em" }}>
@@ -1257,7 +1257,7 @@ export function WorkSection({
                   <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
                     DATE (PERIOD)
                   </span>
-                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#4B3FE1", display: "block" }}>
+                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block" }}>
                     {p.period}
                   </strong>
                 </div>
@@ -1312,7 +1312,7 @@ export function WorkSection({
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 {/* Segment 1: Challenge */}
                 <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
                     01 / CHALLENGE
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
@@ -1325,7 +1325,7 @@ export function WorkSection({
 
                 {/* Segment 2: Approach */}
                 <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
                     02 / APPROACH
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
@@ -1338,7 +1338,7 @@ export function WorkSection({
 
                 {/* Segment 3: Outcome */}
                 <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#4B3FE1", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
                     03 / OUTCOME
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>

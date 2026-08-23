@@ -291,7 +291,7 @@ body {
     top: 6px !important;
     width: 12px !important;
     height: 12px !important;
-    background-color: #4B3FE1 !important; /* 브랜드 핵심 인디고 블루 */
+    background-color: #2563EB !important; /* 브랜드 핵심 블루 */
     border: 2px solid #FFFFFF !important;
     border-radius: 50% !important;
     z-index: 10 !important;
@@ -456,7 +456,7 @@ body {
   .leadership-section-meta {
     font-size: 9pt !important;
     margin-bottom: 4px !important;
-    color: #4B3FE1 !important;
+    color: #2563EB !important;
   }
 
   .leadership-section-h2 {
@@ -466,7 +466,7 @@ body {
   .leadership-lead-p {
     font-size: 14pt !important;
     margin-bottom: 8px !important;
-    color: #4B3FE1 !important;
+    color: #2563EB !important;
   }
   .leadership-desc-p {
     font-size: 11pt !important;
@@ -502,7 +502,7 @@ body {
   }
   .footer-title-h2 span {
     margin-top: 2px !important;
-    color: #4B3FE1 !important;
+    color: #2563EB !important;
   }
   .footer-signature-p {
     font-size: 11pt !important;

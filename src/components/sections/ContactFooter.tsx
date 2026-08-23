@@ -48,7 +48,7 @@ export function ContactFooter({ w }: { w: number }) {
               <button
                 onClick={copyEmail}
                 style={{
-                  backgroundColor: copied ? "#4B3FE1" : "#FFFFFF", // 🌟 인디고 블루 통합
+                  backgroundColor: copied ? "#2563EB" : "#FFFFFF", // 🌟 신뢰 블루 통합
                   color: copied ? "#FFFFFF" : "#111111",
                   border: "none",
                   padding: isMobile ? "12px 18px" : "13px 20px",

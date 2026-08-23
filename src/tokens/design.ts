@@ -1,7 +1,7 @@
 export const PORTFOLIO_PDF_URL = "/portfolio.pdf";
 export const PRIMARY = "#111111";
-export const ACCENT_BLUE = "#4B3FE1"; // 🌟 공식 프라이머리 인디고 블루로 통합
-export const ACCENT_INDIGO = "#4B3FE1"; // 🌟 공식 프라이머리 인디고 블루로 통합
+export const ACCENT_BLUE = "#2563EB"; // 🌟 사용자의 선호도에 맞춰 신뢰감 높은 블루로 통일
+export const ACCENT_INDIGO = "#2563EB"; // 🌟 사용자의 선호도에 맞춰 신뢰감 높은 블루로 통일
 export const ACCENT_GREEN = "#059669";
 export const CANVAS = "#FFFFFF";
 export const CANVAS_SUB = "#F8F9FA";
