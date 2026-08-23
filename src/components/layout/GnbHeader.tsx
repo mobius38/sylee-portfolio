@@ -4,6 +4,7 @@ export function GnbHeader({ w }: { w: number }) {
   const isMobile = w < 768;
   const [activeSection, setActiveSection] = useState<string>("about");
   const [scrollProgress, setScrollProgress] = useState<number>(0); // 🌟 실시간 스크롤 진행률 상태
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // 🌟 모바일 햄버거 메뉴 열림 상태
 
   const navItems = [
     { label: "ABOUT", href: "#about", id: "about" },
@@ -11,6 +12,18 @@ export function GnbHeader({ w }: { w: number }) {
     { label: "LEADERSHIP", href: "#leadership", id: "leadership" },
     { label: "CONTACT", href: "#contact", id: "contact" },
   ];
+
+  // 🌟 모바일 메뉴가 열렸을 때 뒷배경 스크롤 방지
+  useEffect(() => {
+    if (isMenuOpen && isMobile) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen, isMobile]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +57,7 @@ export function GnbHeader({ w }: { w: number }) {
         backgroundColor: "rgba(255, 255, 255, 0.92)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        padding: isMobile ? "0 12px" : "0 40px", /* 모바일 패딩 조정 */
+        padding: isMobile ? "0 20px" : "0 40px", /* 🌟 좌우 패딩 모바일 최적화 */
         height: "60px",
         display: "flex",
         alignItems: "center",
@@ -54,9 +67,10 @@ export function GnbHeader({ w }: { w: number }) {
       {/* Brand Logo */}
       <a
         href="#about"
+        onClick={() => setIsMenuOpen(false)}
         style={{
           fontFamily: "'JetBrains Mono', monospace",
-          fontSize: isMobile ? "12px" : "14px", /* 모바일 로고 가독성 위해 12px로 복구 */
+          fontSize: isMobile ? "13px" : "14px", /* 🌟 모바일 메뉴가 분리되므로 로고를 13px로 당당히 확대 */
           fontWeight: 900,
           color: "#111111",
           textDecoration: "none",
@@ -64,6 +78,7 @@ export function GnbHeader({ w }: { w: number }) {
           alignItems: "center",
           gap: "6px",
           whiteSpace: "nowrap",
+          zIndex: 101, /* 🌟 메뉴 오버레이보다 위에 존재 */
         }}
       >
         <span>LEE SUNYOUNG</span>
@@ -75,31 +90,124 @@ export function GnbHeader({ w }: { w: number }) {
         )}
       </a>
 
-      {/* Nav 4 Items */}
-      <nav style={{ display: "flex", gap: isMobile ? "9px" : "24px" }}> {/* 모바일 메뉴 간격 최적화 */}
-        {navItems.map((item) => {
-          const isActive = activeSection === item.id;
-          return (
-            <a
-              key={item.label}
-              href={item.href}
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: isMobile ? "11px" : "13px", /* 모바일 메뉴 가독성 위해 11px로 복구 */
-                fontWeight: isActive ? 900 : 600,
-                color: isActive ? "#2563EB" : "#4B5563",
-                textDecoration: "none",
-                position: "relative",
-                padding: "4px 0",
-                whiteSpace: "nowrap",
-                transition: "color 0.15s ease",
-              }}
-            >
-              {item.label}
-            </a>
-          );
-        })}
-      </nav>
+      {/* Nav 4 Items / Hamburger Menu */}
+      {isMobile ? (
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle Menu"
+          className="no-print"
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: "8px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "5px",
+            zIndex: 101, /* 🌟 오버레이 메뉴 위에 햄버거 상시 노출 */
+          }}
+        >
+          <span
+            style={{
+              width: "20px",
+              height: "2px",
+              backgroundColor: "#111111",
+              transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease",
+              transform: isMenuOpen ? "translateY(7px) rotate(45deg)" : "none",
+            }}
+          />
+          <span
+            style={{
+              width: "20px",
+              height: "2px",
+              backgroundColor: "#111111",
+              transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease",
+              opacity: isMenuOpen ? 0 : 1,
+            }}
+          />
+          <span
+            style={{
+              width: "20px",
+              height: "2px",
+              backgroundColor: "#111111",
+              transition: "transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease",
+              transform: isMenuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+            }}
+          />
+        </button>
+      ) : (
+        <nav style={{ display: "flex", gap: "24px" }}>
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "13px",
+                  fontWeight: isActive ? 900 : 600,
+                  color: isActive ? "#2563EB" : "#4B5563",
+                  textDecoration: "none",
+                  position: "relative",
+                  padding: "4px 0",
+                  whiteSpace: "nowrap",
+                  transition: "color 0.15s ease",
+                }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+      )}
+
+      {/* 🌟 모바일 풀스크린 오버레이 메뉴 */}
+      {isMobile && isMenuOpen && (
+        <div
+          className="no-print"
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(255, 255, 255, 0.98)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            zIndex: 99,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "36px",
+            animation: "fadeInGnb 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id;
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "22px",
+                  fontWeight: isActive ? 900 : 500,
+                  color: isActive ? "#2563EB" : "#111111",
+                  textDecoration: "none",
+                  letterSpacing: "0.05em",
+                  transition: "transform 0.2s ease, color 0.2s ease",
+                  transform: isActive ? "scale(1.08)" : "none",
+                }}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+        </div>
+      )}
 
       {/* 🌟 1. 배경 트랙 가이드 라인 (전체 너비의 1px 연회색 실선) */}
       <div

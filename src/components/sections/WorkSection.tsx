@@ -456,6 +456,7 @@ function CaseStudyDialog({
   isMobile: boolean;
 }) {
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null); // 🌟 이미지 라이트박스 줌 상태
   const currentSlide = project.slides[activeSlideIdx] ?? project.slides[0];
 
   // Reset slide index when active project changes
@@ -478,10 +479,16 @@ function CaseStudyDialog({
     onNavigateProject(PROJECTS_DATA[nextIdx]);
   };
 
-  // Esc key & body scroll lock
+  // Esc key & body scroll lock (zoomedImage가 열렸을 때 지능형 처리)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        if (zoomedImage) {
+          setZoomedImage(null);
+        } else {
+          onClose();
+        }
+      }
     };
     window.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
@@ -490,7 +497,7 @@ function CaseStudyDialog({
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [onClose]);
+  }, [onClose, zoomedImage]);
 
   return (
     <div
@@ -655,12 +662,14 @@ function CaseStudyDialog({
               key={currentSlide.src}
               src={currentSlide.src}
               alt={currentSlide.alt}
+              onClick={() => setZoomedImage(currentSlide.src)} // 🌟 클릭 시 라이트박스 오픈
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "contain" as const,
                 objectPosition: "center" as const,
                 display: "block",
+                cursor: "zoom-in", // 🌟 돋보기 커서
                 animation: "fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards",
               }}
             />
@@ -807,7 +816,73 @@ function CaseStudyDialog({
           </div>
         </div>
       </div>
-    </div>
+    
+    {/* 🌟 이미지 라이트박스 줌 뷰어 모달 */}
+    {zoomedImage && (
+      <div
+        role="dialog"
+        aria-modal="true"
+        className="no-print"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          backgroundColor: "rgba(10, 12, 16, 0.9)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          zIndex: 2000,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "zoom-out",
+          animation: "fadeIn 0.25s ease-out",
+        }}
+        onClick={() => setZoomedImage(null)}
+      >
+        {/* 닫기 버튼 */}
+        <button
+          onClick={() => setZoomedImage(null)}
+          style={{
+            position: "absolute",
+            top: "24px",
+            right: "24px",
+            width: "44px",
+            height: "44px",
+            borderRadius: "50%",
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            color: "#FFFFFF",
+            border: "none",
+            cursor: "pointer",
+            fontSize: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transition: "background-color 0.15s ease",
+            zIndex: 2010,
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.3)"}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.15)"}
+        >
+          ✕
+        </button>
+        
+        <img
+          src={zoomedImage}
+          alt="Zoomed View"
+          style={{
+            maxWidth: "94vw",
+            maxHeight: "92vh",
+            objectFit: "contain",
+            borderRadius: "4px",
+            boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.7)",
+            animation: "fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        />
+      </div>
+    )}
+  </div>
   );
 }
 
