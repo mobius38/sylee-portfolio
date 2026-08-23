@@ -50,7 +50,7 @@ export function HeroProfileSection({
   const [hoveredProject, setHoveredProject] = useState<{ id: string } | null>(null);
 
   const metrics = [
-    { num: "15+", label: "Years Experience", sub: "Product Design & UI/UX" },
+    { num: "10+", label: "Years Experience", sub: "Product Design & UI/UX" },
     { num: "12", label: "Selected Works", sub: "Enterprise · Commerce · Financial · LMS" },
     { num: "26+", label: "Design System", sub: "Foundations & UI Kit" },
     { num: "100%", label: "Hi-Fi Prototyping", sub: "Interaction & Validation" },
@@ -345,7 +345,7 @@ export function HeroProfileSection({
             화면 설계에서 제품의 구조와 방향 설계로
           </h3>
           <p className="timeline-section-desc" style={{ fontSize: isMobile ? "14.5px" : "16px", color: "#374151", lineHeight: 1.65, margin: 0 }}>
-            15년 10개월간 화면과 인터랙션 설계에서 시작해, 복잡한 제품의 사용성 개선과 디자인 시스템, 프로토타입 기반 제품 검증으로 확장해왔습니다.
+            10년 이상 화면과 인터랙션 설계에서 시작해, 복잡한 제품의 사용성 개선과 디자인 시스템, 프로토타입 기반 제품 검증으로 확장해왔습니다.
           </p>
         </div>
 

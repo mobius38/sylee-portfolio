@@ -32,7 +32,7 @@ export function CareerSection({ w }: { w: number }) {
           화면 설계에서 제품의 구조와 방향 설계로
         </p>
         <p style={{ fontSize: isMobile ? "13px" : "15px", color: "#6B7280", margin: 0, maxWidth: "900px" }}>
-          15년간 화면과 인터랙션 설계에서 시작해, 복잡한 제품의 구조와 디자인 시스템, 제품 방향을 함께 설계하는 역할로 확장해왔습니다.
+          10년 이상 화면과 인터랙션 설계에서 시작해, 복잡한 제품의 구조와 디자인 시스템, 제품 방향을 함께 설계하는 역할로 확장해왔습니다.
         </p>
       </div>
 

@@ -972,7 +972,7 @@ export function WorkSection({
           PROJECTS
         </h2>
         <p style={{ fontSize: isMobile ? "14px" : "17px", color: "#6B7280", margin: 0, maxWidth: "900px", lineHeight: 1.6 }}>
-          엔터프라이즈 플랫폼부터 금융, 이커머스, 디자인 시스템까지 — 15년간 비즈니스 성장을 견인한 핵심 프로덕트 아카이브입니다.
+          엔터프라이즈 플랫폼부터 금융, 이커머스, 디자인 시스템까지 — 10년 이상 비즈니스 성장을 견인한 핵심 프로덕트 아카이브입니다.
         </p>
       </div>
 
