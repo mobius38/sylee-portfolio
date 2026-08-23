@@ -28,6 +28,7 @@ export function HeroProfileSection({
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null); // 🌟 썸네일 팝업 DOM 레퍼런스
 
   // 🌟 프로젝트 ID별 대표 썸네일 매핑
   const projectThumbnails: Record<string, string> = {
@@ -45,8 +46,8 @@ export function HeroProfileSection({
     "mobile-nh": imgNH,
   };
 
-  // 🌟 실시간 마우스 커서 추적 및 썸네일 호버 상태
-  const [hoveredProject, setHoveredProject] = useState<{ id: string; x: number; y: number } | null>(null);
+  // 🌟 썸네일 호버 상태 (좌표는 state에 두지 않고 ref를 통해 DOM 직접 조작하여 60fps 보장)
+  const [hoveredProject, setHoveredProject] = useState<{ id: string } | null>(null);
 
   const metrics = [
     { num: "15+", label: "Years Experience", sub: "Product Design & UI/UX" },
@@ -570,21 +571,23 @@ export function HeroProfileSection({
                             }}
                             onMouseEnter={(e) => {
                               if (item.projectId) {
-                                setHoveredProject({
-                                  id: item.projectId,
-                                  x: e.clientX,
-                                  y: e.clientY,
-                                });
+                                setHoveredProject({ id: item.projectId });
                                 e.currentTarget.style.color = "#2563EB";
+                                
+                                // 마운트 직후 최초 위치 즉각 매핑
+                                const clientX = e.clientX;
+                                const clientY = e.clientY;
+                                setTimeout(() => {
+                                  if (tooltipRef.current) {
+                                    tooltipRef.current.style.transform = `translate3d(${clientX}px, ${clientY}px, 0) translate(-50%, -120%)`;
+                                    tooltipRef.current.style.opacity = "1";
+                                  }
+                                }, 0);
                               }
                             }}
                             onMouseMove={(e) => {
-                              if (item.projectId) {
-                                setHoveredProject({
-                                  id: item.projectId,
-                                  x: e.clientX,
-                                  y: e.clientY,
-                                });
+                              if (item.projectId && tooltipRef.current) {
+                                tooltipRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -120%)`;
                               }
                             }}
                             onMouseLeave={(e) => {
@@ -619,11 +622,12 @@ export function HeroProfileSection({
       {/* 🌟 타임라인 텍스트 호버 시 마우스 따라다니는 미니 썸네일 팝업 */}
       {!isMobile && hoveredProject && projectThumbnails[hoveredProject.id] && (
         <div
+          ref={tooltipRef}
           className="no-print"
           style={{
             position: "fixed",
-            top: hoveredProject.y,
-            left: hoveredProject.x,
+            top: 0,
+            left: 0,
             width: "130px",
             height: "130px",
             borderRadius: "12px",
@@ -631,15 +635,18 @@ export function HeroProfileSection({
             border: "3px solid #FFFFFF",
             boxShadow: "0 16px 32px -4px rgba(0, 0, 0, 0.22), 0 4px 12px -4px rgba(0, 0, 0, 0.15)",
             pointerEvents: "none",
-            transform: "translate(-50%, -120%)", /* 마우스 커서 정중앙 위에 둥실 띄움 */
+            transform: "translate3d(0px, 0px, 0) translate(-50%, -120%)", /* 하드웨어 가속 보장 */
+            willChange: "transform, opacity",
+            opacity: 0,
             zIndex: 9999,
             backgroundColor: "#FFFFFF",
-            animation: "fadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1)",
+            transition: "opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
           <img
             src={projectThumbnails[hoveredProject.id]}
             alt="Mini Thumbnail"
+            decoding="async"
             style={{
               width: "100%",
               height: "100%",
