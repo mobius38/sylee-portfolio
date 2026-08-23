@@ -887,10 +887,44 @@ function CaseStudyDialog({
 }
 
 // ─── Main WORK Section (Unified Web, Enterprise & Mobile) ────────────────────
-export function WorkSection({ w }: { w: number }) {
+export function WorkSection({
+  w,
+  selectedProjectId,
+  onClearSelectedProject,
+}: {
+  w: number;
+  selectedProjectId?: string | null;
+  onClearSelectedProject?: () => void;
+}) {
   const isMobile = w < 768;
   const [activeKeyword, setActiveKeyword] = useState<string>("ALL");
   const [selectedModalProject, setSelectedModalProject] = useState<ProjectItem | null>(null);
+
+  // 🌟 외부(타임라인 클릭)에서 프로젝트 ID 유입 시 동적으로 상세 모달 오픈
+  useEffect(() => {
+    if (selectedProjectId) {
+      const proj = PROJECTS_DATA.find((p) => p.id === selectedProjectId);
+      if (proj) {
+        setSelectedModalProject(proj);
+      }
+    }
+  }, [selectedProjectId]);
+
+  // 🌟 모달 닫힐 때 부모 컴포넌트의 연동 상태도 클리어해 줌
+  const handleCloseModal = () => {
+    setSelectedModalProject(null);
+    if (onClearSelectedProject) {
+      onClearSelectedProject();
+    }
+  };
+
+  // 🌟 모달 내 프로젝트 네비게이션 시 연동 상태 클리어
+  const handleNavigateModalProject = (proj: ProjectItem) => {
+    setSelectedModalProject(proj);
+    if (onClearSelectedProject) {
+      onClearSelectedProject();
+    }
+  };
 
   const keywords = [
     "ALL",
@@ -1152,8 +1186,8 @@ export function WorkSection({ w }: { w: number }) {
       {selectedModalProject && (
         <CaseStudyDialog
           project={selectedModalProject}
-          onClose={() => setSelectedModalProject(null)}
-          onNavigateProject={setSelectedModalProject}
+          onClose={handleCloseModal}
+          onNavigateProject={handleNavigateModalProject}
           isMobile={isMobile}
         />
       )}

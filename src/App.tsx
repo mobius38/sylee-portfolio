@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useWindowWidth } from "./hooks/useWindowWidth";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 import { GnbHeader } from "./components/layout/GnbHeader";
@@ -10,15 +11,16 @@ import { FloatingControls } from "./components/common/FloatingControls";
 export default function App() {
   const w = useWindowWidth();
   useScrollReveal();
+  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null); // 🌟 타임라인 클릭 연동 프로젝트 ID 상태
 
   return (
     <div id="top" style={{ backgroundColor: "#FFFFFF", minHeight: "100vh", color: "#111111" }}>
       <GnbHeader w={w} />
       <main>
         {/* 01. ABOUT (Hero + Metrics + 3 Core Competencies + 15-Year Career Expansion) */}
-        <HeroProfileSection w={w} />
+        <HeroProfileSection w={w} onSelectProject={setSelectedProjectId} />
         {/* 02. PROJECTS (Keyword Chips + Featured Top 2 + 6 Platform Grid + Full Deep-Dive Modal) */}
-        <WorkSection w={w} />
+        <WorkSection w={w} selectedProjectId={selectedProjectId} onClearSelectedProject={() => setSelectedProjectId(null)} />
         {/* 03. LEADERSHIP (Dark Mode Canvas + Interactive Spotlight Focus Matrix) */}
         <LeadershipSection w={w} />
       </main>

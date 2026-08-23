@@ -1,6 +1,26 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-export function HeroProfileSection({ w }: { w: number }) {
+// 🌟 각 프로젝트별 매핑용 대표 썸네일 이미지 임포트
+import imgDashboard from "../../imports/optimized/dolinker-dashboard.webp";
+import imgIntranetHome from "../../imports/optimized/intranet-admin.webp";
+import imgDworksProduct from "../../imports/optimized/dworks-product.webp";
+import imgDworksBranding from "../../imports/optimized/dworks-branding.webp";
+import imgDworksDSThumbnail from "../../imports/optimized/dworks-ds-thumbnail.jpg";
+import imgSalesBridgeProduct from "../../imports/optimized/salesbridge-product.webp";
+import imgCSTalkOverview from "../../imports/optimized/cstalk-overview.webp";
+import imgShaluv from "../../imports/commerce-shaluv.png";
+import imgDime from "../../imports/optimized/mobile-dime.webp";
+import imgLMS from "../../imports/hanmilab-lms.png";
+import imgHelloLink from "../../imports/optimized/mobile-hellolink.webp";
+import imgNH from "../../imports/optimized/mobile-nh.webp";
+
+export function HeroProfileSection({
+  w,
+  onSelectProject,
+}: {
+  w: number;
+  onSelectProject?: (projId: string) => void;
+}) {
   const isMobile = w < 768;
   const [activeIdx, setActiveIdx] = useState(0);
   const [hoveredYearIdx, setHoveredYearIdx] = useState<number | null>(null);
@@ -8,6 +28,25 @@ export function HeroProfileSection({ w }: { w: number }) {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // 🌟 프로젝트 ID별 대표 썸네일 매핑
+  const projectThumbnails: Record<string, string> = {
+    "doolinker": imgDashboard,
+    "intranet": imgIntranetHome,
+    "dualspace": imgDworksProduct,
+    "dworks-design-system": imgDworksDSThumbnail,
+    "salesbridge": imgSalesBridgeProduct,
+    "dworks-brand-identity": imgDworksBranding,
+    "cstalk": imgCSTalkOverview,
+    "commerce-shaluv": imgShaluv,
+    "mobile-dime": imgDime,
+    "hanmilab-lms": imgLMS,
+    "mobile-hellolink": imgHelloLink,
+    "mobile-nh": imgNH,
+  };
+
+  // 🌟 실시간 마우스 커서 추적 및 썸네일 호버 상태
+  const [hoveredProject, setHoveredProject] = useState<{ id: string; x: number; y: number } | null>(null);
 
   const metrics = [
     { num: "15+", label: "Years Experience", sub: "Product Design & UI/UX" },
@@ -22,53 +61,53 @@ export function HeroProfileSection({ w }: { w: number }) {
     {
       year: "2026",
       items: [
-        { date: "2026.04", title: "MIZUHO 일본은행 사내포탈 설계 (IA·권한·컴포넌트)" },
-        { date: "2026.03", title: "Figma Variables 기반 디자인 시스템 구축" },
-        { date: "2026.01", title: "DO.LiNKER Workflow 생성·실행·모니터링 UX 설계" },
+        { date: "2026.04", title: "MIZUHO 일본은행 사내포탈 설계 (IA·권한·컴포넌트)", projectId: "intranet" },
+        { date: "2026.03", title: "Figma Variables 기반 디자인 시스템 구축", projectId: "dworks-design-system" },
+        { date: "2026.01", title: "DO.LiNKER Workflow 생성·실행·모니터링 UX 설계", projectId: "doolinker" },
       ],
     },
     {
       year: "2025",
       items: [
-        { date: "2025.12", title: "Trigger/Action 기반 Workflow Builder UX 설계" },
-        { date: "2025.11", title: "DO.LiNKER 브랜드 아이덴티티(BI) 수립" },
-        { date: "2025.08", title: "Dualspace 통합 플랫폼 기획 & Hi-Fi 프로토타입" },
-        { date: "2025.07", title: "DWorks 고객상담·협업 통합 플랫폼 UX/UI 설계" },
+        { date: "2025.12", title: "Trigger/Action 기반 Workflow Builder UX 설계", projectId: "doolinker" },
+        { date: "2025.11", title: "DO.LiNKER 브랜드 아이덴티티(BI) 수립", projectId: "doolinker" },
+        { date: "2025.08", title: "Dualspace 통합 플랫폼 기획 & Hi-Fi 프로토타입", projectId: "dualspace" },
+        { date: "2025.07", title: "DWorks 고객상담·협업 통합 플랫폼 UX/UI 설계", projectId: "dualspace" },
       ],
     },
     {
       year: "2024",
       items: [
-        { date: "2024.12", title: "SalesBridge 데스크톱 & PWA UX/UI 설계" },
-        { date: "2024.06", title: "DWorks 멀티 플랫폼 디자인 시스템 구축" },
+        { date: "2024.12", title: "SalesBridge 데스크톱 & PWA UX/UI 설계", projectId: "salesbridge" },
+        { date: "2024.06", title: "DWorks 멀티 플랫폼 디자인 시스템 구축", projectId: "dworks-design-system" },
       ],
     },
     {
       year: "2022–23",
       items: [
-        { date: "2023.06", title: "DWorks 엔터프라이즈 리브랜딩 & 공식 사이트 구축" },
-        { date: "2022.10", title: "CS Talk 고객상담 플랫폼 대시보드 UI/UX 설계" },
+        { date: "2023.06", title: "DWorks 엔터프라이즈 리브랜딩 & 공식 사이트 구축", projectId: "dworks-brand-identity" },
+        { date: "2022.10", title: "CS Talk 고객상담 플랫폼 대시보드 UI/UX 설계", projectId: "cstalk" },
       ],
     },
     {
       year: "2019–22",
       items: [
-        { date: "2022.09", title: "Shaluv 아동복 리브랜딩 & 연매출 1억 달성" },
-        { date: "2019.08", title: "자사몰 및 멀티 이커머스 채널 운영 총괄" },
+        { date: "2022.09", title: "Shaluv 아동복 리브랜딩 & 연매출 1억 달성", projectId: "commerce-shaluv" },
+        { date: "2019.08", title: "자사몰 및 멀티 이커머스 채널 운영 총괄", projectId: "commerce-shaluv" },
       ],
     },
     {
       year: "2017–18",
       items: [
-        { date: "2018.03", title: "Dime 소셜 데이팅 모바일 앱 UX/UI 설계" },
-        { date: "2017.07", title: "LMS 에듀테크 플랫폼 사용자 & 어드민 구축" },
+        { date: "2018.03", title: "Dime 소셜 데이팅 모바일 앱 UX/UI 설계", projectId: "mobile-dime" },
+        { date: "2017.07", title: "LMS 에듀테크 플랫폼 사용자 & 어드민 구축", projectId: "hanmilab-lms" },
       ],
     },
     {
       year: "2011–16",
       items: [
-        { date: "2016.02", title: "헬로링크 커머스 & 매거진 모바일 앱 설계" },
-        { date: "2015.01", title: "NH 바로바로마켓 모바일 & 금융 태블릿 UI 설계" },
+        { date: "2016.02", title: "헬로링크 커머스 & 매거진 모바일 앱 설계", projectId: "mobile-hellolink" },
+        { date: "2015.01", title: "NH 바로바로마켓 모바일 & 금융 태블릿 UI 설계", projectId: "mobile-nh" },
         { date: "2014.11", title: "삼성화재 SMS 모바일 웹 인터페이스 설계" },
         { date: "2011.08", title: "네이티브 앱 iOS/Android UI 가이드 수립" },
       ],
@@ -523,12 +562,48 @@ export function HeroProfileSection({ w }: { w: number }) {
                             {item.date}
                           </span>
                           <span
+                            onClick={(e) => {
+                              if (item.projectId && onSelectProject) {
+                                e.stopPropagation();
+                                onSelectProject(item.projectId);
+                              }
+                            }}
+                            onMouseEnter={(e) => {
+                              if (item.projectId) {
+                                setHoveredProject({
+                                  id: item.projectId,
+                                  x: e.clientX,
+                                  y: e.clientY,
+                                });
+                                e.currentTarget.style.color = "#2563EB";
+                              }
+                            }}
+                            onMouseMove={(e) => {
+                              if (item.projectId) {
+                                setHoveredProject({
+                                  id: item.projectId,
+                                  x: e.clientX,
+                                  y: e.clientY,
+                                });
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              setHoveredProject(null);
+                              if (item.projectId) {
+                                e.currentTarget.style.color = "#111111";
+                              }
+                            }}
                             style={{
                               fontSize: isMobile ? "13.5px" : "14px",
-                              color: "#111111",
-                              fontWeight: 600,
+                              color: item.projectId ? "#111111" : "#4B5563",
+                              fontWeight: item.projectId ? 700 : 500,
                               letterSpacing: "-0.015em",
                               wordBreak: "keep-all",
+                              cursor: item.projectId ? "pointer" : "default",
+                              textDecoration: item.projectId ? "underline" : "none",
+                              textDecorationStyle: "dotted",
+                              textUnderlineOffset: "4px",
+                              transition: "color 0.15s ease",
                             }}
                           >
                             {item.title}
@@ -543,6 +618,39 @@ export function HeroProfileSection({ w }: { w: number }) {
           </div>
         </div>
       </div>
+      
+      {/* 🌟 타임라인 텍스트 호버 시 마우스 따라다니는 미니 썸네일 팝업 */}
+      {!isMobile && hoveredProject && projectThumbnails[hoveredProject.id] && (
+        <div
+          className="no-print"
+          style={{
+            position: "fixed",
+            top: hoveredProject.y,
+            left: hoveredProject.x,
+            width: "130px",
+            height: "130px",
+            borderRadius: "12px",
+            overflow: "hidden",
+            border: "3px solid #FFFFFF",
+            boxShadow: "0 16px 32px -4px rgba(0, 0, 0, 0.22), 0 4px 12px -4px rgba(0, 0, 0, 0.15)",
+            pointerEvents: "none",
+            transform: "translate(-50%, -120%)", /* 마우스 커서 정중앙 위에 둥실 띄움 */
+            zIndex: 9999,
+            backgroundColor: "#FFFFFF",
+            animation: "fadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          <img
+            src={projectThumbnails[hoveredProject.id]}
+            alt="Mini Thumbnail"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      )}
     </section>
   );
 }
