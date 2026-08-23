@@ -573,16 +573,9 @@ export function HeroProfileSection({
                               if (item.projectId) {
                                 setHoveredProject({ id: item.projectId });
                                 e.currentTarget.style.color = "#2563EB";
-                                
-                                // 마운트 직후 최초 위치 즉각 매핑
-                                const clientX = e.clientX;
-                                const clientY = e.clientY;
-                                setTimeout(() => {
-                                  if (tooltipRef.current) {
-                                    tooltipRef.current.style.transform = `translate3d(${clientX}px, ${clientY}px, 0) translate(-50%, -120%)`;
-                                    tooltipRef.current.style.opacity = "1";
-                                  }
-                                }, 0);
+                                if (tooltipRef.current) {
+                                  tooltipRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -120%)`;
+                                }
                               }
                             }}
                             onMouseMove={(e) => {
@@ -619,8 +612,8 @@ export function HeroProfileSection({
         </div>
       </div>
       
-      {/* 🌟 타임라인 텍스트 호버 시 마우스 따라다니는 미니 썸네일 팝업 */}
-      {!isMobile && hoveredProject && projectThumbnails[hoveredProject.id] && (
+      {/* 🌟 타임라인 텍스트 호버 시 마우스 따라다니는 미니 썸네일 팝업 (상시 마운트로 null ref 에러 방지) */}
+      {!isMobile && (
         <div
           ref={tooltipRef}
           className="no-print"
@@ -635,24 +628,26 @@ export function HeroProfileSection({
             border: "3px solid #FFFFFF",
             boxShadow: "0 16px 32px -4px rgba(0, 0, 0, 0.22), 0 4px 12px -4px rgba(0, 0, 0, 0.15)",
             pointerEvents: "none",
-            transform: "translate3d(0px, 0px, 0) translate(-50%, -120%)", /* 하드웨어 가속 보장 */
+            transform: "translate3d(0px, 0px, 0) translate(-50%, -120%)",
             willChange: "transform, opacity",
-            opacity: 0,
+            opacity: hoveredProject ? 1 : 0,
             zIndex: 9999,
             backgroundColor: "#FFFFFF",
             transition: "opacity 0.15s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
-          <img
-            src={projectThumbnails[hoveredProject.id]}
-            alt="Mini Thumbnail"
-            decoding="async"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-          />
+          {hoveredProject && projectThumbnails[hoveredProject.id] && (
+            <img
+              src={projectThumbnails[hoveredProject.id]}
+              alt="Mini Thumbnail"
+              decoding="async"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          )}
         </div>
       )}
     </section>
