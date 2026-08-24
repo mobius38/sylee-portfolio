@@ -189,11 +189,11 @@ export const PROJECTS_DATA: ProjectItem[] = [
     client: "㈜스펙트라",
     period: "2024.01 ~ 2024.06",
     serviceType: "Enterprise Design System",
-    role: "Brand & Design System",
+    role: "Product Design · Design System",
     description: "Figma Variables 기반 Foundations 6종 및 공통 Components 26종을 구축하여 스펙트라 전사 제품군의 UI 개발 표준을 수립했습니다.",
-    challenge: "멀티 프로덕트 전반에서 UI 패턴과 컴포넌트가 파편화되어 신규 화면 개발 시 디자인·엔지니어링 리소스 중복과 일관성 저하 발생.",
-    approach: "Figma Variables 기반 토큰(Color, Typography, Spacing) 체계를 정립하고 Foundations 6종과 공통 Components 26종 라이브러리를 구축하여 실서비스 제품과 연동.",
-    outcome: "스펙트라 전사 제품군에 즉시 재사용 가능한 단일 디자인 시스템을 배포하여 디자인-개발 협업 효율 및 화면 일관성을 비약적으로 향상.",
+    challenge: "멀티 프로덕트 전반에서 UI 패턴과 컴포넌트가 파편화되어 신규 화면 개발 시 디자인·엔지니어링 리소스 중복과 일관성 저하가 발생했습니다.",
+    approach: "제품별 UI를 개별 관리하는 대신, 여러 제품에서 확장·재사용할 수 있도록 Figma Variables 기반 토큰 체계를 정의했습니다. 이를 Foundations 6종과 공통 Components 26종으로 구조화해 실서비스 제품에 적용했습니다.",
+    outcome: "스펙트라 제품군에서 공통으로 재사용할 수 있는 디자인 기준을 구축해 제품 간 UI 일관성을 확보하고, 디자인·개발이 동일한 컴포넌트 기준으로 협업할 수 있는 기반을 마련했습니다.",
     pipelineTitle: "DESIGN SYSTEM TOKENS & COMPONENTS",
     pipelineSteps: [
       { label: "FOUNDATIONS" },
@@ -736,7 +736,7 @@ function CaseStudyDialog({
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                도전 과제
+                핵심 문제
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.challenge}
@@ -751,7 +751,7 @@ function CaseStudyDialog({
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                의사결정
+                핵심 판단
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.approach}
@@ -766,7 +766,7 @@ function CaseStudyDialog({
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                비즈니스 임팩트
+                결과 및 영향
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.outcome}
@@ -1316,7 +1316,7 @@ export function WorkSection({
                     01 / CHALLENGE
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    도전 과제
+                    핵심 문제
                   </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.challenge}
@@ -1329,7 +1329,7 @@ export function WorkSection({
                     02 / DECISION
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    의사결정
+                    핵심 판단
                   </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.approach}
@@ -1342,7 +1342,7 @@ export function WorkSection({
                     03 / IMPACT
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    비즈니스 임팩트
+                    결과 및 영향
                   </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.outcome}
