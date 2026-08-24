@@ -39,6 +39,7 @@ import imgShaluv from "../../imports/commerce-shaluv.png";
 import imgShaluvPromotions from "../../imports/optimized/commerce-shaluv-promotions.png";
 import imgDime from "../../imports/optimized/mobile-dime.webp";
 import imgLMS from "../../imports/hanmilab-lms.png";
+import imgSamsungFire from "../../imports/optimized/mobile-samsungfire.webp";
 
 export interface ShowcaseSlide {
   src: string;
@@ -439,6 +440,34 @@ export const PROJECTS_DATA: ProjectItem[] = [
     thumbnail: imgNH,
     slides: [
       { src: imgNH, alt: "NH바로바로마켓", tabLabel: "커머스 대표 화면", title: "NH바로바로마켓 — 모바일 커머스 전면 리뉴얼", caption: "상품 탐색부터 주문/결제까지 모바일 사용자 동선을 최적화한 네이티브 앱" },
+    ],
+  },
+  {
+    id: "mobile-samsungfire",
+    num: "13",
+    title: "SAMSUNG FIRE",
+    subtitle: "Samsung Fire Membership Mobile UI/UX (2014)",
+    categoryFlow: "Membership Service · Mobile UX",
+    keyword: "Mobile",
+    client: "삼성화재 (㈜인포뱅크)",
+    period: "2014.10 ~ 2014.12",
+    serviceType: "Mobile Web & App UX/UI Design",
+    role: "Product Design",
+    description: "삼성화재 모바일 멤버십 서비스의 핵심 사용성 동선(충전·전송·내역 확인)을 구조화하고 시각적 위계를 최적화했습니다.",
+    challenge: "복잡한 금융 멤버십 정보와 다중 메시지 전송 프로세스가 모바일 작은 화면에 파편화되어 노출되어, 사용자가 잔액 확인 및 메시지 발송 등 핵심 기능을 빠르게 수행하기 어려웠습니다.",
+    approach: "기능 위주의 복잡한 메뉴 나열 대신, '캐시 충전', '메시지 전송', '결제 내역' 등 실사용 빈도가 높은 3대 핵심 태스크를 메인 화면에 대형 그리드 카드로 레이아웃화했습니다. 주소록 불러오기와 전송 흐름을 한 화면 내로 단순화하여 터치 오작동을 줄이고 전송 편의성을 극대화했습니다.",
+    outcome: "삼성화재 멤버십 모바일 환경의 핵심 사용 흐름을 간소화하고 직관적인 비주얼 위계를 구축하여 대고객 메시징 서비스의 접근성과 정보 전달력을 확보했습니다.",
+    pipelineTitle: "MEMBERSHIP CORE UX PIPELINE",
+    pipelineSteps: [
+      { label: "TASK ANALYSIS" },
+      { label: "GRID LAYOUT" },
+      { label: "SENDER FLOW" },
+      { label: "VISUAL HEIRARCHY" },
+    ],
+    tags: ["Mobile_Design", "Financial", "Membership_Service", "Task_Simplification", "UI_Design"],
+    thumbnail: imgSamsungFire,
+    slides: [
+      { src: imgSamsungFire, alt: "삼성화재 모바일 서비스", tabLabel: "삼성화재 대표 화면", title: "삼성화재 — 모바일 멤버십 서비스 UI/UX 설계", caption: "삼성화재 멤버십 모바일 메인 그리드 카드 레이아웃 및 메시지 전송·주소록 플로우 설계", fit: "contain" },
     ],
   },
 ];
