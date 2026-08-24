@@ -64,7 +64,6 @@ export interface ProjectItem {
   period: string;
   serviceType: string;
   role: string;
-  contribution?: string;
   description: string;
   challenge: string;
   approach: string;
@@ -90,8 +89,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     client: "도전하는사람들",
     period: "2025.11 ~ 2026.04",
     serviceType: "Workflow Automation Platform",
-    role: "Product Design · UX Architecture",
-    contribution: "Sole Product Designer (Workflow UX · Interaction · Hi-Fi Prototype · Design System)",
+    role: "Product Design",
     description: "Trigger / Action 기반의 복잡한 비즈니스 로직을 비전문가도 직관적으로 구성할 수 있는 워크플로우 자동화 플랫폼을 설계했습니다.",
     challenge: "복잡한 엔터프라이즈 자동화 환경에서 Trigger와 Action 간 연결 관계와 실행 상태를 한눈에 파악하기 어려워, 워크플로우를 설정하고 관리하는 과정의 진입 장벽이 높았습니다.",
     approach: "복잡한 자동화 로직을 개별 설정 화면으로 나누는 대신, 전체 흐름을 한눈에 파악할 수 있도록 노드 기반 Canvas로 구조화했습니다. Trigger–Action–Monitor 흐름과 Drag & Drop 인터랙션을 설계하고, Hi-Fi Prototype으로 주요 동작과 상태 변화를 구현 전에 구체화했습니다.",
@@ -596,13 +594,11 @@ function CaseStudyDialog({
 
         {/* Modal Body */}
         <div style={{ padding: isMobile ? "20px" : "32px 32px" }}>
-          {/* 🌟 4-Column or 5-Column Professional Metadata Spec Bar (CLIENT · CATEGORY · DATE · ROLE [· CONTRIBUTION]) */}
+          {/* 🌟 4-Column Professional Metadata Spec Bar (CLIENT · CATEGORY · DATE · SERVICE) */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: project.contribution 
-                ? (isMobile ? "repeat(2, 1fr)" : "repeat(5, 1fr)")
-                : (isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)"),
+              gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
               gap: isMobile ? "14px 12px" : "24px",
               borderBottom: "none",
               paddingBottom: "12px",
@@ -644,17 +640,6 @@ function CaseStudyDialog({
                 {project.role}
               </strong>
             </div>
-
-            {project.contribution && (
-              <div style={{ gridColumn: isMobile ? "span 2" : "auto" }}>
-                <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "4px", letterSpacing: "0.06em" }}>
-                  CONTRIBUTION
-                </span>
-                <strong style={{ fontSize: "13px", fontWeight: 800, color: "#111111", display: "block", lineHeight: 1.4 }}>
-                  {project.contribution}
-                </strong>
-              </div>
-            )}
           </div>
           {/* High-Resolution Screen Frame with Interactive Dot Pagination */}
           <div
