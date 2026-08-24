@@ -956,7 +956,7 @@ export function WorkSection({
       {/* 1. Giant Bold PROJECTS Section Header */}
       <div style={{ marginBottom: isMobile ? "32px" : "44px" }}>
         <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
-          SELECTED WORKS · 2014–2026
+          SELECTED WORKS · 2011–2026
         </span>
         <h2
           className="projects-title-h2"
