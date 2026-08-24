@@ -1,11 +1,11 @@
 # 포트폴리오 콘텐츠 규칙 (Figma PDF Source of Truth)
 
 ## 1. 커버 & 프로필 (Cover & Profile)
-- **메인 헤드라인**: `"복잡한 제품을 구조화하고, Prototype으로 빠르게 방향을 구체화합니다."`
-- **15+ YEARS**: Product Design & UI/UX
+- **메인 헤드라인**: `"복잡한 제품을 구조화하고, 디자인의 기준과 방향을 만들어갑니다."`
+- **10+ YEARS**: Product Design & UI/UX
 - **소개 문장**:
-  - `Web · Mobile · B2B/B2C 제품을 경험하며 화면 설계에서 제품 구조 설계로 역할을 확장했습니다.`
-  - `Workflow Automation, Intranet, Communication Platform에서 사용자 흐름·권한·정보구조와 디자인 시스템을 설계했으며 Native Mobile과 PWA 기반 제품 경험을 모두 다뤘습니다.`
+  - `Web · Mobile · B2B/B2C 제품을 설계하며 복잡한 문제를 구조화하고, 프로토타입으로 방향을 빠르게 구체화해 이해관계자와 공유해왔습니다.`
+  - `제품 설계뿐 아니라 디자인 시스템과 리뷰를 통해 일관된 디자인 기준을 만들어왔습니다.`
 - **3대 핵심 역량**:
   - `COMPLEX UX`: Workflow · Permission · Communication
   - `DESIGN SYSTEM`: Variables · Components · Guidelines

@@ -23,12 +23,24 @@ export function HeroProfileSection({
 }) {
   const isMobile = w < 768;
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isMounted, setIsMounted] = useState(false); // 🌟 시간차 페이드인 마운트 상태
   const [hoveredYearIdx, setHoveredYearIdx] = useState<number | null>(null);
   const [isTimelineHovered, setIsTimelineHovered] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null); // 🌟 썸네일 팝업 DOM 레퍼런스
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // 🌟 시간차 등장 모션을 위한 공통 스타일 빌더
+  const getRevealStyle = (delayMs: number) => ({
+    opacity: isMounted ? 1 : 0,
+    transform: isMounted ? "translateY(0)" : "translateY(20px)",
+    transition: `opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${delayMs}ms`,
+  });
 
   // 🌟 프로젝트 ID별 대표 썸네일 매핑
   const projectThumbnails: Record<string, string> = {
@@ -51,7 +63,7 @@ export function HeroProfileSection({
 
   const metrics = [
     { num: "10+", label: "Years Experience", sub: "Product Design & UI/UX" },
-    { num: "10+", label: "Selected Works", sub: "Enterprise · Commerce · Financial · LMS" },
+    { num: "12", label: "Selected Works", sub: "Enterprise · Commerce · Financial · LMS" },
     { num: "26+", label: "Design System", sub: "Foundations & UI Kit" },
     { num: "100%", label: "Hi-Fi Prototyping", sub: "Interaction & Validation" },
   ];
@@ -177,7 +189,7 @@ export function HeroProfileSection({
       </div>
 
       {/* 1. Giant Bold Section Title */}
-      <div style={{ marginBottom: isMobile ? "32px" : "48px" }}>
+      <div style={{ marginBottom: isMobile ? "32px" : "48px", ...getRevealStyle(100) }}>
         <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
           PRODUCT DESIGN PORTFOLIO
         </span>
@@ -208,17 +220,18 @@ export function HeroProfileSection({
           }}
         >
           복잡한 제품을 구조화하고,<br />
-          Prototype으로 빠르게 방향을 구체화합니다.
+          디자인의 기준과 방향을 만들어갑니다.
         </p>
       </div>
 
       {/* 2. Narrative Sentences */}
-      <div style={{ maxWidth: "960px", marginBottom: isMobile ? "40px" : "60px" }}>
+      <div style={{ maxWidth: "960px", marginBottom: isMobile ? "40px" : "60px", ...getRevealStyle(250) }}>
         <p className="about-narrative-lead" style={{ fontSize: isMobile ? "16px" : "19px", color: "#111111", lineHeight: 1.6, fontWeight: 600, margin: "0 0 12px 0" }}>
-          Web · Mobile · B2B/B2C 제품을 경험하며 화면 설계에서 제품 구조 설계로 역할을 확장했습니다.
+          Web · Mobile · B2B/B2C 제품을 설계하며 복잡한 문제를 구조화하고,<br className="hidden md:inline" />
+          프로토타입으로 방향을 빠르게 구체화해 이해관계자와 공유해왔습니다.
         </p>
         <p className="about-narrative-body" style={{ fontSize: isMobile ? "14.5px" : "16.5px", color: "#374151", lineHeight: 1.75, margin: 0 }}>
-          Workflow Automation, MIZUHO Portal, Communication Platform에서 노드 기반 인터랙션과 사용성을 개선하고 디자인 시스템을 설계했으며 Native Mobile과 E-Commerce 비즈니스 경험을 모두 다뤘습니다.
+          제품 설계뿐 아니라 디자인 시스템과 리뷰를 통해 일관된 디자인 기준을 만들어왔습니다.
         </p>
       </div>
 
@@ -232,6 +245,7 @@ export function HeroProfileSection({
           borderBottom: "1px solid #E5E7EB",
           padding: isMobile ? "28px 0" : "40px 0",
           marginBottom: isMobile ? "48px" : "72px",
+          ...getRevealStyle(400),
         }}
       >
         {metrics.map((m, idx) => (
@@ -262,7 +276,7 @@ export function HeroProfileSection({
       </div>
 
       {/* 4. 3 Core Competencies */}
-      <div className="about-competency-section" style={{ marginBottom: isMobile ? "48px" : "80px" }}>
+      <div className="about-competency-section" style={{ marginBottom: isMobile ? "48px" : "80px", ...getRevealStyle(550) }}>
         <div style={{ marginBottom: "20px" }}>
           <span className="competency-section-title" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
             CORE COMPETENCIES (3대 핵심 역량)
@@ -332,7 +346,7 @@ export function HeroProfileSection({
       {/* 5. 🌟 Full 15-Year 10-Month Timeline with Shaluv Growth Metrics */}
       <div
         className="about-timeline-section"
-        style={{ borderTop: "1px solid #111111", paddingTop: isMobile ? "36px" : "60px" }}
+        style={{ borderTop: "1px solid #111111", paddingTop: isMobile ? "36px" : "60px", ...getRevealStyle(700) }}
         onMouseEnter={() => setIsTimelineHovered(true)}
         onMouseLeave={() => setIsTimelineHovered(false)}
       >

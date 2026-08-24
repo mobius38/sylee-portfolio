@@ -717,7 +717,7 @@ function CaseStudyDialog({
 
 
 
-          {/* 🌟 Editorial 3-Column Story Section (Challenge ➔ Approach ➔ Outcome) */}
+          {/* 🌟 Editorial 3-Column Story Section (Challenge ➔ Decision ➔ Impact) */}
           <div
             style={{
               display: "grid",
@@ -743,30 +743,30 @@ function CaseStudyDialog({
               </p>
             </div>
 
-            {/* Column 2: Approach */}
+            {/* Column 2: Decision */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  APPROACH
+                  DECISION
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                해결 방안
+                의사결정
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.approach}
               </p>
             </div>
 
-            {/* Column 3: Outcome */}
+            {/* Column 3: Impact */}
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                 <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  OUTCOME
+                  IMPACT
                 </span>
               </div>
               <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                수행 성과
+                비즈니스 임팩트
               </h4>
               <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
                 {project.outcome}
@@ -1316,33 +1316,33 @@ export function WorkSection({
                     01 / CHALLENGE
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    문제 정의
+                    도전 과제
                   </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.challenge}
                   </p>
                 </div>
 
-                {/* Segment 2: Approach */}
+                {/* Segment 2: Decision */}
                 <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
                   <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
-                    02 / APPROACH
+                    02 / DECISION
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    해결 방안
+                    의사결정
                   </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.approach}
                   </p>
                 </div>
 
-                {/* Segment 3: Outcome */}
+                {/* Segment 3: Impact */}
                 <div>
                   <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
-                    03 / OUTCOME
+                    03 / IMPACT
                   </span>
                   <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    수행 성과
+                    비즈니스 임팩트
                   </h4>
                   <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
                     {p.outcome}
