@@ -100,7 +100,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
 
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <lottie-player
-            src="https://assets8.lottiefiles.com/packages/lf20_dh9gq3ez.json"
+            src="https://raw.githubusercontent.com/LottieFiles/lottie-player/master/demo/bell.json"
             background="transparent"
             speed="1.2"
             style={{ width: "30px", height: "30px" }}
