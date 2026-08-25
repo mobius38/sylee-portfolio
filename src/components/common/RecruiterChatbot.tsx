@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { PetDuoAvatar } from "./PetDuoAvatar";
-import lottieCoffeeData from "../../imports/lottie-coffee.json";
 
 interface FAQItem {
   id: string;
@@ -101,9 +100,9 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
 
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <lottie-player
-            src={JSON.stringify(lottieCoffeeData)}
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/coffee.json"
             background="transparent"
-            speed="1.1"
+            speed="1"
             style={{ width: "38px", height: "38px" }}
             loop
             autoplay
