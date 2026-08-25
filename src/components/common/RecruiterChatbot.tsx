@@ -98,21 +98,31 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           </div>
         </div>
 
-        <button
-          onClick={onClose}
-          style={{
-            background: "none",
-            border: "none",
-            color: "#9CA3AF",
-            fontSize: "16px",
-            cursor: "pointer",
-            padding: "4px",
-            lineHeight: 1,
-          }}
-          aria-label="닫기"
-        >
-          ✕
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <dotlottie-player
+            src="https://lottie.host/74eb4470-36ab-48e0-81eb-ec6a66699d7a/n8m5Z3U4w8.lottie"
+            background="transparent"
+            speed="1.2"
+            style={{ width: "32px", height: "32px" }}
+            loop
+            autoplay
+          />
+          <button
+            onClick={onClose}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#9CA3AF",
+              fontSize: "16px",
+              cursor: "pointer",
+              padding: "4px",
+              lineHeight: 1,
+            }}
+            aria-label="닫기"
+          >
+            ✕
+          </button>
+        </div>
       </div>
 
       {/* 2. Accordion FAQ List */}
