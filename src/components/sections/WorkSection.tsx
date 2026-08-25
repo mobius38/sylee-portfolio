@@ -1091,160 +1091,239 @@ export function WorkSection({
         </div>
       </div>
 
-      {/* 3. Tier 1: Recent Top 2 Featured Showcase (최근 대표작 2선 상단 배치) */}
-      {featuredProjects.length > 0 && (
-        <div className="no-print" style={{ marginBottom: isMobile ? "24px" : "32px" }}>
-
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-              gap: isMobile ? "16px" : "24px",
-            }}
-          >
-            {featuredProjects.map((p) => (
+      {/* 3. Projects Grid Rendering */}
+      {activeKeyword === "ALL" ? (
+        <>
+          {/* 전체 보기(ALL) 일 때는 기존의 Featured와 Grid 분할 계층 구조 유지 */}
+          {featuredProjects.length > 0 && (
+            <div className="no-print" style={{ marginBottom: isMobile ? "24px" : "32px" }}>
               <div
-                key={p.id}
-                className="project-card"
                 style={{
-                  padding: isMobile ? "16px" : "20px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  cursor: "pointer",
+                  display: "grid",
+                  gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+                  gap: isMobile ? "16px" : "24px",
                 }}
-                onClick={() => setSelectedModalProject(p)}
               >
-                <div>
+                {featuredProjects.map((p) => (
                   <div
-                    className="card-thumb"
+                    key={p.id}
+                    className="project-card"
                     style={{
-                      width: "100%",
-                      aspectRatio: "16/10",
-                      marginBottom: "14px",
+                      padding: isMobile ? "16px" : "20px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      cursor: "pointer",
                     }}
+                    onClick={() => setSelectedModalProject(p)}
                   >
-                    <img
-                      src={p.thumbnail}
-                      alt={p.title}
-                      loading="lazy"
+                    <div>
+                      <div
+                        className="card-thumb"
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/10",
+                          marginBottom: "14px",
+                        }}
+                      >
+                        <img
+                          src={p.thumbnail}
+                          alt={p.title}
+                          loading="lazy"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            objectPosition: "top center",
+                          }}
+                        />
+                      </div>
+
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
+                          CASE {p.num}
+                        </span>
+                        <span style={{ color: "#D1D5DB" }}>·</span>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
+                          {p.client}
+                        </span>
+                      </div>
+
+                      <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.02em" }}>
+                        {p.title}
+                      </h3>
+                      <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 12px 0", fontWeight: 500 }}>
+                        {p.subtitle}
+                      </p>
+                    </div>
+
+                    <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
+                        {p.keyword}
+                      </span>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                        View Case →
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {gridProjects.length > 0 && (
+            <div className="no-print">
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+                  gap: isMobile ? "16px" : "24px",
+                }}
+              >
+                {gridProjects.map((p) => (
+                  <div
+                    key={p.id}
+                    className="project-card"
+                    style={{
+                      padding: isMobile ? "16px" : "20px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setSelectedModalProject(p)}
+                  >
+                    <div>
+                      <div
+                        className="card-thumb"
+                        style={{
+                          width: "100%",
+                          aspectRatio: "16/10",
+                          marginBottom: "14px",
+                        }}
+                      >
+                        <img
+                          src={p.thumbnail}
+                          alt={p.title}
+                          loading="lazy"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            objectPosition: "top center",
+                          }}
+                        />
+                      </div>
+
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
+                          CASE {p.num}
+                        </span>
+                        <span style={{ color: "#D1D5DB" }}>·</span>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
+                          {p.client}
+                        </span>
+                      </div>
+
+                      <h3 style={{ fontSize: "18px", fontWeight: 900, color: "#111111", margin: "0 0 4px 0" }}>
+                        {p.title}
+                      </h3>
+                      <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 10px 0" }}>
+                        {p.subtitle}
+                      </p>
+                    </div>
+
+                    <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
+                        {p.keyword}
+                      </span>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                        View Case →
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        /* 특정 카테고리 필터 활성화 시에는 Featured 여부 상관없이 단일 2열 그리드로 모아 수직 정렬 어긋남 완전 해결 */
+        filteredProjects.length > 0 && (
+          <div className="no-print">
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+                gap: isMobile ? "16px" : "24px",
+              }}
+            >
+              {filteredProjects.map((p) => (
+                <div
+                  key={p.id}
+                  className="project-card"
+                  style={{
+                    padding: isMobile ? "16px" : "20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setSelectedModalProject(p)}
+                >
+                  <div>
+                    <div
+                      className="card-thumb"
                       style={{
                         width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "top center",
+                        aspectRatio: "16/10",
+                        marginBottom: "14px",
                       }}
-                    />
+                    >
+                      <img
+                        src={p.thumbnail}
+                        alt={p.title}
+                        loading="lazy"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          objectPosition: "top center",
+                        }}
+                      />
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
+                        CASE {p.num}
+                      </span>
+                      <span style={{ color: "#D1D5DB" }}>·</span>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
+                        {p.client}
+                      </span>
+                    </div>
+
+                    <h3 style={{ fontSize: "18px", fontWeight: 900, color: "#111111", margin: "0 0 4px 0" }}>
+                      {p.title}
+                    </h3>
+                    <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 10px 0" }}>
+                      {p.subtitle}
+                    </p>
                   </div>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
-                      CASE {p.num}
+                  <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
+                      {p.keyword}
                     </span>
-                    <span style={{ color: "#D1D5DB" }}>·</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
-                      {p.client}
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                      View Case →
                     </span>
                   </div>
-
-                  <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.02em" }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 12px 0", fontWeight: 500 }}>
-                    {p.subtitle}
-                  </p>
                 </div>
-
-                <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
-                    {p.keyword}
-                  </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                    View Case →
-                  </span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-
-      {/* 4. Tier 2: Selected Products Grid (선별 플랫폼 & 모바일 앱 8종) */}
-      {gridProjects.length > 0 && (
-        <div className="no-print">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-              gap: isMobile ? "16px" : "24px", /* 1행(Featured)의 gap 수치와 동일하게 맞추어 수직 정렬 정렬선 매칭 */
-            }}
-          >
-            {gridProjects.map((p) => (
-              <div
-                key={p.id}
-                className="project-card"
-                style={{
-                  padding: isMobile ? "16px" : "20px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  cursor: "pointer",
-                }}
-                onClick={() => setSelectedModalProject(p)}
-              >
-                <div>
-                  <div
-                    className="card-thumb"
-                    style={{
-                      width: "100%",
-                      aspectRatio: "16/10",
-                      marginBottom: "14px",
-                    }}
-                  >
-                    <img
-                      src={p.thumbnail}
-                      alt={p.title}
-                      loading="lazy"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "top center",
-                      }}
-                    />
-                  </div>
-
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
-                      CASE {p.num}
-                    </span>
-                    <span style={{ color: "#D1D5DB" }}>·</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
-                      {p.client}
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontSize: "18px", fontWeight: 900, color: "#111111", margin: "0 0 4px 0" }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 10px 0" }}>
-                    {p.subtitle}
-                  </p>
-                </div>
-
-                <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
-                    {p.keyword}
-                  </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                    View Case →
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        )
       )}
 
       {/* 5. Case Study Modal Dialog */}
