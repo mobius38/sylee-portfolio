@@ -221,7 +221,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     client: "㈜스펙트라",
     period: "2023.01 ~ 2023.12",
     serviceType: "Desktop React Platform & Mobile PWA",
-    role: "Product Design · Product Architecture",
+    role: "Product Design · Brand & Product Architecture",
     description: "본사-파트너사 간 다자간 소통을 위한 데스크톱 React 기반 협업 플랫폼을 구축하고, 추가로 모바일 PWA 앱을 지원하여 기기 제약 없는 협업 환경을 완성했습니다.",
     challenge: "본사와 파트너사 간 대화·파일 공유·프로젝트 관리가 여러 업무 흐름으로 분산되어 있었고, 데스크톱의 고밀도 업무 환경과 이동 중 접근성을 하나의 경험으로 연결해야 했습니다.",
     approach: "파트너별로 분산된 업무를 하나의 협업 맥락에서 이어갈 수 있도록 대화·파일·프로젝트 정보를 통합한 구조를 설계했습니다. 데스크톱에서는 고밀도 업무 효율을 유지하고, 이동 중에도 핵심 업무를 이어갈 수 있도록 반응형 PWA 경험으로 확장했습니다.",

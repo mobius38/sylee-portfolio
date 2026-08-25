@@ -97,7 +97,7 @@ export function HeroProfileSection({
     {
       year: "2022–23",
       items: [
-        { date: "2023.12", title: "SalesBridge 데스크톱 & PWA UX/UI 설계", projectId: "salesbridge" },
+        { date: "2023.12", title: "SalesBridge 브랜드 BI 수립 & 데스크톱/PWA 설계", projectId: "salesbridge" },
         { date: "2023.06", title: "DWorks 엔터프라이즈 리브랜딩 & 공식 사이트 구축", projectId: "dworks-brand-identity" },
         { date: "2022.10", title: "CS Talk 고객상담 플랫폼 대시보드 UI/UX 설계", projectId: "cstalk" },
       ],
