@@ -90,10 +90,8 @@ export function HeroProfileSection({
     {
       year: "2024",
       items: [
-        { date: "2024.10", title: "Dualspace 통합 플랫폼 기획 & Hi-Fi 프로토타입", projectId: "dualspace" },
-        { date: "2024.09", title: "DWorks 고객상담·협업 통합 플랫폼 UX/UI 설계", projectId: "dualspace" },
-        { date: "2024.06", title: "DWorks 멀티 플랫폼 디자인 시스템 구축", projectId: "dworks-design-system" },
-        { date: "2024.03", title: "Figma Variables 기반 디자인 시스템 구축", projectId: "dworks-design-system" },
+        { date: "2024.10", title: "Dualspace 고객상담·협업 통합 플랫폼 설계 & Hi-Fi 프로토타입", projectId: "dualspace" },
+        { date: "2024.06", title: "DWorks Figma Variables 기반 전사 디자인 시스템 구축", projectId: "dworks-design-system" },
       ],
     },
     {
