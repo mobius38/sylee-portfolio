@@ -12,7 +12,6 @@ import imgIntranetUserPortal from "../../imports/optimized/intranet-user-portal.
 import imgIntranetTx from "../../imports/optimized/intranet-transaction.webp";
 import imgIntranetUser from "../../imports/optimized/intranet-user.webp";
 import imgIntranetDS from "../../imports/optimized/intranet-design-system.webp";
-import imgIntranetLogin from "../../imports/optimized/intranet-login.webp";
 // DUALSPACE
 import imgDualspaceArch from "../../imports/optimized/dualspace-architecture.webp";
 import imgDualspaceCustomer from "../../imports/optimized/dualspace-customer.webp";
@@ -532,7 +531,7 @@ function CaseStudyDialog({
     onNavigateProject(PROJECTS_DATA[nextIdx]);
   };
 
-  // Esc key & body scroll lock (zoomedImage가 열렸을 때 지능형 처리)
+  // Esc key & Arrow keys & body scroll lock (zoomedImage가 열렸을 때 지능형 처리)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -540,6 +539,12 @@ function CaseStudyDialog({
           setZoomedImage(null);
         } else {
           onClose();
+        }
+      } else if (!zoomedImage && project.slides.length > 1) {
+        if (e.key === "ArrowRight") {
+          setActiveSlideIdx((prev) => (prev + 1) % project.slides.length);
+        } else if (e.key === "ArrowLeft") {
+          setActiveSlideIdx((prev) => (prev - 1 + project.slides.length) % project.slides.length);
         }
       }
     };
@@ -550,7 +555,7 @@ function CaseStudyDialog({
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [onClose, zoomedImage]);
+  }, [onClose, zoomedImage, project.slides.length]);
 
   return (
     <div
