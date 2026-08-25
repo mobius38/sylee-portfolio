@@ -75,7 +75,6 @@ export function HeroProfileSection({
       year: "2026",
       items: [
         { date: "2026.04", title: "MIZUHO 일본은행 사내포탈 설계 (IA·권한·컴포넌트)", projectId: "intranet" },
-        { date: "2026.03", title: "Figma Variables 기반 디자인 시스템 구축", projectId: "dworks-design-system" },
         { date: "2026.01", title: "DO.LiNKER Workflow 생성·실행·모니터링 UX 설계", projectId: "doolinker" },
       ],
     },
@@ -84,20 +83,21 @@ export function HeroProfileSection({
       items: [
         { date: "2025.12", title: "Trigger/Action 기반 Workflow Builder UX 설계", projectId: "doolinker" },
         { date: "2025.11", title: "DO.LiNKER 브랜드 아이덴티티(BI) 수립", projectId: "doolinker" },
-        { date: "2025.08", title: "Dualspace 통합 플랫폼 기획 & Hi-Fi 프로토타입", projectId: "dualspace" },
-        { date: "2025.07", title: "DWorks 고객상담·협업 통합 플랫폼 UX/UI 설계", projectId: "dualspace" },
       ],
     },
     {
       year: "2024",
       items: [
-        { date: "2024.12", title: "SalesBridge 데스크톱 & PWA UX/UI 설계", projectId: "salesbridge" },
+        { date: "2024.10", title: "Dualspace 통합 플랫폼 기획 & Hi-Fi 프로토타입", projectId: "dualspace" },
+        { date: "2024.09", title: "DWorks 고객상담·협업 통합 플랫폼 UX/UI 설계", projectId: "dualspace" },
         { date: "2024.06", title: "DWorks 멀티 플랫폼 디자인 시스템 구축", projectId: "dworks-design-system" },
+        { date: "2024.03", title: "Figma Variables 기반 디자인 시스템 구축", projectId: "dworks-design-system" },
       ],
     },
     {
       year: "2022–23",
       items: [
+        { date: "2023.12", title: "SalesBridge 데스크톱 & PWA UX/UI 설계", projectId: "salesbridge" },
         { date: "2023.06", title: "DWorks 엔터프라이즈 리브랜딩 & 공식 사이트 구축", projectId: "dworks-brand-identity" },
         { date: "2022.10", title: "CS Talk 고객상담 플랫폼 대시보드 UI/UX 설계", projectId: "cstalk" },
       ],
