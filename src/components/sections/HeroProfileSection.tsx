@@ -65,8 +65,8 @@ export function HeroProfileSection({
 
   const metrics = [
     { num: "10+", label: "Years Experience", sub: "Product Design & UI/UX" },
-    { num: "12", label: "Selected Works", sub: "Enterprise · Commerce · Financial · LMS" },
-    { num: "26+", label: "Design System", sub: "Foundations & UI Kit" },
+    { num: "12", label: "Selected Works", sub: "Enterprise · Workflow · Commerce · Financial" },
+    { num: "26+", label: "Components", sub: "Foundations · Tokens · UI Kit" },
     { num: "Hi-Fi", label: "Prototyping", sub: "Interaction & Validation" },
   ];
 
