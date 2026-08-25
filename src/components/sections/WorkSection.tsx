@@ -1349,71 +1349,126 @@ export function WorkSection({
               key={p.id}
               className="print-case-page"
               style={{
-                marginBottom: "48px",
-                paddingBottom: "36px",
+                pageBreakBefore: "always",
+                breakBefore: "page",
               }}
             >
-              {/* Header Info */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "16px" }}>
-                <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.08em" }}>
-                    CASE {p.num}
-                  </span>
-                  <h3 style={{ fontSize: "19px", fontWeight: 900, color: "#111111", margin: "4px 0 0 0", letterSpacing: "-0.02em" }}>
-                    {p.title}
-                  </h3>
-                </div>
-              </div>
-
-              {/* 🌟 4-Column Professional Metadata Spec Bar (인쇄 시 메타 정보 바 보강 복구) */}
+              {/* PAGE 1: 프로젝트 타이틀 및 핵심 텍스트 요약 (A4 1장에 정확히 안착) */}
               <div
                 style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(4, 1fr)",
-                  gap: "16px",
-                  borderBottom: "1px solid #F3F4F6",
-                  paddingBottom: "12px",
-                  marginBottom: "16px",
+                  boxSizing: "border-box",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  pageBreakAfter: "always",
+                  breakAfter: "page",
+                  paddingBottom: "16px",
                 }}
               >
-                <div>
-                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
-                    CLIENT
-                  </span>
-                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#111111", display: "block" }}>
-                    {p.client}
-                  </strong>
+                {/* Header Info */}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "12px" }}>
+                  <div>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.08em" }}>
+                      CASE {p.num}
+                    </span>
+                    <h3 style={{ fontSize: "18px", fontWeight: 900, color: "#111111", margin: "2px 0 0 0", letterSpacing: "-0.02em" }}>
+                      {p.title}
+                    </h3>
+                  </div>
                 </div>
 
-                <div>
-                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
-                    CATEGORY
-                  </span>
-                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#111111", display: "block" }}>
-                    {p.keyword}
-                  </strong>
+                {/* 🌟 4-Column Professional Metadata Spec Bar */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(4, 1fr)",
+                    gap: "12px",
+                    borderBottom: "1px solid #E5E7EB",
+                    paddingBottom: "10px",
+                    marginBottom: "16px",
+                  }}
+                >
+                  <div>
+                    <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "8.5px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                      CLIENT
+                    </span>
+                    <strong style={{ fontSize: "11px", fontWeight: 800, color: "#111111", display: "block" }}>
+                      {p.client}
+                    </strong>
+                  </div>
+
+                  <div>
+                    <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "8.5px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                      CATEGORY
+                    </span>
+                    <strong style={{ fontSize: "11px", fontWeight: 800, color: "#111111", display: "block" }}>
+                      {p.keyword}
+                    </strong>
+                  </div>
+
+                  <div>
+                    <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "8.5px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                      DATE (PERIOD)
+                    </span>
+                    <strong style={{ fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block" }}>
+                      {p.period}
+                    </strong>
+                  </div>
+
+                  <div>
+                    <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "8.5px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
+                      ROLE
+                    </span>
+                    <strong style={{ fontSize: "10.5px", fontWeight: 800, color: "#111111", display: "block", lineHeight: 1.2 }}>
+                      {p.role}
+                    </strong>
+                  </div>
                 </div>
 
-                <div>
-                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
-                    DATE (PERIOD)
-                  </span>
-                  <strong style={{ fontSize: "11.5px", fontWeight: 800, color: "#2563EB", display: "block" }}>
-                    {p.period}
-                  </strong>
-                </div>
+                {/* 🌟 3-Segment Story Vertical List (간격 축소 및 콤팩트 최적화) */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+                  {/* Segment 1: Challenge */}
+                  <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "10px" }}>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "2px", letterSpacing: "0.05em" }}>
+                      01 / CHALLENGE
+                    </span>
+                    <h4 style={{ fontSize: "12.5px", color: "#111111", margin: "0 0 4px 0", fontWeight: 900 }}>
+                      핵심 문제
+                    </h4>
+                    <p style={{ fontSize: "11px", color: "#374151", lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+                      {p.challenge}
+                    </p>
+                  </div>
 
-                <div>
-                  <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "9px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "2px", letterSpacing: "0.06em" }}>
-                    ROLE
-                  </span>
-                  <strong style={{ fontSize: "11px", fontWeight: 800, color: "#111111", display: "block", lineHeight: 1.3 }}>
-                    {p.role}
-                  </strong>
+                  {/* Segment 2: Decision */}
+                  <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "10px" }}>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "2px", letterSpacing: "0.05em" }}>
+                      02 / DECISION
+                    </span>
+                    <h4 style={{ fontSize: "12.5px", color: "#111111", margin: "0 0 4px 0", fontWeight: 900 }}>
+                      핵심 판단
+                    </h4>
+                    <p style={{ fontSize: "11px", color: "#374151", lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+                      {p.approach}
+                    </p>
+                  </div>
+
+                  {/* Segment 3: Impact */}
+                  <div>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "9px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "2px", letterSpacing: "0.05em" }}>
+                      03 / IMPACT
+                    </span>
+                    <h4 style={{ fontSize: "12.5px", color: "#111111", margin: "0 0 4px 0", fontWeight: 900 }}>
+                      결과 및 영향
+                    </h4>
+                    <p style={{ fontSize: "11px", color: "#374151", lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
+                      {p.outcome}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* 🌟 Cover & Sub Images for Printing (최대 4개 이미지 제한, 1장일 땐 가로 꽉 차게, 2~4장일 땐 2단 바둑판 2x2 격자 나열) */}
+              {/* PAGE 2: 프로젝트 시각 디자인 산출물 (2페이지부터 깨끗하게 시작) */}
               {(() => {
                 const printSlides = p.slides.slice(0, 4);
                 return printSlides.length > 0 ? (
@@ -1422,7 +1477,8 @@ export function WorkSection({
                       display: "grid",
                       gridTemplateColumns: printSlides.length === 1 ? "1fr" : "repeat(2, 1fr)",
                       gap: "12px",
-                      marginBottom: "24px",
+                      marginTop: "16px",
+                      pageBreakInside: "avoid",
                     }}
                   >
                     {printSlides.map((slide, sIdx) => (
@@ -1448,48 +1504,6 @@ export function WorkSection({
                   </div>
                 ) : null;
               })()}
-
-              {/* 🌟 3-Segment Story Vertical List (웹 모달과 완전 동일한 에디토리얼 레이아웃 계층 적용) */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                {/* Segment 1: Challenge */}
-                <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
-                    01 / CHALLENGE
-                  </span>
-                  <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    핵심 문제
-                  </h4>
-                  <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-                    {p.challenge}
-                  </p>
-                </div>
-
-                {/* Segment 2: Decision */}
-                <div style={{ borderBottom: "1px solid #F3F4F6", paddingBottom: "16px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
-                    02 / DECISION
-                  </span>
-                  <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    핵심 판단
-                  </h4>
-                  <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-                    {p.approach}
-                  </p>
-                </div>
-
-                {/* Segment 3: Impact */}
-                <div>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "3px", letterSpacing: "0.05em" }}>
-                    03 / IMPACT
-                  </span>
-                  <h4 style={{ fontSize: "13.5px", color: "#111111", margin: "0 0 6px 0", fontWeight: 900, fontFamily: "inherit" }}>
-                    결과 및 영향
-                  </h4>
-                  <p style={{ fontSize: "12px", color: "#374151", lineHeight: 1.7, margin: 0, fontWeight: 500 }}>
-                    {p.outcome}
-                  </p>
-                </div>
-              </div>
             </div>
           );
         })}
