@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // DOOLINKER
 import imgDashboard from "../../imports/optimized/dolinker-dashboard.webp";
@@ -488,6 +488,30 @@ function CaseStudyDialog({
   const [zoomedImage, setZoomedImage] = useState<string | null>(null); // 🌟 이미지 라이트박스 줌 상태
   const currentSlide = project.slides[activeSlideIdx] ?? project.slides[0];
 
+  // 🌟 모바일 터치 스와이프 제스처 핸들링
+  const touchStartX = useRef<number>(0);
+  const minSwipeDistance = 50;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (project.slides.length <= 1) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX.current - touchEndX;
+
+    if (Math.abs(diffX) > minSwipeDistance) {
+      if (diffX > 0) {
+        // Left swipe -> Next
+        setActiveSlideIdx((prev) => (prev + 1) % project.slides.length);
+      } else {
+        // Right swipe -> Prev
+        setActiveSlideIdx((prev) => (prev - 1 + project.slides.length) % project.slides.length);
+      }
+    }
+  };
+
   // Reset slide index when active project changes
   useEffect(() => {
     setActiveSlideIdx(0);
@@ -672,6 +696,8 @@ function CaseStudyDialog({
           </div>
           {/* High-Resolution Screen Frame with Interactive Dot Pagination */}
           <div
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
             style={{
               position: "relative",
               width: "100%",
