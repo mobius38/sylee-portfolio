@@ -122,7 +122,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     categoryFlow: "IA → Permission → System",
     keyword: "Financial",
     client: "도전하는사람들",
-    period: "2025.11 ~ 2026.04",
+    period: "2026.03 ~ 2026.04",
     serviceType: "MIZUHO Bank Enterprise Portal",
     role: "Product Design · Design System",
     description: "일본 미즈호(MIZUHO) 은행 사내 포탈의 정보구조와 5단계 권한 인가 체계를 설계하여 사용자 역할별 안전하고 명확한 접근 경험을 구현했습니다.",
