@@ -138,14 +138,14 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: "GUEST" },
     ],
     tags: ["Enterprise_Portal", "Information_Architecture", "Permission_UX", "Data_Grid", "Design_System"],
-    thumbnail: imgIntranetHome,
+    thumbnail: imgIntranetDS,
     isFeatured: true,
     slides: [
-      { src: imgIntranetHome, alt: "어드민 포탈", tabLabel: "어드민 총괄 포탈", title: "금융 이중 포탈 어드민 대시보드", caption: "전체 금융 서비스 모듈의 활성화 상태와 트랜잭션 장애 지표 실시간 모니터링" },
+      { src: imgIntranetDS, alt: "Design System", tabLabel: "Design System Spec", title: "Mizuho Design System — AppHeader 명세", caption: "Figma Variables 기반 컬러 토큰 매핑, 컴포넌트 해부도(Anatomy) 및 소스코드 매핑 가이드라인 구축" },
       { src: imgIntranetUserPortal, alt: "사용자 포탈", tabLabel: "사용자 맞춤 포탈", title: "역할 기반 인가 포탈", caption: "부서 및 권한에 따라 인가된 금융 서비스만 접근하도록 분기 처리" },
       { src: imgIntranetTx, alt: "Transaction", tabLabel: "Transaction Grid", title: "Token · Component 기반 디자인 시스템과 제품 적용", caption: "대용량 금융 데이터 처리를 위한 고밀도 그리드 및 공통 Component 구성" },
       { src: imgIntranetUser, alt: "권한 관리", tabLabel: "권한 관리 체계", title: "사용자 역할과 정보 접근 범위를 제품 구조로", caption: "업무 포털의 정보구조와 권한 체계를 설계해 사용자별 접근 경험 명확화" },
-      { src: imgIntranetDS, alt: "Design System", tabLabel: "Design System", title: "금융 도메인 맞춤형 디자인 시스템", caption: "신뢰성을 위한 컬러/타이포 토큰 및 고밀도 테이블 컴포넌트 규격화" },
+      { src: imgIntranetHome, alt: "어드민 포탈", tabLabel: "어드민 총괄 포탈", title: "금융 이중 포탈 어드민 대시보드", caption: "전체 금융 서비스 모듈의 활성화 상태와 트랜잭션 장애 지표 실시간 모니터링" },
     ],
   },
   {
