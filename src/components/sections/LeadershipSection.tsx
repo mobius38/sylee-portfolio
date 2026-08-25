@@ -35,7 +35,7 @@ export function LeadershipSection({ w }: { w: number }) {
       img: imgHandsSystem,
       lines: [
         "멀티 프로덕트 간 일관성을 위한 디자인 원칙과 컴포넌트를 구축합니다.",
-        "Foundations 6종과 Components 26종을 규격화하여 개발 생산성을 극대화합니다.",
+        "Foundations 6종과 Components 26종을 규격화하여 디자인·개발 간 재사용과 협업 효율을 높입니다.",
         "브랜드 아이덴티티를 제품 UI와 토큰 시스템까지 일원화하여 관리합니다.",
       ],
     },
@@ -43,8 +43,8 @@ export function LeadershipSection({ w }: { w: number }) {
       title: "협업과 조율",
       img: imgHandsCollab,
       lines: [
-        "PM, 엔지니어, 비즈니스 직군 간의 커뮤니케이션 비용을 최소화합니다.",
-        "가설과 인터랙션을 프로토타입으로 시각화하여 빠른 의사결정을 이끕니다.",
+        "PM, 엔지니어, 비즈니스 직군 간의 의사소통 장벽을 낮추고 협업을 촉진합니다.",
+        "가설과 인터랙션을 프로토타입으로 시각화하여 팀의 의사결정을 지원합니다.",
         "UX 설계 의도와 구조적 근거를 명문화하여 팀 전체에 체계적으로 공유합니다.",
       ],
     },
