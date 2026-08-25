@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import imgSamsungFire from "../../imports/optimized/mobile-samsungfire.webp";
 
 // 🌟 각 프로젝트별 매핑용 대표 썸네일 이미지 임포트
 import imgDashboard from "../../imports/optimized/dolinker-dashboard.webp";
@@ -56,6 +57,7 @@ export function HeroProfileSection({
     "hanmilab-lms": imgLMS,
     "mobile-hellolink": imgHelloLink,
     "mobile-nh": imgNH,
+    "mobile-samsungfire": imgSamsungFire,
   };
 
   // 🌟 썸네일 호버 상태 (좌표는 state에 두지 않고 ref를 통해 DOM 직접 조작하여 60fps 보장)
@@ -121,7 +123,7 @@ export function HeroProfileSection({
       items: [
         { date: "2016.02", title: "헬로링크 커머스 & 매거진 모바일 앱 설계", projectId: "mobile-hellolink" },
         { date: "2015.01", title: "NH 바로바로마켓 모바일 & 금융 태블릿 UI 설계", projectId: "mobile-nh" },
-        { date: "2014.11", title: "삼성화재 SMS 모바일 웹 인터페이스 설계" },
+        { date: "2014.11", title: "삼성화재 SMS 모바일 웹 인터페이스 설계", projectId: "mobile-samsungfire" },
         { date: "2011.08", title: "네이티브 앱 iOS/Android UI 가이드 수립" },
       ],
     },
