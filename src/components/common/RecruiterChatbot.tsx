@@ -88,18 +88,10 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           <PetDuoAvatar size={44} />
 
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "2px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "2px" }}>
               <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.08em" }}>
                 COFFEE CHAT &amp; Q&amp;A
               </span>
-              <lottie-player
-                src={JSON.stringify(lottieCoffeeData)}
-                background="transparent"
-                speed="1.2"
-                style={{ width: "36px", height: "36px", marginTop: "-6px", marginBottom: "-6px" }}
-                loop
-                autoplay
-              />
             </div>
             <div style={{ fontSize: "13px", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.01em" }}>
               보름이 &amp; 보리 집사의 커피챗
@@ -107,21 +99,34 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           </div>
         </div>
 
-        <button
-          onClick={onClose}
-          style={{
-            background: "none",
-            border: "none",
-            color: "#9CA3AF",
-            fontSize: "16px",
-            cursor: "pointer",
-            padding: "4px",
-            lineHeight: 1,
-          }}
-          aria-label="닫기"
-        >
-          ✕
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <lottie-player
+            src={JSON.stringify(lottieCoffeeData)}
+            background="transparent"
+            speed="1.1"
+            style={{ width: "38px", height: "38px" }}
+            loop
+            autoplay
+          />
+          <button
+            onClick={onClose}
+            style={{
+              background: "none",
+              border: "none",
+              color: "#9CA3AF",
+              fontSize: "16px",
+              cursor: "pointer",
+              padding: "4px",
+              lineHeight: 1,
+              transition: "color 0.15s ease",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.color = "#FFFFFF"}
+            onMouseLeave={(e) => e.currentTarget.style.color = "#9CA3AF"}
+            aria-label="닫기"
+          >
+            ✕
+          </button>
+        </div>
       </div>
 
       {/* 2. Accordion FAQ List */}
