@@ -99,14 +99,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <lottie-player
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/coffee.json"
-            background="transparent"
-            speed="1"
-            style={{ width: "38px", height: "38px" }}
-            loop
-            autoplay
-          />
+          <SteamingCoffeeCup size={34} />
           <button
             onClick={onClose}
             style={{
@@ -238,6 +231,133 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           1:1 Open Chat →
         </a>
       </div>
+    </div>
+  );
+}
+
+// 김이 모락모락 피어오르는 모던 CSS+SVG 커피잔 컴포넌트
+function SteamingCoffeeCup({ size = 30 }: { size?: number }) {
+  return (
+    <div
+      style={{
+        width: `${size}px`,
+        height: `${size}px`,
+        position: "relative",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: "-4px",
+      }}
+    >
+      {/* 1. 모락모락 김(Steam) 세 가닥 애니메이션 */}
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 100 100"
+        style={{
+          position: "absolute",
+          top: "-10px",
+          left: 0,
+          overflow: "visible",
+        }}
+      >
+        {/* Steam 1 */}
+        <path
+          d="M38 30 Q43 15 38 0 Q43 -15 38 -30"
+          fill="none"
+          stroke="#93C5FD"
+          strokeWidth="6"
+          strokeLinecap="round"
+          className="animate-steam-1"
+        />
+        {/* Steam 2 */}
+        <path
+          d="M50 30 Q55 15 50 0 Q55 -15 50 -30"
+          fill="none"
+          stroke="#93C5FD"
+          strokeWidth="6"
+          strokeLinecap="round"
+          className="animate-steam-2"
+        />
+        {/* Steam 3 */}
+        <path
+          d="M62 30 Q67 15 62 0 Q67 -15 62 -30"
+          fill="none"
+          stroke="#93C5FD"
+          strokeWidth="6"
+          strokeLinecap="round"
+          className="animate-steam-3"
+        />
+      </svg>
+
+      {/* 2. 커피 머그잔 본체 SVG */}
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 100 100"
+        style={{
+          position: "relative",
+          zIndex: 2,
+          overflow: "visible",
+        }}
+      >
+        {/* 머그잔 손잡이 */}
+        <path
+          d="M68 55 C78 55 78 75 68 75"
+          fill="none"
+          stroke="#4B3FE1"
+          strokeWidth="9"
+          strokeLinecap="round"
+        />
+        {/* 머그잔 몸통 */}
+        <path
+          d="M30 45 L34 82 C35 88 40 90 50 90 C60 90 65 88 66 82 L70 45 Z"
+          fill="#4B3FE1"
+        />
+        {/* 컵 테두리/입구 */}
+        <ellipse cx="50" cy="45" rx="20" ry="5" fill="#FAF9F7" stroke="#4B3FE1" strokeWidth="4" />
+      </svg>
+
+      {/* 3. 김이 올라오는 CSS 키프레임 (동적 흐름) */}
+      <style>{`
+        @keyframes steamFlow {
+          0% {
+            stroke-dashoffset: 0;
+            opacity: 0;
+            transform: translateY(2px) scaleX(0.9);
+          }
+          20% {
+            opacity: 0.85;
+          }
+          60% {
+            stroke-dashoffset: -40;
+            opacity: 0.55;
+            transform: translateY(-8px) scaleX(1.1);
+          }
+          90% {
+            opacity: 0;
+          }
+          100% {
+            stroke-dashoffset: -80;
+            opacity: 0;
+            transform: translateY(-18px) scaleX(0.85);
+          }
+        }
+        .animate-steam-1 {
+          stroke-dasharray: 100;
+          animation: steamFlow 3.2s infinite linear;
+        }
+        .animate-steam-2 {
+          stroke-dasharray: 100;
+          animation: steamFlow 3.2s infinite linear;
+          animation-delay: 1.1s;
+        }
+        .animate-steam-3 {
+          stroke-dasharray: 100;
+          animation: steamFlow 3.2s infinite linear;
+          animation-delay: 2.2s;
+        }
+      `}</style>
     </div>
   );
 }
