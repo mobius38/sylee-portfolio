@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PetDuoAvatar } from "./PetDuoAvatar";
+import lottieBellData from "../../imports/lottie-bell.json";
 
 interface FAQItem {
   id: string;
@@ -100,7 +101,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
 
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <lottie-player
-            src="https://raw.githubusercontent.com/LottieFiles/lottie-player/master/demo/bell.json"
+            src={JSON.stringify(lottieBellData)}
             background="transparent"
             speed="1.2"
             style={{ width: "30px", height: "30px" }}
