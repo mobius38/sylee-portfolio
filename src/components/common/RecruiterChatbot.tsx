@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PetDuoAvatar } from "./PetDuoAvatar";
-import lottieBellData from "../../imports/lottie-bell.json";
+import lottieCoffeeData from "../../imports/lottie-coffee.json";
 
 interface FAQItem {
   id: string;
@@ -88,10 +88,18 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           <PetDuoAvatar size={44} />
 
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "2px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "2px" }}>
               <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.08em" }}>
                 COFFEE CHAT &amp; Q&amp;A
               </span>
+              <lottie-player
+                src={JSON.stringify(lottieCoffeeData)}
+                background="transparent"
+                speed="1.2"
+                style={{ width: "36px", height: "36px", marginTop: "-6px", marginBottom: "-6px" }}
+                loop
+                autoplay
+              />
             </div>
             <div style={{ fontSize: "13px", fontWeight: 800, color: "#FFFFFF", letterSpacing: "-0.01em" }}>
               보름이 &amp; 보리 집사의 커피챗
@@ -99,31 +107,21 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           </div>
         </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <lottie-player
-            src={JSON.stringify(lottieBellData)}
-            background="transparent"
-            speed="1.2"
-            style={{ width: "30px", height: "30px" }}
-            loop
-            autoplay
-          />
-          <button
-            onClick={onClose}
-            style={{
-              background: "none",
-              border: "none",
-              color: "#9CA3AF",
-              fontSize: "16px",
-              cursor: "pointer",
-              padding: "4px",
-              lineHeight: 1,
-            }}
-            aria-label="닫기"
-          >
-            ✕
-          </button>
-        </div>
+        <button
+          onClick={onClose}
+          style={{
+            background: "none",
+            border: "none",
+            color: "#9CA3AF",
+            fontSize: "16px",
+            cursor: "pointer",
+            padding: "4px",
+            lineHeight: 1,
+          }}
+          aria-label="닫기"
+        >
+          ✕
+        </button>
       </div>
 
       {/* 2. Accordion FAQ List */}
