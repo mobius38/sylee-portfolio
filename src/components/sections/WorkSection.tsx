@@ -90,7 +90,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     client: "도전하는사람들",
     period: "2025.11 ~ 2026.04",
     serviceType: "Workflow Automation Platform",
-    role: "Product Design · Brand Identity · Design System",
+    role: "Product Design · Brand & Design System",
     description: "Trigger / Action 기반의 복잡한 비즈니스 로직을 비전문가도 직관적으로 구성할 수 있는 워크플로우 자동화 플랫폼을 설계했습니다.",
     challenge: "복잡한 엔터프라이즈 자동화 로직과 설정 과정으로 인해 사용자가 워크플로우의 연결 관계와 실행 상태를 직관적으로 파악하기 어려웠고, 신규 제품으로서 일관된 브랜드와 UI 기준도 필요한 상황이었습니다.",
     approach: "Trigger · Action 기반의 워크플로우 구조와 노드 편집 경험을 설계하고, 생성 → 실행 → 모니터링의 핵심 플로우를 Hi-Fi Prototype으로 구체화했습니다. 동시에 브랜드 아이덴티티와 디자인 시스템을 구축해 제품 전반의 UX/UI 기준을 일관되게 적용했습니다.",
