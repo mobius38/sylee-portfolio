@@ -333,7 +333,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     title: "DIME",
     subtitle: "Social Dating & Matching Mobile App (iOS · Android)",
     categoryFlow: "Social Dating · Card Matching · Native App",
-    keyword: "Dating App",
+    keyword: "Mobile · Dating App",
     client: "㈜다임 (DIME)",
     period: "2017.08 ~ 2018.03",
     serviceType: "Social Dating Native App",
@@ -361,7 +361,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     title: "HANMILAB LMS",
     subtitle: "LMS Edutech Platform & Admin System (Web · Mobile · Publishing)",
     categoryFlow: "Branding → Web (72p) → Admin/Mobile (62p) → Publishing",
-    keyword: "LMS",
+    keyword: "Enterprise · LMS",
     client: "한미랩 (HANMILAB)",
     period: "2017.03 ~ 2017.07",
     serviceType: "Edutech LMS & Admin System",
@@ -991,14 +991,19 @@ export function WorkSection({
     "Enterprise",
     "Financial",
     "Commerce",
-    "LMS",
-    "Design System",
+    "Brand & Design",
+    "Mobile",
   ];
 
-  // Filter projects by chip
+  // Filter projects by chip (포함 관계 매칭으로 유연성 극대화)
   const filteredProjects = activeKeyword === "ALL"
     ? PROJECTS_DATA
-    : PROJECTS_DATA.filter((p) => p.keyword === activeKeyword);
+    : PROJECTS_DATA.filter((p) => {
+        if (activeKeyword === "Brand & Design") {
+          return p.keyword.includes("Brand") || p.keyword.includes("Design");
+        }
+        return p.keyword.includes(activeKeyword);
+      });
 
   const featuredProjects = filteredProjects.filter((p) => p.isFeatured);
   const gridProjects = filteredProjects.filter((p) => !p.isFeatured);
