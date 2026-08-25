@@ -1363,9 +1363,6 @@ export function WorkSection({
                     {p.title}
                   </h3>
                 </div>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280" }}>
-                  {p.keyword}
-                </span>
               </div>
 
               {/* 🌟 4-Column Professional Metadata Spec Bar (인쇄 시 메타 정보 바 보강 복구) */}
