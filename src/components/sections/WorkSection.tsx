@@ -111,11 +111,11 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: "MONITOR" },
     ],
     tags: ["Workflow_Automation", "Interactive_Canvas", "Drag_and_Drop", "Design_System", "Prototype"],
-    thumbnail: imgWorkflow,
+    thumbnail: imgLogin,
     isFeatured: true,
     slides: [
-      { src: imgWorkflow, alt: "Workflow Builder", tabLabel: "Workflow Builder", title: "Drag & Drop으로 Workflow를 구성하다", caption: "Node 선택·연결·설정·실행 인터랙션을 Hi-Fi 프로토타입으로 빠르게 구체화" },
       { src: imgLogin, alt: "Login", tabLabel: "Login & Brand", title: "브랜드의 시각적 기준을 제품 경험까지 연결", caption: "Brand Identity와 Product UI가 분리되지 않도록 시각적 기준 확장" },
+      { src: imgWorkflow, alt: "Workflow Builder", tabLabel: "Workflow Builder", title: "Drag & Drop으로 Workflow를 구성하다", caption: "Node 선택·연결·설정·실행 인터랙션을 Hi-Fi 프로토타입으로 빠르게 구체화" },
       { src: imgDashboard, alt: "Dashboard", tabLabel: "Dashboard", title: "자동화의 생성 · 실행 · 모니터링을 하나의 흐름으로", caption: "Trigger / Action 기반 복잡한 자동화 로직을 사용자가 직접 구성하고 상태 확인" },
       { src: imgDoolinkerDS, alt: "Design System", tabLabel: "Design System", title: "Design Principles에서 Component까지 — 확장 가능한 UI 기준", caption: "FLOW · SIMPLICITY · FLEXIBILITY 3개 원칙 기반 Foundations 6/6, Components 26/26 완성" },
       { src: imgSettings, alt: "Settings", tabLabel: "Settings", title: "공통 컴포넌트 실서비스 적용", caption: "디자인 시스템 컴포넌트를 활용하여 구축된 계정 및 시스템 환경 설정" },
