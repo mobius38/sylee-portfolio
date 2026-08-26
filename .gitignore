@@ -19,4 +19,6 @@ logs/
 /.plugins/
 /.opencode-skills/
 /.agents/
+AGENTS.md
+CLAUDE.md
 Pricing_KPI_Matrix.md
