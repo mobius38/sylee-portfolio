@@ -9,7 +9,8 @@ export function CareerSection({ w }: { w: number }) {
     { period: "2022", role: "CS Talk · DWorks", desc: "사용성 개선 · 브랜딩 · 디자인 시스템 구축" },
     { period: "2023", role: "SalesBridge", desc: "브랜딩 · 협업 플랫폼 UX/UI · PWA" },
     { period: "2024", role: "Dualspace", desc: "제품 방향 기획 · UX/UI · High-fi Prototype" },
-    { period: "2025", role: "DWorks 통합 제품", desc: "멀티 프로덕트 디자인 시스템 · 통합 제품 경험" },
+    { period: "2025.01–07", role: "DWorks 통합 제품", desc: "스펙트라 재직 · 멀티 프로덕트 통합 UX 설계" },
+    { period: "2025.08–09", role: "Freelance (스펙트라)", desc: "우리금융캐피탈 B2B 수주 · Hi-Fi Prototype 완성" },
     { period: "2025–2026", role: "DOOLINKER · MIZUHO Portal", desc: "Workflow 구조화 · 제품 설계 · 디자인 시스템" },
   ];
 
@@ -38,7 +39,7 @@ export function CareerSection({ w }: { w: number }) {
 
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: isMobile ? "20px 16px" : "32px 24px" }}>
         {stages.map((st, idx) => {
-          const isLatest = idx >= 6;
+          const isLatest = idx >= 7;
           return (
             <div key={idx} style={{ borderTop: "1px solid #E5E7EB", paddingTop: "12px" }}>
               <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: isLatest ? "#2563EB" : "#9CA3AF", display: "block", marginBottom: "4px" }}>

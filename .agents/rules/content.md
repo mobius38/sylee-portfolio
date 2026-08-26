@@ -15,7 +15,8 @@
 - `01 DOOLINKER` — `Workflow Automation Platform` (`Brand → Product → System`)
 - `02 INTRANET PORTAL` — `Enterprise Work Platform` (`IA → Permission → System`)
 - `03 DUALSPACE` — `Unified Communication Platform` (`Problem → Structure → Prototype`)
-- `04 DWORKS` — `Multi-product Design System` (`Principle → Component → Product`)
+- `04 DWORKS INTEGRATED PRODUCT` — `우리금융캐피탈 Multi-Product UX` (`Product Analysis → Integrated UX → Hi-Fi Prototype`)
+- `05 DWORKS DESIGN SYSTEM` — `Multi-product Design System` (`Principle → Component → Product`)
 - `05 CS TALK` — `Customer Support Platform` (`UX개선 → Component → Design QA`)
 - `SELECTED PRODUCT: SALESBRIDGE` — `다자간 소통 플랫폼 설계 및 디자인 리드 (2023~2024)`
 
@@ -48,5 +49,6 @@
 4. `2022`: CS Talk · DWorks (사용성 개선 · 브랜딩 · 디자인 시스템 구축)
 5. `2023`: SalesBridge (브랜딩 · 협업 플랫폼 UX/UI · PWA)
 6. `2024`: Dualspace (제품 방향 기획 · UX/UI · High-fi Prototype)
-7. `2025`: DWorks 통합 제품 (멀티 프로덕트 디자인 시스템 · 통합 제품 경험)
-8. `2025–2026`: DOOLINKER · Intranet (Workflow 구조화 · 제품 설계 · 디자인 시스템)
+7. `2025.01–07`: DWorks 통합 제품 (우리금융캐피탈 B2B 수주 · 멀티 프로덕트 통합 UX 설계)
+8. `2025.08–09`: Freelance 스펙트라 (퇴사 후 프리랜서 · DWorks Hi-Fi Prototype 완성)
+9. `2025–2026`: Doolinker · Intranet (Workflow 구조화 · 제품 설계 · 디자인 시스템)

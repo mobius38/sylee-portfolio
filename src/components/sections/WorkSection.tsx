@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 
 // DOOLINKER
 import imgDashboard from "../../imports/optimized/dolinker-dashboard.webp";
-import imgWorkflow from "../../imports/optimized/dolinker-workflow.webp";
+import imgWorkflow from "../../imports/optimized/dolinker-workflow-canvas.webp";
 import imgLogin from "../../imports/optimized/dolinker-login.webp";
 import imgDoolinkerDS from "../../imports/optimized/dolinker-design-system.webp";
 import imgSettings from "../../imports/optimized/dolinker-settings.webp";
@@ -20,6 +20,10 @@ import imgDualspacePartner from "../../imports/optimized/dualspace-partner.webp"
 import imgDworksBranding from "../../imports/optimized/dworks-branding.webp";
 import imgDworksProduct from "../../imports/optimized/dworks-product.webp";
 import imgDworksDSThumbnail from "../../imports/optimized/dworks-ds-thumbnail.jpg";
+import imgDworksHiFiWoori from "../../imports/optimized/dworks-hifi-woori.jpg";
+import imgDworksIsometric from "../../imports/optimized/dworks-integrated-isometric.jpg";
+import imgDworksCSTalk from "../../imports/optimized/dworks-integrated-cstalk.jpg";
+import imgDworksCollab from "../../imports/optimized/dworks-integrated-collab.jpg";
 import imgDworksDSTheme from "../../imports/optimized/dworks-ds-theme.png";
 import imgDworksDSSemantic from "../../imports/optimized/dworks-ds-semantic.png";
 import imgDworksDSPalette from "../../imports/optimized/dworks-ds-palette.png";
@@ -63,6 +67,9 @@ export interface ProjectItem {
   keyword: string;
   client: string;
   period: string;
+  period2?: string;          // ← 선택. 재직·프리랜서 두 단계 있을 때
+  periodLabel?: string;      // ← 첫 번째 기간 레이블 (예: "재직")
+  period2Label?: string;     // ← 두 번째 기간 레이블 (예: "프리랜서")
   serviceType: string;
   role: string;
   description: string;
@@ -148,13 +155,71 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
   },
   {
-    id: "dualspace",
+    id: "dworks-woori-capital",
     num: "03",
-    title: "DUALSPACE",
-    subtitle: "Unified Communication Platform & Multi-Product Suite (2024~2025)",
-    categoryFlow: "Problem → Structure → Hi-Fi Prototype → Integrated Product",
+    title: "WOORI FINANCIAL CAPITAL",
+    subtitle: "우리금융캐피탈 B2B 수주 DWorks Hi-Fi Prototype (2025.08~09)",
+    categoryFlow: "Financial Spec → 3-Panel Layout → Hi-Fi Prototype",
+    keyword: "Financial · Enterprise",
+    client: "스펙트라",
+    period: "2025.08 ~ 2025.09",
+    serviceType: "Financial Enterprise Hi-Fi Prototype",
+    role: "Lead Product Designer · Hi-Fi Prototyping",
+    description: "스펙트라 퇴사 후 프리랜서(2025.08~09)로 참여하여, 우리금융캐피탈 B2B 수주를 목표로 실제 서비스 수준의 DWorks 멀티 프로덕트 Hi-Fi Prototype을 완성했습니다.",
+    challenge: "우리금융캐피탈의 복잡한 금융 심사·상담·오토론 업무 요구사항을 충족하면서, 실제 도입 후의 운영 환경을 직관적으로 증명할 수 있는 최고 완성도의 고해상도(Hi-Fi) 프로토타입이 필요했습니다.",
+    approach: "실제 상담원과 파트너, AI 챗봇이 유기적으로 연동되는 LiveTalk 대화 화면을 설계하고, 우측 패널에 참여자 정보·할 일(To-do)·대화 이력까지 통합한 정밀한 실동작 프로토타입을 구축했습니다.",
+    outcome: "우리금융캐피탈 B2B 제안 및 수주를 성공적으로 지원하는 결정적 Hi-Fi Prototype을 납품하였으며, 퇴사 후에도 전문성을 인정받아 프로젝트의 핵심 결과물을 완성했습니다.",
+    pipelineTitle: "B2B WINNING HI-FI PROTOTYPE PIPELINE",
+    pipelineSteps: [
+      { label: "FINANCIAL SPEC" },
+      { label: "CHAT & AI WORKFLOW" },
+      { label: "3-PANEL LAYOUT" },
+      { label: "WINNING PROTOTYPE" },
+    ],
+    tags: ["Financial_Enterprise", "B2B_Winning", "Hi_Fi_Prototype", "Woori_Capital", "Freelance"],
+    thumbnail: imgDworksHiFiWoori,
+    slides: [
+      { src: imgDworksHiFiWoori, alt: "우리금융캐피탈 B2B 수주용 DWorks Hi-Fi Prototype", tabLabel: "Hi-Fi Prototype", title: "우리금융캐피탈 — B2B 수주를 위한 DWorks Hi-Fi Prototype", caption: "퇴사 후 프리랜서(2025.08~09) 지원 · AI 챗봇·상담원·파트너 협업 및 우측 할일/이력 패널을 망라한 실서비스급 인터랙티브 화면" },
+    ],
+  },
+  {
+    id: "dworks-integrated-product",
+    num: "04",
+    title: "DWORKS INTEGRATED PRODUCT",
+    subtitle: "Multi-Product UX Architecture & Direction (2025.01~07)",
+    categoryFlow: "Product Analysis → UX Architecture → Integrated UX",
     keyword: "Enterprise",
-    client: "㈜스펙트라",
+    client: "스펙트라",
+    period: "2025.01 ~ 2025.07",
+    serviceType: "Enterprise Multi-Product Platform",
+    role: "Product Design · UX Architecture",
+    description: "스펙트라 재직 중(2025.01~07) 분산 운영되던 DWorks 제품군(CS Talk · SalesBridge · Workflow)을 단일 제품 경험으로 통합하기 위한 멀티 프로덕트 UX 아키텍처를 설계했습니다.",
+    challenge: "CS Talk, SalesBridge, Workflow 등 개별적으로 발전해온 DWorks 제품군이 서로 다른 사용자 흐름과 화면 구조를 가지고 있어, 엔터프라이즈 고객 관점의 일관된 제품 경험을 제공하기 어려웠습니다.",
+    approach: "기능 명세를 사용자 업무 맥락 중심으로 재구성하고, 공통 권한·상태·대화 흐름을 기준으로 멀티 프로덕트 통합 IA와 와이어프레임을 구조화하여 전사 제품의 표준 UX 방향성을 정립했습니다.",
+    outcome: "DWorks 멀티 프로덕트 통합 IA 및 설계안을 완성하여 전사 제품 로드맵의 기준점을 마련하고, 향후 대형 금융사 제안 및 B2B 수주의 뼈대가 되는 제품 기반을 구축했습니다.",
+    pipelineTitle: "INTEGRATED PRODUCT UX FLOW",
+    pipelineSteps: [
+      { label: "PRODUCT ANALYSIS" },
+      { label: "UX ARCHITECTURE" },
+      { label: "INTEGRATED IA" },
+      { label: "DESIGN GOVERNANCE" },
+    ],
+    tags: ["Multi_Product", "B2B_Enterprise", "UX_Architecture", "Integrated_IA", "Spectra"],
+    thumbnail: imgDworksIsometric,
+    slides: [
+      { src: imgDworksIsometric, alt: "DWorks 멀티 프로덕트 통합 화면", tabLabel: "통합 제품 전경", title: "DWorks — 멀티 프로덕트 통합 UX 아키텍처", caption: "스펙트라 재직 중(2025.01~07) CS Talk · SalesBridge · Workflow 제품군을 단일 사용자 경험으로 묶는 통합 화면 및 업무 체계 수립" },
+      { src: imgDworksCSTalk, alt: "DWorks 통합 상담 대화 화면", tabLabel: "통합 상담 대화", title: "DWorks — 통합 상담 대화 화면", caption: "1:1 고객 상담(LiveTalk), 티켓 정보, 상담 대화 이력을 일원화한 통합 상담 작업 공간" },
+      { src: imgDworksCollab, alt: "DWorks 협업 대화 화면", tabLabel: "파트너 협업 대화", title: "DWorks — 파트너 협업 대화 화면", caption: "상담원과 본사-파트너사 간 다자간 협업 및 업무 공유 화면 설계" },
+    ],
+  },
+  {
+    id: "dualspace",
+    num: "05",
+    title: "DUALSPACE",
+    subtitle: "Unified Communication Platform — Product Direction & Hi-Fi Prototype (2024)",
+    categoryFlow: "Problem → Structure → Hi-Fi Prototype",
+    keyword: "Enterprise",
+    client: "스펙트라",
     period: "2024.09 ~ 2024.10",
     serviceType: "Unified Enterprise Platform",
     role: "Product Design · Product Direction",
@@ -168,25 +233,23 @@ export const PROJECTS_DATA: ProjectItem[] = [
       { label: "SALESBRIDGE (N:N)" },
       { label: "DUALSPACE HUB" },
       { label: "HI-FI PROTOTYPE" },
-      { label: "INTEGRATED PRODUCT" },
     ],
     tags: ["Unified_Communication", "MVP_Leading", "UX_Architecture", "Hi_Fi_Prototype", "Sole_Design"],
-    thumbnail: imgDworksProduct,
+    thumbnail: imgDualspaceCustomer,
     slides: [
       { src: imgDualspaceArch, alt: "통합 생태계", tabLabel: "통합 생태계", title: "상담과 협업 — 분리된 두 제품을 하나의 경험으로", caption: "CS Talk(1:1 상담)과 SalesBridge(N:N 협업)을 통합한 신규 서비스 구조", fit: "contain" },
       { src: imgDualspaceCustomer, alt: "1:1 상담", tabLabel: "1:1 상담 뷰", title: "사용자 관계 · 역할 · 권한 · 정보 접근을 구조화", caption: "복수 사용자 기반의 복잡한 관계를 제품의 대화 흐름과 접근 구조로 전환" },
       { src: imgDualspacePartner, alt: "파트너 협업", tabLabel: "파트너 협업 뷰", title: "Prototype으로 제품 방향을 구체화", caption: "요구사항을 화면으로 옮기기보다 유사 기능과 우선순위를 정리해 MVP 범위 제안" },
-      { src: imgDworksProduct, alt: "통합 제품화", tabLabel: "통합 제품화", title: "DWorks 멀티 프로덕트 통합 제품 설계", caption: "PM과 협업하여 기능 명세를 UX 관점으로 재구성하고 MVP 기준으로 구조 정리" },
     ],
   },
   {
     id: "dworks-design-system",
-    num: "04",
+    num: "06",
     title: "DWORKS DESIGN SYSTEM",
     subtitle: "Multi-Product Design System (Figma Variables & Components 26)",
     categoryFlow: "Foundation → Token Variables → Components 26",
     keyword: "Design System",
-    client: "㈜스펙트라",
+    client: "스펙트라",
     period: "2024.01 ~ 2024.06",
     serviceType: "Enterprise Design System",
     role: "Product Design · Design System",
@@ -213,12 +276,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "salesbridge",
-    num: "05",
+    num: "07",
     title: "SALESBRIDGE",
     subtitle: "Desktop Web (React) & Mobile PWA Collaboration Platform (2023)",
     categoryFlow: "Desktop Web (React) · Mobile PWA · Multi-User",
     keyword: "Enterprise",
-    client: "㈜스펙트라",
+    client: "스펙트라",
     period: "2023.01 ~ 2023.12",
     serviceType: "Desktop React Platform & Mobile PWA",
     role: "Product Design · Brand Identity",
@@ -242,12 +305,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "dworks-brand-identity",
-    num: "06",
+    num: "08",
     title: "DWORKS BRAND IDENTITY",
     subtitle: "Enterprise DX Rebranding & Official Corporate Website (2023)",
     categoryFlow: "DX Vision → Logo Redesign → Brand Guide → Official Web",
     keyword: "Brand Identity",
-    client: "㈜스펙트라",
+    client: "스펙트라",
     period: "2023.06 ~ 2023.12",
     serviceType: "Enterprise DX Rebranding & Web",
     role: "Brand Identity · Visual Direction",
@@ -270,12 +333,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "cstalk",
-    num: "07",
+    num: "09",
     title: "CS TALK",
     subtitle: "Customer Support Platform",
     categoryFlow: "UX개선 → Component → Design QA",
     keyword: "Enterprise",
-    client: "㈜스펙트라",
+    client: "스펙트라",
     period: "2022.10 ~ 2023.06",
     serviceType: "Customer Support Dashboard",
     role: "Product Design · UX Architecture",
@@ -300,12 +363,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "commerce-shaluv",
-    num: "08",
+    num: "10",
     title: "SHALUV",
     subtitle: "Kids Fashion Niche Rebranding & Multi-Channel Growth (2019~2022)",
     categoryFlow: "Niche Concept → Lovely Mood Rebranding → 14x Traffic → Growth",
     keyword: "Commerce",
-    client: "어스투 (US2)",
+    client: "어스투",
     period: "2019.08 ~ 2022.09",
     serviceType: "E-Commerce Multi-Channel Brand",
     role: "Brand Design · E-Commerce",
@@ -329,12 +392,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "mobile-dime",
-    num: "09",
+    num: "11",
     title: "DIME",
     subtitle: "Social Dating & Matching Mobile App (iOS · Android)",
     categoryFlow: "Social Dating · Card Matching · Native App",
     keyword: "Mobile · Dating App",
-    client: "㈜다임 (DIME)",
+    client: "다임",
     period: "2017.08 ~ 2018.03",
     serviceType: "Social Dating Native App",
     role: "UX/UI Design · Promotion Design",
@@ -357,12 +420,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "hanmilab-lms",
-    num: "10",
+    num: "12",
     title: "HANMILAB LMS",
     subtitle: "LMS Edutech Platform & Admin System (Web · Mobile · Publishing)",
     categoryFlow: "Branding → Web (72p) → Admin/Mobile (62p) → Publishing",
     keyword: "Enterprise · LMS",
-    client: "한미랩 (HANMILAB)",
+    client: "한미랩",
     period: "2017.03 ~ 2017.07",
     serviceType: "Edutech LMS & Admin System",
     role: "UX/UI Design",
@@ -386,12 +449,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "mobile-hellolink",
-    num: "11",
+    num: "13",
     title: "HELLO LINK",
     subtitle: "Commerce & Mobile Magazine Native App (iOS · Android)",
     categoryFlow: "Code Commerce · Magazine · Mobile App",
     keyword: "O2O Commerce",
-    client: "인포뱅크㈜",
+    client: "인포뱅크",
     period: "2015.12 ~ 2016.02",
     serviceType: "Code Commerce & Magazine App",
     role: "UX/UI Design",
@@ -415,12 +478,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "mobile-nh",
-    num: "12",
+    num: "14",
     title: "NH바로바로마켓",
     subtitle: "Commerce Native Mobile App (Android)",
     categoryFlow: "Mobile Commerce · Native App",
     keyword: "Mobile Commerce",
-    client: "인포뱅크 · NH농협",
+    client: "인포뱅크",
     period: "2014.04 ~ 2015.01",
     serviceType: "Commerce Native App (Android)",
     role: "UX/UI Design",
@@ -443,12 +506,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
   },
   {
     id: "mobile-samsungfire",
-    num: "13",
+    num: "15",
     title: "SAMSUNG FIRE",
     subtitle: "Samsung Fire Membership Mobile UI/UX (2014)",
     categoryFlow: "Membership Service · Mobile UX",
     keyword: "Financial · Mobile",
-    client: "삼성화재 · 인포뱅크",
+    client: "인포뱅크",
     period: "2014.10 ~ 2014.12",
     serviceType: "Mobile Web & App UX/UI Design",
     role: "UX/UI Design",
@@ -685,9 +748,30 @@ function CaseStudyDialog({
               <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#9CA3AF", display: "block", marginBottom: "4px", letterSpacing: "0.06em" }}>
                 DATE (PERIOD)
               </span>
-              <strong style={{ fontSize: "14px", fontWeight: 800, color: "#2563EB", display: "block" }}>
-                {project.period}
-              </strong>
+              {project.period2 ? (
+                <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <span style={{ fontSize: "10px", fontWeight: 800, color: "#6B7280", backgroundColor: "#F3F4F6", padding: "2px 6px", borderRadius: "3px", whiteSpace: "nowrap" as const }}>
+                      {project.periodLabel || "재직"}
+                    </span>
+                    <strong style={{ fontSize: "13px", fontWeight: 800, color: "#2563EB" }}>
+                      {project.period}
+                    </strong>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <span style={{ fontSize: "10px", fontWeight: 800, color: "#FFFFFF", backgroundColor: "#7C3AED", padding: "2px 6px", borderRadius: "3px", whiteSpace: "nowrap" as const }}>
+                      {project.period2Label || "프리랜서"}
+                    </span>
+                    <strong style={{ fontSize: "13px", fontWeight: 800, color: "#7C3AED" }}>
+                      {project.period2}
+                    </strong>
+                  </div>
+                </div>
+              ) : (
+                <strong style={{ fontSize: "14px", fontWeight: 800, color: "#2563EB", display: "block" }}>
+                  {project.period}
+                </strong>
+              )}
             </div>
 
             <div>

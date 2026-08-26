@@ -4,9 +4,12 @@ import imgSamsungFire from "../../imports/optimized/mobile-samsungfire.webp";
 // 🌟 각 프로젝트별 매핑용 대표 썸네일 이미지 임포트
 import imgLogin from "../../imports/optimized/dolinker-login.webp";
 import imgIntranetHome from "../../imports/optimized/intranet-admin.webp";
+import imgDualspaceCustomer from "../../imports/optimized/dualspace-customer.webp";
 import imgDworksProduct from "../../imports/optimized/dworks-product.webp";
 import imgDworksBranding from "../../imports/optimized/dworks-branding.webp";
 import imgDworksDSThumbnail from "../../imports/optimized/dworks-ds-thumbnail.jpg";
+import imgDworksHiFiWoori from "../../imports/optimized/dworks-hifi-woori.jpg";
+import imgDworksIsometric from "../../imports/optimized/dworks-integrated-isometric.jpg";
 import imgSalesBridgeProduct from "../../imports/optimized/salesbridge-product.webp";
 import imgCSTalkOverview from "../../imports/optimized/cstalk-overview.webp";
 import imgShaluv from "../../imports/commerce-shaluv.png";
@@ -47,7 +50,9 @@ export function HeroProfileSection({
   const projectThumbnails: Record<string, string> = {
     "doolinker": imgLogin,
     "intranet": imgIntranetHome,
-    "dualspace": imgDworksProduct,
+    "dualspace": imgDualspaceCustomer,
+    "dworks-integrated-product": imgDworksIsometric,
+    "dworks-woori-capital": imgDworksHiFiWoori,
     "dworks-design-system": imgDworksDSThumbnail,
     "salesbridge": imgSalesBridgeProduct,
     "dworks-brand-identity": imgDworksBranding,
@@ -85,6 +90,8 @@ export function HeroProfileSection({
       items: [
         { date: "2025.12", title: "Trigger/Action 기반 Workflow Builder UX 설계", projectId: "doolinker" },
         { date: "2025.11", title: "DO.LiNKER 브랜드 아이덴티티(BI) 수립", projectId: "doolinker" },
+        { date: "2025.09", title: "우리금융캐피탈 B2B 수주용 DWorks Hi-Fi Prototype 완성", projectId: "dworks-woori-capital" },
+        { date: "2025.07", title: "DWorks 멀티 프로덕트 통합 UX 아키텍처 설계 완료", projectId: "dworks-integrated-product" },
       ],
     },
     {

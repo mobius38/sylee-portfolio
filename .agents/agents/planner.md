@@ -15,7 +15,10 @@ description: >-
 
 > 💡 지원자의 정체성:
 > **Senior Product Designer로서 탄탄한 제품 설계 및 IC 역량을 바탕으로, Product Design Lead로 성장 및 역할을 확장하고 있는 15+년 차 프로덕트 디자이너**
-
+SECTION 06
+|
+SPECIAL FEATURE — IC DESIGN LEADERSHIP
+디자인 리드로서 팀과 제품을 성장시키는 4대 핵심 축
 ## 필수 참조 파일
 
 기획 작업 전 반드시 읽어야 하는 파일:
