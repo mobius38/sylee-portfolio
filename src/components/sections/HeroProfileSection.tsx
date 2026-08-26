@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import imgSamsungFire from "../../imports/optimized/mobile-samsungfire.webp";
 
 // 🌟 각 프로젝트별 매핑용 대표 썸네일 이미지 임포트
-import imgLogin from "../../imports/optimized/dolinker-login.webp";
+import imgWorkflow from "../../imports/optimized/dolinker-workflow-canvas.webp";
 import imgIntranetHome from "../../imports/optimized/intranet-admin.webp";
 import imgDualspaceCustomer from "../../imports/optimized/dualspace-customer.webp";
 import imgDworksProduct from "../../imports/optimized/dworks-product.webp";
@@ -48,7 +48,7 @@ export function HeroProfileSection({
 
   // 🌟 프로젝트 ID별 대표 썸네일 매핑
   const projectThumbnails: Record<string, string> = {
-    "doolinker": imgLogin,
+    "doolinker": imgWorkflow,
     "intranet": imgIntranetHome,
     "dualspace": imgDualspaceCustomer,
     "dworks-integrated-product": imgDworksIsometric,
