@@ -1343,7 +1343,7 @@ export function WorkSection({
         {PROJECTS_DATA.map((p) => {
           // 인쇄용 첫 번째 대표 이미지
           const primarySlide = p.slides[0];
-          const shouldBreakBefore = p.num > 1; // Case 01은 상단 타이틀과 같은 페이지에, Case 02부터는 개별 페이지 구분
+          const shouldBreakBefore = Number(p.num) > 1; // Case 01은 상단 타이틀과 같은 페이지에, Case 02부터는 개별 페이지 구분
 
           return (
             <div
