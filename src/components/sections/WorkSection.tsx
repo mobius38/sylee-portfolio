@@ -38,11 +38,11 @@ import imgSalesBridgeBrand from "../../imports/optimized/salesbridge-brand.webp"
 // MOBILE APPS & LMS & COMMERCE
 import imgNH from "../../imports/optimized/mobile-nh.webp";
 import imgHelloLink from "../../imports/optimized/mobile-hellolink.webp";
-import imgHelloLinkMagazine from "../../imports/mobile-hellolink-magazine.png";
-import imgShaluv from "../../imports/commerce-shaluv.png";
+import imgHelloLinkMagazine from "../../imports/optimized/mobile-hellolink-magazine.webp";
+import imgShaluv from "../../imports/optimized/commerce-shaluv.webp";
 import imgShaluvPromotions from "../../imports/optimized/commerce-shaluv-promotions.png";
 import imgDime from "../../imports/optimized/mobile-dime.webp";
-import imgLMS from "../../imports/hanmilab-lms.png";
+import imgLMS from "../../imports/optimized/hanmilab-lms.webp";
 import imgSamsungFire from "../../imports/optimized/mobile-samsungfire.webp";
 
 export interface ShowcaseSlide {

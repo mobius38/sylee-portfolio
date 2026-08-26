@@ -12,9 +12,9 @@ import imgDworksHiFiWoori from "../../imports/optimized/dworks-hifi-woori.jpg";
 import imgDworksIsometric from "../../imports/optimized/dworks-integrated-isometric.jpg";
 import imgSalesBridgeProduct from "../../imports/optimized/salesbridge-product.webp";
 import imgCSTalkOverview from "../../imports/optimized/cstalk-overview.webp";
-import imgShaluv from "../../imports/commerce-shaluv.png";
+import imgShaluv from "../../imports/optimized/commerce-shaluv.webp";
 import imgDime from "../../imports/optimized/mobile-dime.webp";
-import imgLMS from "../../imports/hanmilab-lms.png";
+import imgLMS from "../../imports/optimized/hanmilab-lms.webp";
 import imgHelloLink from "../../imports/optimized/mobile-hellolink.webp";
 import imgNH from "../../imports/optimized/mobile-nh.webp";
 
