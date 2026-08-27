@@ -59,7 +59,7 @@ export function ContactFooter({ w }: { w: number }) {
             maxWidth: "700px",
           }}
         >
-          B2B SaaS 제품 디자인, 디자인 시스템 구축, 또는 협업 관련 문의를 환영합니다.
+          B2B 엔터프라이즈 제품 설계, 디자인 시스템 구축, 또는 협업 관련 문의를 환영합니다.
         </p>
 
         {/* 4. Dual Action Pill Buttons (시안과 1:1 완벽 일치: 2개 버튼) */}

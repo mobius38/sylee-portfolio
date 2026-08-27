@@ -224,7 +224,7 @@ export function HeroProfileSection({
             marginBottom: "14px",
           }}
         >
-          B2B SaaS · Product Design · 2011–2026
+          B2B Enterprise · Product Design · 2011–2026
         </span>
 
         <h1
@@ -259,11 +259,11 @@ export function HeroProfileSection({
         </p>
       </div>
 
-      {/* 2. Sleek Meta Bar (시안과 1:1 완벽 일치: 심플 & 완벽한 밸런스) */}
+      {/* 2. Sleek Meta Bar (온프레미스 & 엔터프라이즈 도메인 정밀 반영) */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: isMobile ? "1fr 1fr" : "1.2fr 1.6fr 2fr auto",
+          gridTemplateColumns: isMobile ? "1fr 1fr" : "1.2fr 1.8fr 2fr auto",
           alignItems: "center",
           gap: isMobile ? "20px 16px" : "32px",
           borderTop: "1px solid #111111",
@@ -286,7 +286,7 @@ export function HeroProfileSection({
             SPECIALTY
           </span>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
-            B2B SaaS · UX Systems
+            B2B Enterprise · UX Architecture
           </span>
         </div>
         <div>
