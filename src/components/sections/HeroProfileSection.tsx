@@ -68,13 +68,6 @@ export function HeroProfileSection({
   // 🌟 썸네일 호버 상태 (좌표는 state에 두지 않고 ref를 통해 DOM 직접 조작하여 60fps 보장)
   const [hoveredProject, setHoveredProject] = useState<{ id: string } | null>(null);
 
-  const metrics = [
-    { num: "10+", label: "Years Experience", sub: "Product Design & UI/UX" },
-    { num: "12", label: "Selected Works", sub: "Enterprise · Workflow · Commerce · Financial" },
-    { num: "26+", label: "Components", sub: "Foundations · Tokens · UI Kit" },
-    { num: "Hi-Fi", label: "Prototyping", sub: "Interaction & Validation" },
-  ];
-
   // 15-Year 10-Month Career Timeline (Clean Recruiter-Friendly Structure)
   const timelineMilestones = [
     // 최신 연도부터 내림차순으로 정렬
@@ -247,44 +240,73 @@ export function HeroProfileSection({
         </p>
       </div>
 
-      {/* 3. Hero Metrics Structure Bar */}
+      {/* 2. Sleek Meta Bar (시안과 1:1 완벽 일치: 심플 & 완벽한 밸런스) */}
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, 1fr)",
-          gap: isMobile ? "24px 16px" : "32px",
+          gridTemplateColumns: isMobile ? "1fr 1fr" : "1.2fr 1.6fr 2fr auto",
+          alignItems: "center",
+          gap: isMobile ? "20px 16px" : "32px",
           borderTop: "1px solid #111111",
           borderBottom: "1px solid #E5E7EB",
-          padding: isMobile ? "28px 0" : "40px 0",
+          padding: isMobile ? "20px 0" : "24px 0",
           marginBottom: isMobile ? "48px" : "72px",
-          ...getRevealStyle(400),
+          ...getRevealStyle(300),
         }}
       >
-        {metrics.map((m, idx) => (
-          <div key={idx} className="about-metric-card">
-            <span
-              className="about-metric-num"
-              style={{
-                fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
-                fontSize: isMobile ? "32px" : "56px",
-                fontWeight: 900,
-                color: "#111111",
-                letterSpacing: "-0.04em",
-                display: "block",
-                lineHeight: 1,
-                marginBottom: "8px",
-              }}
-            >
-              {m.num}
-            </span>
-            <strong className="about-metric-label" style={{ fontSize: isMobile ? "14px" : "16px", color: "#111111", fontWeight: 800, display: "block", marginBottom: "4px" }}>
-              {m.label}
-            </strong>
-            <span className="about-metric-sub" style={{ fontSize: isMobile ? "12.5px" : "13.5px", color: "#4B5563", lineHeight: 1.45, display: "block" }}>
-              {m.sub}
-            </span>
-          </div>
-        ))}
+        <div>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
+            EXPERIENCE
+          </span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
+            10+ Years
+          </span>
+        </div>
+        <div>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
+            SPECIALTY
+          </span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
+            B2B SaaS · UX Systems
+          </span>
+        </div>
+        <div>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
+            RECENT WORK
+          </span>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
+            DWorks · CS Talk · SalesBridge
+          </span>
+        </div>
+        <div style={{ gridColumn: isMobile ? "span 2" : "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end" }}>
+          <a
+            href="#projects"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              backgroundColor: "#111111",
+              color: "#FFFFFF",
+              padding: "11px 22px",
+              borderRadius: "9999px",
+              fontSize: "13px",
+              fontWeight: 800,
+              letterSpacing: "-0.01em",
+              textDecoration: "none",
+              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#2563EB";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#111111";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            Case Studies →
+          </a>
+        </div>
       </div>
 
       {/* 4. 3 Core Competencies */}
