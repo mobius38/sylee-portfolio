@@ -225,7 +225,7 @@ export function HeroProfileSection({
           }}
         >
           Product Designer<br />
-          <span style={{ fontStyle: "italic", fontWeight: 800, color: "#111111" }}>
+          <span style={{ fontStyle: "italic", fontWeight: 800, color: "#6B7280" }}>
             who builds systems,
           </span><br />
           not screens.
