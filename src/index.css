@@ -495,15 +495,28 @@ body {
     line-height: 1.4 !important;
   }
 
-  /* 🌟 PROJECTS Print Optimization: Hide screen-only lists and show detailed cases */
+  /* 🌟 PROJECTS Print Optimization: Projects 타이틀과 Case 01을 A4 한 페이지에 완벽 결합 */
   #projects {
-    border-top: none !important; /* 인쇄 시 타임라인 끝-프로젝트 시작부의 상단 회색 구분 선 완전 제거 */
-    padding-top: 0px !important; /* 인쇄 시 불필요한 탑 패딩 제거 */
+    border-top: none !important;
+    padding-top: 0px !important;
+    page-break-before: always !important; /* 🌟 타임라인 끝난 후 새 A4 페이지에서 시작 */
+    break-before: page !important;
   }
   .web-only-projects,
   .project-card,
   .no-print {
     display: none !important;
+  }
+
+  .projects-header-print {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-bottom: 10pt !important;
+  }
+
+  .projects-header-print .projects-title-h2 {
+    font-size: 22pt !important;
+    margin-bottom: 4pt !important;
   }
 
   /* 🌟 인쇄 시 모달 상세 케이스 스터디 북릿 100% 강제 노출 */
@@ -515,11 +528,27 @@ body {
 
   .print-case-page {
     display: block !important;
-    margin-bottom: 28pt !important;
-    padding-bottom: 20pt !important;
+    margin-bottom: 24pt !important;
+    padding-bottom: 16pt !important;
     border-bottom: 1px solid #E5E7EB !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+  }
+
+  /* Case 01 (첫 번째 케이스)은 상단 Projects 타이틀과 분리되지 않고 한 페이지에 쏙 들어가도록 조정 */
+  .print-case-page:first-child {
+    page-break-before: avoid !important;
+    break-before: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+  }
+
+  .print-case-page:first-child img {
+    max-height: 100pt !important; /* 첫 페이지 이미지 높이 컴팩트 최적화 */
+    object-fit: cover !important;
   }
 
   /* 🌟 LEADERSHIP + FOOTER Single Final Page Print Optimization (리더십과 푸터를 A4 한 페이지에 완벽 결합) */
