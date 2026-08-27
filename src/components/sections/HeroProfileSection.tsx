@@ -346,23 +346,59 @@ export function HeroProfileSection({
           </span>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "16px" : "32px" }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: isMobile ? "28px" : "40px" }}>
           <div
             className="competency-card-item"
             style={{
-              padding: "28px 24px",
-              backgroundColor: "#F9FAFB",
-              border: "1px solid #E5E7EB",
-              borderRadius: "8px",
-              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
+              paddingTop: "18px",
+              borderTop: "1.5px solid #111111",
+              backgroundColor: "transparent",
+              transition: "border-color 0.25s ease, transform 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderTopColor = "#2563EB";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderTopColor = "#111111";
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
-              <span className="print-num" style={{ display: "none" }}>01</span>
-              <span className="web-meta">01 / COMPLEX UX &amp; IA</span>
+            <span
+              className="competency-card-number"
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "#2563EB",
+                display: "block",
+                marginBottom: "10px",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              01
             </span>
-            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>복잡한 제품 구조화</h3>
-            <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+            <h3
+              className="competency-card-title"
+              style={{
+                fontSize: isMobile ? "18px" : "20px",
+                fontWeight: 900,
+                color: "#111111",
+                margin: "0 0 10px 0",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.3,
+              }}
+            >
+              복잡한 제품 구조화
+            </h3>
+            <p
+              className="competency-card-desc"
+              style={{
+                fontSize: isMobile ? "14px" : "15px",
+                color: "#4B5563",
+                margin: 0,
+                lineHeight: 1.65,
+                fontWeight: 500,
+              }}
+            >
               비즈니스 복잡도가 높은 워크플로우 자동화, 사내 다중 권한 포털의 정보구조(IA)와 업무 흐름을 직관적인 사용자 태스크 플로우로 단순화합니다.
             </p>
           </div>
@@ -370,19 +406,55 @@ export function HeroProfileSection({
           <div
             className="competency-card-item"
             style={{
-              padding: "28px 24px",
-              backgroundColor: "#F9FAFB",
-              border: "1px solid #E5E7EB",
-              borderRadius: "8px",
-              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
+              paddingTop: "18px",
+              borderTop: "1.5px solid #111111",
+              backgroundColor: "transparent",
+              transition: "border-color 0.25s ease, transform 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderTopColor = "#2563EB";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderTopColor = "#111111";
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
-              <span className="print-num" style={{ display: "none" }}>02</span>
-              <span className="web-meta">02 / DESIGN SYSTEM STANDARDS</span>
+            <span
+              className="competency-card-number"
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "#2563EB",
+                display: "block",
+                marginBottom: "10px",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              02
             </span>
-            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>디자인 시스템 표준 구축</h3>
-            <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+            <h3
+              className="competency-card-title"
+              style={{
+                fontSize: isMobile ? "18px" : "20px",
+                fontWeight: 900,
+                color: "#111111",
+                margin: "0 0 10px 0",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.3,
+              }}
+            >
+              디자인 시스템 표준 구축
+            </h3>
+            <p
+              className="competency-card-desc"
+              style={{
+                fontSize: isMobile ? "14px" : "15px",
+                color: "#4B5563",
+                margin: 0,
+                lineHeight: 1.65,
+                fontWeight: 500,
+              }}
+            >
               Figma Variables 기반 컬러/타이포 디자인 토큰화 및 크로스 플랫폼 공통 컴포넌트 표준을 제정해 제품군의 일관성과 협업 속도를 혁신합니다.
             </p>
           </div>
@@ -390,19 +462,55 @@ export function HeroProfileSection({
           <div
             className="competency-card-item"
             style={{
-              padding: "28px 24px",
-              backgroundColor: "#F9FAFB",
-              border: "1px solid #E5E7EB",
-              borderRadius: "8px",
-              transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
+              paddingTop: "18px",
+              borderTop: "1.5px solid #111111",
+              backgroundColor: "transparent",
+              transition: "border-color 0.25s ease, transform 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderTopColor = "#2563EB";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderTopColor = "#111111";
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
-              <span className="print-num" style={{ display: "none" }}>03</span>
-              <span className="web-meta">03 / HI-FI PROTOTYPING</span>
+            <span
+              className="competency-card-number"
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "18px",
+                fontWeight: 700,
+                color: "#2563EB",
+                display: "block",
+                marginBottom: "10px",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              03
             </span>
-            <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>인터랙티브 검증 및 MVP 리딩</h3>
-            <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
+            <h3
+              className="competency-card-title"
+              style={{
+                fontSize: isMobile ? "18px" : "20px",
+                fontWeight: 900,
+                color: "#111111",
+                margin: "0 0 10px 0",
+                letterSpacing: "-0.025em",
+                lineHeight: 1.3,
+              }}
+            >
+              인터랙티브 검증 및 MVP 리딩
+            </h3>
+            <p
+              className="competency-card-desc"
+              style={{
+                fontSize: isMobile ? "14px" : "15px",
+                color: "#4B5563",
+                margin: 0,
+                lineHeight: 1.65,
+                fontWeight: 500,
+              }}
+            >
               실서비스 환경에 수렴하는 고해상도(Hi-Fi) 프로토타이핑을 설계하여 복잡한 노드 기반 인터랙션의 요구사항을 검증하고 최적의 MVP 범위를 정의합니다.
             </p>
           </div>

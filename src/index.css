@@ -731,14 +731,16 @@ body {
   }
 }
 
-/* ─── Core Competency Card Micro-interactions ──────────────────────────── */
+/* ─── Core Competency Editorial Micro-interactions ──────────────────────────── */
 .competency-card-item {
-  will-change: transform, box-shadow, border-color, background-color;
+  will-change: transform, border-color;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
 .competency-card-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 28px -6px rgba(37, 99, 235, 0.06), 0 8px 16px -8px rgba(0, 0, 0, 0.04) !important;
-  border-color: #3B82F6 !important;
-  background-color: #FFFFFF !important;
+  transform: translateY(-3px);
+  border-top-color: #2563EB !important;
+}
+.competency-card-item:hover .competency-card-title {
+  color: #2563EB !important;
 }
 
