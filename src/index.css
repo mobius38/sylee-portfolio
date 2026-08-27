@@ -235,6 +235,26 @@ body {
     display: none !important;
   }
 
+  /* 🌟 Reset section padding on print so ALL pages have the EXACT same top margin */
+  main,
+  section,
+  #about,
+  #projects,
+  #leadership,
+  #contact,
+  #about > div,
+  #projects > div,
+  #leadership > div,
+  #contact > div {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .print-only-header {
+    display: none !important; /* 웹 화면과 완전히 동일한 첫 페이지 상단 여백 보장 */
+  }
+
   /* 🌟 Print Typography Scale Enforcement (A4 용지 상에서 웅장하고 선명한 타이틀) */
   h1.about-title-h1,
   .editorial-display-title.about-title-h1 {
