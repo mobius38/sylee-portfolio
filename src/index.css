@@ -19,10 +19,10 @@
   --font-serif: 'DM Serif Display', Georgia, serif;
 }
 
-/* ─── Unified Editorial Display Typography (DM Serif Display 100% 완벽 일치) ─── */
+/* ─── Unified Editorial Display Typography (DM Serif Display Bold 100% 완벽 일치) ─── */
 .editorial-display-title {
   font-family: var(--font-serif) !important;
-  font-weight: 400 !important; /* DM Serif Display는 기본 고유 디스플레이 굵기 탑재 */
+  font-weight: 800 !important; /* 🌟 묵직하고 단단한 800 볼드 확실하게 유지! */
   letter-spacing: -0.04em !important;
   line-height: 1.05 !important;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
@@ -31,6 +31,7 @@
 .editorial-display-title .display-italic-part {
   font-family: var(--font-serif) !important;
   font-style: italic !important;
+  font-weight: 800 !important; /* 🌟 이탤릭도 동일한 볼드 800 유지! */
   letter-spacing: -0.035em !important;
 }
 
