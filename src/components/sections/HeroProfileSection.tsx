@@ -180,16 +180,16 @@ export function HeroProfileSection({
         overflow: "hidden",
       }}
     >
-      {/* 🌟 Ambient Royal Blue Glow Orb (확실하게 인지되는 프리미엄 앰비언트 광원) */}
+      {/* 🌟 Ambient Royal Blue Glow Orb (중심점을 위쪽 모서리로 올려 상단에서 자연스럽게 쏟아지는 빛) */}
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
-          top: isMobile ? "-80px" : "-120px",
-          right: isMobile ? "-80px" : "-120px",
-          width: isMobile ? "440px" : "860px",
-          height: isMobile ? "440px" : "860px",
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.20) 0%, rgba(59, 130, 246, 0.12) 35%, rgba(96, 165, 250, 0.05) 60%, transparent 75%)",
+          top: isMobile ? "-180px" : "-320px",
+          right: isMobile ? "-60px" : "-80px",
+          width: isMobile ? "500px" : "900px",
+          height: isMobile ? "500px" : "900px",
+          background: "radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.14) 35%, rgba(96, 165, 250, 0.06) 60%, transparent 75%)",
           borderRadius: "50%",
           pointerEvents: "none",
           zIndex: 0,
