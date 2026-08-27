@@ -180,9 +180,10 @@ export function HeroProfileSection({
         overflow: "hidden",
       }}
     >
-      {/* 🌟 Ambient Royal Blue Glow Orb (중심점을 위쪽 모서리로 올려 상단에서 자연스럽게 쏟아지는 빛) */}
+      {/* 🌟 Ambient Royal Blue Glow Orb (인쇄 시 숨김 처리 no-print) */}
       <div
         aria-hidden="true"
+        className="no-print"
         style={{
           position: "absolute",
           top: isMobile ? "-180px" : "-320px",
@@ -296,9 +297,10 @@ export function HeroProfileSection({
             DO.LINKER · MIZUHO · Dualspace
           </span>
         </div>
-        <div style={{ gridColumn: isMobile ? "span 2" : "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end" }}>
+        <div className="no-print" style={{ gridColumn: isMobile ? "span 2" : "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end" }}>
           <a
             href="#projects"
+            className="no-print"
             style={{
               display: "inline-flex",
               alignItems: "center",
