@@ -197,21 +197,20 @@ export function HeroProfileSection({
 
       {/* 1. Giant Editorial Display Typography (시안의 압도적인 몰입감 1:1 완벽 이식) */}
       <div style={{ marginBottom: isMobile ? "32px" : "48px", ...getRevealStyle(100) }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "20px" }}>
-          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#2563EB", display: "inline-block" }}></span>
-          <span
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "12px",
-              fontWeight: 800,
-              color: "#2563EB",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-            }}
-          >
-            B2B SaaS · Product Design · 2011–2026
-          </span>
-        </div>
+        <span
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "12px",
+            fontWeight: 800,
+            color: "#2563EB",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            display: "block",
+            marginBottom: "16px",
+          }}
+        >
+          B2B SaaS · Product Design · 2011–2026
+        </span>
 
         <h1
           className="about-title-h1"
@@ -226,7 +225,7 @@ export function HeroProfileSection({
           }}
         >
           Product Designer<br />
-          <span style={{ fontStyle: "italic", fontWeight: 500, color: "#6B7280" }}>
+          <span style={{ fontStyle: "italic", fontWeight: 800, color: "#111111" }}>
             who builds systems,
           </span><br />
           not screens.
