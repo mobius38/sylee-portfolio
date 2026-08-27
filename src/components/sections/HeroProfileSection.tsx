@@ -195,49 +195,43 @@ export function HeroProfileSection({
         </div>
       </div>
 
-      {/* 1. Giant Bold Section Title (다른 섹션과 100% 동일한 규격) */}
-      <div style={{ marginBottom: isMobile ? "32px" : "44px", ...getRevealStyle(100) }}>
-        <span
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "12px",
-            fontWeight: 800,
-            color: "#2563EB",
-            letterSpacing: "0.15em",
-            display: "block",
-            marginBottom: "8px",
-          }}
-        >
-          PRODUCT DESIGNER · 2011–2026
-        </span>
+      {/* 1. Giant Editorial Display Typography (시안의 압도적인 몰입감 1:1 완벽 이식) */}
+      <div style={{ marginBottom: isMobile ? "32px" : "48px", ...getRevealStyle(100) }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "20px" }}>
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#2563EB", display: "inline-block" }}></span>
+          <span
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: "12px",
+              fontWeight: 800,
+              color: "#2563EB",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+            }}
+          >
+            B2B SaaS · Product Design · 2011–2026
+          </span>
+        </div>
+
         <h1
           className="about-title-h1"
           style={{
-            fontSize: isMobile ? "44px" : "clamp(56px, 6.5vw, 84px)",
-            fontWeight: 900,
-            letterSpacing: "-0.04em",
-            lineHeight: 1.0,
-            color: "#111111",
-            margin: "0 0 24px 0",
-          }}
-        >
-          ABOUT
-        </h1>
-        <p
-          className="about-sub-p"
-          style={{
-            fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
-            fontSize: isMobile ? "22px" : "clamp(26px, 2.8vw, 38px)",
+            fontFamily: "'Newsreader', Georgia, serif",
+            fontSize: isMobile ? "38px" : "clamp(52px, 5.8vw, 88px)",
             fontWeight: 800,
+            letterSpacing: "-0.035em",
+            lineHeight: 1.08,
             color: "#111111",
-            lineHeight: 1.3,
-            letterSpacing: "-0.03em",
-            margin: "0 0 16px 0",
-            maxWidth: "1100px",
+            margin: "0 0 32px 0",
           }}
         >
-          Product Designer who builds <span style={{ fontFamily: "'Newsreader', serif", fontStyle: "italic", fontWeight: 600, color: "#2563EB" }}>systems</span>, not just screens.
-        </p>
+          Product Designer<br />
+          <span style={{ fontStyle: "italic", fontWeight: 500, color: "#6B7280" }}>
+            who builds systems,
+          </span><br />
+          not screens.
+        </h1>
+
         <p
           style={{
             fontFamily: "'Noto Sans KR', sans-serif",
