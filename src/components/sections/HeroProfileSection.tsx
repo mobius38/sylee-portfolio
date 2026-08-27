@@ -293,8 +293,8 @@ export function HeroProfileSection({
           <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
             RECENT WORK
           </span>
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
-            DO.LINKER · MIZUHO · Dualspace
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 800, color: "#111111" }}>
+            DO.LINKER (Workflow) · MIZUHO (Intranet)
           </span>
         </div>
         <div className="no-print" style={{ gridColumn: isMobile ? "span 2" : "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end" }}>
