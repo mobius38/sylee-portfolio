@@ -100,7 +100,7 @@ export function GnbHeader({ w }: { w: number }) {
           )}
         </a>
 
-        {/* Nav 4 Items / Hamburger Menu */}
+        {/* Nav 4 Items / Hamburger Menu & PDF Print Button */}
         {isMobile ? (
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -146,30 +146,68 @@ export function GnbHeader({ w }: { w: number }) {
             />
           </button>
         ) : (
-          <nav style={{ display: "flex", gap: "24px" }}>
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  style={{
-                    fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
-                    fontSize: "13px",
-                    fontWeight: isActive ? 900 : 600,
-                    color: isActive ? "#2563EB" : "#4B5563", // 🌟 신뢰 블루 싱크
-                    textDecoration: "none",
-                    position: "relative",
-                    padding: "4px 0",
-                    whiteSpace: "nowrap",
-                    transition: "color 0.15s ease",
-                  }}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-          </nav>
+          <div style={{ display: "flex", alignItems: "center", gap: "28px" }}>
+            <nav style={{ display: "flex", gap: "24px" }}>
+              {navItems.map((item) => {
+                const isActive = activeSection === item.id;
+                return (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    style={{
+                      fontFamily: "'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
+                      fontSize: "13px",
+                      fontWeight: isActive ? 900 : 600,
+                      color: isActive ? "#2563EB" : "#4B5563",
+                      textDecoration: "none",
+                      position: "relative",
+                      padding: "4px 0",
+                      whiteSpace: "nowrap",
+                      transition: "color 0.15s ease",
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })}
+            </nav>
+
+            {/* 🌟 PDF 다운로드 / 인쇄 Action 버튼 */}
+            <button
+              onClick={() => window.print()}
+              aria-label="PDF 인쇄 / 다운로드"
+              className="no-print"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "6px",
+                backgroundColor: "#111111",
+                color: "#FFFFFF",
+                border: "none",
+                padding: "7px 16px",
+                borderRadius: "9999px",
+                fontSize: "12.5px",
+                fontWeight: 800,
+                cursor: "pointer",
+                transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#2563EB";
+                e.currentTarget.style.transform = "translateY(-1px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#111111";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              PDF 다운로드
+            </button>
+          </div>
         )}
       </div>
 
@@ -210,6 +248,37 @@ export function GnbHeader({ w }: { w: number }) {
               </a>
             );
           })}
+          {/* Mobile PDF Action Button */}
+          <div style={{ marginTop: "16px", paddingTop: "20px", borderTop: "1px solid rgba(0, 0, 0, 0.08)", width: "100%", maxWidth: "240px" }}>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                setTimeout(() => window.print(), 300);
+              }}
+              style={{
+                width: "100%",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "8px",
+                backgroundColor: "#111111",
+                color: "#FFFFFF",
+                border: "none",
+                padding: "14px 20px",
+                borderRadius: "9999px",
+                fontSize: "14px",
+                fontWeight: 800,
+                cursor: "pointer",
+              }}
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              PDF 다운로드 / 인쇄
+            </button>
+          </div>
         </div>
       )}
 
