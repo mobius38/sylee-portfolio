@@ -171,9 +171,11 @@ export function HeroProfileSection({
     <section
       id="about"
       style={{
-        padding: isMobile ? "48px 16px" : "100px 40px 80px 40px",
-        maxWidth: "1440px",
+        padding: isMobile ? "40px 20px" : "80px clamp(24px, 5vw, 80px) 64px clamp(24px, 5vw, 80px)",
+        maxWidth: "1600px",
         margin: "0 auto",
+        width: "100%",
+        boxSizing: "border-box",
       }}
     >
       {/* 🌟 프린트 시에만 상단에 나타나는 머리말 (Running Header) */}
@@ -188,8 +190,8 @@ export function HeroProfileSection({
         </div>
       </div>
 
-      {/* 1. Giant Editorial Display Typography (시안의 압도적인 몰입감 1:1 완벽 이식) */}
-      <div style={{ marginBottom: isMobile ? "32px" : "48px", ...getRevealStyle(100) }}>
+      {/* 1. Giant Editorial Display Typography (적정 스케일 & 유연한 반응형) */}
+      <div style={{ marginBottom: isMobile ? "28px" : "40px", ...getRevealStyle(100) }}>
         <span
           style={{
             fontFamily: "'JetBrains Mono', monospace",
@@ -199,7 +201,7 @@ export function HeroProfileSection({
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             display: "block",
-            marginBottom: "16px",
+            marginBottom: "14px",
           }}
         >
           B2B SaaS · Product Design · 2011–2026
@@ -208,9 +210,10 @@ export function HeroProfileSection({
         <h1
           className="about-title-h1 editorial-display-title"
           style={{
-            fontSize: isMobile ? "38px" : "clamp(52px, 5.8vw, 88px)",
+            fontSize: isMobile ? "32px" : "clamp(38px, 4.2vw, 64px)",
             color: "#111111",
-            margin: "0 0 32px 0",
+            margin: "0 0 24px 0",
+            lineHeight: 1.12,
           }}
         >
           Product Designer<br />
@@ -223,13 +226,13 @@ export function HeroProfileSection({
         <p
           style={{
             fontFamily: "'Noto Sans KR', sans-serif",
-            fontSize: isMobile ? "15px" : "18px",
+            fontSize: isMobile ? "14.5px" : "17px",
             fontWeight: 500,
             color: "#4B5563",
             lineHeight: 1.6,
             letterSpacing: "-0.015em",
             margin: 0,
-            maxWidth: "880px",
+            maxWidth: "800px",
           }}
         >
           복잡한 비즈니스 로직을 구조화하고, 확장 가능한 디자인 시스템과 프로토타입으로 제품의 방향을 만듭니다.

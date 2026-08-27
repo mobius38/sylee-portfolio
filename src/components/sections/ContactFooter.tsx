@@ -18,11 +18,11 @@ export function ContactFooter({ w }: { w: number }) {
       style={{
         backgroundColor: "#0D0F12",
         color: "#FFFFFF",
-        padding: isMobile ? "80px 20px 48px 20px" : "140px 40px 64px 40px",
+        padding: isMobile ? "64px 20px 40px 20px" : "100px clamp(24px, 5vw, 80px) 48px clamp(24px, 5vw, 80px)",
         borderTop: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
-      <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1600px", margin: "0 auto", width: "100%" }}>
         {/* 1. Subheader Tag */}
         <span
           style={{
@@ -33,19 +33,20 @@ export function ContactFooter({ w }: { w: number }) {
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             display: "block",
-            marginBottom: isMobile ? "24px" : "32px",
+            marginBottom: isMobile ? "20px" : "28px",
           }}
         >
           GET IN TOUCH
         </span>
 
-        {/* 2. Giant Editorial Serif Display (히어로와 완벽한 100% 동일 폰트 패밀리) */}
+        {/* 2. Giant Editorial Serif Display (적정 스케일 36px~68px) */}
         <h2
           className="footer-title-h2 editorial-display-title"
           style={{
-            fontSize: isMobile ? "42px" : "clamp(52px, 6.2vw, 92px)",
+            fontSize: isMobile ? "36px" : "clamp(42px, 4.8vw, 72px)",
             color: "#FFFFFF",
-            margin: "0 0 32px 0",
+            margin: "0 0 24px 0",
+            lineHeight: 1.1,
           }}
         >
           Let's build<br />
