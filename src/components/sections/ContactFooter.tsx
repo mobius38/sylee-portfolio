@@ -62,11 +62,12 @@ export function ContactFooter({ w }: { w: number }) {
           B2B 엔터프라이즈 제품 설계, 디자인 시스템 구축, 또는 협업 관련 문의를 환영합니다.
         </p>
 
-        {/* 4. Dual Action Pill Buttons (시안과 1:1 완벽 일치: 2개 버튼) */}
-        <div style={{ display: "flex", gap: "14px", alignItems: "center", flexWrap: "wrap", marginBottom: isMobile ? "64px" : "96px" }}>
+        {/* 4. Dual Action Pill Buttons (인쇄 시 완전 숨김 no-print) */}
+        <div className="no-print" style={{ display: "flex", gap: "14px", alignItems: "center", flexWrap: "wrap", marginBottom: isMobile ? "64px" : "96px" }}>
           {/* Email Action Button */}
           <a
             href={`mailto:${email}`}
+            className="no-print"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -102,6 +103,7 @@ export function ContactFooter({ w }: { w: number }) {
           {/* Back to Top / Projects Button */}
           <a
             href="#projects"
+            className="no-print"
             style={{
               display: "inline-flex",
               alignItems: "center",

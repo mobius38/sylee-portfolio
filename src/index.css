@@ -235,6 +235,34 @@ body {
     display: none !important;
   }
 
+  /* 🌟 Print Typography Scale Enforcement (A4 용지 상에서 웅장하고 선명한 타이틀) */
+  h1.about-title-h1,
+  .editorial-display-title.about-title-h1 {
+    font-size: 34pt !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 16pt !important;
+    color: #111111 !important;
+  }
+
+  h2.projects-title-h2,
+  .editorial-display-title.projects-title-h2,
+  h2.leadership-section-h2,
+  .editorial-display-title.leadership-section-h2 {
+    font-size: 28pt !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 12pt !important;
+  }
+
+  h2.footer-title-h2,
+  .editorial-display-title.footer-title-h2 {
+    font-size: 24pt !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 12pt !important;
+  }
+
   /* Ensure all sections and reveal elements are 100% visible */
   .reveal-init {
     opacity: 1 !important;
