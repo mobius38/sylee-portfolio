@@ -555,9 +555,9 @@ body {
   #leadership {
     background-color: #FFFFFF !important;
     color: #111111 !important;
-    border-top: 1px solid #E5E7EB !important;
-    padding-top: 10pt !important;
-    padding-bottom: 8pt !important;
+    border-top: none !important; /* 🌟 1. 상단 그레이 보더 완전 제거 */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     margin-bottom: 0 !important;
     page-break-before: always !important; /* 🌟 새로운 A4 페이지 시작 */
     break-before: page !important;
@@ -568,62 +568,66 @@ body {
   }
 
   .leadership-section-meta {
-    font-size: 8.5pt !important;
-    margin-bottom: 2pt !important;
+    font-size: 9pt !important;
+    margin-bottom: 4pt !important;
     color: #2563EB !important;
   }
 
   .leadership-section-h2 {
-    font-size: 22pt !important;
-    margin-bottom: 6pt !important;
+    font-size: 26pt !important;
+    margin-bottom: 8pt !important;
     color: #111111 !important;
   }
 
   .leadership-lead-p {
-    font-size: 11pt !important;
-    margin-bottom: 4pt !important;
+    font-size: 13pt !important;
+    margin-bottom: 6pt !important;
     color: #2563EB !important;
+    font-weight: 800 !important;
   }
   .leadership-desc-p {
-    font-size: 9pt !important;
-    line-height: 1.4 !important;
+    font-size: 10pt !important;
+    line-height: 1.55 !important;
     color: #4B5563 !important;
-    margin-bottom: 12pt !important;
+    margin-bottom: 18pt !important;
   }
 
   .leadership-cards-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 8pt !important;
-    margin-bottom: 12pt !important;
+    gap: 14pt !important; /* 🌟 3. 박스 간 여백 시원하게 확장 */
+    margin-bottom: 24pt !important;
   }
 
   .leadership-card-item {
-    padding: 8pt 12pt !important;
+    padding: 16pt 18pt !important; /* 🌟 3. 박스 내부 패딩 넉넉하게 확장 (답답함 완전 해소) */
     min-height: auto !important;
     background-color: #F9FAFB !important;
     border: 1px solid #E5E7EB !important;
+    border-radius: 6pt !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
   .leadership-card-title {
-    font-size: 10.5pt !important;
-    margin-bottom: 3pt !important;
+    font-size: 12.5pt !important; /* 🌟 선명하고 단정한 타이틀 */
+    font-weight: 800 !important;
+    margin-bottom: 8pt !important;
     color: #111111 !important;
   }
   .leadership-card-desc {
-    font-size: 8.5pt !important;
-    line-height: 1.4 !important;
-    color: #4B5563 !important;
+    font-size: 9.5pt !important; /* 🌟 가독성 높은 본문 폰트 */
+    line-height: 1.55 !important; /* 🌟 여유로운 줄간격 */
+    color: #374151 !important;
+    margin-bottom: 4pt !important;
   }
 
-  /* 🌟 FOOTER (리더십 하단에 찰떡 결합) */
+  /* 🌟 FOOTER (보더 없이 순수 여백으로 리더십과 찰떡 결합) */
   footer {
     background-color: #FFFFFF !important;
     color: #111111 !important;
-    border-top: 1px solid #E5E7EB !important;
-    padding-top: 12pt !important;
-    padding-bottom: 10pt !important;
+    border-top: none !important; /* 🌟 2. 푸터 상단 그레이 보더 완전 제거 */
+    padding-top: 16pt !important;
+    padding-bottom: 0 !important;
     margin-top: 0 !important;
     page-break-before: avoid !important; /* 🌟 리더십과 같은 페이지 유지 */
     break-before: avoid !important;
@@ -632,16 +636,17 @@ body {
   }
 
   .footer-title-h2 {
-    font-size: 18pt !important;
-    margin-bottom: 4pt !important;
+    font-size: 24pt !important;
+    line-height: 1.1 !important;
+    margin-bottom: 6pt !important;
     color: #111111 !important;
   }
   .footer-title-h2 span {
     color: #2563EB !important;
   }
   .footer-signature-p {
-    font-size: 9pt !important;
-    margin-bottom: 8pt !important;
+    font-size: 10pt !important;
+    margin-bottom: 16pt !important;
     color: #4B5563 !important;
   }
   footer span[style*="rgba(255, 255, 255, 0.4)"] {
