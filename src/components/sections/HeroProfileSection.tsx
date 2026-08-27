@@ -285,23 +285,26 @@ export function HeroProfileSection({
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              backgroundColor: "#111111",
+              backgroundColor: "#2563EB",
               color: "#FFFFFF",
-              padding: "11px 22px",
+              padding: "11px 24px",
               borderRadius: "9999px",
-              fontSize: "13px",
+              fontSize: "13.5px",
               fontWeight: 800,
               letterSpacing: "-0.01em",
               textDecoration: "none",
+              boxShadow: "0 2px 8px rgba(37, 99, 235, 0.25)",
               transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#2563EB";
+              e.currentTarget.style.backgroundColor = "#1D4ED8";
               e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 4px 12px rgba(37, 99, 235, 0.35)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#111111";
+              e.currentTarget.style.backgroundColor = "#2563EB";
               e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 2px 8px rgba(37, 99, 235, 0.25)";
             }}
           >
             Case Studies →
