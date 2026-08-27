@@ -293,7 +293,7 @@ export function HeroProfileSection({
             RECENT WORK
           </span>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
-            DWorks · CS Talk · SalesBridge
+            DO.LINKER · MIZUHO · Dualspace
           </span>
         </div>
         <div style={{ gridColumn: isMobile ? "span 2" : "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end" }}>
