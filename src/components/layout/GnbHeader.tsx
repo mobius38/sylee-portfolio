@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 export function GnbHeader({ w }: { w: number }) {
   const isMobile = w < 768;
   const [activeSection, setActiveSection] = useState<string>("about");
-  const [scrollProgress, setScrollProgress] = useState<number>(0); // 🌟 실시간 스크롤 진행률 상태
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false); // 🌟 모바일 햄버거 메뉴 열림 상태
 
   const navItems = [
@@ -27,13 +26,7 @@ export function GnbHeader({ w }: { w: number }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // 1. 현재 스크롤 진행률 계산 (0% ~ 100%)
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setScrollProgress(scrollPercent);
-
-      // 2. 현재 스크롤 위치에 따른 활성 섹션(GNB Active) 매핑
+      // 현재 스크롤 위치에 따른 활성 섹션(GNB Active) 매핑
       const scrollPos = window.scrollY + 140;
       const sections = ["contact", "leadership", "projects", "about"];
       for (const sId of sections) {
@@ -56,9 +49,10 @@ export function GnbHeader({ w }: { w: number }) {
         left: 0,
         width: "100%",
         zIndex: isMobile && isMenuOpen ? 999 : 50,
-        backgroundColor: isMobile && isMenuOpen ? "#FAF9F7" : "rgba(255, 255, 255, 0.92)",
-        backdropFilter: isMobile && isMenuOpen ? "none" : "blur(12px)",
-        WebkitBackdropFilter: isMobile && isMenuOpen ? "none" : "blur(12px)",
+        backgroundColor: isMobile && isMenuOpen ? "#FAF9F7" : "rgba(255, 255, 255, 0.72)",
+        backdropFilter: isMobile && isMenuOpen ? "none" : "blur(20px)",
+        WebkitBackdropFilter: isMobile && isMenuOpen ? "none" : "blur(20px)",
+        borderBottom: isMobile && isMenuOpen ? "none" : "1px solid rgba(0, 0, 0, 0.07)",
         padding: isMobile ? "0 20px" : "0 40px",
         height: isMobile && isMenuOpen ? "100vh" : "60px",
         display: "flex",
@@ -219,36 +213,7 @@ export function GnbHeader({ w }: { w: number }) {
         </div>
       )}
 
-      {/* 🌟 3. 배경 트랙 가이드 라인 (전체 너비의 1px 연회색 실선) */}
-      <div
-        className="no-print"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "1px",
-          backgroundColor: "#E5E7EB",
-          zIndex: 51,
-        }}
-      />
-
-      {/* 🌟 4. 실제 스크롤 진행 바 (스크롤 진행률에 따라 회색 선 위를 덮는 2px 파란 실선) */}
-      <div
-        className="no-print"
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: `${scrollProgress}%`,
-          height: "2px",
-          backgroundColor: "#2563EB", // 🌟 스크롤 진행 바도 블루로 통합 통일!
-          transition: "width 0.08s ease-out",
-          zIndex: 52,
-        }}
-      />
-
-      {/* 🌟 5. 오버레이 오픈 시 웹 채팅 플로팅 위젯 은폐용 인라인 스타일 */}
+      {/* 🌟 오버레이 오픈 시 웹 채팅 플로팅 위젯 은폐용 인라인 스타일 */}
       {isMobile && isMenuOpen && (
         <style>{`
           aside.no-print {
