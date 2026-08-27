@@ -1102,20 +1102,20 @@ export function WorkSection({
         borderTop: "1px solid #E5E7EB",
       }}
     >
-      {/* 1. Giant Bold PROJECTS Section Header */}
+      {/* 1. Giant Bold PROJECTS Section Header (히어로 세리프 폰트 패밀리 완벽 통일) */}
       <div style={{ marginBottom: isMobile ? "32px" : "44px" }}>
         <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
           SELECTED WORKS · 2011–2026
         </span>
         <h2
-          className="projects-title-h2"
+          className="projects-title-h2 editorial-display-title"
           style={{
-            fontSize: isMobile ? "44px" : "clamp(56px, 6.5vw, 84px)",
-            fontWeight: 900,
+            fontSize: isMobile ? "44px" : "clamp(54px, 6.4vw, 84px)",
+            fontWeight: 800,
             color: "#111111",
             margin: "0 0 16px 0",
-            letterSpacing: "-0.04em",
-            lineHeight: 1.0,
+            letterSpacing: "-0.045em",
+            lineHeight: 1.05,
           }}
         >
           PROJECTS
