@@ -1500,42 +1500,54 @@ export function WorkSection({
                 </div>
               </div>
 
-              {/* 🌟 Cover & Sub Images for Printing (최대 4개 이미지 격자 나열) */}
-              {(() => {
-                const printSlides = p.slides.slice(0, 4);
-                return printSlides.length > 0 ? (
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: printSlides.length === 1 ? "1fr" : "repeat(2, 1fr)",
-                      gap: "12px",
-                      marginBottom: "24px",
-                      pageBreakInside: "avoid",
-                    }}
-                  >
-                    {printSlides.map((slide, sIdx) => (
-                      <div
-                        key={sIdx}
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/9",
-                          backgroundColor: "#F9FAFB",
-                          border: "1px solid #E5E7EB",
-                          borderRadius: "6px",
-                          overflow: "hidden",
-                        }}
-                      >
+              {/* 🌟 Showcase Slides for Printing (모든 슬라이드 화면 + 타이틀 + 캡션 100% 온전 출력) */}
+              {p.slides && p.slides.length > 0 && (
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: p.slides.length === 1 ? "1fr" : "repeat(2, 1fr)",
+                    gap: "14px",
+                    marginBottom: "24px",
+                    pageBreakInside: "avoid",
+                  }}
+                >
+                  {p.slides.map((slide, sIdx) => (
+                    <div
+                      key={sIdx}
+                      style={{
+                        backgroundColor: "#F9FAFB",
+                        border: "1px solid #E5E7EB",
+                        borderRadius: "6px",
+                        overflow: "hidden",
+                        pageBreakInside: "avoid",
+                      }}
+                    >
+                      <div style={{ width: "100%", aspectRatio: "16/10", backgroundColor: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <img
                           src={slide.src}
                           alt={slide.alt}
-                          loading="lazy"
-                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                          loading="eager"
+                          decoding="sync"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                            display: "block",
+                          }}
                         />
                       </div>
-                    ))}
-                  </div>
-                ) : null;
-              })()}
+                      <div style={{ padding: "8px 10px", borderTop: "1px solid #F3F4F6" }}>
+                        <span style={{ fontSize: "10px", fontWeight: 800, color: "#111111", display: "block", marginBottom: "2px" }}>
+                          {slide.title}
+                        </span>
+                        <span style={{ fontSize: "9px", color: "#6B7280", lineHeight: 1.4, display: "block" }}>
+                          {slide.caption}
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* 🌟 3-Segment Story Vertical List (각 스토리 블록 복원) */}
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
