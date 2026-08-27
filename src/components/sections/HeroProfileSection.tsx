@@ -358,7 +358,8 @@ export function HeroProfileSection({
             }}
           >
             <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
-              01 / COMPLEX UX & IA
+              <span className="print-num" style={{ display: "none" }}>01</span>
+              <span className="web-meta">01 / COMPLEX UX &amp; IA</span>
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>복잡한 제품 구조화</h3>
             <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
@@ -377,7 +378,8 @@ export function HeroProfileSection({
             }}
           >
             <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
-              02 / DESIGN SYSTEM STANDARDS
+              <span className="print-num" style={{ display: "none" }}>02</span>
+              <span className="web-meta">02 / DESIGN SYSTEM STANDARDS</span>
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>디자인 시스템 표준 구축</h3>
             <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
@@ -396,7 +398,8 @@ export function HeroProfileSection({
             }}
           >
             <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
-              03 / HI-FI PROTOTYPING
+              <span className="print-num" style={{ display: "none" }}>03</span>
+              <span className="web-meta">03 / HI-FI PROTOTYPING</span>
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>인터랙티브 검증 및 MVP 리딩</h3>
             <p className="competency-card-desc" style={{ fontSize: isMobile ? "13.5px" : "14.5px", color: "#4B5563", margin: 0, lineHeight: 1.6, fontWeight: 500 }}>
