@@ -547,20 +547,42 @@ body {
     break-inside: avoid !important;
   }
 
-  /* Case 01 (첫 번째 케이스)은 상단 Projects 타이틀과 분리되지 않고 한 페이지에 쏙 들어가도록 조정 */
-  .print-case-page:first-child {
-    page-break-before: avoid !important;
-    break-before: avoid !important;
+  /* 🌟 Case Study Print Slides Grid & Captions Optimization */
+  .print-slides-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12pt !important;
+    margin-bottom: 18pt !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    border-bottom: none !important;
   }
 
-  .print-case-page:first-child img {
-    max-height: 100pt !important; /* 첫 페이지 이미지 높이 컴팩트 최적화 */
-    object-fit: cover !important;
+  .print-slide-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #E5E7EB !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-slide-card img {
+    max-height: 140pt !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .print-slide-card strong {
+    font-size: 9.5pt !important;
+    color: #111111 !important;
+    display: block !important;
+  }
+
+  .print-slide-card p {
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
+    color: #4B5563 !important;
+    display: block !important;
   }
 
   /* 🌟 LEADERSHIP + FOOTER Single Final Page Print Optimization (리더십과 푸터를 A4 한 페이지에 완벽 결합) */

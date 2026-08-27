@@ -1500,29 +1500,36 @@ export function WorkSection({
                 </div>
               </div>
 
-              {/* 🌟 Showcase Slides for Printing (모든 슬라이드 화면 + 타이틀 + 캡션 100% 온전 출력) */}
+              {/* 🌟 Showcase Slides for Printing (모든 슬라이드 화면 + 탭 라벨 + 타이틀 + 상세 캡션 100% 온전 출력) */}
               {p.slides && p.slides.length > 0 && (
                 <div
+                  className="print-slides-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: p.slides.length === 1 ? "1fr" : "repeat(2, 1fr)",
-                    gap: "14px",
-                    marginBottom: "24px",
+                    gap: "16px",
+                    marginBottom: "28px",
                     pageBreakInside: "avoid",
+                    breakInside: "avoid",
                   }}
                 >
                   {p.slides.map((slide, sIdx) => (
                     <div
                       key={sIdx}
+                      className="print-slide-card"
                       style={{
-                        backgroundColor: "#F9FAFB",
+                        backgroundColor: "#FFFFFF",
                         border: "1px solid #E5E7EB",
                         borderRadius: "6px",
                         overflow: "hidden",
                         pageBreakInside: "avoid",
+                        breakInside: "avoid",
+                        display: "flex",
+                        flexDirection: "column",
                       }}
                     >
-                      <div style={{ width: "100%", aspectRatio: "16/10", backgroundColor: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      {/* 슬라이드 이미지 영역 */}
+                      <div style={{ width: "100%", aspectRatio: "16/10", backgroundColor: "#F8F9FA", display: "flex", alignItems: "center", justifyContent: "center", borderBottom: "1px solid #F3F4F6" }}>
                         <img
                           src={slide.src}
                           alt={slide.alt}
@@ -1536,13 +1543,20 @@ export function WorkSection({
                           }}
                         />
                       </div>
-                      <div style={{ padding: "8px 10px", borderTop: "1px solid #F3F4F6" }}>
-                        <span style={{ fontSize: "10px", fontWeight: 800, color: "#111111", display: "block", marginBottom: "2px" }}>
+
+                      {/* 슬라이드 상세 설명 캡션 영역 (인쇄 시 100% 선명 노출) */}
+                      <div style={{ padding: "10px 12px", backgroundColor: "#FFFFFF" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "4px" }}>
+                          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", fontWeight: 700, color: "#2563EB", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                            0{sIdx + 1} · {slide.tabLabel}
+                          </span>
+                        </div>
+                        <strong style={{ fontSize: "11px", fontWeight: 800, color: "#111111", display: "block", marginBottom: "3px", lineHeight: 1.35 }}>
                           {slide.title}
-                        </span>
-                        <span style={{ fontSize: "9px", color: "#6B7280", lineHeight: 1.4, display: "block" }}>
+                        </strong>
+                        <p style={{ fontSize: "9.5px", color: "#4B5563", lineHeight: 1.45, margin: 0 }}>
                           {slide.caption}
-                        </span>
+                        </p>
                       </div>
                     </div>
                   ))}
