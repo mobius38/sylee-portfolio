@@ -220,12 +220,13 @@ export function HeroProfileSection({
         {/* 1. Giant Editorial Display Typography (적정 스케일 & 유연한 반응형) */}
         <div style={{ marginBottom: isMobile ? "28px" : "40px", ...getRevealStyle(100) }}>
         <span
+          className="section-label"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "12px",
-            fontWeight: 800,
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "11px",
+            fontWeight: 500,
             color: "#2563EB",
-            letterSpacing: "0.15em",
+            letterSpacing: "0.14em",
             textTransform: "uppercase",
             display: "block",
             marginBottom: "14px",
@@ -281,7 +282,7 @@ export function HeroProfileSection({
         }}
       >
         <div>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
             EXPERIENCE
           </span>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
@@ -289,7 +290,7 @@ export function HeroProfileSection({
           </span>
         </div>
         <div>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
             SPECIALTY
           </span>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14.5px", fontWeight: 800, color: "#111111" }}>
@@ -297,7 +298,7 @@ export function HeroProfileSection({
           </span>
         </div>
         <div>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 700, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#9CA3AF", letterSpacing: "0.08em", display: "block", marginBottom: "4px" }}>
             RECENT WORK
           </span>
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "14px", fontWeight: 800, color: "#111111" }}>
@@ -340,7 +341,7 @@ export function HeroProfileSection({
       {/* 4. 3 Core Competencies */}
       <div className="about-competency-section" style={{ marginBottom: isMobile ? "48px" : "80px", ...getRevealStyle(550) }}>
         <div style={{ marginBottom: "20px" }}>
-          <span className="competency-section-title" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11.5px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+          <span className="competency-section-title section-label" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", letterSpacing: "0.14em" }}>
             CORE COMPETENCIES (3대 핵심 역량)
           </span>
         </div>
@@ -356,7 +357,7 @@ export function HeroProfileSection({
               transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
               01 / COMPLEX UX & IA
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>복잡한 제품 구조화</h3>
@@ -375,7 +376,7 @@ export function HeroProfileSection({
               transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
               02 / DESIGN SYSTEM STANDARDS
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>디자인 시스템 표준 구축</h3>
@@ -394,7 +395,7 @@ export function HeroProfileSection({
               transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease",
             }}
           >
-            <span className="competency-card-number" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.05em" }}>
+            <span className="competency-card-number" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "12px", letterSpacing: "0.1em" }}>
               03 / HI-FI PROTOTYPING
             </span>
             <h3 className="competency-card-title" style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0" }}>인터랙티브 검증 및 MVP 리딩</h3>
@@ -414,7 +415,7 @@ export function HeroProfileSection({
       >
         {/* Header Row */}
         <div style={{ marginBottom: isMobile ? "24px" : "36px" }}>
-          <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.05em" }}>
+          <span className="section-label" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", display: "block", marginBottom: "6px", letterSpacing: "0.14em" }}>
             CAREER EXPANSION TIMELINE
           </span>
           <h3 className="timeline-section-h3" style={{ fontSize: isMobile ? "24px" : "36px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.03em" }}>

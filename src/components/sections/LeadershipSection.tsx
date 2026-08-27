@@ -64,7 +64,7 @@ export function LeadershipSection({ w }: { w: number }) {
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* 1. Giant Bold LEADERSHIP Section Header (히어로 세리프 폰트 패밀리 완벽 통일) */}
         <div style={{ maxWidth: "1000px", marginBottom: isMobile ? "40px" : "64px" }}>
-          <span className="leadership-section-meta" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
+          <span className="leadership-section-meta section-label" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#60A5FA", letterSpacing: "0.14em", display: "block", marginBottom: "8px" }}>
             DESIGN LEADERSHIP &amp; PHILOSOPHY
           </span>
           <h2

@@ -16,12 +16,13 @@ export function ContactFooter({ w }: { w: number }) {
       <div style={{ maxWidth: "1600px", margin: "0 auto", width: "100%" }}>
         {/* 1. Subheader Tag */}
         <span
+          className="section-label"
           style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "12px",
-            fontWeight: 800,
+            fontFamily: "'DM Mono', monospace",
+            fontSize: "11px",
+            fontWeight: 500,
             color: "#60A5FA",
-            letterSpacing: "0.15em",
+            letterSpacing: "0.14em",
             textTransform: "uppercase",
             display: "block",
             marginBottom: isMobile ? "20px" : "28px",

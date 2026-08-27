@@ -1104,7 +1104,7 @@ export function WorkSection({
     >
       {/* 1. Giant Bold PROJECTS Section Header (히어로 세리프 폰트 패밀리 완벽 통일) */}
       <div className="projects-header-print" style={{ marginBottom: isMobile ? "32px" : "44px" }}>
-        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
+        <span className="section-label" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#2563EB", letterSpacing: "0.14em", display: "block", marginBottom: "8px" }}>
           SELECTED WORKS · 2011–2026
         </span>
         <h2
