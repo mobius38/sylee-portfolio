@@ -507,12 +507,13 @@ body {
     line-height: 1.4 !important;
   }
 
-  /* 🌟 PROJECTS Print Optimization: Projects 타이틀과 Case 01을 A4 한 페이지에 완벽 결합 */
+  /* 🌟 PROJECTS Print Optimization: 타임라인 바로 아래에 Projects 타이틀이 자연스럽게 이어지도록 페이지 분할 해제 */
   #projects {
     border-top: none !important;
-    padding-top: 0px !important;
-    page-break-before: always !important; /* 🌟 타임라인 끝난 후 새 A4 페이지에서 시작 */
-    break-before: page !important;
+    padding-top: 24pt !important;
+    margin-top: 0 !important;
+    page-break-before: auto !important; /* 🌟 타임라인과 같은 페이지에 자연스럽게 연결 */
+    break-before: auto !important;
   }
   .web-only-projects,
   .project-card,
@@ -523,12 +524,14 @@ body {
   .projects-header-print {
     page-break-after: avoid !important;
     break-after: avoid !important;
-    margin-bottom: 10pt !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 20pt !important;
   }
 
   .projects-header-print .projects-title-h2 {
-    font-size: 22pt !important;
-    margin-bottom: 4pt !important;
+    font-size: 24pt !important;
+    margin-bottom: 6pt !important;
   }
 
   /* 🌟 인쇄 시 모달 상세 케이스 스터디 북릿 100% 강제 노출 */
@@ -560,8 +563,9 @@ body {
   .print-slide-card {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    background-color: #FFFFFF !important;
+    background-color: #F8F9FA !important; /* 🌟 은은하고 고급스러운 라이트 그레이 액자 배경 복구 */
     border: 1px solid #E5E7EB !important;
+    border-radius: 4pt !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -569,19 +573,6 @@ body {
   .print-slide-card img {
     max-height: 140pt !important;
     object-fit: contain !important;
-    display: block !important;
-  }
-
-  .print-slide-card strong {
-    font-size: 9.5pt !important;
-    color: #111111 !important;
-    display: block !important;
-  }
-
-  .print-slide-card p {
-    font-size: 8.5pt !important;
-    line-height: 1.4 !important;
-    color: #4B5563 !important;
     display: block !important;
   }
 

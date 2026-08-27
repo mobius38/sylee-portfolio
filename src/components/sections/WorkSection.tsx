@@ -1427,7 +1427,7 @@ export function WorkSection({
         {PROJECTS_DATA.map((p) => {
           // 인쇄용 첫 번째 대표 이미지
           const primarySlide = p.slides[0];
-          const shouldBreakBefore = Number(p.num) > 1; // Case 01은 상단 타이틀과 같은 페이지에, Case 02부터는 개별 페이지 구분
+          const shouldBreakBefore = true; // 🌟 Projects 타이틀과 타임라인이 한 페이지로 결합되고, 각 케이스 스터디는 새 A4 페이지에서 정갈하게 시작!
 
           return (
             <div
