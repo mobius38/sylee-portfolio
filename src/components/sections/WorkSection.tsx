@@ -1420,8 +1420,8 @@ export function WorkSection({
         />
       )}
 
-      {/* 🌟 6. Print-only Detailed Cases Booklet (웹에서는 완전히 숨기고 인쇄 시에만 모달 속 상세 내용을 세로 책자처럼 출력) */}
-      <div className="print-only-detailed-cases" style={{ display: "none" }}>
+      {/* 🌟 6. Print-only Detailed Cases Booklet (웹에서는 숨기고 인쇄 시에만 모달 속 상세 내용을 세로 책자처럼 출력) */}
+      <div className="print-only-detailed-cases">
 
 
         {PROJECTS_DATA.map((p) => {

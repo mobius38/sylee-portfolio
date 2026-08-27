@@ -200,6 +200,10 @@ body {
   will-change: transform;
 }
 
+.print-only-detailed-cases {
+  display: none;
+}
+
 .project-card:hover .card-thumb img {
   transform: scale(1.035);
 }
@@ -486,24 +490,27 @@ body {
     border-top: none !important; /* 인쇄 시 타임라인 끝-프로젝트 시작부의 상단 회색 구분 선 완전 제거 */
     padding-top: 0px !important; /* 인쇄 시 불필요한 탑 패딩 제거 */
   }
-  #projects > div:nth-child(2),
-  #projects > div:nth-child(3),
-  #projects > div:nth-child(4),
+  .web-only-projects,
   .project-card,
-  .no-print,
-  div[style*="RECENT FEATURED WORKS"] {
+  .mobile-scroll-wrap,
+  .no-print {
     display: none !important;
   }
 
+  /* 🌟 인쇄 시 모달 상세 케이스 스터디 북릿 100% 강제 노출 */
   .print-only-detailed-cases {
     display: block !important;
     width: 100% !important;
+    visibility: visible !important;
   }
 
   .print-case-page {
-    margin-bottom: 32px !important;
-    padding-bottom: 24px !important;
-    border-bottom: 1px dashed #D1D5DB !important;
+    display: block !important;
+    margin-bottom: 28pt !important;
+    padding-bottom: 20pt !important;
+    border-bottom: 1px solid #E5E7EB !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   /* 🌟 LEADERSHIP print scale-down (인쇄 시 리더십 다크 해제, 화이트 테마 및 폰트/패딩 축소) */
