@@ -1,15 +1,6 @@
-import { useState } from "react";
-
 export function ContactFooter({ w }: { w: number }) {
-  const [copied, setCopied] = useState(false);
   const email = "mobius38@gmail.com";
   const isMobile = w < 768;
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <footer
@@ -71,7 +62,7 @@ export function ContactFooter({ w }: { w: number }) {
           B2B SaaS 제품 디자인, 디자인 시스템 구축, 또는 협업 관련 문의를 환영합니다.
         </p>
 
-        {/* 4. Dual Action Pill Buttons */}
+        {/* 4. Dual Action Pill Buttons (시안과 1:1 완벽 일치: 2개 버튼) */}
         <div style={{ display: "flex", gap: "14px", alignItems: "center", flexWrap: "wrap", marginBottom: isMobile ? "64px" : "96px" }}>
           {/* Email Action Button */}
           <a
@@ -82,7 +73,7 @@ export function ContactFooter({ w }: { w: number }) {
               gap: "8px",
               backgroundColor: "#2563EB",
               color: "#FFFFFF",
-              padding: isMobile ? "13px 22px" : "14px 28px",
+              padding: isMobile ? "13px 24px" : "14px 28px",
               borderRadius: "9999px",
               fontSize: isMobile ? "13.5px" : "14.5px",
               fontWeight: 800,
@@ -108,35 +99,6 @@ export function ContactFooter({ w }: { w: number }) {
             이메일 보내기
           </a>
 
-          {/* Copy Email Button */}
-          <button
-            onClick={copyEmail}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              backgroundColor: "rgba(255, 255, 255, 0.08)",
-              color: copied ? "#60A5FA" : "rgba(255, 255, 255, 0.85)",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
-              padding: isMobile ? "12px 20px" : "13px 24px",
-              borderRadius: "9999px",
-              fontSize: isMobile ? "13px" : "14px",
-              fontWeight: 700,
-              cursor: "pointer",
-              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.14)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.15)";
-            }}
-          >
-            {copied ? "✓ 이메일 복사 완료" : "이메일 복사"}
-          </button>
-
           {/* Back to Top / Projects Button */}
           <a
             href="#projects"
@@ -144,26 +106,30 @@ export function ContactFooter({ w }: { w: number }) {
               display: "inline-flex",
               alignItems: "center",
               gap: "6px",
-              backgroundColor: "transparent",
-              color: "rgba(255, 255, 255, 0.6)",
-              border: "1px solid rgba(255, 255, 255, 0.12)",
-              padding: isMobile ? "12px 20px" : "13px 24px",
+              backgroundColor: "rgba(255, 255, 255, 0.08)",
+              color: "rgba(255, 255, 255, 0.85)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              padding: isMobile ? "13px 22px" : "14px 26px",
               borderRadius: "9999px",
-              fontSize: isMobile ? "13px" : "14px",
+              fontSize: isMobile ? "13.5px" : "14.5px",
               fontWeight: 700,
               textDecoration: "none",
               transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
             }}
             onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.16)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.35)";
               e.currentTarget.style.color = "#FFFFFF";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+              e.currentTarget.style.transform = "translateY(-2px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.color = "rgba(255, 255, 255, 0.6)";
-              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.12)";
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.15)";
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.85)";
+              e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            작업들 다시 보기 ↑
+            작업들 다시 보기 →
           </a>
         </div>
 
