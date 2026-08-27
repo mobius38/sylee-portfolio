@@ -197,9 +197,12 @@ export function HeroProfileSection({
 
       {/* 1. Giant Bold Section Title */}
       <div style={{ marginBottom: isMobile ? "32px" : "48px", ...getRevealStyle(100) }}>
-        <span style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif", fontSize: "12px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.15em", display: "block", marginBottom: "8px" }}>
-          PRODUCT DESIGN PORTFOLIO
-        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
+          <span style={{ width: "6px", height: "6px", borderRadius: "50%", backgroundColor: "#4B3FE1", display: "inline-block" }}></span>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 700, color: "#4B3FE1", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+            Lead & Senior Product Designer
+          </span>
+        </div>
         <h1
           className="about-title-h1"
           style={{
@@ -216,29 +219,41 @@ export function HeroProfileSection({
         <p
           className="about-sub-p"
           style={{
-            fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
-            fontSize: isMobile ? "20px" : "clamp(26px, 2.6vw, 36px)",
+            fontFamily: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif",
+            fontSize: isMobile ? "22px" : "clamp(28px, 3.2vw, 42px)",
             fontWeight: 800,
             color: "#111111",
-            lineHeight: 1.35,
-            letterSpacing: "-0.025em",
+            lineHeight: 1.25,
+            letterSpacing: "-0.03em",
             margin: "0 0 16px 0",
             maxWidth: "1100px",
           }}
         >
-          복잡한 제품을 구조화하고,<br />
-          디자인의 기준과 방향을 만들어갑니다.
+          Product Designer who builds <span style={{ fontFamily: "'Newsreader', serif", fontStyle: "italic", fontWeight: 600, color: "#4B3FE1" }}>systems</span>, not just screens.
+        </p>
+        <p
+          style={{
+            fontFamily: "'Noto Sans KR', sans-serif",
+            fontSize: isMobile ? "16px" : "clamp(18px, 1.8vw, 22px)",
+            fontWeight: 700,
+            color: "#374151",
+            lineHeight: 1.5,
+            letterSpacing: "-0.02em",
+            margin: "0 0 8px 0",
+          }}
+        >
+          복잡한 비즈니스 로직을 구조화하고, 확장 가능한 디자인 기준과 방향을 만듭니다.
         </p>
       </div>
 
       {/* 2. Narrative Sentences */}
       <div style={{ maxWidth: "960px", marginBottom: isMobile ? "40px" : "60px", ...getRevealStyle(250) }}>
-        <p className="about-narrative-lead" style={{ fontSize: isMobile ? "16px" : "19px", color: "#111111", lineHeight: 1.6, fontWeight: 600, margin: "0 0 12px 0" }}>
-          Web · Mobile · B2B/B2C 제품을 설계하며 복잡한 문제를 구조화하고,<br className="hidden md:inline" />
-          프로토타입으로 방향을 빠르게 구체화해 이해관계자와 공유해왔습니다.
+        <p className="about-narrative-lead" style={{ fontSize: isMobile ? "15.5px" : "18px", color: "#111111", lineHeight: 1.65, fontWeight: 600, margin: "0 0 12px 0" }}>
+          엔터프라이즈 B2B SaaS부터 글로벌 금융 포탈까지 — 파편화된 워크플로우를 명쾌한 시스템으로 통합하고,<br className="hidden md:inline" />
+          Hi-Fi 프로토타입으로 비즈니스 방향을 빠르게 구체화하여 이해관계자와 싱크를 맞춰왔습니다.
         </p>
-        <p className="about-narrative-body" style={{ fontSize: isMobile ? "14.5px" : "16.5px", color: "#374151", lineHeight: 1.75, margin: 0 }}>
-          제품 설계뿐 아니라 디자인 시스템과 리뷰를 통해 일관된 디자인 기준을 만들어왔습니다.
+        <p className="about-narrative-body" style={{ fontSize: isMobile ? "14px" : "16px", color: "#4B5563", lineHeight: 1.75, margin: 0 }}>
+          제품 설계에 그치지 않고, Figma Variables 기반 전사 디자인 시스템과 리뷰 프로세스를 정립하여 조직 전체의 일관된 제품 퀄리티를 리딩합니다.
         </p>
       </div>
 
