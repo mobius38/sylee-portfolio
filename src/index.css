@@ -496,7 +496,7 @@ body {
     display: none !important;
   }
 
-  /* 🌟 타임라인 인쇄 최적화: 가로 스크롤 해제 및 2열 A4 그리드로 정갈하게 노출 */
+  /* 🌟 타임라인 인쇄 최적화: 2열 대신 위에서 아래로 흐르는 1열 세로(Vertical) 타임라인으로 깔끔하게 배치 */
   .mobile-scroll-wrap {
     overflow: visible !important;
     width: 100% !important;
@@ -504,18 +504,32 @@ body {
   }
 
   .timeline-track-rail {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 16pt !important;
     width: 100% !important;
     min-width: 100% !important;
+    position: relative !important;
   }
 
   .timeline-card-item {
     width: 100% !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    margin-bottom: 12pt !important;
+    margin-bottom: 0 !important;
+    padding-left: 14pt !important;
+    border-left: 2.5px solid #2563EB !important; /* 🌟 세로 타임라인 축 */
+  }
+
+  .timeline-node-container {
+    display: none !important;
+  }
+
+  .timeline-card-item .timeline-year-text {
+    font-size: 16pt !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8pt !important;
+    display: block !important;
   }
 
   /* 🌟 인쇄 시 모달 상세 케이스 스터디 북릿 100% 강제 노출 */
