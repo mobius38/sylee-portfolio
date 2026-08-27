@@ -171,13 +171,32 @@ export function HeroProfileSection({
     <section
       id="about"
       style={{
-        padding: isMobile ? "40px 20px" : "80px clamp(24px, 5vw, 80px) 64px clamp(24px, 5vw, 80px)",
+        position: "relative",
+        padding: isMobile ? "56px 20px 48px 20px" : "clamp(90px, 8.5vw, 130px) clamp(24px, 5vw, 80px) 72px clamp(24px, 5vw, 80px)",
         maxWidth: "1600px",
         margin: "0 auto",
         width: "100%",
         boxSizing: "border-box",
+        overflow: "hidden",
       }}
     >
+      {/* 🌟 Ambient Royal Blue Glow Orb (우측 상단 은은한 깊이감 & 시각적 조화) */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: "-5%",
+          right: "-5%",
+          width: isMobile ? "340px" : "720px",
+          height: isMobile ? "340px" : "720px",
+          background: "radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(37, 99, 235, 0.025) 45%, transparent 70%)",
+          borderRadius: "50%",
+          pointerEvents: "none",
+          zIndex: 0,
+          filter: "blur(30px)",
+        }}
+      />
+
       {/* 🌟 프린트 시에만 상단에 나타나는 머리말 (Running Header) */}
       <div className="print-only-header" style={{ display: "none" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "2px solid #111111", paddingBottom: "10px", marginBottom: "32px" }}>
@@ -191,7 +210,7 @@ export function HeroProfileSection({
       </div>
 
       {/* 1. Giant Editorial Display Typography (적정 스케일 & 유연한 반응형) */}
-      <div style={{ marginBottom: isMobile ? "28px" : "40px", ...getRevealStyle(100) }}>
+      <div style={{ position: "relative", zIndex: 1, marginBottom: isMobile ? "28px" : "40px", ...getRevealStyle(100) }}>
         <span
           style={{
             fontFamily: "'JetBrains Mono', monospace",
