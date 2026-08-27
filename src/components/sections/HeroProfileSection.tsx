@@ -172,46 +172,53 @@ export function HeroProfileSection({
       id="about"
       style={{
         position: "relative",
-        padding: isMobile ? "56px 20px 48px 20px" : "clamp(90px, 8.5vw, 130px) clamp(24px, 5vw, 80px) 72px clamp(24px, 5vw, 80px)",
-        maxWidth: "1600px",
-        margin: "0 auto",
         width: "100%",
-        boxSizing: "border-box",
-        overflow: "hidden",
+        overflow: "hidden", // 🌟 풀위드(100%)에서 클리핑하므로 1600px 경계선 잘림 완전 해소!
+        backgroundColor: "#FFFFFF",
       }}
     >
-      {/* 🌟 Ambient Royal Blue Glow Orb (인쇄 시 숨김 처리 no-print) */}
+      {/* 🌟 Ambient Royal Blue Glow Orb (경계선 없는 100% 무경계 소프트 앰비언트 광원) */}
       <div
         aria-hidden="true"
         className="no-print"
         style={{
           position: "absolute",
-          top: isMobile ? "-180px" : "-320px",
-          right: isMobile ? "-60px" : "-80px",
-          width: isMobile ? "500px" : "900px",
-          height: isMobile ? "500px" : "900px",
-          background: "radial-gradient(circle, rgba(37, 99, 235, 0.22) 0%, rgba(59, 130, 246, 0.14) 35%, rgba(96, 165, 250, 0.06) 60%, transparent 75%)",
+          top: isMobile ? "-220px" : "-380px",
+          right: isMobile ? "-100px" : "min(8vw, 120px)",
+          width: isMobile ? "520px" : "1100px",
+          height: isMobile ? "520px" : "1100px",
+          background: "radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(59, 130, 246, 0.10) 30%, rgba(96, 165, 250, 0.04) 52%, transparent 70%)",
           borderRadius: "50%",
           pointerEvents: "none",
           zIndex: 0,
-          filter: "blur(60px)",
+          filter: "blur(80px)",
         }}
       />
 
-      {/* 🌟 프린트 시에만 상단에 나타나는 머리말 (Running Header) */}
-      <div className="print-only-header" style={{ display: "none" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "2px solid #111111", paddingBottom: "10px", marginBottom: "32px" }}>
-          <span style={{ fontSize: "14px", fontWeight: 800, color: "#111111", letterSpacing: "-0.02em" }}>
-            LEE SUNYOUNG · PRODUCT DESIGNER PORTFOLIO
-          </span>
-          <span style={{ fontSize: "11px", fontWeight: 700, color: "#4B5563", fontFamily: "'JetBrains Mono', monospace" }}>
-            mobius38@gmail.com
-          </span>
+      <div
+        style={{
+          maxWidth: "1600px",
+          margin: "0 auto",
+          padding: isMobile ? "56px 20px 48px 20px" : "clamp(90px, 8.5vw, 130px) clamp(24px, 5vw, 80px) 72px clamp(24px, 5vw, 80px)",
+          boxSizing: "border-box",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* 🌟 프린트 시에만 상단에 나타나는 머리말 (Running Header) */}
+        <div className="print-only-header" style={{ display: "none" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: "2px solid #111111", paddingBottom: "10px", marginBottom: "32px" }}>
+            <span style={{ fontSize: "14px", fontWeight: 800, color: "#111111", letterSpacing: "-0.02em" }}>
+              LEE SUNYOUNG · PRODUCT DESIGNER PORTFOLIO
+            </span>
+            <span style={{ fontSize: "11px", fontWeight: 700, color: "#4B5563", fontFamily: "'JetBrains Mono', monospace" }}>
+              mobius38@gmail.com
+            </span>
+          </div>
         </div>
-      </div>
 
-      {/* 1. Giant Editorial Display Typography (적정 스케일 & 유연한 반응형) */}
-      <div style={{ position: "relative", zIndex: 1, marginBottom: isMobile ? "28px" : "40px", ...getRevealStyle(100) }}>
+        {/* 1. Giant Editorial Display Typography (적정 스케일 & 유연한 반응형) */}
+        <div style={{ marginBottom: isMobile ? "28px" : "40px", ...getRevealStyle(100) }}>
         <span
           style={{
             fontFamily: "'JetBrains Mono', monospace",
@@ -721,6 +728,7 @@ export function HeroProfileSection({
           )}
         </div>
       )}
+      </div>
     </section>
   );
 }
