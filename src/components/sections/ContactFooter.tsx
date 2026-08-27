@@ -39,14 +39,14 @@ export function ContactFooter({ w }: { w: number }) {
           GET IN TOUCH
         </span>
 
-        {/* 2. Giant Editorial Serif Display (적정 스케일 36px~68px) */}
+        {/* 2. Giant Editorial Serif Display (히어로보다 차분하고 정갈한 스케일) */}
         <h2
           className="footer-title-h2 editorial-display-title"
           style={{
-            fontSize: isMobile ? "36px" : "clamp(42px, 4.8vw, 72px)",
+            fontSize: isMobile ? "32px" : "clamp(36px, 4.2vw, 60px)",
             color: "#FFFFFF",
-            margin: "0 0 24px 0",
-            lineHeight: 1.1,
+            margin: "0 0 20px 0",
+            lineHeight: 1.12,
           }}
         >
           Let's build<br />

@@ -210,10 +210,10 @@ export function HeroProfileSection({
         <h1
           className="about-title-h1 editorial-display-title"
           style={{
-            fontSize: isMobile ? "32px" : "clamp(38px, 4.2vw, 64px)",
+            fontSize: isMobile ? "40px" : "clamp(54px, 6.4vw, 92px)",
             color: "#111111",
-            margin: "0 0 24px 0",
-            lineHeight: 1.12,
+            margin: "0 0 28px 0",
+            lineHeight: 1.06,
           }}
         >
           Product Designer<br />
