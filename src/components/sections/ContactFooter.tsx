@@ -74,23 +74,21 @@ export function ContactFooter({ w }: { w: number }) {
               gap: "8px",
               backgroundColor: "#2563EB",
               color: "#FFFFFF",
-              padding: isMobile ? "13px 24px" : "14px 28px",
+              padding: isMobile ? "12px 22px" : "13px 26px",
               borderRadius: "9999px",
               fontSize: isMobile ? "13.5px" : "14.5px",
               fontWeight: 800,
               textDecoration: "none",
-              boxShadow: "0 4px 14px rgba(37, 99, 235, 0.35)",
-              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+              boxShadow: "none", // 🌟 인위적인 글로우 제거
+              transition: "all 0.15s ease",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#1D4ED8";
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 6px 20px rgba(37, 99, 235, 0.5)";
+              e.currentTarget.style.transform = "translateY(-1px)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.backgroundColor = "#2563EB";
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 14px rgba(37, 99, 235, 0.35)";
             }}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
