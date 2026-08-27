@@ -78,7 +78,7 @@ export function LeadershipSection({ w }: { w: number }) {
               margin: "0 0 20px 0",
             }}
           >
-            LEADERSHIP
+            Leadership
           </h2>
           <p className="leadership-lead-p" style={{ fontSize: isMobile ? "18px" : "26px", color: "#93C5FD", margin: "0 0 12px 0", fontWeight: 700, letterSpacing: "-0.02em" }}>
             제품을 직접 설계하며, 디자인의 기준까지 만들어왔습니다.

@@ -1118,7 +1118,7 @@ export function WorkSection({
             lineHeight: 1.05,
           }}
         >
-          PROJECTS
+          Projects
         </h2>
         <p style={{ fontSize: isMobile ? "14px" : "17px", color: "#6B7280", margin: 0, maxWidth: "900px", lineHeight: 1.6 }}>
           엔터프라이즈 플랫폼부터 금융, 커머스까지 — 복잡한 문제를 구조화하고 제품의 방향과 경험을 설계해온 주요 프로젝트입니다.
