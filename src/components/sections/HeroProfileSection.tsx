@@ -206,19 +206,15 @@ export function HeroProfileSection({
         </span>
 
         <h1
-          className="about-title-h1"
+          className="about-title-h1 editorial-display-title"
           style={{
-            fontFamily: "'Newsreader', Georgia, serif",
             fontSize: isMobile ? "38px" : "clamp(52px, 5.8vw, 88px)",
-            fontWeight: 800,
-            letterSpacing: "-0.035em",
-            lineHeight: 1.08,
             color: "#111111",
             margin: "0 0 32px 0",
           }}
         >
           Product Designer<br />
-          <span style={{ fontStyle: "italic", fontWeight: 800, color: "#6B7280" }}>
+          <span className="display-italic-part" style={{ color: "#6B7280" }}>
             who builds systems,
           </span><br />
           not screens.

@@ -39,21 +39,17 @@ export function ContactFooter({ w }: { w: number }) {
           GET IN TOUCH
         </span>
 
-        {/* 2. Giant Editorial Serif Display (히어로와 완벽한 수미상관) */}
+        {/* 2. Giant Editorial Serif Display (히어로와 완벽한 100% 동일 폰트 패밀리) */}
         <h2
-          className="footer-title-h2"
+          className="footer-title-h2 editorial-display-title"
           style={{
-            fontFamily: "'Newsreader', Georgia, serif",
-            fontSize: isMobile ? "44px" : "clamp(56px, 6.8vw, 100px)",
-            fontWeight: 800,
-            letterSpacing: "-0.035em",
-            lineHeight: 1.05,
+            fontSize: isMobile ? "42px" : "clamp(52px, 6.2vw, 92px)",
             color: "#FFFFFF",
             margin: "0 0 32px 0",
           }}
         >
           Let's build<br />
-          <span style={{ fontStyle: "italic", fontWeight: 800, color: "#9CA3AF" }}>
+          <span className="display-italic-part" style={{ color: "#9CA3AF" }}>
             something great
           </span><br />
           together.
