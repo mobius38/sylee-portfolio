@@ -522,84 +522,101 @@ body {
     break-inside: avoid !important;
   }
 
-  /* 🌟 LEADERSHIP print scale-down (인쇄 시 리더십 다크 해제, 화이트 테마 및 폰트/패딩 축소) */
+  /* 🌟 LEADERSHIP + FOOTER Single Final Page Print Optimization (리더십과 푸터를 A4 한 페이지에 완벽 결합) */
   #leadership {
     background-color: #FFFFFF !important;
     color: #111111 !important;
     border-top: 1px solid #E5E7EB !important;
-    padding-top: 60px !important;
-    padding-bottom: 60px !important;
-    break-inside: avoid !important;
+    padding-top: 10pt !important;
+    padding-bottom: 8pt !important;
+    margin-bottom: 0 !important;
+    page-break-before: always !important; /* 🌟 새로운 A4 페이지 시작 */
+    break-before: page !important;
+    page-break-after: avoid !important;   /* 🌟 푸터와 분리 금지 */
+    break-after: avoid !important;
     page-break-inside: avoid !important;
+    break-inside: avoid !important;
   }
 
   .leadership-section-meta {
-    font-size: 9pt !important;
-    margin-bottom: 4px !important;
+    font-size: 8.5pt !important;
+    margin-bottom: 2pt !important;
     color: #2563EB !important;
   }
 
   .leadership-section-h2 {
+    font-size: 22pt !important;
+    margin-bottom: 6pt !important;
     color: #111111 !important;
   }
 
   .leadership-lead-p {
-    font-size: 14pt !important;
-    margin-bottom: 8px !important;
+    font-size: 11pt !important;
+    margin-bottom: 4pt !important;
     color: #2563EB !important;
   }
   .leadership-desc-p {
-    font-size: 11pt !important;
-    line-height: 1.6 !important;
+    font-size: 9pt !important;
+    line-height: 1.4 !important;
     color: #4B5563 !important;
+    margin-bottom: 12pt !important;
   }
+
+  .leadership-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8pt !important;
+    margin-bottom: 12pt !important;
+  }
+
   .leadership-card-item {
-    padding: 18px 24px !important;
-    min-height: auto !important; /* 고정 높이 해제 */
-    background-color: #F9FAFB !important; /* 연회색 카드로 변경 */
+    padding: 8pt 12pt !important;
+    min-height: auto !important;
+    background-color: #F9FAFB !important;
     border: 1px solid #E5E7EB !important;
-    break-inside: avoid !important;
     page-break-inside: avoid !important;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+    break-inside: avoid !important;
   }
   .leadership-card-title {
-    font-size: 14pt !important;
-    margin-bottom: 8px !important;
+    font-size: 10.5pt !important;
+    margin-bottom: 3pt !important;
     color: #111111 !important;
   }
   .leadership-card-desc {
-    font-size: 10pt !important;
-    line-height: 1.5 !important;
+    font-size: 8.5pt !important;
+    line-height: 1.4 !important;
     color: #4B5563 !important;
   }
 
-  /* 🌟 FOOTER print scale-down (인쇄 시 푸터 다크 해제, 화이트 테마 및 폰트/패딩 축소) */
+  /* 🌟 FOOTER (리더십 하단에 찰떡 결합) */
+  footer {
+    background-color: #FFFFFF !important;
+    color: #111111 !important;
+    border-top: 1px solid #E5E7EB !important;
+    padding-top: 12pt !important;
+    padding-bottom: 10pt !important;
+    margin-top: 0 !important;
+    page-break-before: avoid !important; /* 🌟 리더십과 같은 페이지 유지 */
+    break-before: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
   .footer-title-h2 {
-    font-size: 16pt !important;
-    margin-bottom: 8px !important;
+    font-size: 18pt !important;
+    margin-bottom: 4pt !important;
     color: #111111 !important;
   }
   .footer-title-h2 span {
-    margin-top: 2px !important;
     color: #2563EB !important;
   }
   .footer-signature-p {
-    font-size: 11pt !important;
-    margin-bottom: 16px !important;
+    font-size: 9pt !important;
+    margin-bottom: 8pt !important;
     color: #4B5563 !important;
   }
-  footer {
-    background-color: #FFFFFF !important; /* 푸터 어두운 배경 제거 */
-    color: #111111 !important;
-    border-top: 1px solid #E5E7EB !important;
-    padding-top: 40px !important;
-    padding-bottom: 30px !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important; /* 푸터가 중간에 잘리지 않도록 강제 */
-  }
   footer span[style*="rgba(255, 255, 255, 0.4)"] {
-    color: #9CA3AF !important; /* 카피라이트 텍스트 회색으로 */
+    color: #9CA3AF !important;
   }
 }
 

@@ -90,6 +90,7 @@ export function LeadershipSection({ w }: { w: number }) {
 
         {/* 2. Clean Reference-Style 2x2 Modular Grid (Title + 3 Lines) */}
         <div
+          className="leadership-cards-grid"
           style={{
             display: "grid",
             gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
