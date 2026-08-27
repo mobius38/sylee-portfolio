@@ -231,7 +231,7 @@ export function HeroProfileSection({
             marginBottom: "14px",
           }}
         >
-          B2B Enterprise · Product Design · 2011–2026
+          PRODUCT DESIGN PORTFOLIO
         </span>
 
         <h1
