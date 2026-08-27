@@ -23,8 +23,8 @@
 .editorial-display-title {
   font-family: var(--font-serif) !important;
   font-weight: 800 !important;
-  letter-spacing: -0.035em !important;
-  line-height: 1.06 !important;
+  letter-spacing: -0.05em !important; /* 🌟 쫀쫀하고 밀도 있는 하이엔드 타이트 자간 */
+  line-height: 1.04 !important;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
 }
 
@@ -32,6 +32,7 @@
   font-family: var(--font-serif) !important;
   font-style: italic !important;
   font-weight: 800 !important;
+  letter-spacing: -0.045em !important;
 }
 
 /* ─── Global Reset & Body ───────────────────────────────────────────────────── */
