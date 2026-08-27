@@ -16,67 +16,168 @@ export function ContactFooter({ w }: { w: number }) {
       id="contact"
       className="reveal-init"
       style={{
-        backgroundColor: "#08090C",
+        backgroundColor: "#0D0F12",
         color: "#FFFFFF",
-        padding: isMobile ? "60px 16px 84px 16px" : "100px 40px 60px 40px",
+        padding: isMobile ? "80px 20px 48px 20px" : "140px 40px 64px 40px",
+        borderTop: "1px solid rgba(255, 255, 255, 0.08)",
       }}
     >
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "32px" }}>
-          <div>
-            <h2
-              className="footer-title-h2"
-              style={{
-                fontSize: isMobile ? "28px" : "38px",
-                fontWeight: 900,
-                color: "#FFFFFF",
-                letterSpacing: "-0.03em",
-                lineHeight: 1.2,
-                margin: "0 0 10px 0",
-              }}
-            >
-              다음 프로젝트를 함께 만들고 싶으시다면,
-              <span style={{ display: "block", color: "#60A5FA", marginTop: "4px" }}>
-                언제든 편하게 연락해 주세요.
-              </span>
-            </h2>
-            <p className="footer-signature-p" style={{ fontSize: isMobile ? "15px" : "17px", color: "rgba(255, 255, 255, 0.7)", margin: "0 0 24px 0", fontWeight: 500 }}>
-              이선영 <span style={{ color: "rgba(255, 255, 255, 0.35)", margin: "0 6px" }}>·</span> Product Designer
-            </p>
+        {/* 1. Subheader Tag */}
+        <span
+          style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: "12px",
+            fontWeight: 800,
+            color: "#60A5FA",
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            display: "block",
+            marginBottom: isMobile ? "24px" : "32px",
+          }}
+        >
+          GET IN TOUCH
+        </span>
 
-            <div style={{ display: "flex", gap: "12px", alignItems: "center", flexWrap: "wrap" }}>
-              <button
-                onClick={copyEmail}
-                style={{
-                  backgroundColor: copied ? "#2563EB" : "#FFFFFF", // 🌟 신뢰 블루 통합
-                  color: copied ? "#FFFFFF" : "#111111",
-                  border: "none",
-                  padding: isMobile ? "12px 18px" : "13px 20px",
-                  fontSize: isMobile ? "12px" : "13px",
-                  fontWeight: 700,
-                  fontFamily: "'JetBrains Mono', monospace",
-                  cursor: "pointer",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  borderRadius: "4px",
-                  transition: "all 0.15s ease",
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                {copied ? "이메일 복사 완료" : email}
-              </button>
-            </div>
-          </div>
+        {/* 2. Giant Editorial Serif Display (히어로와 완벽한 수미상관) */}
+        <h2
+          className="footer-title-h2"
+          style={{
+            fontFamily: "'Newsreader', Georgia, serif",
+            fontSize: isMobile ? "44px" : "clamp(56px, 6.8vw, 100px)",
+            fontWeight: 800,
+            letterSpacing: "-0.035em",
+            lineHeight: 1.05,
+            color: "#FFFFFF",
+            margin: "0 0 32px 0",
+          }}
+        >
+          Let's build<br />
+          <span style={{ fontStyle: "italic", fontWeight: 800, color: "#9CA3AF" }}>
+            something great
+          </span><br />
+          together.
+        </h2>
 
-          <div>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "rgba(255, 255, 255, 0.4)" }}>
-              © 2026 LEE SUNYOUNG. ALL RIGHTS RESERVED.
-            </span>
-          </div>
+        {/* 3. Subtext Description */}
+        <p
+          style={{
+            fontFamily: "'Noto Sans KR', sans-serif",
+            fontSize: isMobile ? "15px" : "17px",
+            color: "rgba(255, 255, 255, 0.7)",
+            lineHeight: 1.6,
+            fontWeight: 400,
+            margin: "0 0 40px 0",
+            maxWidth: "700px",
+          }}
+        >
+          B2B SaaS 제품 디자인, 디자인 시스템 구축, 또는 협업 관련 문의를 환영합니다.
+        </p>
+
+        {/* 4. Dual Action Pill Buttons */}
+        <div style={{ display: "flex", gap: "14px", alignItems: "center", flexWrap: "wrap", marginBottom: isMobile ? "64px" : "96px" }}>
+          {/* Email Action Button */}
+          <a
+            href={`mailto:${email}`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              backgroundColor: "#2563EB",
+              color: "#FFFFFF",
+              padding: isMobile ? "13px 22px" : "14px 28px",
+              borderRadius: "9999px",
+              fontSize: isMobile ? "13.5px" : "14.5px",
+              fontWeight: 800,
+              textDecoration: "none",
+              boxShadow: "0 4px 14px rgba(37, 99, 235, 0.35)",
+              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#1D4ED8";
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow = "0 6px 20px rgba(37, 99, 235, 0.5)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#2563EB";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 4px 14px rgba(37, 99, 235, 0.35)";
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            이메일 보내기
+          </a>
+
+          {/* Copy Email Button */}
+          <button
+            onClick={copyEmail}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              backgroundColor: "rgba(255, 255, 255, 0.08)",
+              color: copied ? "#60A5FA" : "rgba(255, 255, 255, 0.85)",
+              border: "1px solid rgba(255, 255, 255, 0.15)",
+              padding: isMobile ? "12px 20px" : "13px 24px",
+              borderRadius: "9999px",
+              fontSize: isMobile ? "13px" : "14px",
+              fontWeight: 700,
+              cursor: "pointer",
+              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.14)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.3)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.08)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.15)";
+            }}
+          >
+            {copied ? "✓ 이메일 복사 완료" : "이메일 복사"}
+          </button>
+
+          {/* Back to Top / Projects Button */}
+          <a
+            href="#projects"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              backgroundColor: "transparent",
+              color: "rgba(255, 255, 255, 0.6)",
+              border: "1px solid rgba(255, 255, 255, 0.12)",
+              padding: isMobile ? "12px 20px" : "13px 24px",
+              borderRadius: "9999px",
+              fontSize: isMobile ? "13px" : "14px",
+              fontWeight: 700,
+              textDecoration: "none",
+              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = "#FFFFFF";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = "rgba(255, 255, 255, 0.6)";
+              e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.12)";
+            }}
+          >
+            작업들 다시 보기 ↑
+          </a>
+        </div>
+
+        {/* 5. Bottom Copyright & Info */}
+        <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "32px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "13px", fontWeight: 700, color: "rgba(255, 255, 255, 0.85)" }}>
+            LEE SUNYOUNG <span style={{ color: "rgba(255, 255, 255, 0.35)", margin: "0 6px" }}>·</span> Product Designer
+          </span>
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "rgba(255, 255, 255, 0.4)", letterSpacing: "0.05em" }}>
+            © 2026 LEE SUNYOUNG. ALL RIGHTS RESERVED.
+          </span>
         </div>
       </div>
     </footer>
