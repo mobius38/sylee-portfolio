@@ -1505,10 +1505,16 @@ export function WorkSection({
                 const printSlides = p.slides ? p.slides.slice(0, 4) : [];
                 return printSlides.length > 0 ? (
                   <div
-                    className="print-slides-grid"
+                    className={`print-slides-grid print-slides-grid-${printSlides.length}`}
+                    data-count={printSlides.length}
                     style={{
                       display: "grid",
-                      gridTemplateColumns: printSlides.length === 1 ? "1fr" : "repeat(2, 1fr)",
+                      gridTemplateColumns:
+                        printSlides.length === 1
+                          ? "1fr"
+                          : printSlides.length === 3
+                          ? "repeat(3, 1fr)"
+                          : "repeat(2, 1fr)",
                       gap: "14px",
                       marginBottom: "28px",
                       pageBreakInside: "avoid",
@@ -1521,7 +1527,7 @@ export function WorkSection({
                         className="print-slide-card"
                         style={{
                           width: "100%",
-                          aspectRatio: "16/10",
+                          aspectRatio: printSlides.length === 1 ? "16/9" : "16/10",
                           backgroundColor: "#F9FAFB",
                           border: "1px solid #E5E7EB",
                           borderRadius: "6px",

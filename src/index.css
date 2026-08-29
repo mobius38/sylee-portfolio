@@ -579,7 +579,7 @@ body {
     break-inside: avoid !important;
   }
 
-  /* 🌟 Case Study Print Slides Grid & Captions Optimization */
+  /* 🌟 Case Study Print Slides Grid & Captions Optimization (이미지 개수별 동적 레이아웃) */
   .print-slides-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
@@ -592,17 +592,72 @@ body {
   .print-slide-card {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
-    background-color: #F8F9FA !important; /* 🌟 은은하고 고급스러운 라이트 그레이 액자 배경 복구 */
+    background-color: #F8F9FA !important; /* 🌟 은은하고 고급스러운 라이트 그레이 액자 배경 */
     border: 1px solid #E5E7EB !important;
     border-radius: 4pt !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
   }
 
   .print-slide-card img {
     max-height: 140pt !important;
+    width: 100% !important;
+    height: 100% !important;
     object-fit: contain !important;
     display: block !important;
+  }
+
+  /* 🌟 1개 이미지: 100% 전폭 웅장한 히어로 샷 (A4 가로폭에 맞춰 시원하게 확대) */
+  .print-slides-grid[data-count="1"],
+  .print-slides-grid-1 {
+    grid-template-columns: 1fr !important;
+  }
+  .print-slides-grid[data-count="1"] .print-slide-card,
+  .print-slides-grid-1 .print-slide-card {
+    max-width: 100% !important;
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  .print-slides-grid[data-count="1"] .print-slide-card img,
+  .print-slides-grid-1 .print-slide-card img {
+    max-height: 280pt !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  /* 🌟 2개 이미지: 2열 나란히 균형 배치 */
+  .print-slides-grid[data-count="2"],
+  .print-slides-grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .print-slides-grid[data-count="2"] .print-slide-card img,
+  .print-slides-grid-2 .print-slide-card img {
+    max-height: 170pt !important;
+  }
+
+  /* 🌟 3개 이미지: 3열 나란히 정갈한 배치 */
+  .print-slides-grid[data-count="3"],
+  .print-slides-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .print-slides-grid[data-count="3"] .print-slide-card img,
+  .print-slides-grid-3 .print-slide-card img {
+    max-height: 135pt !important;
+  }
+
+  /* 🌟 4개 이상: 2x2 그리드 */
+  .print-slides-grid[data-count="4"],
+  .print-slides-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .print-slides-grid[data-count="4"] .print-slide-card img,
+  .print-slides-grid-4 .print-slide-card img {
+    max-height: 140pt !important;
   }
 
   /* 🌟 LEADERSHIP + FOOTER Single Final Page Print Optimization (리더십과 푸터를 A4 한 페이지에 완벽 결합) */
