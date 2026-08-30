@@ -227,6 +227,12 @@ body {
     margin: 12mm 10mm;
   }
 
+  /* Modal slide image: screen=cover(crop), print=contain(전체 표시) */
+  .modal-slide-image {
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
   /* Force background colors and crisp rendering */
   html, body {
     background-color: #FFFFFF !important;

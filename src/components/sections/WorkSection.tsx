@@ -83,6 +83,7 @@ export interface ProjectItem {
   thumbnail: string;
   slides: ShowcaseSlide[];
   isFeatured?: boolean;
+  archive?: boolean;
 }
 
 // ─── Unified WORK Data (Web + Enterprise + Mobile Apps) ──────────────────────
@@ -146,7 +147,6 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     tags: ["Enterprise_Portal", "Information_Architecture", "Permission_UX", "Data_Grid", "Design_System"],
     thumbnail: imgIntranetHome,
-    isFeatured: true,
     slides: [
       { src: imgIntranetHome, alt: "어드민 포탈", tabLabel: "어드민 총괄 포탈", title: "금융 이중 포탈 어드민 대시보드", caption: "전체 금융 서비스 모듈의 활성화 상태와 트랜잭션 장애 지표 실시간 모니터링" },
       { src: imgIntranetUserPortal, alt: "사용자 포탈", tabLabel: "사용자 맞춤 포탈", title: "역할 기반 인가 포탈", caption: "부서 및 권한에 따라 인가된 금융 서비스만 접근하도록 분기 처리" },
@@ -414,6 +414,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     tags: ["Social_Dating", "iOS_Android", "Card_Swipe", "Mobile_UX", "Native_App"],
     thumbnail: imgDime,
+    archive: true,
     slides: [
       { src: imgDime, alt: "DIME", tabLabel: "데이팅 & 매칭 화면", title: "DIME — 소셜 데이팅 & 프로필 매칭 앱", caption: "프로필 카드 탐색과 제스처 인터랙션을 최적화한 소셜 데이팅 네이티브 모바일 앱" },
     ],
@@ -443,6 +444,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     tags: ["LMS_Edutech", "Responsive_Web", "Admin_System", "Branding", "Web_Publishing"],
     thumbnail: imgLMS,
+    archive: true,
     slides: [
       { src: imgLMS, alt: "HANMILAB LMS 한미아카데미", tabLabel: "LMS 반응형 웹 & 시험 모달", title: "HANMILAB LMS (한미아카데미) — 반응형 학습 플랫폼", caption: "온라인 수강/시험 반응형 사용자 웹(72p) 및 국비지원 교육과정·온라인 시험 유의사항 모달 UI/UX 설계", fit: "contain" },
     ],
@@ -471,6 +473,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     tags: ["Mobile_Commerce", "iOS_Android", "Magazine_App", "Design_Guide", "Native_UI"],
     thumbnail: imgHelloLinkMagazine,
+    archive: true,
     slides: [
       { src: imgHelloLinkMagazine, alt: "HELLO LINK 매거진", tabLabel: "매거진 & 커머스 지면", title: "HELLO LINK — 매거진 연계 숫자 코드 커머스", caption: "여성동아 특별 추천 상품을 다이얼하듯 스마트폰에서 즉시 쇼핑하는 헬로링크 지면/매거진 뷰어", fit: "contain" },
       { src: imgHelloLink, alt: "HELLO LINK 모바일 앱", tabLabel: "모바일 네이티브 앱", title: "HELLO LINK — 모바일 네이티브 앱 UI", caption: "숫자 코드 다이얼패드 및 상품 정보·주문·결제 원스톱 프로세스 설계" },
@@ -500,6 +503,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     tags: ["Mobile_App", "Android_Native", "E_Commerce", "Branding", "Design_Guide"],
     thumbnail: imgNH,
+    archive: true,
     slides: [
       { src: imgNH, alt: "NH바로바로마켓", tabLabel: "커머스 대표 화면", title: "NH바로바로마켓 — 모바일 커머스 전면 리뉴얼", caption: "상품 탐색부터 주문/결제까지 모바일 사용자 동선을 최적화한 네이티브 앱" },
     ],
@@ -528,6 +532,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     ],
     tags: ["Mobile_Design", "Financial", "Membership_Service", "Task_Simplification", "UI_Design"],
     thumbnail: imgSamsungFire,
+    archive: true,
     slides: [
       { src: imgSamsungFire, alt: "삼성화재 모바일 서비스", tabLabel: "삼성화재 대표 화면", title: "삼성화재 — 모바일 멤버십 서비스 UI/UX 설계", caption: "삼성화재 멤버십 모바일 메인 그리드 카드 레이아웃 및 메시지 전송·주소록 플로우 설계", fit: "contain" },
     ],
@@ -667,17 +672,26 @@ function CaseStudyDialog({
             zIndex: 10,
             backgroundColor: "#FFFFFF",
             borderBottom: "1px solid #F3F4F6",
-            padding: isMobile ? "16px 20px" : "20px 32px",
+            padding: isMobile ? "14px 20px" : "20px 32px",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center",
+            alignItems: isMobile ? "flex-start" : "center",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: isMobile ? "flex-start" : "center",
+              gap: isMobile ? "4px" : "10px",
+              flex: 1,
+              paddingRight: isMobile ? "12px" : "0",
+            }}
+          >
             <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", fontWeight: 900, color: "#2563EB", letterSpacing: "0.05em" }}>
               CASE {project.num}
             </span>
-            <span style={{ color: "#D1D5DB" }}>|</span>
+            {!isMobile && <span style={{ color: "#D1D5DB" }}>|</span>}
             <strong style={{ fontSize: isMobile ? "18px" : "22px", fontWeight: 900, color: "#111111", letterSpacing: "-0.02em" }}>
               {project.title}
             </strong>
@@ -692,6 +706,7 @@ function CaseStudyDialog({
               borderRadius: "9999px",
               width: "36px",
               height: "36px",
+              flexShrink: 0,
               cursor: "pointer",
               display: "flex",
               alignItems: "center",
@@ -783,7 +798,7 @@ function CaseStudyDialog({
               </strong>
             </div>
           </div>
-          {/* High-Resolution Screen Frame with Interactive Dot Pagination */}
+          {/* Image Viewer with Full Controls */}
           <div
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
@@ -792,47 +807,175 @@ function CaseStudyDialog({
               width: "100%",
               height: isMobile ? "280px" : "500px",
               backgroundColor: "#F9FAFB",
-              borderRadius: "8px",
+              borderRadius: "12px",
               overflow: "hidden",
-              border: "none",
+              border: "1px solid #E5E7EB",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: isMobile ? "12px" : "24px",
+              padding: 0,
               marginBottom: "28px",
             }}
           >
+            {/* Main Image — cover crop, top-aligned */}
             <img
               key={currentSlide.src}
               src={currentSlide.src}
               alt={currentSlide.alt}
-              onClick={() => setZoomedImage(currentSlide.src)} // 🌟 클릭 시 라이트박스 오픈
+              className="modal-slide-image"
+              onClick={() => setZoomedImage(currentSlide.src)}
               style={{
                 width: "100%",
                 height: "100%",
-                objectFit: "contain" as const,
-                objectPosition: "center" as const,
+                objectFit: "cover" as const,
+                objectPosition: "top center" as const,
                 display: "block",
-                cursor: "zoom-in", // 🌟 돋보기 커서
+                cursor: "zoom-in",
                 animation: "fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards",
               }}
             />
 
-            {/* Bottom Centered Pagination Dots (이전 디자인 복구) */}
+            {/* Top-right: "N / M" counter */}
             {project.slides.length > 1 && (
               <div
                 style={{
                   position: "absolute",
-                  bottom: "14px",
+                  top: "12px",
+                  right: "12px",
+                  backgroundColor: "rgba(0, 0, 0, 0.52)",
+                  backdropFilter: "blur(4px)",
+                  color: "#FFFFFF",
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: "11px",
+                  fontWeight: 700,
+                  padding: "4px 10px",
+                  borderRadius: "9999px",
+                  letterSpacing: "0.06em",
+                  pointerEvents: "none" as const,
+                }}
+              >
+                {activeSlideIdx + 1} / {project.slides.length}
+              </div>
+            )}
+
+            {/* Left prev button — hidden on first slide */}
+            {project.slides.length > 1 && activeSlideIdx > 0 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); setActiveSlideIdx(activeSlideIdx - 1); }}
+                aria-label="Previous slide"
+                style={{
+                  position: "absolute",
+                  left: "12px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: "34px",
+                  height: "34px",
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(0, 0, 0, 0.48)",
+                  backdropFilter: "blur(4px)",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "background-color 0.15s ease",
+                  flexShrink: 0,
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#2563EB"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.48)"; }}
+              >
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 1L1 7L7 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            )}
+
+            {/* Right next button — hidden on last slide */}
+            {project.slides.length > 1 && activeSlideIdx < project.slides.length - 1 && (
+              <button
+                onClick={(e) => { e.stopPropagation(); setActiveSlideIdx(activeSlideIdx + 1); }}
+                aria-label="Next slide"
+                style={{
+                  position: "absolute",
+                  right: "12px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: "34px",
+                  height: "34px",
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(0, 0, 0, 0.48)",
+                  backdropFilter: "blur(4px)",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "background-color 0.15s ease",
+                  flexShrink: 0,
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#2563EB"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, 0.48)"; }}
+              >
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L7 7L1 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            )}
+
+            {/* Dark gradient overlay — fades image bottom to black */}
+            {(currentSlide.tabLabel || project.slides.length > 1) && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: project.slides.length > 1 ? "90px" : "60px",
+                  background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%)",
+                  pointerEvents: "none" as const,
+                }}
+              />
+            )}
+
+            {/* Bottom-left: slide caption — white text on dark gradient */}
+            {currentSlide.tabLabel && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: project.slides.length > 1 ? "28px" : "12px",
+                  left: "14px",
+                  right: "14px",
+                  pointerEvents: "none" as const,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: isMobile ? "12px" : "13px",
+                    fontWeight: 700,
+                    color: "#FFFFFF",
+                    display: "block",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap" as const,
+                  }}
+                >
+                  {currentSlide.tabLabel}
+                </span>
+              </div>
+            )}
+
+            {/* Bottom-center: dots — below caption, white on dark */}
+            {project.slides.length > 1 && (
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "10px",
                   left: "50%",
                   transform: "translateX(-50%)",
                   display: "flex",
-                  gap: "6px",
+                  gap: "5px",
                   alignItems: "center",
-                  backgroundColor: "rgba(17, 24, 39, 0.55)",
-                  padding: "5px 10px",
-                  borderRadius: "9999px",
-                  backdropFilter: "blur(6px)",
                 }}
               >
                 {project.slides.map((_, idx) => {
@@ -843,14 +986,15 @@ function CaseStudyDialog({
                       onClick={() => setActiveSlideIdx(idx)}
                       aria-label={`Go to slide ${idx + 1}`}
                       style={{
-                        width: isActive ? "18px" : "6px",
-                        height: "6px",
+                        width: isActive ? "8px" : "6px",
+                        height: isActive ? "8px" : "6px",
                         borderRadius: "9999px",
-                        backgroundColor: isActive ? "#FFFFFF" : "rgba(255, 255, 255, 0.45)",
+                        backgroundColor: isActive ? "#2563EB" : "rgba(255, 255, 255, 0.4)",
                         border: "none",
                         padding: 0,
                         cursor: "pointer",
                         transition: "all 0.2s ease",
+                        flexShrink: 0,
                       }}
                     />
                   );
@@ -1079,18 +1223,31 @@ export function WorkSection({
     "Mobile",
   ];
 
-  // Filter projects by chip (포함 관계 매칭으로 유연성 극대화)
-  const filteredProjects = activeKeyword === "ALL"
-    ? PROJECTS_DATA
-    : PROJECTS_DATA.filter((p) => {
-        if (activeKeyword === "Brand & Design") {
-          return p.keyword.includes("Brand") || p.keyword.includes("Design");
-        }
-        return p.keyword.includes(activeKeyword);
-      });
+  // ── Projects Hierarchy (Featured → Selected → Earlier Work) ────────────────
+  const featuredProject = PROJECTS_DATA.find((p) => p.id === "doolinker") ?? null;
+  const archiveProjects = PROJECTS_DATA.filter((p) => p.archive);
 
-  const featuredProjects = filteredProjects.filter((p) => p.isFeatured);
-  const gridProjects = filteredProjects.filter((p) => !p.isFeatured);
+  const matchesKeyword = (p: ProjectItem): boolean => {
+    if (activeKeyword === "ALL") return true;
+    if (activeKeyword === "Brand & Design") {
+      return p.keyword.includes("Brand") || p.keyword.includes("Design");
+    }
+    return p.keyword.includes(activeKeyword);
+  };
+
+  // Selected: non-archive, non-featured (ALL) | matching non-archive (filtered)
+  const selectedProjects =
+    activeKeyword === "ALL"
+      ? PROJECTS_DATA.filter((p) => !p.archive && p.id !== "doolinker")
+      : PROJECTS_DATA.filter((p) => !p.archive && p.id !== "doolinker" && matchesKeyword(p));
+
+  // When filter active, include featured if it matches the keyword
+  const showFeaturedInFilter =
+    activeKeyword !== "ALL" && featuredProject !== null && matchesKeyword(featuredProject);
+
+  const filteredFlatProjects: ProjectItem[] = showFeaturedInFilter
+    ? [featuredProject!, ...selectedProjects]
+    : selectedProjects;
 
   return (
     <section
@@ -1175,193 +1332,179 @@ export function WorkSection({
         </div>
       </div>
 
-      {/* 3. Projects Grid Rendering */}
+      {/* 3. Projects Grid — A. Featured · B. Selected · C. Earlier Work */}
       {activeKeyword === "ALL" ? (
         <>
-          {/* 전체 보기(ALL) 일 때는 기존의 Featured와 Grid 분할 계층 구조 유지 */}
-          {featuredProjects.length > 0 && (
-            <div className="no-print" style={{ marginBottom: isMobile ? "24px" : "32px" }}>
+          {/* ── A. FEATURED PROJECT — DO.LINKER ─────────────────────────────── */}
+          {featuredProject && (
+            <div className="no-print" style={{ marginBottom: isMobile ? "32px" : "52px" }}>
               <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-                  gap: isMobile ? "16px" : "24px",
-                }}
+                className="project-card"
+                style={{ cursor: "pointer", padding: 0, overflow: "hidden" }}
+                onClick={() => setSelectedModalProject(featuredProject!)}
               >
-                {featuredProjects.map((p) => (
-                  <div
-                    key={p.id}
-                    className="project-card"
-                    style={{
-                      padding: isMobile ? "16px" : "20px",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => setSelectedModalProject(p)}
-                  >
-                    <div>
-                      <div
-                        className="card-thumb"
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/10",
-                          marginBottom: "14px",
-                        }}
-                      >
-                        <img
-                          src={p.thumbnail}
-                          alt={p.title}
-                          loading="lazy"
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            objectPosition: "top center",
-                          }}
-                        />
-                      </div>
-
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
-                          CASE {p.num}
-                        </span>
-                        <span style={{ color: "#D1D5DB" }}>·</span>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
-                          {p.client}
-                        </span>
-                      </div>
-
-                      <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: "0 0 6px 0", letterSpacing: "-0.02em" }}>
-                        {p.title}
-                      </h3>
-                      <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 12px 0", fontWeight: 500 }}>
-                        {p.subtitle}
-                      </p>
-                    </div>
-
-                    <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
-                        {p.keyword}
-                      </span>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                        View Case →
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {gridProjects.length > 0 && (
-            <div className="no-print">
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-                  gap: isMobile ? "16px" : "24px",
-                }}
-              >
-                {gridProjects.map((p) => (
-                  <div
-                    key={p.id}
-                    className="project-card"
-                    style={{
-                      padding: isMobile ? "16px" : "20px",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "space-between",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => setSelectedModalProject(p)}
-                  >
-                    <div>
-                      <div
-                        className="card-thumb"
-                        style={{
-                          width: "100%",
-                          aspectRatio: "16/10",
-                          marginBottom: "14px",
-                        }}
-                      >
-                        <img
-                          src={p.thumbnail}
-                          alt={p.title}
-                          loading="lazy"
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            objectPosition: "top center",
-                          }}
-                        />
-                      </div>
-
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
-                          CASE {p.num}
-                        </span>
-                        <span style={{ color: "#D1D5DB" }}>·</span>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
-                          {p.client}
-                        </span>
-                      </div>
-
-                      <h3 style={{ fontSize: "18px", fontWeight: 900, color: "#111111", margin: "0 0 4px 0" }}>
-                        {p.title}
-                      </h3>
-                      <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 10px 0" }}>
-                        {p.subtitle}
-                      </p>
-                    </div>
-
-                    <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
-                        {p.keyword}
-                      </span>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                        View Case →
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </>
-      ) : (
-        /* 특정 카테고리 필터 활성화 시에는 Featured 여부 상관없이 단일 2열 그리드로 모아 수직 정렬 어긋남 완전 해결 */
-        filteredProjects.length > 0 && (
-          <div className="no-print">
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
-                gap: isMobile ? "16px" : "24px",
-              }}
-            >
-              {filteredProjects.map((p) => (
+                {/* Full-width hero image */}
                 <div
-                  key={p.id}
-                  className="project-card"
+                  className="card-thumb"
                   style={{
-                    padding: isMobile ? "16px" : "20px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    cursor: "pointer",
+                    width: "100%",
+                    aspectRatio: isMobile ? "16/9" : "21/8",
+                    borderRadius: "6px 6px 0 0",
+                    border: "none",
+                    borderBottom: "1px solid #E5E7EB",
+                    overflow: "hidden",
+                    backgroundColor: "#F8F9FA",
                   }}
-                  onClick={() => setSelectedModalProject(p)}
                 >
-                  <div>
+                  <img
+                    src={featuredProject.slides[1]?.src ?? featuredProject.thumbnail}
+                    alt={featuredProject.title}
+                    loading="lazy"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top center",
+                    }}
+                  />
+                </div>
+                {/* Card info row */}
+                <div
+                  style={{
+                    padding: isMobile ? "20px" : "26px 32px",
+                    display: "flex",
+                    flexDirection: isMobile ? "column" : "row",
+                    justifyContent: "space-between",
+                    alignItems: isMobile ? "flex-start" : "flex-end",
+                    gap: isMobile ? "16px" : "32px",
+                  }}
+                >
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "10px" }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
+                        CASE {featuredProject.num}
+                      </span>
+                      <span style={{ color: "#D1D5DB" }}>·</span>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
+                        WORKFLOW AUTOMATION
+                      </span>
+                    </div>
+                    <h3
+                      style={{
+                        fontSize: isMobile ? "26px" : "clamp(28px, 3vw, 40px)",
+                        fontWeight: 900,
+                        color: "#111111",
+                        margin: "0 0 14px 0",
+                        letterSpacing: "-0.03em",
+                        lineHeight: 1.1,
+                      }}
+                    >
+                      {featuredProject.title}
+                    </h3>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                      {featuredProject.role.split(" · ").map((r) => (
+                        <span
+                          key={r}
+                          style={{
+                            fontFamily: "'JetBrains Mono', monospace",
+                            fontSize: "11px",
+                            fontWeight: 700,
+                            color: "#4B5563",
+                            backgroundColor: "#F3F4F6",
+                            border: "1px solid #E5E7EB",
+                            padding: "3px 10px",
+                            borderRadius: "9999px",
+                          }}
+                        >
+                          {r}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: isMobile ? "row" : "column",
+                      alignItems: isMobile ? "center" : "flex-end",
+                      gap: "12px",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#9CA3AF", fontWeight: 600 }}>
+                      {featuredProject.period.replace("~", "—")}
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        fontSize: "13px",
+                        color: "#2563EB",
+                        fontWeight: 900,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "4px",
+                      }}
+                    >
+                      View Case
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ── B. SELECTED PROJECTS ──────────────────────────────────────── */}
+          {selectedProjects.length > 0 && (
+            <div className="no-print">
+              {/* Sub-label divider */}
+              <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "24px" }}>
+                <span
+                  style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    color: "#9CA3AF",
+                    letterSpacing: "0.12em",
+                    whiteSpace: "nowrap" as const,
+                  }}
+                >
+                  SELECTED PROJECTS
+                </span>
+                <div style={{ flex: 1, height: "1px", backgroundColor: "#E5E7EB" }} />
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+                  gap: isMobile ? "16px" : "24px",
+                }}
+              >
+                {selectedProjects.map((p) => (
+                  <div
+                    key={p.id}
+                    className="project-card"
+                    style={{
+                      padding: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      cursor: "pointer",
+                      overflow: "hidden",
+                    }}
+                    onClick={() => setSelectedModalProject(p)}
+                  >
+                    {/* Thumbnail */}
                     <div
                       className="card-thumb"
                       style={{
                         width: "100%",
                         aspectRatio: "16/10",
-                        marginBottom: "14px",
+                        borderRadius: "6px 6px 0 0",
+                        border: "none",
+                        borderBottom: "1px solid #E5E7EB",
+                        overflow: "hidden",
+                        backgroundColor: "#F8F9FA",
                       }}
                     >
                       <img
@@ -1376,32 +1519,113 @@ export function WorkSection({
                         }}
                       />
                     </div>
-
-                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB" }}>
-                        CASE {p.num}
-                      </span>
-                      <span style={{ color: "#D1D5DB" }}>·</span>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
-                        {p.client}
+                    {/* Info */}
+                    <div
+                      style={{
+                        padding: isMobile ? "14px 16px 16px" : "16px 20px 18px",
+                        display: "flex",
+                        flexDirection: "column",
+                        flex: 1,
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <div>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
+                            CASE {p.num}
+                          </span>
+                          <span style={{ color: "#D1D5DB" }}>·</span>
+                          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
+                            {p.keyword}
+                          </span>
+                        </div>
+                        <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
+                          {p.title}
+                        </h3>
+                      </div>
+                      <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "10px", marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                          View Case →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        /* Filtered view: flat 2-col grid of matching non-archive projects */
+        filteredFlatProjects.length > 0 && (
+          <div className="no-print">
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
+                gap: isMobile ? "16px" : "24px",
+              }}
+            >
+              {filteredFlatProjects.map((p) => (
+                <div
+                  key={p.id}
+                  className="project-card"
+                  style={{
+                    padding: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    cursor: "pointer",
+                    overflow: "hidden",
+                  }}
+                  onClick={() => setSelectedModalProject(p)}
+                >
+                  <div
+                    className="card-thumb"
+                    style={{
+                      width: "100%",
+                      aspectRatio: "16/10",
+                      borderRadius: "6px 6px 0 0",
+                      border: "none",
+                      borderBottom: "1px solid #E5E7EB",
+                      overflow: "hidden",
+                      backgroundColor: "#F8F9FA",
+                    }}
+                  >
+                    <img
+                      src={p.thumbnail}
+                      alt={p.title}
+                      loading="lazy"
+                      style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      padding: isMobile ? "14px 16px 16px" : "16px 20px 18px",
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: 1,
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB" }}>
+                          CASE {p.num}
+                        </span>
+                        <span style={{ color: "#D1D5DB" }}>·</span>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#6B7280", fontWeight: 700 }}>
+                          {p.keyword}
+                        </span>
+                      </div>
+                      <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
+                        {p.title}
+                      </h3>
+                    </div>
+                    <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "10px", marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                        View Case →
                       </span>
                     </div>
-
-                    <h3 style={{ fontSize: "18px", fontWeight: 900, color: "#111111", margin: "0 0 4px 0" }}>
-                      {p.title}
-                    </h3>
-                    <p style={{ fontSize: "13px", color: "#6B7280", margin: "0 0 10px 0" }}>
-                      {p.subtitle}
-                    </p>
-                  </div>
-
-                  <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
-                      {p.keyword}
-                    </span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                      View Case →
-                    </span>
                   </div>
                 </div>
               ))}
@@ -1409,6 +1633,115 @@ export function WorkSection({
           </div>
         )
       )}
+
+      {/* ── C. EARLIER WORK · 2014—2018 ──────────────────────────────────── */}
+      {archiveProjects.length > 0 && (
+        <div className="no-print" style={{ marginTop: isMobile ? "48px" : "72px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: isMobile ? "20px" : "24px" }}>
+            <span
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: "12px",
+                fontWeight: 500,
+                color: "#6B7280",
+                letterSpacing: "0.12em",
+                whiteSpace: "nowrap" as const,
+              }}
+            >
+              EARLIER WORK · 2014—2018
+            </span>
+            <div style={{ flex: 1, height: "1px", backgroundColor: "#E5E7EB" }} />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {archiveProjects.map((p, idx) => {
+              const yearMatch = p.period.match(/\d{4}/);
+              const year = yearMatch ? yearMatch[0] : "";
+              return (
+                <div
+                  key={p.id}
+                  onClick={() => setSelectedModalProject(p)}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: isMobile ? "52px 1fr 28px" : "72px 1fr 220px 28px",
+                    alignItems: "center",
+                    gap: isMobile ? "8px" : "0 24px",
+                    padding: isMobile ? "18px 0" : "22px 0",
+                    borderBottom: idx < archiveProjects.length - 1 ? "1px solid #E5E7EB" : "none",
+                    cursor: "pointer",
+                    transition: "padding-left 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isMobile) {
+                      e.currentTarget.style.paddingLeft = "6px";
+                      const titleEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-title");
+                      const arrowEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-arrow");
+                      if (titleEl) titleEl.style.color = "#111111";
+                      if (arrowEl) arrowEl.style.color = "#2563EB";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isMobile) {
+                      e.currentTarget.style.paddingLeft = "0px";
+                      const titleEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-title");
+                      const arrowEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-arrow");
+                      if (titleEl) titleEl.style.color = "#1F2937";
+                      if (arrowEl) arrowEl.style.color = "#9CA3AF";
+                    }
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      color: "#9CA3AF",
+                    }}
+                  >
+                    {year}
+                  </span>
+                  <span
+                    className="archive-row-title"
+                    style={{
+                      fontSize: isMobile ? "16px" : "17px",
+                      fontWeight: 800,
+                      color: "#1F2937",
+                      transition: "color 0.15s ease",
+                    }}
+                  >
+                    {p.title}
+                  </span>
+                  {!isMobile && (
+                    <span
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        fontSize: "12px",
+                        color: "#9CA3AF",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {p.serviceType}
+                    </span>
+                  )}
+                  <span
+                    className="archive-row-arrow"
+                    style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: "14px",
+                      color: "#9CA3AF",
+                      fontWeight: 700,
+                      transition: "color 0.15s ease",
+                      textAlign: "right" as const,
+                    }}
+                  >
+                    →
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
 
       {/* 5. Case Study Modal Dialog */}
       {selectedModalProject && (

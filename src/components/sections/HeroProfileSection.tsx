@@ -305,7 +305,7 @@ export function HeroProfileSection({
             DO.LINKER (Workflow) · MIZUHO (Intranet)
           </span>
         </div>
-        <div className="no-print" style={{ gridColumn: isMobile ? "span 2" : "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end" }}>
+        <div className="no-print" style={{ gridColumn: "auto", display: "flex", justifyContent: isMobile ? "flex-start" : "flex-end", alignItems: "flex-end" }}>
           <a
             href="#projects"
             className="no-print"
