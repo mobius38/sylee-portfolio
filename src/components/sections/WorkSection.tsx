@@ -1459,14 +1459,14 @@ export function WorkSection({
                         fontSize: "13px",
                         color: "#2563EB",
                         fontWeight: 900,
-                        display: "flex",
+                        display: "inline-flex",
                         alignItems: "center",
-                        gap: "4px",
+                        gap: "6px",
                       }}
                     >
                       View Case
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M9 18l6-6-6-6" />
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     </span>
                   </div>
@@ -1559,13 +1559,21 @@ export function WorkSection({
                             {p.keyword}
                           </span>
                         </div>
-                        <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
-                          {p.title}
-                        </h3>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px" }}>
+                          <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
+                            {p.title}
+                          </h3>
+                          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#9CA3AF", fontWeight: 600, flexShrink: 0 }}>
+                            {p.period.match(/\d{4}/)?.[0] ?? p.period}
+                          </span>
+                        </div>
                       </div>
                       <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "10px", marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
-                        <span className="view-case-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                          View Case →
+                        <span className="view-case-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12.5px", color: "#2563EB", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                          View Case
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                          </svg>
                         </span>
                       </div>
                     </div>
@@ -1637,13 +1645,21 @@ export function WorkSection({
                           {p.keyword}
                         </span>
                       </div>
-                      <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
-                        {p.title}
-                      </h3>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px" }}>
+                        <h3 style={{ fontSize: isMobile ? "18px" : "20px", fontWeight: 900, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
+                          {p.title}
+                        </h3>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#9CA3AF", fontWeight: 600, flexShrink: 0 }}>
+                          {p.period.match(/\d{4}/)?.[0] ?? p.period}
+                        </span>
+                      </div>
                     </div>
                     <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "10px", marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
-                      <span className="view-case-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
-                        View Case →
+                      <span className="view-case-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12.5px", color: "#2563EB", fontWeight: 800, display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                        View Case
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                       </span>
                     </div>
                   </div>
