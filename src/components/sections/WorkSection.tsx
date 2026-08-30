@@ -555,20 +555,25 @@ function CaseStudyDialog({
   const [zoomedImage, setZoomedImage] = useState<string | null>(null); // 🌟 이미지 라이트박스 줌 상태
   const currentSlide = project.slides[activeSlideIdx] ?? project.slides[0];
 
-  // 🌟 모바일 터치 스와이프 제스처 핸들링
+  // 🌟 모바일 터치 스와이프 제스처 핸들링 (스크롤 간섭 방지)
   const touchStartX = useRef<number>(0);
-  const minSwipeDistance = 50;
+  const touchStartY = useRef<number>(0);
+  const minSwipeDistance = 45;
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (project.slides.length <= 1) return;
     const touchEndX = e.changedTouches[0].clientX;
+    const touchEndY = e.changedTouches[0].clientY;
     const diffX = touchStartX.current - touchEndX;
+    const diffY = touchStartY.current - touchEndY;
 
-    if (Math.abs(diffX) > minSwipeDistance) {
+    // X축 이동 거리가 Y축(스크롤)보다 확실히 클 때만 수평 스와이프로 판정
+    if (Math.abs(diffX) > minSwipeDistance && Math.abs(diffX) > Math.abs(diffY) * 1.3) {
       if (diffX > 0) {
         // Left swipe -> Next
         setActiveSlideIdx((prev) => (prev + 1) % project.slides.length);
@@ -578,6 +583,20 @@ function CaseStudyDialog({
       }
     }
   };
+
+  // 🌟 이미지 프리로딩 (Next / Prev Slide Preload)
+  useEffect(() => {
+    if (project.slides.length <= 1) return;
+    const nextIdx = (activeSlideIdx + 1) % project.slides.length;
+    const prevIdx = (activeSlideIdx - 1 + project.slides.length) % project.slides.length;
+    [nextIdx, prevIdx].forEach((idx) => {
+      const src = project.slides[idx]?.src;
+      if (src) {
+        const img = new Image();
+        img.src = src;
+      }
+    });
+  }, [activeSlideIdx, project.slides]);
 
   // Reset slide index when active project changes
   useEffect(() => {
@@ -1434,6 +1453,7 @@ export function WorkSection({
                       {featuredProject.period.replace("~", "—")}
                     </span>
                     <span
+                      className="view-case-link"
                       style={{
                         fontFamily: "'JetBrains Mono', monospace",
                         fontSize: "13px",
@@ -1544,7 +1564,7 @@ export function WorkSection({
                         </h3>
                       </div>
                       <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "10px", marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                        <span className="view-case-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
                           View Case →
                         </span>
                       </div>
@@ -1622,7 +1642,7 @@ export function WorkSection({
                       </h3>
                     </div>
                     <div style={{ borderTop: "1px solid #F3F4F6", paddingTop: "10px", marginTop: "12px", display: "flex", justifyContent: "flex-end" }}>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
+                      <span className="view-case-link" style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", color: "#2563EB", fontWeight: 800 }}>
                         View Case →
                       </span>
                     </div>

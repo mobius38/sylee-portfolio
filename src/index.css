@@ -220,6 +220,17 @@ body {
   transform: scale(1.035);
 }
 
+.project-card .view-case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .view-case-link {
+  transform: translateX(4px);
+}
+
 /* ─── Print Stylesheet (PDF & Print Optimization) ───────────────────────────── */
 @media print {
   @page {
