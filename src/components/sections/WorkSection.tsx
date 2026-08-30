@@ -1712,7 +1712,10 @@ export function WorkSection({
                       const titleEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-title");
                       const arrowEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-arrow");
                       if (titleEl) titleEl.style.color = "#111111";
-                      if (arrowEl) arrowEl.style.color = "#2563EB";
+                      if (arrowEl) {
+                        arrowEl.style.color = "#2563EB";
+                        arrowEl.style.transform = "translateX(4px)";
+                      }
                     }
                   }}
                   onMouseLeave={(e) => {
@@ -1721,7 +1724,10 @@ export function WorkSection({
                       const titleEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-title");
                       const arrowEl = e.currentTarget.querySelector<HTMLElement>(".archive-row-arrow");
                       if (titleEl) titleEl.style.color = "#1F2937";
-                      if (arrowEl) arrowEl.style.color = "#9CA3AF";
+                      if (arrowEl) {
+                        arrowEl.style.color = "#9CA3AF";
+                        arrowEl.style.transform = "translateX(0px)";
+                      }
                     }
                   }}
                 >
@@ -1761,15 +1767,16 @@ export function WorkSection({
                   <span
                     className="archive-row-arrow"
                     style={{
-                      fontFamily: "'JetBrains Mono', monospace",
-                      fontSize: "14px",
+                      display: "flex",
+                      justifyContent: "flex-end",
+                      alignItems: "center",
                       color: "#9CA3AF",
-                      fontWeight: 700,
-                      transition: "color 0.15s ease",
-                      textAlign: "right" as const,
+                      transition: "color 0.15s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                   >
-                    →
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                   </span>
                 </div>
               );
