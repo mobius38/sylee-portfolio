@@ -98,7 +98,7 @@ export function PetDuoIllustration({ size = 48 }: { size?: number }) {
 
       {/* Subtle Bottom Accent Tag */}
       <rect x="26" y="82" width="48" height="12" rx="6" fill="#1E293B" />
-      <text x="50" y="90.5" fill="#F8FAFC" fontSize="6.5" fontFamily="'JetBrains Mono', monospace" fontWeight="800" textAnchor="middle">
+      <text x="50" y="90.5" fill="#F8FAFC" fontSize="6.5"  fontWeight="800" textAnchor="middle">
         CAT &amp; DOG
       </text>
     </svg>

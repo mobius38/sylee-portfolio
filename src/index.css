@@ -1,5 +1,6 @@
-/* ─── Modern Digital Agency Fonts (DM Serif Display + DM Mono System) ────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..800&display=swap');
+/* ─── Modern 2-Font Editorial System (DM Serif Display + Pretendard) ─────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @import 'tailwindcss';
 
 @theme {
@@ -14,21 +15,22 @@
   --color-border: #E5E7EB;
   --color-border-dark: #262933;
 
-  --font-sans: 'Plus Jakarta Sans', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-sans: 'Pretendard', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono: 'Pretendard', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-/* ─── Section Label (DM Mono 기반 심플 & 강약 밸런스 레이블) ─────────────────── */
+/* ─── Section Label (Pretendard Tabular & Letter-spacing 기반 미니멀 레이블) ──────────── */
 .section-label {
-  font-family: var(--font-mono) !important;
+  font-family: var(--font-sans) !important;
   font-size: 11px !important;
-  font-weight: 500 !important;
+  font-weight: 800 !important;
   letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
   color: #2563EB !important;
   display: block !important;
   margin-bottom: 12px !important;
+  font-feature-settings: "tnum" 1, "cv05" 1;
 }
 
 /* ─── Unified Editorial Display Typography (DM Serif Display Bold 100% 완벽 일치) ─── */
@@ -188,7 +190,7 @@ body {
 
 /* ─── Project Card Micro-Interactions (Linear Style) ────────────────────────── */
 .project-card {
-  border-radius: 8px;
+  border-radius: 14px;
   background-color: #FFFFFF;
   border: 1px solid #E5E7EB;
   transition: border-color 0.2s ease, box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -200,8 +202,12 @@ body {
   transform: translateY(-2px);
 }
 
+.project-card:hover .other-card-title {
+  color: #2563EB !important;
+}
+
 .project-card .card-thumb {
-  border-radius: 6px;
+  border-radius: 13px 13px 0 0;
   overflow: hidden;
   background-color: #F8F9FA;
   border: 1px solid #E5E7EB;
@@ -498,7 +504,7 @@ body {
     break-inside: avoid !important;
   }
   .competency-section-title {
-    font-family: 'DM Mono', monospace !important;
+    font-family: var(--font-mono) !important;
     font-size: 9.5pt !important;
     letter-spacing: 0.14em !important;
     color: #2563EB !important;
@@ -516,7 +522,7 @@ body {
     break-inside: avoid !important;
   }
   .competency-card-number {
-    font-family: 'DM Mono', monospace !important;
+    font-family: var(--font-mono) !important;
     font-size: 14pt !important; /* 🌟 01, 02, 03 대형 모던 넘버 */
     font-weight: 700 !important;
     color: #2563EB !important;

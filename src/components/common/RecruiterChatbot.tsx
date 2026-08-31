@@ -13,14 +13,14 @@ const FAQ_LIST: FAQItem[] = [
   {
     id: "career",
     q: "주요 경력과 전문 분야는 무엇인가요?",
-    a: "10년 이상 스펙트라, 도전하는사람들 등에서 B2B 온프레미스 플랫폼, 금융 포탈, 워크플로우 자동화 도구, 이커머스를 리딩했습니다. 복잡한 비즈니스 로직을 명쾌한 사용자 경험으로 구조화하는 데 특화되어 있습니다.",
+    a: "10년 이상 스펙트라, 도전하는사람들 등에서 B2B 엔터프라이즈 플랫폼, 금융 포털, 워크플로우 자동화 도구, 이커머스를 설계했습니다. 복잡한 비즈니스 로직을 명쾌한 사용자 경험으로 구조화하는 데 특화되어 있습니다.",
     actionText: "대표 프로젝트 보기",
     actionHref: "#projects",
   },
   {
     id: "design-system",
     q: "디자인 시스템 구축 경험이 궁금해요.",
-    a: "Figma Variables 기반 Foundations 6종 및 공통 Components 26종을 구축했습니다. 디자인 토큰을 코드와 동기화하고 디자인 QA 기준을 수립하여 개발 리소스를 절감했습니다.",
+    a: "Figma Variables 기반 Foundations 6종 및 공통 Components 26종을 체계화했습니다. 디자인 토큰과 모듈형 컴포넌트 기준을 수립하여 제품 간 일관된 디자인 기준을 정립했습니다.",
     actionText: "디자인 시스템 케이스 보기",
     actionHref: "#projects",
   },
@@ -88,7 +88,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
 
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "2px" }}>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.08em" }}>
+              <span style={{ fontSize: "10px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.08em" }}>
                 COFFEE CHAT &amp; Q&amp;A
               </span>
             </div>
@@ -154,7 +154,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
                 <span>{item.q}</span>
                 <span
                   style={{
-                    fontFamily: "'JetBrains Mono', monospace",
+                    
                     fontSize: "12px",
                     color: "#9CA3AF",
                     marginLeft: "8px",
@@ -187,7 +187,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
                         fontWeight: 700,
                         color: "#2563EB", // 🌟 신뢰 블루 통합
                         textDecoration: "none",
-                        fontFamily: "'JetBrains Mono', monospace",
+                        
                       }}
                     >
                       {item.actionText} →
@@ -211,7 +211,7 @@ export function RecruiterChatbot({ isOpen, onClose }: { isOpen: boolean; onClose
           alignItems: "center",
           fontSize: "11px",
           color: "#6B7280",
-          fontFamily: "'JetBrains Mono', monospace",
+          
         }}
       >
         <span>이메일: mobius38@gmail.com</span>

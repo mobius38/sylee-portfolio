@@ -17,7 +17,7 @@ export function LeadershipSection({ w }: { w: number }) {
       img: imgHandsDirection,
       lines: [
         "모호한 비즈니스 요구사항을 UX 관점으로 구조화합니다.",
-        "기획·개발과 구현 범위를 조율하여 실행 가능한 MVP 우선순위를 도출합니다.",
+        "기획, 개발과 구현 범위를 조율하여 실행 가능한 MVP 우선순위를 도출합니다.",
         "사용자 흐름을 고려한 최적의 프로덕트 설계안을 선제적으로 제시합니다.",
       ],
     },
@@ -25,7 +25,7 @@ export function LeadershipSection({ w }: { w: number }) {
       title: "디자인 리뷰",
       img: imgHandsReview,
       lines: [
-        "전사 디자인 품질 기준을 수립하고 제품 완성도를 정렬합니다.",
+        "제품 전반의 디자인 품질을 리뷰하고 일관된 완성도 기준을 유지합니다.",
         "타 팀 디자이너 산출물을 정기적으로 리뷰하고 품질 피드백을 제공합니다.",
         "인터랙티브 프로토타입 기반 워크숍으로 팀 간 설계 방향성을 일치시킵니다.",
       ],
@@ -34,9 +34,9 @@ export function LeadershipSection({ w }: { w: number }) {
       title: "디자인 시스템",
       img: imgHandsSystem,
       lines: [
-        "멀티 프로덕트 간 일관성을 위한 디자인 원칙과 컴포넌트를 구축합니다.",
-        "Foundations 6종과 Components 26종을 규격화하여 디자인·개발 간 재사용과 협업 효율을 높입니다.",
-        "브랜드 아이덴티티를 제품 UI와 토큰 시스템까지 일원화하여 관리합니다.",
+        "멀티 프로덕트 간 일관성을 위한 디자인 원칙과 컴포넌트 체계를 구축합니다.",
+        "코어 컴포넌트, 복합 패턴, 제품별 컴포넌트로 계층화된 기준을 마련했습니다.",
+        "브랜드 아이덴티티와 제품 UI가 일관된 시각 언어를 유지하도록 설계합니다.",
       ],
     },
     {
@@ -64,7 +64,7 @@ export function LeadershipSection({ w }: { w: number }) {
       <div style={{ maxWidth: "1440px", margin: "0 auto" }}>
         {/* 1. Giant Bold LEADERSHIP Section Header (히어로 세리프 폰트 패밀리 완벽 통일) */}
         <div style={{ maxWidth: "1000px", marginBottom: isMobile ? "40px" : "64px" }}>
-          <span className="leadership-section-meta section-label" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", fontWeight: 500, color: "#60A5FA", letterSpacing: "0.14em", display: "block", marginBottom: "8px" }}>
+          <span className="leadership-section-meta section-label" style={{ fontSize: "11px", fontWeight: 800, color: "#60A5FA", letterSpacing: "0.14em", display: "block", marginBottom: "8px" }}>
             DESIGN LEADERSHIP &amp; PHILOSOPHY
           </span>
           <h2

@@ -13,22 +13,22 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
       num: "02",
       id: "#cases",
       title: "MIZUHO PORTAL",
-      sub: "일본 미즈호(MIZUHO) 은행 사내 포탈",
+      sub: "일본 미즈호(MIZUHO) 은행 사내 포털",
       flow: "IA → Permission → System →",
     },
     {
       num: "03",
       id: "#cases",
-      title: "WOORI FINANCIAL CAPITAL",
-      sub: "우리금융캐피탈 B2B 수주 DWorks Hi-Fi Prototype",
-      flow: "Financial Spec → Hi-Fi Prototype →",
+      title: "DWORKS INTEGRATED PRODUCT",
+      sub: "멀티 프로덕트 통합 UX 아키텍처 설계",
+      flow: "Product Analysis → UX Architecture →",
     },
     {
       num: "04",
       id: "#cases",
-      title: "DWORKS INTEGRATED PRODUCT",
-      sub: "멀티 프로덕트 통합 UX 아키텍처 설계",
-      flow: "Product Analysis → UX Architecture →",
+      title: "우리금융캐피탈",
+      sub: "우리금융캐피탈 B2B 수주 DWorks Hi-Fi Prototype",
+      flow: "Financial Spec → Hi-Fi Prototype →",
     },
     {
       num: "05",
@@ -65,13 +65,6 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
       sub: "Customer Support Platform",
       flow: "UX개선 → Component → Design QA →",
     },
-    {
-      num: "10",
-      id: "#cases",
-      title: "SHALUV",
-      sub: "Kids Fashion E-Commerce Rebranding",
-      flow: "Rebranding → Mall UX/UI → 14x Traffic →",
-    },
   ];
 
   return (
@@ -87,14 +80,14 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
       <div style={{ borderTop: "1px solid #111111", paddingTop: "24px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "16px", flexWrap: "wrap", gap: "8px" }}>
           <div>
-            <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
+            <span style={{ fontSize: "11px", fontWeight: 800, color: "#2563EB", display: "block", marginBottom: "4px" }}>
               INDEX
             </span>
             <h2 style={{ fontSize: isMobile ? "18px" : "22px", fontWeight: 800, color: "#111111", margin: 0, letterSpacing: "-0.02em" }}>
               Selected Cases
             </h2>
           </div>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "#9CA3AF" }}>
+          <span style={{ fontSize: "11px", color: "#9CA3AF", fontWeight: 700 }}>
             JUMP TO CASE ↓
           </span>
         </div>
@@ -125,7 +118,7 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
               }}
             >
               <div>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isMobile ? "12px" : "13px", fontWeight: 800, color: "#2563EB" }}>
+                <span style={{ fontSize: isMobile ? "12px" : "13px", fontWeight: 900, color: "#2563EB", letterSpacing: "-0.02em" }}>
                   {c.num}
                 </span>
               </div>
@@ -147,7 +140,7 @@ export function SelectedCasesIndexSection({ w }: { w: number }) {
                 </div>
               )}
               <div style={{ textAlign: "right" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: isMobile ? "11px" : "12px", color: "#2563EB", fontWeight: 700 }}>
+                <span style={{ fontSize: isMobile ? "11px" : "12px", color: "#2563EB", fontWeight: 800 }}>
                   {isMobile ? "→" : c.flow}
                 </span>
               </div>

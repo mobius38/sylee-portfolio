@@ -18,9 +18,8 @@ export function ContactFooter({ w }: { w: number }) {
         <span
           className="section-label"
           style={{
-            fontFamily: "'DM Mono', monospace",
             fontSize: "11px",
-            fontWeight: 500,
+            fontWeight: 800,
             color: "#60A5FA",
             letterSpacing: "0.14em",
             textTransform: "uppercase",
@@ -51,7 +50,6 @@ export function ContactFooter({ w }: { w: number }) {
         {/* 3. Subtext Description */}
         <p
           style={{
-            fontFamily: "'Noto Sans KR', sans-serif",
             fontSize: isMobile ? "15px" : "17px",
             color: "rgba(255, 255, 255, 0.7)",
             lineHeight: 1.6,
@@ -136,10 +134,10 @@ export function ContactFooter({ w }: { w: number }) {
 
         {/* 5. Bottom Copyright & Info */}
         <div style={{ borderTop: "1px solid rgba(255, 255, 255, 0.08)", paddingTop: "32px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "16px" }}>
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "13px", fontWeight: 700, color: "rgba(255, 255, 255, 0.85)" }}>
+          <span style={{ fontSize: "13px", fontWeight: 700, color: "rgba(255, 255, 255, 0.85)" }}>
             LEE SUNYOUNG <span style={{ color: "rgba(255, 255, 255, 0.35)", margin: "0 6px" }}>·</span> Product Designer
           </span>
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", color: "rgba(255, 255, 255, 0.4)", letterSpacing: "0.05em" }}>
+          <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.4)", letterSpacing: "0.05em", fontWeight: 600 }}>
             © 2026 LEE SUNYOUNG. ALL RIGHTS RESERVED.
           </span>
         </div>

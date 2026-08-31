@@ -42,7 +42,7 @@ export function CareerSection({ w }: { w: number }) {
           const isLatest = idx >= 7;
           return (
             <div key={idx} style={{ borderTop: "1px solid #E5E7EB", paddingTop: "12px" }}>
-              <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: isLatest ? "#2563EB" : "#9CA3AF", display: "block", marginBottom: "4px" }}>
+              <span style={{ fontSize: "11px", fontWeight: 800, color: isLatest ? "#2563EB" : "#9CA3AF", display: "block", marginBottom: "4px" }}>
                 {st.period}
               </span>
               <h3 style={{ fontSize: isMobile ? "14px" : "16px", fontWeight: 800, color: "#111111", margin: "0 0 4px 0" }}>

@@ -55,7 +55,7 @@ export function FloatingControls() {
             border: "1px solid #E5E7EB",
             padding: "4px 14px 4px 6px",
             borderRadius: "9999px",
-            fontFamily: "'JetBrains Mono', monospace",
+            
             fontSize: "12px",
             fontWeight: 700,
             boxShadow: "0 6px 20px -4px rgba(0, 0, 0, 0.12)",
@@ -96,7 +96,7 @@ export function FloatingControls() {
               color: "#111111",
               border: "1px solid #E5E7EB",
               borderRadius: "50%",
-              fontFamily: "'JetBrains Mono', monospace",
+              
               fontSize: "13px",
               fontWeight: 700,
               boxShadow: "0 4px 14px rgba(0, 0, 0, 0.08)",

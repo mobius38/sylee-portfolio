@@ -18,7 +18,7 @@ export function DownloadButton({
         display: "inline-flex",
         alignItems: "center",
         gap: "6px",
-        fontFamily: "'JetBrains Mono', monospace",
+        
         fontSize: isMobile ? "11px" : "12px",
         fontWeight: 700,
         backgroundColor: isDark ? "#111111" : isGhost ? "transparent" : "#FFFFFF",
