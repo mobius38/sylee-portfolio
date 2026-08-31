@@ -58,35 +58,6 @@ export interface PipelineStep {
   label: string;
 }
 
-export interface CaseStoryPoint {
-  icon?: string;
-  title: string;
-  desc: string;
-}
-
-export interface CaseStoryStep {
-  step: string;
-  title: string;
-  desc: string;
-}
-
-export interface CaseStory {
-  problem: {
-    headline: string;
-    desc: string;
-    points: CaseStoryPoint[];
-  };
-  process: {
-    headline: string;
-    desc: string;
-    steps: CaseStoryStep[];
-  };
-  result: {
-    headline: string;
-    desc: string;
-    cards: CaseStoryPoint[];
-  };
-}
 
 export interface ProjectItem {
   id: string;
@@ -106,7 +77,6 @@ export interface ProjectItem {
   challenge: string;
   approach: string;
   outcome: string;
-  story?: CaseStory;         // ← 🌟 심화 3단 케이스 스터디 (Problem ➔ Process ➔ Result)
   pipelineTitle?: string;
   pipelineSteps?: PipelineStep[];
   bullets?: { label: string; text: string }[];
@@ -1055,260 +1025,62 @@ function CaseStudyDialog({
 
 
 
-          {/* 🌟 Case Story Section (Problem ➔ Process ➔ Result) */}
-          {project.story ? (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "0px",
-                borderTop: "2px solid #111111",
-                paddingTop: "0px",
-                marginTop: "16px",
-              }}
-            >
-              {/* 01 · Problem */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: isMobile ? "1fr" : "200px 1fr",
-                  borderBottom: "1px solid #E5E7EB",
-                }}
-              >
-                {/* Left: Section Label */}
-                <div
-                  style={{
-                    padding: isMobile ? "20px 0 4px 0" : "28px 24px 28px 0",
-                    borderRight: isMobile ? "none" : "1px solid #E5E7EB",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                  }}
-                >
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 900, color: "#9CA3AF", letterSpacing: "0.12em" }}>
-                    01
-                  </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#111111", letterSpacing: "0.06em" }}>
-                    PROBLEM
-                  </span>
-                </div>
-                {/* Right: Content */}
-                <div style={{ padding: isMobile ? "0 0 24px 0" : "28px 0 28px 28px" }}>
-                  <h4 style={{ fontSize: isMobile ? "15px" : "17px", fontWeight: 800, color: "#111111", margin: "0 0 8px 0", letterSpacing: "-0.02em", lineHeight: 1.35 }}>
-                    {project.story.problem.headline}
-                  </h4>
-                  <p style={{ fontSize: "13px", color: "#6B7280", lineHeight: 1.75, margin: "0 0 20px 0" }}>
-                    {project.story.problem.desc}
-                  </p>
-                  <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "8px" }}>
-                    {project.story.problem.points.map((pt, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          padding: "14px 16px",
-                          borderRadius: "6px",
-                          backgroundColor: "#F9FAFB",
-                          border: "1px solid #F3F4F6",
-                        }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-                          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 900, color: "#D1D5DB" }}>
-                            {String(i + 1).padStart(2, "0")}
-                          </span>
-                          <div style={{ fontSize: "12px", fontWeight: 700, color: "#111111" }}>{pt.title}</div>
-                        </div>
-                        <div style={{ fontSize: "12px", color: "#9CA3AF", lineHeight: 1.6 }}>{pt.desc}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+          {/* CHALLENGE / DECISION / IMPACT */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+              gap: isMobile ? "24px" : "32px",
+              borderTop: "1px solid #F3F4F6",
+              paddingTop: "24px",
+              marginTop: "8px",
+            }}
+          >
+            {/* Column 1: Challenge */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+                  CHALLENGE
+                </span>
               </div>
-
-              {/* 02 · Process */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: isMobile ? "1fr" : "200px 1fr",
-                  borderBottom: "1px solid #E5E7EB",
-                  backgroundColor: "#FAFAFA",
-                }}
-              >
-                {/* Left: Section Label */}
-                <div
-                  style={{
-                    padding: isMobile ? "20px 0 4px 0" : "28px 24px 28px 0",
-                    borderRight: isMobile ? "none" : "1px solid #E5E7EB",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                  }}
-                >
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 900, color: "#9CA3AF", letterSpacing: "0.12em" }}>
-                    02
-                  </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#111111", letterSpacing: "0.06em" }}>
-                    PROCESS
-                  </span>
-                </div>
-                {/* Right: Content */}
-                <div style={{ padding: isMobile ? "0 0 24px 0" : "28px 0 28px 28px" }}>
-                  <h4 style={{ fontSize: isMobile ? "15px" : "17px", fontWeight: 800, color: "#111111", margin: "0 0 8px 0", letterSpacing: "-0.02em", lineHeight: 1.35 }}>
-                    {project.story.process.headline}
-                  </h4>
-                  <p style={{ fontSize: "13px", color: "#6B7280", lineHeight: 1.75, margin: "0 0 20px 0" }}>
-                    {project.story.process.desc}
-                  </p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-                    {project.story.process.steps.map((st, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          display: "flex",
-                          alignItems: "flex-start",
-                          gap: "16px",
-                          padding: "12px 0",
-                          borderBottom: i < project.story!.process.steps.length - 1 ? "1px solid #F3F4F6" : "none",
-                        }}
-                      >
-                        <div
-                          style={{
-                            flexShrink: 0,
-                            width: "28px",
-                            height: "28px",
-                            borderRadius: "50%",
-                            backgroundColor: "#111111",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                          }}
-                        >
-                          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 900, color: "#FFFFFF" }}>
-                            {st.step}
-                          </span>
-                        </div>
-                        <div style={{ flex: 1 }}>
-                          <div style={{ fontSize: "13px", fontWeight: 700, color: "#111111", marginBottom: "2px" }}>{st.title}</div>
-                          <div style={{ fontSize: "12px", color: "#9CA3AF", lineHeight: 1.6 }}>{st.desc}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* 03 · Result */}
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: isMobile ? "1fr" : "200px 1fr",
-                }}
-              >
-                {/* Left: Section Label */}
-                <div
-                  style={{
-                    padding: isMobile ? "20px 0 4px 0" : "28px 24px 28px 0",
-                    borderRight: isMobile ? "none" : "1px solid #E5E7EB",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "4px",
-                  }}
-                >
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 900, color: "#9CA3AF", letterSpacing: "0.12em" }}>
-                    03
-                  </span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#111111", letterSpacing: "0.06em" }}>
-                    RESULT
-                  </span>
-                </div>
-                {/* Right: Content */}
-                <div style={{ padding: isMobile ? "0 0 24px 0" : "28px 0 28px 28px" }}>
-                  <h4 style={{ fontSize: isMobile ? "15px" : "17px", fontWeight: 800, color: "#111111", margin: "0 0 8px 0", letterSpacing: "-0.02em", lineHeight: 1.35 }}>
-                    {project.story.result.headline}
-                  </h4>
-                  <p style={{ fontSize: "13px", color: "#6B7280", lineHeight: 1.75, margin: "0 0 20px 0" }}>
-                    {project.story.result.desc}
-                  </p>
-                  <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "8px" }}>
-                    {project.story.result.cards.map((cd, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          padding: "16px",
-                          borderRadius: "6px",
-                          backgroundColor: "#111111",
-                          position: "relative" as const,
-                          overflow: "hidden" as const,
-                        }}
-                      >
-                        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", fontWeight: 900, color: "rgba(255,255,255,0.3)", marginBottom: "10px", letterSpacing: "0.08em" }}>
-                          {String(i + 1).padStart(2, "0")}
-                        </div>
-                        <div style={{ fontSize: "13px", fontWeight: 700, color: "#FFFFFF", marginBottom: "4px", lineHeight: 1.4 }}>{cd.title}</div>
-                        <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{cd.desc}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                핵심 문제
+              </h4>
+              <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
+                {project.challenge}
+              </p>
             </div>
-          ) : (
-            /* Fallback: Standard 3-Column Story Section */
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
-                gap: isMobile ? "24px" : "32px",
-                borderTop: "1px solid #F3F4F6",
-                paddingTop: "24px",
-                marginTop: "8px",
-              }}
-            >
-              {/* Column 1: Challenge */}
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                    CHALLENGE
-                  </span>
-                </div>
-                <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                  핵심 문제
-                </h4>
-                <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
-                  {project.challenge}
-                </p>
-              </div>
 
-              {/* Column 2: Decision */}
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                    DECISION
-                  </span>
-                </div>
-                <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                  핵심 판단
-                </h4>
-                <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
-                  {project.approach}
-                </p>
+            {/* Column 2: Decision */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+                  DECISION
+                </span>
               </div>
-
-              {/* Column 3: Impact */}
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                    IMPACT
-                  </span>
-                </div>
-                <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                  결과 및 영향
-                </h4>
-                <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
-                  {project.outcome}
-                </p>
-              </div>
+              <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                핵심 판단
+              </h4>
+              <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
+                {project.approach}
+              </p>
             </div>
-          )}
+
+            {/* Column 3: Impact */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+                  IMPACT
+                </span>
+              </div>
+              <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                결과 및 영향
+              </h4>
+              <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
+                {project.outcome}
+              </p>
+            </div>
+          </div>
 
           {/* 🌟 Bottom Case Navigation Banner (Next Case Link Only) */}
           <div
