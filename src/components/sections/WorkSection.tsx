@@ -58,6 +58,36 @@ export interface PipelineStep {
   label: string;
 }
 
+export interface CaseStoryPoint {
+  icon?: string;
+  title: string;
+  desc: string;
+}
+
+export interface CaseStoryStep {
+  step: string;
+  title: string;
+  desc: string;
+}
+
+export interface CaseStory {
+  problem: {
+    headline: string;
+    desc: string;
+    points: CaseStoryPoint[];
+  };
+  process: {
+    headline: string;
+    desc: string;
+    steps: CaseStoryStep[];
+  };
+  result: {
+    headline: string;
+    desc: string;
+    cards: CaseStoryPoint[];
+  };
+}
+
 export interface ProjectItem {
   id: string;
   num: string;
@@ -76,6 +106,7 @@ export interface ProjectItem {
   challenge: string;
   approach: string;
   outcome: string;
+  story?: CaseStory;         // ← 🌟 심화 3단 케이스 스터디 (Problem ➔ Process ➔ Result)
   pipelineTitle?: string;
   pipelineSteps?: PipelineStep[];
   bullets?: { label: string; text: string }[];
@@ -376,6 +407,36 @@ export const PROJECTS_DATA: ProjectItem[] = [
     challenge: "스마트스토어·쿠팡·카카오쇼핑 등 경쟁이 높은 이커머스 환경에서 상품 나열 중심의 판매 방식만으로는 차별화가 어려웠고, 타깃 고객에게 명확한 인상을 전달할 브랜드 콘셉트가 필요했습니다.",
     approach: "샤스커트 레깅스를 주력 상품으로 기획하고, 여자아이 의류를 구매하는 부모를 핵심 고객으로 정의해 Lovely Mood 브랜드 콘셉트를 수립했습니다. KATRI 안전 시험·인증을 거쳐 제품 판매 기반을 마련하고, 브랜드 아이덴티티와 상품 비주얼을 스마트스토어·자사몰·쿠팡·카카오쇼핑 등 주요 채널에 일관되게 적용했습니다.",
     outcome: "상품 기획부터 브랜드 구축, 멀티채널 판매·운영까지 직접 연결하며 일관된 브랜드 경험과 운영 체계를 구축했고, 운영 기간 동안 고객 유입 확대와 연매출 1억 원 규모의 성장을 확인했습니다.",
+    story: {
+      problem: {
+        headline: "포화된 키즈 패션 시장에서의 차별화 부재",
+        desc: "스마트스토어·쿠팡·카카오쇼핑 등 경쟁이 극심한 이커머스 환경에서 단순 상품 나열 중심의 판매 방식으로는 브랜드 인지도를 확보하기 어려웠고, 고객 유입이 정체되는 한계가 있었습니다.",
+        points: [
+          { icon: "⚡", title: "차별화 부재", desc: "단순 상품 나열 판매로 인한 가격 경쟁 심화" },
+          { icon: "🎯", title: "타깃 모호성", desc: "불특정 다수 대상 구성으로 전환율 저조" },
+          { icon: "🔄", title: "채널 단절", desc: "오픈마켓 간 브랜드 톤앤매너 불일치" },
+        ],
+      },
+      process: {
+        headline: "니치 타깃 정의 및 멀티채널 브랜드 리뉴얼",
+        desc: "여아 부모를 핵심 타깃으로 정조준하고 'Lovely Mood'를 브랜드 시그니처 콘셉트로 정의했습니다. 상품 기획부터 KATRI 안전 인증, 룩북 촬영, 멀티채널 비주얼 통합까지 전 과정을 체계적으로 추진했습니다.",
+        steps: [
+          { step: "01", title: "Market Research", desc: "키즈 시장 니즈 분석 및 Lovely Mood 니치 컨셉 정의" },
+          { step: "02", title: "Product Planning", desc: "샤스커트 레깅스 주력 기획 및 KATRI 안전 시험 인증" },
+          { step: "03", title: "Brand & Visual", desc: "시즌별 룩북 촬영, 배송 캘린더, 채널별 그래픽 시스템 구축" },
+          { step: "04", title: "Multi-Channel", desc: "스마트스토어·자사몰·쿠팡·카카오쇼핑 일관 런칭 및 운영" },
+        ],
+      },
+      result: {
+        headline: "고객 유입 14배 성장 & 연매출 1억 달성",
+        desc: "브랜드 아이덴티티와 멀티채널 비주얼을 일관되게 정립하여 타깃 고객의 자발적 유입을 크게 이끌어냈으며, 안정적인 매출 기반과 브랜드 자산을 성공적으로 확보했습니다.",
+        cards: [
+          { icon: "📈", title: "14배 유입 성장", desc: "러블리 무드 리브랜딩 후 타깃 고객 유입 14배 확대" },
+          { icon: "💰", title: "연매출 1억 달성", desc: "멀티채널 운영 체계 안착 및 지속 가능한 매출 기반 확보" },
+          { icon: "🧩", title: "브랜드 자산 구축", desc: "기획·인증·촬영·운영까지 엔드투엔드 브랜드 가이드 완성" },
+        ],
+      },
+    },
     pipelineTitle: "NICHE BRANDING & MULTI-CHANNEL FLOW",
     pipelineSteps: [
       { label: "MARKET RESEARCH" },
@@ -1024,62 +1085,171 @@ function CaseStudyDialog({
 
 
 
-          {/* 🌟 Editorial 3-Column Story Section (Challenge ➔ Decision ➔ Impact) */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
-              gap: isMobile ? "24px" : "32px",
-              borderTop: "1px solid #F3F4F6",
-              paddingTop: "24px",
-              marginTop: "8px",
-            }}
-          >
-            {/* Column 1: Challenge */}
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  CHALLENGE
-                </span>
+          {/* 🌟 Case Story Section (Problem ➔ Process ➔ Result) */}
+          {project.story ? (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: isMobile ? "24px" : "32px",
+                borderTop: "1px solid #F3F4F6",
+                paddingTop: "28px",
+                marginTop: "8px",
+              }}
+            >
+              {/* 01 · Problem */}
+              <div
+                style={{
+                  backgroundColor: "#FAF9F7",
+                  borderRadius: "10px",
+                  padding: isMobile ? "18px" : "24px 28px",
+                  border: "1px solid #E5E7EB",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.06em" }}>
+                    01 · PROBLEM
+                  </span>
+                </div>
+                <h4 style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0", letterSpacing: "-0.02em" }}>
+                  {project.story.problem.headline}
+                </h4>
+                <p style={{ fontSize: "13.5px", color: "#4B5563", lineHeight: 1.7, margin: "0 0 18px 0" }}>
+                  {project.story.problem.desc}
+                </p>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "10px" }}>
+                  {project.story.problem.points.map((pt, i) => (
+                    <div key={i} style={{ backgroundColor: "#FFFFFF", padding: "14px 16px", borderRadius: "8px", border: "1px solid #E5E7EB" }}>
+                      <div style={{ fontSize: "16px", marginBottom: "6px" }}>{pt.icon}</div>
+                      <div style={{ fontSize: "13px", fontWeight: 800, color: "#111111", marginBottom: "4px" }}>{pt.title}</div>
+                      <div style={{ fontSize: "12px", color: "#6B7280", lineHeight: 1.5 }}>{pt.desc}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                핵심 문제
-              </h4>
-              <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
-                {project.challenge}
-              </p>
-            </div>
 
-            {/* Column 2: Decision */}
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  DECISION
-                </span>
+              {/* 02 · Process */}
+              <div
+                style={{
+                  backgroundColor: "#FAF9F7",
+                  borderRadius: "10px",
+                  padding: isMobile ? "18px" : "24px 28px",
+                  border: "1px solid #E5E7EB",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.06em" }}>
+                    02 · PROCESS
+                  </span>
+                </div>
+                <h4 style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0", letterSpacing: "-0.02em" }}>
+                  {project.story.process.headline}
+                </h4>
+                <p style={{ fontSize: "13.5px", color: "#4B5563", lineHeight: 1.7, margin: "0 0 18px 0" }}>
+                  {project.story.process.desc}
+                </p>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4, 1fr)", gap: "10px" }}>
+                  {project.story.process.steps.map((st, i) => (
+                    <div key={i} style={{ backgroundColor: "#FFFFFF", padding: "14px 16px", borderRadius: "8px", border: "1px solid #E5E7EB" }}>
+                      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 900, color: "#2563EB", marginBottom: "6px" }}>
+                        {st.step}
+                      </div>
+                      <div style={{ fontSize: "13px", fontWeight: 800, color: "#111111", marginBottom: "4px" }}>{st.title}</div>
+                      <div style={{ fontSize: "12px", color: "#6B7280", lineHeight: 1.5 }}>{st.desc}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                핵심 판단
-              </h4>
-              <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
-                {project.approach}
-              </p>
-            </div>
 
-            {/* Column 3: Impact */}
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
-                  IMPACT
-                </span>
+              {/* 03 · Result */}
+              <div
+                style={{
+                  backgroundColor: "#FAF9F7",
+                  borderRadius: "10px",
+                  padding: isMobile ? "18px" : "24px 28px",
+                  border: "1px solid #E5E7EB",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.06em" }}>
+                    03 · RESULT
+                  </span>
+                </div>
+                <h4 style={{ fontSize: isMobile ? "17px" : "19px", fontWeight: 900, color: "#111111", margin: "0 0 10px 0", letterSpacing: "-0.02em" }}>
+                  {project.story.result.headline}
+                </h4>
+                <p style={{ fontSize: "13.5px", color: "#4B5563", lineHeight: 1.7, margin: "0 0 18px 0" }}>
+                  {project.story.result.desc}
+                </p>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "10px" }}>
+                  {project.story.result.cards.map((cd, i) => (
+                    <div key={i} style={{ backgroundColor: "#FFFFFF", padding: "14px 16px", borderRadius: "8px", border: "1px solid #E5E7EB" }}>
+                      <div style={{ fontSize: "16px", marginBottom: "6px" }}>{cd.icon}</div>
+                      <div style={{ fontSize: "13px", fontWeight: 800, color: "#111111", marginBottom: "4px" }}>{cd.title}</div>
+                      <div style={{ fontSize: "12px", color: "#6B7280", lineHeight: 1.5 }}>{cd.desc}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
-                결과 및 영향
-              </h4>
-              <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
-                {project.outcome}
-              </p>
             </div>
-          </div>
+          ) : (
+            /* Fallback: Standard 3-Column Story Section */
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+                gap: isMobile ? "24px" : "32px",
+                borderTop: "1px solid #F3F4F6",
+                paddingTop: "24px",
+                marginTop: "8px",
+              }}
+            >
+              {/* Column 1: Challenge */}
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+                    CHALLENGE
+                  </span>
+                </div>
+                <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                  핵심 문제
+                </h4>
+                <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
+                  {project.challenge}
+                </p>
+              </div>
+
+              {/* Column 2: Decision */}
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+                    DECISION
+                  </span>
+                </div>
+                <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                  핵심 판단
+                </h4>
+                <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
+                  {project.approach}
+                </p>
+              </div>
+
+              {/* Column 3: Impact */}
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "11px", fontWeight: 800, color: "#2563EB", letterSpacing: "0.05em" }}>
+                    IMPACT
+                  </span>
+                </div>
+                <h4 style={{ fontSize: "15px", color: "#111111", margin: "0 0 8px 0", fontWeight: 800, letterSpacing: "-0.01em" }}>
+                  결과 및 영향
+                </h4>
+                <p style={{ fontSize: "13px", color: "#4B5563", lineHeight: 1.7, margin: 0 }}>
+                  {project.outcome}
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* 🌟 Bottom Case Navigation Banner (Next Case Link Only) */}
           <div
